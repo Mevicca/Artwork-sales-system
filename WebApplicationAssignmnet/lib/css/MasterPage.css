@@ -1,0 +1,36 @@
+﻿html {
+    padding-bottom:10px;
+}
+
+#firstCol {
+    width: 30%;
+    text-align:left;
+}
+
+#secondCol {
+    width: 40%;
+    text-align: center;
+}
+
+#thirdCol {
+    width: 30%;
+    text-align: right;
+}
+
+#subCol1 {
+    width: 20%;
+    display: contents;
+}
+
+#subCol2 {
+    width: 10%;
+    display: contents;
+}
+
+footer {
+    position: fixed;
+    text-align:center;
+    width:99%;
+    background:grey;   /*can change*/
+    bottom:0;
+}
