@@ -30,7 +30,7 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
         <footer>
-            Footer here <%--test--%>
+            Footer here //pohyee comment here
         </footer>
     </form>
 </body>
