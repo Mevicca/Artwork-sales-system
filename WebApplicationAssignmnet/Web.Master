@@ -16,7 +16,7 @@
             <table id="headerStyle" style="width: 100%;">
                 <tr id="firstRow">
                     <td id="firstCol"><i class="fa fa-paint-brush" title="Edit"></i></td>
-                    <td id="secondCol">Logo here</td>
+                    <td id="secondCol">Logo here</td><%--test--%>
                     <td id="thirdCol" style="text-align: right">
                         <div id="subCol1">Search</div>
                         <div id="subCol2">Login</div>
