@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplicationAssignmnet
-{
-
-
-    public partial class Web
-    {
-
+namespace WebApplicationAssignmnet {
+    
+    
+    public partial class Web {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace WebApplicationAssignmnet
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// ContentPlaceHolder control.
         /// </summary>

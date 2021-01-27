@@ -9,20 +9,56 @@
 <head runat="server">
     <title></title>
 
+	<style type="text/css">
+		.auto-style1 {
+			height: 34px;
+		}
+		.dropdown {
+			position:relative;
+			display:inline-block;
+		}
+		.dropdown-content {
+
+			display:none;
+			position:absolute;
+			background-color:lightgrey;
+			color:white;
+			text-align:center;
+			min-width: 55px;
+			z-index: 1;
+		}
+		.dropdown:hover .dropdown-content 
+		{
+			display:block;
+			margin-top:0px;
+		}
+		.dropdown-content a:hover {
+			background-color:grey;
+		}
+
+	</style>
+
 </head>
 <body>
     <form id="form1" runat="server">
         <header>
-            <table id="headerStyle" style="width: 100%;">
+           <table id="headerStyle" style="width: 100%;" >
                 <tr id="firstRow">
                     <td id="firstCol"><i class="fa fa-paint-brush" title="Edit"></i></td>
-                    <td id="secondCol">Logo here</td><!--halo-->
+                    <td id="secondCol">Logo here</td>
                     <td id="thirdCol" style="text-align: right">
                         <div id="subCol1">Search</div>
-                        <div id="subCol2">Login</div>
+					</td>
+					<td id="forthCol">
+                        <div id="subCol2" class="dropdown">
+							<img alt="" src="Lprofile.png" aria-dropeffect="none" class="auto-style1" />
+							<div class="dropdown-content">
+								<a href="#">Login</a>
+								<br />
+								<a href="#">Join Us</a>
+							</div>
+                        </div>
                     </td>
-
-
                 </tr>
             </table>
 
