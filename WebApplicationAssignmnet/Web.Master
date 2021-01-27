@@ -12,6 +12,7 @@
 	<style type="text/css">
 		.auto-style1 {
 			height: 34px;
+			display:block;
 		}
 		.dropdown {
 			position:relative;
