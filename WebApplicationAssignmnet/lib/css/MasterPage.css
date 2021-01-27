@@ -1,10 +1,111 @@
-﻿html {
-    padding-bottom:10px;
+﻿* {
+}
+
+#hideNavBar li {
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    font-family: ul-sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#menuLabel {
+    padding: 12px 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: floralwhite;
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+#hideNavBar li a, #hideNavBar li button:not(.roundButton) {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#hideNavBar li a {
+    border-bottom: 0.5px dashed chocolate;
+}
+
+#hideNavBar li button {
+    float: right;
+}
+
+#hideNavBar li a:hover {
+    background-color: rgba(147, 142, 148, 0.60);
+    color: white;
+    text-align: right;
+}
+
+#btnClose {
+    text-align: right;
+    width: 25px;
+    display: block;
+}
+
+#btnPin {
+    text-align: right;
+    width: 25px;
+}
+
+#pinIcon {
+    background-color: transparent;
+}
+
+#hideNavBar {
+    margin-top: 0px;
+    height: 100%;
+    padding: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background-image: url("../../assets/navBarImage.jpg");
+    opacity:0.8;
+    background-repeat: repeat;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.w3-animate-left {
+    position: relative;
+    animation: animateleft 0.4s;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+#btnNavOpen {
+    border-style: none;
+    border-color: inherit;
+    background-color: transparent;
+}
+
+html {
+    padding-bottom: 10px;
 }
 
 #firstCol {
     width: 30%;
-    text-align:left;
+    text-align: left;
 }
 
 #secondCol {
@@ -29,8 +130,8 @@
 
 footer {
     position: fixed;
-    text-align:center;
-    width:99%;
-    background:grey;   /*can change*/
-    bottom:0;
+    text-align: center;
+    width: 99%;
+    background: grey; /*can change*/
+    bottom: 0;
 }
