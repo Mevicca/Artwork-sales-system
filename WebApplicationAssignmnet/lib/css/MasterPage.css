@@ -13,13 +13,21 @@
 }
 
 #thirdCol {
-    width: 30%;
-    text-align: right;
+    width: 70%;
+    position: relative;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #E7717D; /*can change*/
+    border-radius: 50px;
+    padding-left: 5px;
+    margin-right: 10px;
 }
 
 #subCol1 {
     width: 20%;
     display: contents;
+    
 }
 
 #subCol2 {
@@ -29,8 +37,83 @@
 
 footer {
     position: fixed;
-    text-align:center;
-    width:99%;
-    background:grey;   /*can change*/
-    bottom:0;
+    text-align: center;
+    width: 100%;
+    background-color: #111111; /*can change*/
+    opacity: 0.9;
+    bottom: 0;
+    padding: 20px;
+}
+
+#footer-adjust {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+#footer-followUs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+#footer-contactUs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.searchtxt {
+    width: 100%;
+    border: none;
+    padding: 0px 5px;
+    margin-right: 5px;
+}
+
+input:focus {
+    outline: none;
+ }
+
+.searchbtn{
+    margin-right:5px;
+}
+
+#fbicon {
+    font-size: 22px;
+    color: white;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+#fbicon:hover {
+    color: #4267B2; /*can change*/
+}
+
+#instaicon {
+    font-size:22px; 
+    color:white; 
+    margin-left:8px;
+    margin-right:5px;
+}
+
+#instaicon:hover {
+    color: #DD2A7B; /*can change*/
+}
+
+#twittericon {
+    font-size: 22px;
+    color: white;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+#twittericon:hover {
+    color: #00acee; /*can change*/
+}
+
+#copyrighticon {
+    font-size: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
 }
