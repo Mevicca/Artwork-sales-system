@@ -67,7 +67,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="lib\css\MasterPage.css" />
+    <Content Include="lib\css\Tools.css" />
+    <Content Include="lib\js\jquery.js" />
+    <Content Include="lib\js\Masterpage.js" />
+    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
   </ItemGroup>
@@ -80,6 +88,13 @@
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web.Master.cs">
       <DependentUpon>Web.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,6 +104,39 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="lib\css\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\core.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\list.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\path.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="lib\css\font-awesome-4.7.0\scss\_variables.scss" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -98,6 +146,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

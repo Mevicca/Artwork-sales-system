@@ -3,36 +3,61 @@
 <!DOCTYPE html>
 
 <link href="lib/css/MasterPage.css" rel="stylesheet" />
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="lib/css/Tools.css" rel="stylesheet" />
+<link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="lib/js/jquery.js"></script>
+<script src="lib/js/Masterpage.js"></script>
 
 <html>
 <head runat="server">
     <title></title>
-
 </head>
-<body>
-    <form id="form1" runat="server">
-        <header>
-            <table id="headerStyle" style="width: 100%;">
-                <tr id="firstRow">
-                    <td id="firstCol"><i class="fa fa-paint-brush" title="Edit"></i></td>
-                    <td id="secondCol">Logo here</td><!--halo-->
-                    <td id="thirdCol" style="text-align: right">
-                        <div id="subCol1">Search</div>
-                        <div id="subCol2">Login</div>
-                    </td>
+<body style="margin-left: 0px">
+    <div class="w3-animate-left" id="mySidebar">
+        <ul id="hideNavBar" style="list-style-type: none;">
+            <li>
+                <button id="btnClose" class="roundButton" title="Close it" onclick="nav_close()">
+                    <i class="fa fa-close"></i>
+                </button>
+                <button id="btnPin" class="roundButton" title="Pin it" onclick="nav_pin()">
+                    <i id="pinIcon" class="fa fa-map-pin" aria-hidden="true"></i>
+                </button>
+            </li>
+            <li>
+                <asp:Label ID="menuLabel" runat="server" Text="M E N U"></asp:Label>
+            </li>
+            <li><a href="Test.aspx">Test Link</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+        </ul>
+    </div>
+    <div id="nav-bar">
+        <form id="form1" runat="server">
+            <header>
+                <table id="headerStyle" style="width: 100%;">
+                    <tr id="firstRow">
+                        <td id="firstCol" class="nav-bar">
+                            <button type="button" id="btnNavOpen" onclick="nav_open()">
+                                <i class="fa fa-paint-brush" title="Edit" style="font-size: medium"></i>
+                            </button>
+                        </td>
+                        <td id="secondCol">Logo here</td>
+                        <td id="thirdCol" style="text-align: right">
+                            <div id="subCol1">Search</div>
+                            <div id="subCol2">Login</div>
+                        </td>
 
+                    </tr>
+                </table>
 
-                </tr>
-            </table>
-
-        </header>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+            </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
-        <footer>
-            Footer here //pohyee comment here
-        </footer>
-    </form>
+            <footer>
+                Footer here
+            </footer>
+        </form>
+    </div>
 </body>
 
 </html>
