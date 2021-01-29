@@ -10,33 +10,53 @@
     <title></title>
 
 	<style type="text/css">
-		.auto-style1 {
-			height: 34px;
+		#profileIcon {
 			display:block;
+			color:black;
+		}
+		#profileIcon:hover {
+			color:gold;
 		}
 		.dropdown {
 			position:relative;
 			display:inline-block;
 		}
-		.dropdown-content {
+		/*.dropdown-content {
 
-			display:none;
+			display:block;
 			position:absolute;
-			background-color:lightgrey;
+			background-color:black;
 			color:white;
 			text-align:center;
-			min-width: 55px;
-			z-index: 1;
+			box-shadow: 0px 8px 16px 0px rgb(90, 90, 88);
+		}*/
+		.dropdown-content a{
+		    color: white;
+		    padding: 5px 10px;
+		    text-decoration: none;
+		    display: block;
+		}
+		.dropdown-content a:hover{
+		    color:black;
 		}
 		.dropdown:hover .dropdown-content 
 		{
 			display:block;
-			margin-top:0px;
 		}
 		.dropdown-content a:hover {
-			background-color:grey;
+			background-color:gray;
 		}
-
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: black;
+			color: white;
+			text-align: center;
+			box-shadow: 0px 8px 16px 0px rgb(90, 90, 88);
+			left: -54px;
+			top: 21px;
+			width: 70px;
+		}
 	</style>
 
 </head>
@@ -51,14 +71,13 @@
                         <div id="subCol1">Search</div>
 					</td>
 					<td id="forthCol">
-                        <div id="subCol2" class="dropdown">
-							<img alt="" src="Lprofile.png" aria-dropeffect="none" class="auto-style1" />
+						<div class="dropdown" id="profileIcon">
+							<i class="fa fa-user fa-lg" aria-hidden="true"></i>
 							<div class="dropdown-content">
 								<a href="#">Login</a>
-								<br />
 								<a href="#">Join Us</a>
 							</div>
-                        </div>
+						</div>
                     </td>
                 </tr>
             </table>
