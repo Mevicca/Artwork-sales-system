@@ -41,7 +41,7 @@
                                 <i class="fa fa-paint-brush" title="Edit" style="font-size: medium"></i>
                             </button>
                         </td>
-                        <td id="secondCol">Logo here</td>
+                         <td id="secondCol"><img src="blackcrop.png" alt="Tayy Art" width=200></td>
                         <td id="thirdCol" style="text-align: right">
                           <input type="text" placeholder="Search" class="searchtxt" />
                           <a class="searchbtn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
