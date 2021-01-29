@@ -137,6 +137,7 @@
     <Content Include="lib\css\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="lib\css\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="lib\css\font-awesome-4.7.0\scss\_variables.scss" />
+
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

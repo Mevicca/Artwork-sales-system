@@ -43,8 +43,9 @@
                         </td>
                         <td id="secondCol">Logo here</td>
                         <td id="thirdCol" style="text-align: right">
-                            <div id="subCol1">Search</div>
-                            <div id="subCol2">Login</div>
+                          <input type="text" placeholder="Search" class="searchtxt" />
+                          <a class="searchbtn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                          <div id="subCol2">Login</div>
                         </td>
 
                     </tr>
@@ -53,11 +54,36 @@
             </header>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
-            <footer>
-                Footer here
-            </footer>
+           <footer>    
+            <div>
+                <div id="footer-adjust"> 
+                    
+                    <div id="footer-followUs">
+                        <div style="margin-bottom:5px;">Follow Us :</div>
+                    <div>
+                        <a href="https://www.facebook.com/admin.neko.art" target="_blank" ><i class="fa fa-facebook" id="fbicon" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" id="instaicon" aria-hidden="true" ></i></a>
+                        <a href="https://twitter.com/twitter?lang=en" target="_blank"><i class="fa fa-twitter" id="twittericon" aria-hidden="true" ></i></a>
+                    </div>
+
+                    </div>
+
+                    <div id="footer-contactUs">
+                        <div style="margin-bottom:5px;">Contact Us :</div>
+                        <div style="display:flex;flex-wrap:wrap">
+                        <div style="margin-left:10px;"><i class="fa fa-phone"" aria-hidden="true"></i> : +018 888 8300</div>   
+                        <div style="margin-left:10px;"><i class="fa fa-fax"" aria-hidden="true"></i> : +03 330 0330</div>
+                        </div>
+                    </div>
+
+                    <div><div style="margin-right:20px;">
+                        <i class="fa fa-copyright" id="copyrighticon" aria-hidden="true""></i>2021 | TayyArt  
+                    </div></div>       
+                    
+                </div>        
+           </div> 
+        </footer>
         </form>
     </div>
 </body>
-
 </html>
