@@ -45,9 +45,18 @@
                         <td id="thirdCol" style="text-align: right">
                           <input type="text" placeholder="Search" class="searchtxt" />
                           <a class="searchbtn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                          <div id="subCol2">Login</div>
                         </td>
 
+                        <td id="forthCol">
+						              <div class="dropdown" id="profileIcon">
+							              <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+							              <div class="dropdown-content">
+								              <a href="#">Login</a>
+								              <a href="#">Join Us</a>
+						              	</div>
+						              </div>
+                        </td>
+                        
                     </tr>
                 </table>
 
