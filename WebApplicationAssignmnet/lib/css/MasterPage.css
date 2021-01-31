@@ -1,10 +1,129 @@
-﻿html {
-    padding-bottom:10px;
+﻿* {
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    z-index: 100;
+}
+
+#nav-bar {
+    background-color: #4c0206;
+}
+
+#hideNavBar li {
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    font-family: ul-sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#menuLabel {
+    padding: 12px 16px;
+    font-family: sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana;
+    color: #A0522D;
+    display: block;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size:16px;
+}
+
+#hideNavBar li a, #hideNavBar li button:not(.roundButton) {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#hideNavBar li a {
+    border-bottom: 0.5px dashed chocolate;
+}
+
+#hideNavBar li button {
+    float: right;
+}
+
+#hideNavBar li a:hover {
+    background-color: rgba(147, 142, 148, 0.60);
+    color: white;
+    text-align: right;
+}
+
+#btnClose {
+    text-align: right;
+    width: 25px;
+    display: block;
+}
+
+#closeIcon {
+    color: #8B4513;
+}
+
+#btnPin {
+    text-align: right;
+    width: 25px;
+}
+
+#pinIcon {
+    background-color: transparent;
+    color: #8B4513;
+}
+
+#hideNavBar {
+    margin-top: 0px;
+    height: 100%;
+    padding: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background-color: rgba(230,190,138,0.5);
+}
+
+button:focus {
+    outline: 0;
+}
+
+.w3-animate-left {
+    position: relative;
+    animation: animateleft 0.4s;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+#btnNavOpen {
+    border-style: none;
+    border-color: inherit;
+    background-color: transparent;
+}
+
+html {
+    padding-bottom: 10px;
 }
 
 #firstCol {
     width: 30%;
-    text-align:left;
+    text-align: left;
+    position:relative;
 }
 
 #secondCol {
@@ -13,24 +132,159 @@
 }
 
 #thirdCol {
-    width: 30%;
-    text-align: right;
+    width: 60%;
+    position: relative;
+    float: right;
+    display: flex;
+    margin-top: 5px;
+    margin-right:5px;
 }
 
-#subCol1 {
-    width: 20%;
-    display: contents;
-}
-
-#subCol2 {
-    width: 10%;
-    display: contents;
+.searchText {
+    height: 25px;
+    border: 2px solid #E7717D; /*can change*/
+    border-radius: 50px;
+    background-color:azure;
+    padding-left: 10px;
+    margin-right:8px;
+    display:flex;
 }
 
 footer {
     position: fixed;
-    text-align:center;
-    width:99%;
-    background:grey;   /*can change*/
-    bottom:0;
+    text-align: center;
+    width: 100%;
+    opacity: 0.9;
+    bottom: 0;
+    padding: 5px;
+    background-color: rgba(76, 2, 6,0.9);
+}
+
+#footer-adjust {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+#footer-followUs {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#footer-contactUs {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#footer-copyright {
+    width: 30%;
+    text-align: right;
+}
+
+.searchtxt {
+    border: none;
+    padding: 0px 5px;
+    margin-right: 5px;
+    width:100%;
+}
+
+input:focus {
+    outline: none;
+ }
+
+.searchbtn{
+    margin-right:5px;
+    margin-top:3px;
+}
+
+#fbicon {
+    font-size: 22px;
+    color: white;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+#fbicon:hover {
+    color: #4267B2; /*can change*/
+}
+
+#instaicon {
+    font-size:22px; 
+    color:white; 
+    margin-left:8px;
+    margin-right:5px;
+}
+
+#instaicon:hover {
+    color: #DD2A7B; /*can change*/
+}
+
+#twittericon {
+    font-size: 22px;
+    color: white;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+#twittericon:hover {
+    color: #00acee; /*can change*/
+}
+
+#copyrighticon {
+    font-size: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+#profileIcon {
+    display: block;
+    color: white;
+    margin-top:5px;
+    margin-right:8px;
+}
+
+#profileIcon:hover {
+    color: gold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left:5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgb(90, 90, 88);
+    left: -54px;
+    top: 21px;
+    width: 70px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: gray;
 }

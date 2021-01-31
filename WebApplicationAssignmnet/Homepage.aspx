@@ -2,5 +2,6 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
         <div>
+            Test content
         </div>
 </asp:Content>
