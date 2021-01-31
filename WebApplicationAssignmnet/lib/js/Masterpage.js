@@ -9,8 +9,10 @@ $(function () {
 });
 
 function nav_openning() {
-    document.getElementById("nav-bar").style.marginLeft = "25%";
-    document.getElementById("mySidebar").style.width = "25%";
+    document.getElementById("mySidebar").style.width = "180px";
+    document.getElementById("nav-bar").style.marginLeft = "180px";
+    document.getElementById("content").style.marginLeft = "180px";
+    document.getElementById("footer").style.marginLeft = "180px";
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("btnNavOpen").style.display = 'none';
 }
@@ -22,6 +24,8 @@ function nav_open() {
 function nav_close() {
     isFixedNav = false;
     document.getElementById("nav-bar").style.marginLeft = "0%";
+    document.getElementById("footer").style.marginLeft = "0%";
+    document.getElementById("content").style.marginLeft = "0%";
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("btnNavOpen").style.display = "inline-block";
 }
