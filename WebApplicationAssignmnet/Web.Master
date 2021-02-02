@@ -8,12 +8,15 @@
 <script src="lib/js/jquery.js"></script>
 <script src="lib/js/Masterpage.js"></script>
 
-<html>
+<asp.net>
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        
+    </style>
 </head>
-<body style="margin: 0px">
-    <div class="w3-animate-left" id="mySidebar">
+<body style="margin: 0px;">
+    <div class="w3-animate-left" id="mySidebar" >
         <ul id="hideNavBar" style="list-style-type: none;">
             <li>
                 <button id="btnClose" class="roundButton" title="Close it" onclick="nav_close()">
@@ -38,7 +41,7 @@
                     <tr id="firstRow">
                         <td id="firstCol" class="nav-bar">
                         </td>
-                         <td id="secondCol"><img src="rosegold.png" alt="Tayy Art" width="150" height="60"></td>
+                         <td id="secondCol"><a href="Homepage.aspx"><img src="rosegold.png" alt="Tayy Art" width="150" height="60"></a></td>
                         <td id="thirdCol">
                             <div class="searchText">
                                   <input type="text" placeholder="Search" class="searchtxt" />
@@ -68,10 +71,10 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
         </asp:ContentPlaceHolder>
     </div>
-    <footer id="footer">    
-                <div id="footer-adjust" style="width:100%"> 
+    <footer id="footer" style="width:auto;" >  
+                <div id="footer-adjust" class="auto-style1"> 
                     <div id="footer-followUs">
-                        <div style="margin-bottom:5px;">Follow Us :</div>
+                        <div>Follow Us :</div>
                     <div>
                         <a href="https://www.facebook.com/admin.neko.art" target="_blank" ><i class="fa fa-facebook" id="fbicon" aria-hidden="true"></i></a>
                         <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" id="instaicon" aria-hidden="true" ></i></a>
@@ -81,18 +84,16 @@
                     </div>
 
                     <div id="footer-contactUs">
-                        <div style="margin-bottom:5px;">Contact Us :</div>
-                        <div style="display:flex;flex-wrap:wrap">
+                        <div>Contact Us :</div>
+                        <div style="display:flex;flex-wrap:wrap; justify-content:center;">
                         <div style="margin-left:10px;"><i class="fa fa-phone"" aria-hidden="true"></i> : +018 888 8300</div>   
                         <div style="margin-left:10px;"><i class="fa fa-fax"" aria-hidden="true"></i> : +03 330 0330</div>
                         </div>
                     </div>
 
-                    <div id="footer-copyright">
-                        <i class="fa fa-copyright" id="copyrighticon" aria-hidden="true""></i>2021 | TayyArt  
-                    </div>
+                    <div id="footer-copyright">© 2021 | TayyArt  </div>
                     
                 </div>        
         </footer>
 </body>
-</html>
+</asp.net>
