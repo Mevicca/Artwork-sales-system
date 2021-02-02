@@ -10,10 +10,7 @@
 
 <html>
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        
-    </style>
+    <title>TAYY Art</title>
 </head>
 <body style="margin: 0px;">
     <div class="w3-animate-left" id="mySidebar" >
@@ -91,7 +88,7 @@
                         </div>
                     </div>
 
-                    <div id="footer-copyright">© 2021 | TayyArt  </div>
+                    <div id="footer-copyright">© 2021 | TAYY Art  </div>
                     
                 </div>        
         </footer>

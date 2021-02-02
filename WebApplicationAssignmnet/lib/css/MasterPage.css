@@ -21,7 +21,6 @@
     font-family: ul-sans-serif;
     font-weight: bold;
     font-style: italic;
-
 }
 
 #menuLabel {
@@ -86,7 +85,6 @@
     overflow-x: hidden;
     transition: 0.5s;
     background-color: rgba(230,190,138,0.5);
-  
 }
 
 button:focus {
@@ -98,8 +96,6 @@ button:focus {
     animation: animateleft 0.4s;
     display: none;
     background-color: rgba(0,0,0,0.5);
-    
-   
 }
 
 @keyframes animateleft {
@@ -111,7 +107,6 @@ button:focus {
     to {
         left: 0;
         opacity: 1;
-        
     }
 }
 
@@ -123,7 +118,6 @@ button:focus {
 
 html {
     padding-bottom: 10px;
-   
 }
 
 #firstCol {
@@ -155,7 +149,6 @@ html {
     padding-left: 10px;
     margin-right:8px;
     display:flex;
-
 }
 
 footer {
@@ -168,7 +161,6 @@ footer {
     bottom: 0;
     padding: 5px;
     background-color: rgba(76, 2, 6,0.9);
- 
 }
 
 #footer-adjust {
