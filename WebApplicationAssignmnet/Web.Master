@@ -8,7 +8,7 @@
 <script src="lib/js/jquery.js"></script>
 <script src="lib/js/Masterpage.js"></script>
 
-<asp.net>
+<html>
 <head runat="server">
     <title></title>
     <style type="text/css">
@@ -96,4 +96,4 @@
                 </div>        
         </footer>
 </body>
-</asp.net>
+</html>
