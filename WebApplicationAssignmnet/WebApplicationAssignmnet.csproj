@@ -67,6 +67,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\Images\blackcrop.png" />
+    <Content Include="assets\Images\rosegold.png" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.js" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -137,7 +149,17 @@
     <Content Include="lib\css\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="lib\css\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="lib\css\font-awesome-4.7.0\scss\_variables.scss" />
-
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap.min.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\desktop.ini" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js.map" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -149,7 +171,7 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
+    <Folder Include="assets\product\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

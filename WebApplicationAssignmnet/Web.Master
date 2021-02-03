@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 
+<link href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="lib/css/MasterPage.css" rel="stylesheet" />
 <link href="lib/css/Tools.css" rel="stylesheet" />
 <link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -38,7 +39,7 @@
                     <tr id="firstRow">
                         <td id="firstCol" class="nav-bar">
                         </td>
-                         <td id="secondCol"><a href="Homepage.aspx"><img src="rosegold.png" alt="Tayy Art" width="150" height="60"></a></td>
+                         <td id="secondCol"><a href="Homepage.aspx"><img src="assets/Images/rosegold.png" alt="Tayy Art" width="150" height="60"></a></td>
                         <td id="thirdCol">
                             <div class="searchText">
                                   <input type="text" placeholder="Search" class="searchtxt" />
