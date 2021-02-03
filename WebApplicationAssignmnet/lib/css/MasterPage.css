@@ -1,4 +1,5 @@
 ﻿* {
+    box-sizing:revert;
 }
 
 .centered {
@@ -38,6 +39,7 @@
     padding: 12px 16px;
     text-decoration: none;
     text-align: center;
+    color:chocolate;
 }
 
 #hideNavBar li a {
@@ -106,7 +108,7 @@ button:focus {
 
     to {
         left: 0;
-        opacity: 1
+        opacity: 1;
     }
 }
 
@@ -138,26 +140,32 @@ html {
     display: flex;
     margin-top: 5px;
     margin-right:5px;
+    padding: 12px;
 }
 
 .searchText {
     height: 25px;
     border: 2px solid #E7717D; /*can change*/
+    font-size:small;
     border-radius: 50px;
-    background-color:azure;
+    background-color: azure;
     padding-left: 10px;
     margin-right:8px;
     display:flex;
+    box-sizing:initial;
 }
 
 footer {
-    position: fixed;
+    position:fixed;
     text-align: center;
     width: 100%;
     opacity: 0.9;
+    left:0;
+    right:0;
     bottom: 0;
     padding: 5px;
     background-color: rgba(76, 2, 6,0.9);
+    font-family:'Times New Roman', Times, serif;
 }
 
 #footer-adjust {
@@ -171,7 +179,9 @@ footer {
     width: 30%;
     display: flex;
     align-items: center;
+    justify-content:center;
     flex-wrap: wrap;
+    margin-left: 10px;
 }
 
 #footer-contactUs {
@@ -185,6 +195,10 @@ footer {
 #footer-copyright {
     width: 30%;
     text-align: right;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .searchtxt {
@@ -199,12 +213,12 @@ input:focus {
  }
 
 .searchbtn{
-    margin-right:5px;
+    margin-right:10px;
     margin-top:3px;
 }
 
 #fbicon {
-    font-size: 22px;
+    font-size: 15px;
     color: white;
     margin-left: 8px;
     margin-right: 5px;
@@ -215,9 +229,9 @@ input:focus {
 }
 
 #instaicon {
-    font-size:22px; 
+    font-size:15px; 
     color:white; 
-    margin-left:8px;
+    margin-left:5px;
     margin-right:5px;
 }
 
@@ -226,9 +240,9 @@ input:focus {
 }
 
 #twittericon {
-    font-size: 22px;
+    font-size: 15px;
     color: white;
-    margin-left: 8px;
+    margin-left: 5px;
     margin-right: 5px;
 }
 
@@ -236,16 +250,9 @@ input:focus {
     color: #00acee; /*can change*/
 }
 
-#copyrighticon {
-    font-size: 10px;
-    margin-bottom: 5px;
-    margin-right: 5px;
-}
-
 #profileIcon {
     display: block;
     color: white;
-    margin-top:5px;
     margin-right:8px;
 }
 
@@ -269,6 +276,7 @@ input:focus {
     left: -54px;
     top: 21px;
     width: 70px;
+    font-family:'Times New Roman', Times, serif;
 }
 
 .dropdown-content a {
@@ -287,4 +295,17 @@ input:focus {
 }
 .dropdown-content a:hover {
     background-color: gray;
+}
+
+.searchText, .fa fa-user .fa-lg, #btnClose, #btnPin {
+    font-family: sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana;
+    line-height: 0;   
+}
+
+#content {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1, h2 {
+    font-family: Arial, Helvetica, sans-serif;
 }

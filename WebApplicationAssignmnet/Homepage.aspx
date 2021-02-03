@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
         <div>
-            Test content
+            
         </div>
+    <h3>test</h3>
+    <asp:Label runat="server">Test label</asp:Label>
 </asp:Content>
