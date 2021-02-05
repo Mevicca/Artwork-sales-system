@@ -7,13 +7,32 @@
 <link href="lib/css/Tools.css" rel="stylesheet" />
 <link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <script src="lib/js/jquery.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="lib/js/Masterpage.js"></script>
+<script>
+    function throttle(method, waitTime) {
+        var working = false;
+        return function () {
+            if (working) return;
+            working = true;
+            setTimeout(function () {
+                method(); working = false;
+            }, waitTime);
+        };
+    }
+
+    function adjustContainerPadding() {
+        var footerHeight = document.getElementById("footer").offsetHeight;
+        $("#nav-bar").css("margin-bottom", footerHeight);
+        return adjustContainerPadding;
+    }
+</script>
 
 <html>
 <head runat="server">
     <title>TAYY Art</title>
 </head>
-<body style="margin: 0px;">
+<body style="margin: 0px;" onresize="throttle(adjustContainerPadding(), 500);">
     <div class="w3-animate-left" id="mySidebar" >
         <ul id="hideNavBar" style="list-style-type: none;">
             <li>
@@ -25,7 +44,7 @@
                 </button>
             </li>
             <li>
-                <asp:Label ID="menuLabel" runat="server" Text="M E N U"></asp:Label>
+                <asp:Label ID="menuLabel" runat="server" Text=""></asp:Label>
             </li>
             <li><a href="Test.aspx">Test Link</a></li>
             <li><a href="#">Link 2</a></li>
@@ -50,27 +69,27 @@
                             <div class="dropdown" id="profileIcon">
 							    <i class="fa fa-user fa-lg" aria-hidden="true"></i>
 							    <div class="dropdown-content">
-								    <a href="#">Login</a>
-								    <a href="#">Join Us</a>
+								    <a href="Login.aspx">Login</a>
+								    <a href="SignUp.aspx">Sign up</a>
     						    </div>
                             </div>
                         </td>
                     </tr>
                 </table>
             </header>
+            <div class="centered">
+                <button type="button" id="btnNavOpen" onclick="nav_open()">
+                    <i class="fa fa-angle-double-right" title="Edit" style="font-size:24px;color:red"></i>
+                </button>
+            </div>
+            <div id="content" style="padding-left:25px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </form>
     </div>
-    <div class="centered">
-        <button type="button" id="btnNavOpen" onclick="nav_open()">
-            <i class="fa fa-angle-double-right" title="Edit" style="font-size:24px;color:red"></i>
-        </button>
-    </div>
-    <div id="content" style="padding-left:25px">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
     <footer id="footer" style="width:auto;" >  
-                <div id="footer-adjust" class="auto-style1"> 
+                <div id="footer-adjust"> 
                     <div id="footer-followUs">
                         <div>Follow Us :</div>
                     <div>
