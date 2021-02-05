@@ -1,5 +1,5 @@
 ﻿* {
-    box-sizing:revert;
+    box-sizing: revert;
 }
 
 .centered {
@@ -31,7 +31,7 @@
     display: block;
     text-decoration: none;
     font-weight: bolder;
-    font-size:16px;
+    font-size: 16px;
 }
 
 #hideNavBar li a, #hideNavBar li button:not(.roundButton) {
@@ -39,7 +39,7 @@
     padding: 12px 16px;
     text-decoration: none;
     text-align: center;
-    color:chocolate;
+    color: chocolate;
 }
 
 #hideNavBar li a {
@@ -51,7 +51,7 @@
 }
 
 #hideNavBar li a:hover {
-    background-color: rgba(147, 142, 148, 0.60);
+    background-color: rgba(147, 142, 148, 0.6);
     color: white;
     text-align: right;
 }
@@ -86,7 +86,7 @@
     left: 0;
     overflow-x: hidden;
     transition: 0.5s;
-    background-color: rgba(230,190,138,0.5);
+    background-color: rgba(230,190,138,1);
 }
 
 button:focus {
@@ -118,14 +118,10 @@ button:focus {
     background-color: transparent;
 }
 
-html {
-    padding-bottom: 10px;
-}
-
 #firstCol {
     width: 30%;
     text-align: left;
-    position:relative;
+    position: relative;
 }
 
 #secondCol {
@@ -139,33 +135,32 @@ html {
     float: right;
     display: flex;
     margin-top: 5px;
-    margin-right:5px;
+    margin-right: 5px;
     padding: 12px;
 }
 
 .searchText {
     height: 25px;
     border: 2px solid #E7717D; /*can change*/
-    font-size:small;
+    font-size: small;
     border-radius: 50px;
     background-color: azure;
     padding-left: 10px;
-    margin-right:8px;
-    display:flex;
-    box-sizing:initial;
+    margin-right: 8px;
+    display: flex;
+    box-sizing: initial;
 }
 
 footer {
-    position:fixed;
+    position: fixed;
     text-align: center;
     width: 100%;
-    opacity: 0.9;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
     bottom: 0;
     padding: 5px;
     background-color: rgba(76, 2, 6,0.9);
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #footer-adjust {
@@ -179,7 +174,7 @@ footer {
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     flex-wrap: wrap;
     margin-left: 10px;
 }
@@ -205,16 +200,16 @@ footer {
     border: none;
     padding: 0px 5px;
     margin-right: 5px;
-    width:100%;
+    width: 100%;
 }
 
 input:focus {
     outline: none;
- }
+}
 
-.searchbtn{
-    margin-right:10px;
-    margin-top:3px;
+.searchbtn {
+    margin-right: 10px;
+    margin-top: 3px;
 }
 
 #fbicon {
@@ -224,20 +219,20 @@ input:focus {
     margin-right: 5px;
 }
 
-#fbicon:hover {
-    color: #4267B2; /*can change*/
-}
+    #fbicon:hover {
+        color: #4267B2; /*can change*/
+    }
 
 #instaicon {
-    font-size:15px; 
-    color:white; 
-    margin-left:5px;
-    margin-right:5px;
+    font-size: 15px;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-#instaicon:hover {
-    color: #DD2A7B; /*can change*/
-}
+    #instaicon:hover {
+        color: #DD2A7B; /*can change*/
+    }
 
 #twittericon {
     font-size: 15px;
@@ -246,27 +241,28 @@ input:focus {
     margin-right: 5px;
 }
 
-#twittericon:hover {
-    color: #00acee; /*can change*/
-}
+    #twittericon:hover {
+        color: #00acee; /*can change*/
+    }
 
 #profileIcon {
     display: block;
     color: white;
-    margin-right:8px;
+    margin-right: 8px;
 }
 
-#profileIcon:hover {
-    color: gold;
-}
+    #profileIcon:hover {
+        color: gold;
+    }
 
 .dropdown {
     position: relative;
     display: inline-block;
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 .dropdown-content {
+    z-index:1;
     display: none;
     position: absolute;
     background-color: black;
@@ -276,34 +272,40 @@ input:focus {
     left: -54px;
     top: 21px;
     width: 70px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.dropdown-content a {
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    color: black;
-}
+    .dropdown-content a {
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        display: block;
+    }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 .dropdown-content a:hover {
     background-color: gray;
 }
 
 .searchText, .fa fa-user .fa-lg, #btnClose, #btnPin {
     font-family: sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana;
-    line-height: 0;   
+    line-height: 0;
 }
 
 #content {
     font-family: 'Times New Roman', Times, serif;
+    background: #F3E0DC;
+}
+
+html {
+    background: #F3E0DC;
+    background-clip: content-box;
+    width: 100%;
+    min-width: 702px;
+    min-height:300px;
 }
 
 h1, h2 {

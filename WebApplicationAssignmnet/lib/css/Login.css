@@ -1,0 +1,65 @@
+﻿.tblLogin tr td {
+    padding-bottom: 20px;
+}
+
+.colIcon {
+    width: 34px;
+    padding-right: 10px;
+}
+
+.colwidth-240 {
+    width: 240px;
+    padding-right: 15px;
+}
+
+.validatorMsg {
+    float: left;
+    text-align: left;
+    color: red;
+    font-size: medium;
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.colIcon > .fa {
+    color: purple;
+}
+
+.colwidth-icon {
+    width: 33px;
+}
+
+.ddl-gender {
+    width: 194px;
+}
+
+.ddl-id {
+    width: 100px;
+}
+
+.tblLogin > tbody > tr {
+    display: flex;
+}
+
+.text-center {
+    padding: 5px;
+}
+
+.container, .row, .col-md-6, .card, .border-top {
+    height: inherit;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+.card-header {
+    padding-top: 10px 15px;
+    padding-bottom: 0px;
+    display: inline;
+}
+
+.bottom-card, .card-header {
+    background-image: url("../../assets/Images/form-header.jpg");
+    color: firebrick;
+}
