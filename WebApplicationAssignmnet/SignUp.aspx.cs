@@ -52,7 +52,7 @@ namespace WebApplicationAssignmnet
                     cmd.ExecuteNonQuery();
                     
                 }
-                Response.Redirect("Homepage.aspx", false);
+                Response.Redirect("Login.aspx", false);
             }
             catch (Exception ex)
             {
@@ -63,7 +63,7 @@ namespace WebApplicationAssignmnet
                 }
                 else
                 {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "MessageThenRedirect", "openAlert(event, 'Fail','Failure register !');", true);
                 }
             }
 

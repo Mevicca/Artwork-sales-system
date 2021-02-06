@@ -89,3 +89,20 @@ function checkNav() {
 
     }
 }
+
+function throttle(method, waitTime) {
+    var working = false;
+    return function () {
+        if (working) return;
+        working = true;
+        setTimeout(function () {
+            method(); working = false;
+        }, waitTime);
+    };
+}
+
+function adjustContainerPadding() {
+    var footerHeight = document.getElementById("footer").offsetHeight;
+    $("#nav-bar").css("margin-bottom", footerHeight);
+    return adjustContainerPadding;
+}

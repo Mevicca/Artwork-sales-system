@@ -86,7 +86,7 @@
     left: 0;
     overflow-x: hidden;
     transition: 0.5s;
-    background-color: rgba(230,190,138,1);
+    animation : blinkBackground 3s infinite;
 }
 
 button:focus {
@@ -310,4 +310,33 @@ html {
 
 h1, h2 {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes blinkBackground{
+    0% {
+        background-color: rgba(65, 33, 36,0.95);
+    }
+
+    50% {
+        background-color: rgba(188, 139, 107,0.95);
+    }
+
+    100% {
+        background-color: rgba(205, 170, 136,0.95);
+    }
+}
+
+
+@-webkit-keyframes blinkBackground {
+    0% {
+        background-color: rgba(65, 33, 36,0.95);
+    }
+
+    50% {
+        background-color: rgba(188, 139, 107,0.95);
+    }
+
+    100% {
+        background-color: rgba(205, 170, 136,0.95);
+    }
 }

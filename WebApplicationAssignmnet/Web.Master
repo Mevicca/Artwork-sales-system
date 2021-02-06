@@ -3,30 +3,11 @@
 <!DOCTYPE html>
 
 <link href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="lib/css/MasterPage.css" rel="stylesheet" />
 <link href="lib/css/Tools.css" rel="stylesheet" />
+<link href="lib/css/MasterPage.css" rel="stylesheet" />
 <link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <script src="lib/js/jquery.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="lib/js/Masterpage.js"></script>
-<script>
-    function throttle(method, waitTime) {
-        var working = false;
-        return function () {
-            if (working) return;
-            working = true;
-            setTimeout(function () {
-                method(); working = false;
-            }, waitTime);
-        };
-    }
-
-    function adjustContainerPadding() {
-        var footerHeight = document.getElementById("footer").offsetHeight;
-        $("#nav-bar").css("margin-bottom", footerHeight);
-        return adjustContainerPadding;
-    }
-</script>
 
 <html>
 <head runat="server">
