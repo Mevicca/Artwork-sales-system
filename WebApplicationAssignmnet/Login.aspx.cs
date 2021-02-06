@@ -26,19 +26,31 @@ namespace WebApplicationAssignmnet
                     string query = "";
                     if (DropDownListIdentification.SelectedValue == "")
                     {
-                        query = "SELECT COUNT(*) FROM CUSTOMER WHERE CustEmail = @0 AND CustPassword =@1";
+                        query = "SELECT COUNT(*), ISACTIVE FROM CUSTOMER WHERE CustEmail = @0 AND CustPassword =@1 GROUP BY ISACTIVE";
                     }
                     else
                     {
-                        query = "SELECT COUNT(*) FROM ARTIST WHERE ArtEmail = @0 AND ArtPassword =@1";
+                        query = "SELECT COUNT(*), ISACTIVE  FROM ARTIST WHERE ArtEmail = @0 AND ArtPassword =@1 GROUP BY ISACTIVE";
                     }
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("0", txtEmail.Text.Trim());
                     cmd.Parameters.AddWithValue("1", txtPassword.Text.Trim());
 
-                    var result = (Int32)cmd.ExecuteScalar();
-                    if (result < 1)
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            if (reader.GetInt32(0) > 0 && !reader.GetBoolean(1))
+                            {
+                                throw new Exception("Inactive account.");
+                            }
+
+                        }
+                    }
+                    else
                     {
                         throw new Exception("Wrong Email / Password.");
                     }
