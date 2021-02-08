@@ -2,8 +2,6 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="lib/css/Login.css" rel="stylesheet" />
-        
-    </script>
 
     <form runat="server">
         <div class="container h-100 d-flex justify-content-center align-items-center">
