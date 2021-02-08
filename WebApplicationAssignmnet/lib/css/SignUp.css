@@ -7,8 +7,7 @@
     padding-right: 10px;
 }
 
-.colwidth-240 {
-    width: 240px;
+.colwidth{
     padding-right: 15px;
 }
 
@@ -62,4 +61,8 @@
 .bottom-card, .card-header {
     background-image: url("../../assets/Images/form-header.jpg");
     color: firebrick;
+}
+
+.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }

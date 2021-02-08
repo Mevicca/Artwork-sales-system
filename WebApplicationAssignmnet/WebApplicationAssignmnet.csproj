@@ -78,9 +78,7 @@
     <Content Include="assets\Images\form-header.jpg" />
     <Content Include="assets\Images\rosegold.png" />
     <Content Include="lib\css\Login.css" />
-    <Content Include="lib\js\Login.js" />
     <Content Include="lib\css\SignUp.css" />
-    <Content Include="lib\js\SignUp.js" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
@@ -101,7 +99,6 @@
     <Content Include="lib\css\Tools.css" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
-    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
   </ItemGroup>
@@ -128,13 +125,6 @@
     </Compile>
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web.Master.cs">
       <DependentUpon>Web.Master</DependentUpon>

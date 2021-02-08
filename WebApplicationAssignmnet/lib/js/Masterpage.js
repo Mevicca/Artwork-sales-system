@@ -15,35 +15,12 @@ $(function () {
 
 });
 
-$(window).on('load', function () {
-    adjustContainerPadding();
-});
-
-function throttle(method, waitTime) {
-    var working = false;
-    return function () {
-        if (working) return;
-        working = true;
-        setTimeout(function () {
-            method(); working = false;
-        }, waitTime);
-    };
-}
-
-//call when after load page and resize page
-function adjustContainerPadding() {
-    //For the content height
-    var screen = window.innerHeight;
-    var header = parseInt(document.querySelector('header').offsetHeight);
-    var newHeight = (screen - header-1) + "px";
-    $("#content").css("height", newHeight);
-}
-
 function nav_openning() {
-    document.getElementById("mySidebar").style.width = "180px";
-    document.getElementById("nav-bar").style.marginLeft = "180px";
-    document.getElementById("footer").style.marginLeft = "180px";
-    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("leftSide").style.width = "180px";
+    document.getElementById("hideNavBar").style.width = "180px";
+    document.getElementById("bottom-footer").style.marginLeft = "180px";
+    document.getElementById("leftSide").style.display = "block";
+    document.getElementById("rightSide").style.marginLeft = "180px";
     document.getElementById("btnNavOpen").style.display = 'none';
     typeWriter();
 }
@@ -62,10 +39,11 @@ function nav_open() {
 }
 function nav_close() {
     isFixedNav = false;
-    document.getElementById("nav-bar").style.marginLeft = "0%";
-    document.getElementById("footer").style.marginLeft = "0%";
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("btnNavOpen").style.display = "inline-block";
+    document.getElementById("leftSide").style.display = "none";    //left nav bar
+    document.getElementById("hideNavBar").style.width = "0px";
+    document.getElementById("btnNavOpen").style.display = "flex";
+    document.getElementById("rightSide").style.marginLeft = "0px";
+    document.getElementById("bottom-footer").style.marginLeft = "0px";
 }
 function nav_pin() {
     isFixedNav = !isFixedNav;
@@ -88,21 +66,4 @@ function checkNav() {
         document.getElementById("menuLabel").style.paddingLeft = "20px";
 
     }
-}
-
-function throttle(method, waitTime) {
-    var working = false;
-    return function () {
-        if (working) return;
-        working = true;
-        setTimeout(function () {
-            method(); working = false;
-        }, waitTime);
-    };
-}
-
-function adjustContainerPadding() {
-    var footerHeight = document.getElementById("footer").offsetHeight;
-    $("#nav-bar").css("margin-bottom", footerHeight);
-    return adjustContainerPadding;
 }
