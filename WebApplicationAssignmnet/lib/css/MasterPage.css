@@ -140,7 +140,7 @@ footer {
 }
 
 #bottom-footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     height: 38px;
@@ -295,7 +295,7 @@ body {
 
 @media only screen and (max-width: 710px) {
     #bottom-footer {
-        font-size:10px;
+        font-size:12px;
     }
 }
 
