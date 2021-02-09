@@ -8,8 +8,8 @@
             <div class="row text-center" style="background-color: #F3E0DC">
                 <div class="card">
                     <header class="card-header">
-                        <h2 style="float: left;display:flex;">Login</h2>
-                        <div style="float: right;">
+                        <h2 style="float: left; display: flex;">Login</h2>
+                        <div style="float: right; display: flex;">
                             <asp:Label runat="server">By : </asp:Label>
                             <asp:DropDownList ID="DropDownListIdentification" runat="server" CssClass="line-input ddl-id" ToolTip="Identification" AutoPostBack="True">
                                 <asp:ListItem Value="Customer"></asp:ListItem>
@@ -65,8 +65,7 @@
                             </tr>
                             <tr style="padding-bottom: 5px;">
                                 <td class="colIcon">&nbsp;</td>
-                                <td style="                                        padding-bottom: 5px;
-                                        white-space: nowrap">
+                                <td style="padding-bottom: 5px; white-space: nowrap">
                                     <asp:Button ID="btnReset" runat="server" Text="Reset" ToolTip="Reset"
                                         class="pressed-cancel-button" OnClick="btnReset_Click" CausesValidation="False" UseSubmitBehavior="false" />
                                     <asp:Button ID="btnLogin" runat="server" Text="Login" ToolTip="Login" class="pressed-confirm-button" OnClick="btnlogin_Click" />
