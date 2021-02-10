@@ -46,6 +46,8 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -55,6 +57,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -67,6 +70,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Tayy.mdf" />
+    <Content Include="App_Data\Tayy_log.ldf">
+      <DependentUpon>Tayy.mdf</DependentUpon>
+    </Content>
+    <Content Include="assets\Images\blackcrop.png" />
+    <Content Include="assets\Images\form-header.jpg" />
+    <Content Include="assets\Images\rosegold.png" />
+    <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\SignUp.css" />
+    <Content Include="Login.aspx" />
+    <Content Include="SignUp.aspx" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.js" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -75,11 +99,25 @@
     <Content Include="lib\css\Tools.css" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
-    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
@@ -87,13 +125,6 @@
     </Compile>
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web.Master.cs">
       <DependentUpon>Web.Master</DependentUpon>
@@ -137,7 +168,17 @@
     <Content Include="lib\css\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="lib\css\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="lib\css\font-awesome-4.7.0\scss\_variables.scss" />
-
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap.min.css.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\desktop.ini" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js.map" />
+    <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js.map" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -149,7 +190,7 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
+    <Folder Include="assets\product\oilPaint\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,19 +1,20 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="WebApplicationAssignmnet.Web" %>
-
 <!DOCTYPE html>
 
-<link href="lib/css/MasterPage.css" rel="stylesheet" />
+<link href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="lib/css/Tools.css" rel="stylesheet" />
-<link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="lib/css/MasterPage.css" rel="stylesheet" />
+<link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <script src="lib/js/jquery.js"></script>
 <script src="lib/js/Masterpage.js"></script>
 
 <html>
 <head runat="server">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAYY Art</title>
 </head>
-<body style="margin: 0px">
-    <div class="w3-animate-left" id="mySidebar">
+<body>
+    <div class="w3-animate-left" id="leftSide">
         <ul id="hideNavBar" style="list-style-type: none;">
             <li>
                 <button id="btnClose" class="roundButton" title="Close it" onclick="nav_close()">
@@ -24,75 +25,75 @@
                 </button>
             </li>
             <li>
-                <asp:Label ID="menuLabel" runat="server" Text="M E N U"></asp:Label>
+                <asp:Label ID="menuLabel" runat="server" Text=""></asp:Label>
             </li>
             <li><a href="Test.aspx">Test Link</a></li>
             <li><a href="#">Link 2</a></li>
             <li><a href="#">Link 3</a></li>
         </ul>
     </div>
-    <div id="nav-bar">
-        <form id="form1" runat="server">
-            <header>
-                <table id="headerStyle" style="width: 100%;">
-                    <tr id="firstRow">
-                        <td id="firstCol" class="nav-bar">
-                        </td>
-                         <td id="secondCol"><img src="rosegold.png" alt="Tayy Art" width="150" height="60"></td>
-                        <td id="thirdCol">
+
+    <div id="rightSide" class="d-flex flex-column">
+        <nav class="navbar navbar-expand-md navbar-light" id="nav-bar">
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"></div>
+            <div class="order-first order-md-0">
+                <a href="Homepage.aspx">
+                    <img src="assets/Images/rosegold.png" alt="Tayy Art" width="150" height="60">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <form class="form-inline ml-auto">
                             <div class="searchText">
-                                  <input type="text" placeholder="Search" class="searchtxt" />
-                                  <a class="searchbtn" href="#">
-                                      <i class="fa fa-search" aria-hidden="true"></i>
-                                  </a>
+                                <input type="text" placeholder="Search" class="searchtxt" />
+                                <a class="searchbtn" href="#">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </a>
                             </div>
-                            <div class="dropdown" id="profileIcon">
-							    <i class="fa fa-user fa-lg" aria-hidden="true"></i>
-							    <div class="dropdown-content">
-								    <a href="#">Login</a>
-								    <a href="#">Join Us</a>
-    						    </div>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown" id="profileIcon">
+                            <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+                            <div class="dropdown-content">
+                                <a href="Login.aspx">Login</a>
+                                <a href="SignUp.aspx">Sign up</a>
                             </div>
-                        </td>
-                    </tr>
-                </table>
-            </header>
-        </form>
-    </div>
-    <div class="centered">
-        <button type="button" id="btnNavOpen" onclick="nav_open()">
-            <i class="fa fa-angle-double-right" title="Edit" style="font-size:24px;color:red"></i>
-        </button>
-    </div>
-    <div id="content" style="padding-left:25px">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
-    <footer id="footer">    
-                <div id="footer-adjust" style="width:100%"> 
-                    <div id="footer-followUs">
-                        <div style="margin-bottom:5px;">Follow Us :</div>
-                    <div>
-                        <a href="https://www.facebook.com/admin.neko.art" target="_blank" ><i class="fa fa-facebook" id="fbicon" aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" id="instaicon" aria-hidden="true" ></i></a>
-                        <a href="https://twitter.com/twitter?lang=en" target="_blank"><i class="fa fa-twitter" id="twittericon" aria-hidden="true" ></i></a>
-                    </div>
-
-                    </div>
-
-                    <div id="footer-contactUs">
-                        <div style="margin-bottom:5px;">Contact Us :</div>
-                        <div style="display:flex;flex-wrap:wrap">
-                        <div style="margin-left:10px;"><i class="fa fa-phone"" aria-hidden="true"></i> : +018 888 8300</div>   
-                        <div style="margin-left:10px;"><i class="fa fa-fax"" aria-hidden="true"></i> : +03 330 0330</div>
                         </div>
-                    </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="centered">
+            <button type="button" id="btnNavOpen" onclick="nav_open()">
+                <i class="fa fa-angle-double-right" title="Edit" style="font-size: 24px; color: red"></i>
+            </button>
+        </div>
 
-                    <div id="footer-copyright">
-                        <i class="fa fa-copyright" id="copyrighticon" aria-hidden="true""></i>2021 | TayyArt  
-                    </div>
-                    
-                </div>        
-        </footer>
+        <div id="content" style="padding-left:25px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <div id="bottom-footer">
+            <footer class="text-white-50">
+                        <div id="footer-followUs" class="footer-adjust ">
+                            <div>Follow Us :
+                                <a href="https://www.facebook.com/admin.neko.art" target="_blank" ><i class="fa fa-facebook" id="fbicon" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" id="instaicon" aria-hidden="true" ></i></a>
+                                <a href="https://twitter.com/twitter?lang=en" target="_blank"><i class="fa fa-twitter" id="twittericon" aria-hidden="true" ></i></a>
+                            </div>
+                        </div>
+                        <div id="footer-contactUs" class="footer-adjust" style="display:flex;flex-wrap:wrap; justify-content:center;">
+                            <div>Contact Us :</div>
+                            <div style="margin-left:10px;">
+                                <i class="fa fa-phone"" aria-hidden="true"></i> : +018 888 8300  </div>   
+                                <i class="fa fa-fax"" aria-hidden="true" style="margin-left:5px; margin-top:2px"></i> : +03 330 0330
+                        </div>
+
+                        <div id="footer-copyright" class="footer-adjust">© 2021 | TAYY Art  </div>
+            </footer>
+            </div>
+    </div>
 </body>
 </html>
