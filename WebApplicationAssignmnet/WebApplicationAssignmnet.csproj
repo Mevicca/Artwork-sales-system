@@ -74,12 +74,25 @@
     <Content Include="App_Data\Tayy_log.ldf">
       <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>
+    <Content Include="assets\Acrylic\carlos pun B&amp;L.jpg" />
+    <Content Include="assets\Acrylic\carlos pun DD.jpg" />
+    <Content Include="assets\Acrylic\carlos pun Marvin.jpeg" />
+    <Content Include="assets\Acrylic\carlos pun MM.jpg" />
+    <Content Include="assets\Acrylic\carlos pun Mono.jpg" />
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
     <Content Include="assets\Images\rosegold.png" />
+    <Content Include="assets\product\Acrylic\carlos pun B&amp;L.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun DD.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun Marvin.jpeg" />
+    <Content Include="assets\product\Acrylic\carlos pun MM.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun Mono.jpg" />
     <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\ProductPage.css" />
     <Content Include="lib\css\SignUp.css" />
+    <Content Include="lib\js\ProductPage.js" />
     <Content Include="Login.aspx" />
+    <Content Include="ProductPage.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
@@ -110,6 +123,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPage.aspx.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductPage.aspx.designer.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
