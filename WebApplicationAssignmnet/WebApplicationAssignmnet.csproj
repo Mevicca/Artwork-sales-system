@@ -72,9 +72,6 @@
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
     <Content Include="AddProduct.aspx" />
-    <Content Include="App_Data\Tayy2.mdf" />
-    <Content Include="App_Data\Tayy2_log.ldf">
-      <DependentUpon>Tayy2.mdf</DependentUpon>
     </Content>
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
