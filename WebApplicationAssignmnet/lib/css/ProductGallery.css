@@ -1,0 +1,176 @@
+﻿body {
+}
+
+.galleryContent{
+    padding:40px;
+    padding-top:20px;
+}
+
+#lblGalleryCategory{
+    font-size:40px;
+    font-weight:bold;
+}
+
+#galley-sort-by {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#ddlSortBy {
+    width: 25%;
+    height: 35px;
+    margin-left: 5px;
+}
+
+/* Product Gallery style*/
+#add-gallery{
+    width: 10%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+#add-gallery:hover{
+    text-decoration:none;
+}
+
+#add-gallery #plus-icon{
+    color:#BC4639;
+}
+    #add-gallery:hover #plus-icon {
+        color: #D4A59A;
+    }
+
+#myBtnContainer {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px;
+    background-color: #F3E0DC;
+    cursor: pointer;
+    width: calc( ( 100%  - 12px  ) / 3 );
+}
+
+    /* Add a light grey background on mouse-over */
+    .btn:hover {
+        background-color: #efbdb2;
+    }
+
+    /* Add a dark background to the active button */
+    .btn.active {
+        background-color: #bc5b51;
+        color: white;
+    }
+
+/* Gallery Content Style */
+.content {
+    padding: 25px;
+    margin-left:25px;
+}
+
+.img {
+     width: 210px;
+     height: 210px;
+     filter: grayscale(0);
+     object-fit: contain;
+     margin-bottom: 10px;
+       
+}
+
+.img:hover  {
+    transform: scale(1.05);
+    
+}
+    .img:hover > .viewButton {
+        display: flex;
+    }
+
+.img .viewButton {
+    display:none;
+    width:220px;
+    height:220px;
+    background-color:black;
+    opacity:0.6;
+    align-items:center;
+    justify-content:center;
+    position:absolute;
+    color:white;
+    font-weight:bold;
+}
+
+/*gallerydropdown - Customers*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    justify-content:center;
+}
+
+    .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: #BC4639;
+    }
+
+.dropdown-content {
+    display: none;
+    position: fixed ;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #F3E0DC;
+        }
+
+.dropdown:hover .dropdown-content {
+   display: block;
+}
