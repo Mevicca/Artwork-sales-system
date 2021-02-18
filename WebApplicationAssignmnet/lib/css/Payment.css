@@ -1,0 +1,106 @@
+﻿.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
+    background: white;
+}
+
+.tab {
+    flex-direction: row;
+    padding-bottom: 5px;
+}
+
+.list-group-item {
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+}
+
+.list-group-horizontal {
+    width: 60%;
+}
+
+.payment-details {
+    height: 100%;
+}
+
+.order-summary {
+    width: 30%;
+    height: 100%;
+    max-width: 300px;
+}
+
+.bottom-card, .card-header {
+    background-image: url("../../assets/Images/form-header.jpg");
+    color: firebrick;
+}
+
+.btnApply {
+    margin-left: auto;
+}
+
+.div-button {
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+.input-credit {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 50px;
+}
+
+input-validity {
+    width: 50px;
+}
+
+
+td > .fa {
+    margin-right: 5px;
+    color: purple;
+}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+    .tablink:hover {
+        background-color: bisque;
+        color: brown;
+    }
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#radioBank > tbody > tr > td > * {
+    margin-bottom: 20px;
+}
+
+#radioBank {
+    margin-top: 20px;
+}
+
+td > label {
+    margin-left: 10px;
+}
+
+#payButton{
+    margin-right:15px;
+}

@@ -63,12 +63,18 @@
                                 <td class="colwidth-icon">&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <asp:CheckBox ID="chkPersistCookie" runat="server" AutoPostBack="false" />
+                                    Remember Me ?    
+                                </td>
+                            </tr>
                             <tr style="padding-bottom: 5px;">
-                                <td class="colIcon">&nbsp;</td>
+                                <td class="colIcon"></td>
                                 <td style="padding-bottom: 5px; white-space: nowrap">
                                     <asp:Button ID="btnReset" runat="server" Text="Reset" ToolTip="Reset"
-                                        class="pressed-cancel-button" OnClick="btnReset_Click" CausesValidation="False" UseSubmitBehavior="false" />
-                                    <asp:Button ID="btnLogin" runat="server" Text="Login" ToolTip="Login" class="pressed-confirm-button" OnClick="btnlogin_Click" />
+                                        CssClass="pressed-cancel-button" OnClick="btnReset_Click" CausesValidation="False" UseSubmitBehavior="false" />
+                                    <asp:Button ID="btnLogin" runat="server" Text="Login" ToolTip="Login" CssClass="pressed-confirm-button" OnClick="btnlogin_Click" />
                                 </td>
                                 <td class="colwidth-icon">&nbsp;</td>
                                 <td>&nbsp;</td>
@@ -77,7 +83,9 @@
 
                     </article>
                     <!-- card-body-->
-                    <div class="border-top card-body text-center bottom-card">Do not have an account? <a href="SignUp.aspx">Sign up</a></div>
+                    <div class="border-top card-body text-center bottom-card">Do not have an account? 
+                        <asp:HyperLink runat="server" NavigateUrl="SignUp.aspx">Sign up</asp:HyperLink><br />
+                        Forget Password ? <asp:HyperLink runat="server" NavigateUrl="ResetPassword.aspx">Reset</asp:HyperLink></div>
                 </div>
                 <!-- card-->
             </div>

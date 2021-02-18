@@ -1,0 +1,103 @@
+﻿.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
+    background: white;
+}
+
+.tab {
+    flex-direction: row;
+    padding-bottom: 5px;
+}
+
+.list-group-item {
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+}
+
+.list-group-horizontal {
+    width: 60%;
+}
+
+.shipping-details {
+    height: 100%;
+}
+
+.order-summary {
+    width: 30%;
+    height: 100%;
+    max-width: 300px;
+}
+
+.bottom-card, .card-header {
+    background-image: url("../../assets/Images/form-header.jpg");
+    color: firebrick;
+}
+
+.cart {
+    padding-left: 40px;
+}
+
+.btnApply {
+    margin-left: auto;
+    align-self: center;
+    background-color: beige;
+}
+
+.div-button {
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+}
+
+.btnBack, .btnPayment {
+    width: 125px;
+    margin-top: 10px;
+}
+
+.txtDeliveryCompany {
+    color: firebrick;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: floralwhite;
+    margin-left: 10px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.editLink {
+    margin-right: 10px;
+}
+
+.dropdownmenu {
+    background-color: gainsboro;
+    color: crimson;
+}
+
+.lbl-click {
+    margin-left: auto;
+}
+
+.row-click {
+    width: 400px;
+}
+
+.row > .fa {
+    margin-right: 15px;
+    color: purple;
+    vertical-align:central;
+}
+
+td > label {
+    margin-left:10px;
+}
+
+.coupon{
+    padding-left:15px;
+}
+
+h3{
+    font-weight:bold;
+}

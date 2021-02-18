@@ -11,7 +11,7 @@ namespace WebApplicationAssignmnet
 {
 
 
-    public partial class WebForm1
+    public partial class Homepage
     {
     }
 }

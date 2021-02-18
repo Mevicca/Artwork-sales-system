@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
@@ -77,9 +83,26 @@
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
     <Content Include="assets\Images\rosegold.png" />
+    <Content Include="assets\product\oilPaint\abstractColor.jpg" />
+    <Content Include="assets\product\oilPaint\greenRopes.jpg" />
+    <Content Include="assets\Services\DHL Express.png" />
+    <Content Include="assets\Services\Grab.png" />
+    <Content Include="assets\Services\j&amp;t.png" />
+    <Content Include="assets\Services\PosLaju.jpg" />
+    <Content Include="Bank.aspx" />
+    <Content Include="BankPayment.aspx" />
+    <Content Include="lib\css\Bank.css" />
+    <Content Include="lib\css\BankPayment.css" />
     <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\Payment.css" />
+    <Content Include="lib\css\ResetPassword.css" />
+    <Content Include="lib\css\Shipping.css" />
     <Content Include="lib\css\SignUp.css" />
+    <Content Include="lib\js\Payment.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Payment.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="Shipping.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
@@ -103,13 +126,49 @@
     <Content Include="Homepage.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constant.cs" />
+    <Compile Include="Bank.aspx.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bank.aspx.designer.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BankPayment.aspx.cs">
+      <DependentUpon>BankPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankPayment.aspx.designer.cs">
+      <DependentUpon>BankPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Email.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping.aspx.cs">
+      <DependentUpon>Shipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping.aspx.designer.cs">
+      <DependentUpon>Shipping.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
@@ -189,8 +248,9 @@
     </None>
     <Content Include="Web.sitemap" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="assets\product\oilPaint\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

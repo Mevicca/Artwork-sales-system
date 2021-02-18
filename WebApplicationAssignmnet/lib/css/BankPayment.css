@@ -1,0 +1,24 @@
+﻿#TablePaymentDetails > tbody > tr > td {
+    height: 20px;
+}
+
+.btn-danger {
+    margin-right: 20px;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+}
+
+.container {
+    margin: auto;
+    background-color: white;
+    height: 100%;
+}
+
+.BankName {
+    margin-bottom: 50px;
+    font-weight:bold;
+}
