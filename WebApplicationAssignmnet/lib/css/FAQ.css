@@ -1,0 +1,83 @@
+﻿.FAQcontainer {
+    margin: 30px;
+    background-color: white;
+}
+
+.descp {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contContainer {
+    padding: 20px;
+}
+
+.image-container {
+    background-image: url('../../assets/Images/FAQ/FAQ wallpaper.jpg'); /* The image used - important! */
+    background-size: cover;
+    position: relative; /* Needed to position the cutout text in the middle of the image */
+    height: 300px; /* Some height */
+}
+
+.bannerText {
+    background-color: white;
+    color: black;
+    font-size: 10vw; /* Responsive font size */
+    font-weight: bold;
+    margin: 0 auto; /* Center the text container */
+    padding: 10px;
+    width: 50%;
+    text-align: center; /* Center text */
+    position: absolute; /* Position text */
+    top: 50%; /* Position text in the middle */
+    left: 50%; /* Position text in the middle */
+    transform: translate(-50%, -50%); /* Position text in the middle */
+}
+
+.text {
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.accordion {
+    background-color: #D4A59A;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #f88787;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #F3E0DC;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-family: Tahoma;
+    font-size: 14.5px;
+}
+
+.accordion:after {
+    content: '\021DF'; /* Unicode character for "arrow down" sign*/
+    font-size: 18px;
+    color: black;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\021DE"; /* Unicode character for "arrow up" sign*/
+}
