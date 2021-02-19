@@ -38,14 +38,14 @@ namespace WebApplicationAssignmnet
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Invalid PAC No.')", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "PopupMsg", "failalert('Error','Invalid PAC No.')", true);
             }
         }
 
         private void SentEmail()
         {
             var result = new Email().SendPaymentEmail(Session["Email"].ToString());
-            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Error','Payment Successfully.')", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Payment Successfully.')", true);
             Response.Redirect("~/Homepage.aspx");
         }
     }

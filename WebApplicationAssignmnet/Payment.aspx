@@ -50,7 +50,7 @@
                                             Name on card
                                             </asp:TableCell>
                                             <asp:TableCell HorizontalAlign="Center">
-                                                <asp:TextBox ID="txtcardHolder" runat="server" placeholder="Cardholder" CssClass="line-input"></asp:TextBox>
+                                                <asp:TextBox ID="txtcardHolder" runat="server" placeholder="Cardholder" ClientIDMode="Static" CssClass="line-input"></asp:TextBox>
                                             </asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow Height="60px">

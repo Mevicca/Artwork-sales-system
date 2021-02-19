@@ -10,6 +10,8 @@
 
 <body>
     <link href="lib/css/BankPayment.css" rel="stylesheet" />
+    <link href="lib/sweetAlert/sweetalert.css" rel="stylesheet" />
+    <script src="lib/sweetAlert/sweetalert.js"></script>
     <script type="text/javascript">
         function successalert(stitle, stext) {
             swal({
