@@ -29,7 +29,7 @@ namespace WebApplicationAssignmnet
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert("+ex.Message+");", true); 
             }
 
         }
@@ -59,6 +59,7 @@ namespace WebApplicationAssignmnet
                         while (reader.Read())
                         {
                             string deliveryMethodNo = reader.GetInt32(0).ToString();
+                            string deliveryDescription = reader.GetString(1);
                             string deliveryFee = reader.GetDecimal(3).ToString();
                             string dayMin = reader.GetDecimal(4).ToString();
                             string dayMax = reader.GetDecimal(5).ToString();
@@ -67,7 +68,7 @@ namespace WebApplicationAssignmnet
                             {
                                 var newItem = new ListItem()
                                 {
-                                    Text = "<br/> Standard Delivery" +
+                                    Text = "<br/> " + deliveryDescription +
                                     "  " + DateTime.Now.AddDays(Int32.Parse(dayMin)).ToString("dd.MM.yy") + " - " +
                                     DateTime.Now.AddDays(Int32.Parse(dayMax)).ToString("dd.MM.yy") + "<br/>" +
                                     "RM " + deliveryFee.ToString(),
@@ -224,15 +225,16 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
                         lblDiscount.Text = String.Format("{0:0.00}", (Double.Parse(lblSubtotal.Text.ToString()) * 0.05).ToString());
                         lbelDiscount.Text = "Discount 5%";
                         CalculateFinal();
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Coupon applied.')", true);
                         return;
                     }
                 }
-                System.Windows.Forms.MessageBox.Show("Invalid coupon.");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Invalid coupon.')", true);
 
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','"+ex.Message+"')", true);
             }
         }
 
@@ -264,7 +266,7 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Please add a product into cart.");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Please add a product into cart.');", true);
             }
         }
 

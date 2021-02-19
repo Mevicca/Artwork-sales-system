@@ -4,7 +4,22 @@
     <form id="formPayment" runat="server">
         <link href="lib/css/Payment.css" rel="stylesheet" />
         <script src="lib/js/Payment.js"></script>
-
+        <script type="text/javascript">
+            function successalert(stitle, stext) {
+                swal({
+                    title: stitle,
+                    text: stext,
+                    type: 'success'
+                });
+            }
+            function failalert(ftitle, ftext) {
+                swal({
+                    title: ftitle,
+                    text: ftext,
+                    type: 'error'
+                });
+            }
+        </script>
         <div class="container">
             <div class="row justify-content-center">
                 <ul class="list-group list-group-horizontal tab">
@@ -35,7 +50,7 @@
                                             Name on card
                                             </asp:TableCell>
                                             <asp:TableCell HorizontalAlign="Center">
-                                                <asp:TextBox ID="txtcardHolder" runat="server" placeholder="Card" CssClass="line-input"></asp:TextBox>
+                                                <asp:TextBox ID="txtcardHolder" runat="server" placeholder="Cardholder" CssClass="line-input"></asp:TextBox>
                                             </asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow Height="60px">
@@ -90,7 +105,7 @@
                                     </asp:RadioButtonList>
                                 </div>
                                 <div class="row">
-                                    <asp:Button CssClass="ml-auto pill-button" runat="server" Text="Make Payment" ID="payButton" ClientIDMode="Static" OnClick="PayButton_Click" />
+                                    <asp:Button CssClass="btn btn-success" runat="server" Text="Make Payment" ID="payButton" ClientIDMode="Static" OnClick="PayButton_Click" />
                                 </div>
                             </div>
                         </div>
@@ -120,7 +135,8 @@
                                 </div>
                                 <div class="col-sm-6">
                                     : ( RM
-                                    <asp:Label ID="lblDiscount" runat="server" Text="0.00"></asp:Label> )<br />
+                                    <asp:Label ID="lblDiscount" runat="server" Text="0.00"></asp:Label>
+                                    )<br />
                                 </div>
                             </div>
                             <div class="row">
@@ -144,12 +160,12 @@
                         </div>
                     </div>
                     <div class="div-button">
-                        <asp:Button ID="BtnBack" runat="server" Text="Cancel" CssClass="roundButton btnBack" OnClick="BtnBack_Click" />
+                        <asp:Button ID="BtnBack" runat="server" Text="Cancel" Width="125" CssClass="btn btn-danger btnBack" OnClick="BtnBack_Click" />
                     </div>
                     <div style="word-wrap: break-word">
                         If you faced any question, kindly read
                         <asp:HyperLink ID="linkFAQ" runat="server" Text="FAQ"></asp:HyperLink>
-                        or contact us with xxx-xxx-xxxx.
+                        or contact us with 018-888 8300.
                     </div>
                 </div>
                 <%-- End Order Summary --%>

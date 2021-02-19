@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="lib/css/Login.css" rel="stylesheet" />
-
+   
     <form runat="server">
         <div class="container h-100 d-flex justify-content-center align-items-center">
             <div class="row text-center" style="background-color: #F3E0DC">
@@ -83,9 +83,12 @@
 
                     </article>
                     <!-- card-body-->
-                    <div class="border-top card-body text-center bottom-card">Do not have an account? 
+                    <div class="border-top card-body text-center bottom-card">
+                        Do not have an account? 
                         <asp:HyperLink runat="server" NavigateUrl="SignUp.aspx">Sign up</asp:HyperLink><br />
-                        Forget Password ? <asp:HyperLink runat="server" NavigateUrl="ResetPassword.aspx">Reset</asp:HyperLink></div>
+                        Forget Password ?
+                        <asp:HyperLink runat="server" NavigateUrl="ResetPassword.aspx">Reset</asp:HyperLink>
+                    </div>
                 </div>
                 <!-- card-->
             </div>

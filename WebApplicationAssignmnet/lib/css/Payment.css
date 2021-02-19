@@ -78,7 +78,7 @@ td > .fa {
 
     .tablink:hover {
         background-color: bisque;
-        color: brown;
+        color:darkblue;
     }
 
 /* Style the tab content */
@@ -103,4 +103,5 @@ td > label {
 
 #payButton{
     margin-right:15px;
+    margin-top:50px;
 }

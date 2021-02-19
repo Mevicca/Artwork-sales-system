@@ -37,8 +37,12 @@ namespace WebApplicationAssignmnet
                     DateTime.Parse(txtMonth.Text) > DateTime.Today)
                 {
                     var result = new Email().SendPaymentEmail(Session["Email"].ToString());
-                    System.Windows.Forms.MessageBox.Show("Payment Successfully.");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Payment Successfully.');", true);
                     Response.Redirect("~/Homepage.aspx");
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Failure','Payment failure.');", true);
                 }
             }
         }

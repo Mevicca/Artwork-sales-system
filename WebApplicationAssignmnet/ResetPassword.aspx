@@ -22,17 +22,24 @@
                         </div>
                         <div class="row" style="display: flex;">
                             <asp:TextBox class="line-input" runat="server" Placeholder="Email address" ID="txtEmail" Width="250"></asp:TextBox>
-                            <asp:Button runat="server" ID="BtnSend" Text="Send" OnClick="BtnSend_Click" ClientIDMode="Static" CssClass="roundButton"/>
+                            <asp:Button runat="server" ID="BtnSend" Text="Send" OnClick="BtnSend_Click" ClientIDMode="Static" CssClass="btn btn-outline-info" Width="150" />
                         </div>
                     </div>
                     <div class="row reset-form">
                         <asp:TextBox CssClass="line-input" runat="server" Text="" Placeholder="PIN number" ID="txtPin" Visible="false" Width="250"></asp:TextBox>
                         <asp:TextBox runat="server" ID="txtChange" Text="" Visible="false" TextMode="Password" />
-                        <asp:Button runat="server" ID="BtnCheck" Text="Apply" Visible="false" OnClick="BtnCheck_Click" ClientIDMode="Static" CssClass="roundButton"/>
-                        <asp:Button runat="server" ID="BtnChange" Text="Change Password" Visible="false" OnClick="BtnChange_Click" ClientIDMode="Static" CssClass="roundButton"/>
+                        <asp:Button runat="server" ID="BtnCheck" Text="Apply" Visible="false" OnClick="BtnCheck_Click" ClientIDMode="Static" CssClass="btn btn-outline-info" Width="150" />
+                        <asp:Button runat="server" ID="BtnChange" Text="Change Password" Visible="false" OnClick="BtnChange_Click" ClientIDMode="Static" Width="150" CssClass="btn btn-outline-info" />
                     </div>
                     <div class="row">
                         <asp:Label ID="ErrorMsg" runat="server" ForeColor="red"></asp:Label>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server"
+                            ControlToValidate="txtChange" ForeColor="Red" Display="Dynamic"
+                            ErrorMessage="Required." Enabled="false" />
+                        <asp:RegularExpressionValidator ID="RegExp1" runat="server"
+                            ErrorMessage="Invalid length."
+                            ControlToValidate="txtChange"
+                            ValidationExpression="^[a-zA-Z0-9'@&#.\s]{8,20}$" Enabled="false" />
                     </div>
                 </article>
                 <!-- card-body-->

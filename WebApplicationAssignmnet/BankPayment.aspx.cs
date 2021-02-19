@@ -25,7 +25,7 @@ namespace WebApplicationAssignmnet
 
         protected void PAC_Click(object sender, EventArgs e)
         {
-            Accept.Enabled = true;
+            AcceptBtn.Enabled = true;
             PAC.Visible = true;
         }
 
@@ -38,14 +38,14 @@ namespace WebApplicationAssignmnet
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Invalid PAC No.");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Invalid PAC No.')", true);
             }
         }
 
         private void SentEmail()
         {
             var result = new Email().SendPaymentEmail(Session["Email"].ToString());
-            System.Windows.Forms.MessageBox.Show("Payment Successfully.");
+            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Error','Payment Successfully.')", true);
             Response.Redirect("~/Homepage.aspx");
         }
     }

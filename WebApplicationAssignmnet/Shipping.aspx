@@ -1,6 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="Shipping.aspx.cs" Inherits="WebApplicationAssignmnet.Shipping" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <script type="text/javascript">
+        function failalert(ftitle, ftext) {
+            swal({
+                title: ftitle,
+                text: ftext,
+                type: 'error'
+            });
+        }
+        function successalert(stitle, stext) {
+            swal({
+                title: stitle,
+                text: stext,
+                type: 'success'
+            });
+        }
+    </script>
     <form id="form1" runat="server">
         <link href="lib/css/Shipping.css" rel="stylesheet" />
         <div class="container">
@@ -38,7 +54,7 @@
                                     Billing email address
                                 </div>
                                 <div class="row">
-                                    <asp:TextBox ID="txtEmailAdd" runat="server" placeholder="Email address" CssClass="line-input"></asp:TextBox>
+                                    <asp:TextBox ID="txtEmailAdd" runat="server" placeholder="Email address" CssClass="line-input" Width="250"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server"
                                         ControlToValidate="txtEmailAdd"
                                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
@@ -84,7 +100,7 @@
                 <div class="col-4 order-summary">
                     <div class="card">
                         <div class="card-header">
-                            Order Summary
+                            <strong>Order Summary</strong>
                         </div>
                         <div class="card-body" style="padding: 15px 20px; width: auto">
                             <%-- Product --%>
@@ -103,7 +119,7 @@
                             </asp:Repeater>
                             <div class="row justify-content-between coupon">
                                 <asp:TextBox ID="txtCoupon" runat="server" CssClass="line-input" Placeholder="Coupon" Width="120px"></asp:TextBox>
-                                <asp:Button ID="btnApply" runat="server" CssClass="btnApply" Text="Apply" OnClick="BtnApply_Click" />
+                                <asp:Button ID="btnApply" runat="server" CssClass="btn btn-outline-info" Text="Apply" OnClick="BtnApply_Click" />
                             </div>
                         </div>
                         <div class="border-top card-body bottom-card">
@@ -122,7 +138,8 @@
                                 </div>
                                 <div class="col-sm-6">
                                     : ( RM
-                                    <asp:Label ID="lblDiscount" runat="server" Text="0.00"></asp:Label> )<br />
+                                    <asp:Label ID="lblDiscount" runat="server" Text="0.00"></asp:Label>
+                                    )<br />
                                 </div>
                             </div>
                             <div class="row">
@@ -146,13 +163,13 @@
                         </div>
                     </div>
                     <div class="div-button">
-                        <asp:Button ID="btnBack" runat="server" Text="Back to cart" CssClass="roundButton btnBack" />
-                        <asp:Button ID="btnPayment" runat="server" Text="Go payment" CssClass="roundButton btnPayment" OnClick="BtnPayment_Click" />
+                        <asp:Button ID="btnBack" runat="server" Text="Back to cart" CssClass="btn btn-danger btnBack" />
+                        <asp:Button ID="btnPayment" runat="server" Text="Go payment" CssClass="btn btn-success btnPayment" OnClick="BtnPayment_Click" />
                     </div>
                     <div style="word-wrap: break-word">
                         If you faced any question, kindly read
                     <asp:HyperLink ID="linkFAQ" runat="server" Text="FAQ"></asp:HyperLink>
-                        or contact us with xxx-xxx-xxxx.
+                        or contact us with 018-888 8300.
                     </div>
                 </div>
                 <%-- End Order Summary --%>

@@ -10,6 +10,22 @@
 
 <body>
     <link href="lib/css/BankPayment.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function successalert(stitle, stext) {
+            swal({
+                title: stitle,
+                text: stext,
+                type: 'success'
+            });
+        }
+        function failalert(ftitle, ftext) {
+            swal({
+                title: ftitle,
+                text: ftext,
+                type: 'error'
+            });
+        }
+    </script>
     <form id="form1" runat="server">
         <div class="container">
             <div>
@@ -72,9 +88,9 @@
                         </asp:TableRow>
                     </asp:Table>
                     <div class="row" style="display: flex; align-items: center; margin-top: 30px; margin-left: 5px;">
-                        <asp:Button runat="server" ID="CancelBtn" OnClick="CancelBtn_Click" Text="Cancel" CssClass="btn-danger" Width="100px" />
-                        <asp:Button runat="server" ID="PACBtn" OnClick="PAC_Click" Text="Request PAC Now" CssClass="btn-danger" Width="200px" />
-                        <asp:Button runat="server" ID="Accept" OnClick="Accept_Click" Enable="False" Text="Accept" CssClass="btn-danger" Width="100px" />
+                        <asp:Button runat="server" ID="CancelBtn" OnClick="CancelBtn_Click" Text="Cancel" CssClass="btn btn-warning" Width="100px" />
+                        <asp:Button runat="server" ID="PACBtn" OnClick="PAC_Click" Text="Request PAC Now" CssClass="btn btn-warning" Width="200px" />
+                        <asp:Button runat="server" ID="AcceptBtn" OnClick="Accept_Click" Enable="False" Text="Accept" CssClass="btn btn-warning" Width="100px" />
                     </div>
                 </div>
             </div>

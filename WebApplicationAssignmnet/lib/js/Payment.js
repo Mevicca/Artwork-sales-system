@@ -15,7 +15,7 @@ function openTab(tabName, elmnt) {
 
     document.getElementById(tabName).style.display = "block";
     document.getElementById('payMethod').value = tabName;
-    elmnt.style.backgroundColor = "chocolate";
+    elmnt.style.backgroundColor = "#d4a59a";
 }
 
 $(function () {

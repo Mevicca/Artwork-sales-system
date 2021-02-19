@@ -35,6 +35,7 @@ namespace WebApplicationAssignmnet
             {
                 txtPin.Visible = false;
                 BtnChange.Visible = txtChange.Visible = true;
+                RegExp1.Enabled = RequiredFieldValidatorPassword.Enabled = true;
                 BtnSend.Visible = BtnCheck.Visible = false;
             }
             else
