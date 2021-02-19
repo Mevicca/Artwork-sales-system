@@ -219,5 +219,7 @@
 
 .newsDesc {
     padding: 30px;
-
+    text-align: justify;
+    background-color: #f7c4b9;
+    border-radius: 12px;
 }

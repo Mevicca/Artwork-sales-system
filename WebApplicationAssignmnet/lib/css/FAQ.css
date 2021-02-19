@@ -68,6 +68,7 @@
     transition: max-height 0.2s ease-out;
     font-family: Tahoma;
     font-size: 14.5px;
+    text-align: justify;
 }
 
 .accordion:after {
