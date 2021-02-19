@@ -1,0 +1,225 @@
+﻿* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    border: 1px solid #5C2018;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #5C2018;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: #F3E0DC;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3.0s;
+    animation-name: fade;
+    animation-duration: 3.0s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.text {
+    color: black;
+    background-color: white;
+    font-size: 25px;
+    font-family: 'Lucida Handwriting';
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    border-color: black;
+    color: black;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 20%;
+    left:40.5%;
+    width: 19%;
+}
+
+.btn:hover {
+    background: black;
+    border-color: white;
+    color: white;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.caterColumn {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+/* Style the images inside the grid */
+.caterColumn img {
+    opacity: 1.0;
+    cursor: pointer;
+    border: 5px solid #5C2018;
+}
+
+.caterColumn img:hover {
+    opacity: 0.6;
+}
+
+/* Clear floats after the columns */
+.caterRow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.homeCater {
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Lucida Handwriting';
+    text-align: center;
+    width: 58%;
+    border-radius: 8px;
+}
+
+.homePart {
+    font-family: 'Lucida Handwriting';
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 20px;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.artistMon{
+    width: 600px;
+}
+
+.highNew {
+    width: 230px;
+}
+
+.artistRow {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    max-width: 1000px; /*change the container size*/
+    max-height: 1200px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+/* Create two equal columns that sits next to each other */
+.artistColumn {
+    flex: 0%;
+    padding: 0 10px;
+}
+
+.artistColumn img {
+    margin-top: 20px;
+    vertical-align: middle;
+    border: 3px solid #5C2018;
+}
+
+.newsPart {
+    margin: 30px;
+}
+
+.news {
+    margin: 30px;
+    padding: 20px;
+    font-family: Tahoma;
+    border: 5px solid #5C2018;
+}
+
+.newsImg {
+    width: 200px;
+}
+
+.newsDesc {
+    padding: 30px;
+    text-align: justify;
+    background-color: #f7c4b9;
+    border-radius: 12px;
+}
