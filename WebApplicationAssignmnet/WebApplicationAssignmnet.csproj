@@ -103,6 +103,45 @@
     <Content Include="assets\product\sculpture\wooden-buffalo2.png" />
     <Content Include="assets\product\sculpture\world-in-his-hands.png" />
     <Content Include="CustomerProductGallery.aspx" />
+    <Content Include="assets\Images\FAQ\FAQ wallpaper.jpg" />
+    <Content Include="assets\Images\homepage\homeCaterAP.jpg" />
+    <Content Include="assets\Images\homepage\homeCaterOP.jpg" />
+    <Content Include="assets\Images\homepage\homeCaterS.jpg" />
+    <Content Include="assets\Images\homepage\homeCaterWP.jpg" />
+    <Content Include="assets\Images\homepage\news1.jpg" />
+    <Content Include="assets\Images\homepage\news2.jpg" />
+    <Content Include="assets\Images\homepage\news3.PNG" />
+    <Content Include="assets\Images\homepage\slide1.jpg" />
+    <Content Include="assets\Images\homepage\slide2.jpg" />
+    <Content Include="assets\Images\homepage\slide3.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Afternoon Blues.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Autumn fly.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Backyard.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Beauty of West.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Boat.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Chinese Temple.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Flower at the window.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Mountain.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Plaza Shadows.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Purple lake.jpg" />
+    <Content Include="assets\Images\product\Watercolor\River.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Rural.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Seaside.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Snow.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Snowy mountain.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Square.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Street.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Vally.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Vernazza Reflection.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Winter.jpg" />
+    <Content Include="assets\Images\rosegold.png" />
+    <Content Include="FAQ.aspx" />
+    <Content Include="lib\css\FAQ.css" />
+    <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\SignUp.css" />
+    <Content Include="lib\js\FAQ.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.css" />
@@ -118,9 +157,11 @@
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="lib\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="lib\css\Homepage.css" />
     <Content Include="lib\css\MasterPage.css" />
     <Content Include="lib\css\ProductGallery.css" />
     <Content Include="lib\css\Tools.css" />
+    <Content Include="lib\js\Homepage.js" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
     <Content Include="lib\js\ProductGallery.js" />
@@ -159,6 +200,13 @@
       <DependentUpon>ProductGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Constant.cs" />
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
