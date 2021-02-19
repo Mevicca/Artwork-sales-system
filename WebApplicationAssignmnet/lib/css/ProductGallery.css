@@ -1,9 +1,14 @@
 ﻿body {
 }
+.container {
+    background-color: white;
+    padding-left: 0;
+    padding-right: 0;
+}
 
-.galleryContent{
-    padding:40px;
-    padding-top:20px;
+.galleryContent {
+    padding: 40px;
+    padding-top: 20px;
 }
 
 #lblGalleryCategory{
@@ -19,7 +24,7 @@
 }
 
 #ddlSortBy {
-    width: 25%;
+    width: 16%;
     height: 35px;
     margin-left: 5px;
 }
@@ -57,7 +62,7 @@
 }
 
 /* Style the buttons */
-.btn {
+.btn-status {
     border: none;
     outline: none;
     padding: 12px;
@@ -67,12 +72,12 @@
 }
 
     /* Add a light grey background on mouse-over */
-    .btn:hover {
+    .btn-status:hover {
         background-color: #efbdb2;
     }
 
     /* Add a dark background to the active button */
-    .btn.active {
+    .btn-status.active {
         background-color: #bc5b51;
         color: white;
     }
@@ -80,7 +85,6 @@
 /* Gallery Content Style */
 .content {
     padding: 25px;
-    margin-left:25px;
 }
 
 .img {
@@ -89,18 +93,18 @@
      filter: grayscale(0);
      object-fit: contain;
      margin-bottom: 10px;
-       
+     cursor:pointer;
 }
 
 .img:hover  {
     transform: scale(1.05);
     
 }
-    .img:hover > .viewButton {
+    .img:hover > .viewButton #view{
         display: flex;
     }
 
-.img .viewButton {
+.img .viewButton #view{
     display:none;
     width:220px;
     height:220px;
@@ -111,16 +115,20 @@
     position:absolute;
     color:white;
     font-weight:bold;
+    text-decoration:none;
 }
 
 /*gallerydropdown - Customers*/
-.navbar {
+.navbar-gallery {
     overflow: hidden;
-    background-color: #333;
-    justify-content:center;
+    background-color: #D4A59A;
+    display:flex;
+    justify-content: center;
+    margin:0;
+    padding:0;
 }
 
-    .navbar a {
+    .navbar-gallery a {
         float: left;
         font-size: 16px;
         color: white;
@@ -129,12 +137,12 @@
         text-decoration: none;
     }
 
-.dropdown {
+.dropdown-category {
     float: left;
     overflow: hidden;
 }
 
-    .dropdown .dropbtn {
+    .dropdown-category .dropbtn {
         font-size: 16px;
         border: none;
         outline: none;
@@ -145,20 +153,20 @@
         margin: 0;
     }
 
-    .navbar a:hover, .dropdown:hover .dropbtn {
+    .navbar-gallery a:hover, .dropdown-category:hover .dropbtn {
         background-color: #BC4639;
     }
 
-.dropdown-content {
+.dropdown-category-content {
     display: none;
-    position: fixed ;
+    position: fixed;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
-    .dropdown-content a {
+    .dropdown-category-content a {
         float: none;
         color: black;
         padding: 10px 16px;
@@ -167,10 +175,10 @@
         text-align: left;
     }
 
-        .dropdown-content a:hover {
+        .dropdown-category-content a:hover {
             background-color: #F3E0DC;
         }
 
-.dropdown:hover .dropdown-content {
-   display: block;
+.dropdown-category:hover .dropdown-category-content {
+    display: block;
 }

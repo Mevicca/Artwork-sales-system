@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebApplicationAssignmnet
 {
-    public partial class ProductGallery : System.Web.UI.Page
+    public partial class Test : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void ProductImage_Click(object sender, ImageClickEventArgs e)
-        {
-            var test = "";
+            txtTest.Text = Request.QueryString["id"].ToString();
         }
     }
 }

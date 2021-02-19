@@ -70,12 +70,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AddProduct.aspx" />
     <Content Include="App_Data\Tayy2.mdf" />
     <Content Include="App_Data\Tayy2_log.ldf">
       <DependentUpon>Tayy2.mdf</DependentUpon>
     </Content>
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
+    <Content Include="assets\Images\digitalArt.jpg" />
+    <Content Include="assets\Images\drawing.png" />
     <Content Include="assets\Images\rosegold.png" />
     <Content Include="assets\product\sculpture\baby-gorilla.png" />
     <Content Include="assets\product\sculpture\baby-gorilla1.png" />
@@ -109,6 +113,7 @@
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js" />
+    <Content Include="lib\css\AboutUs.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -125,6 +130,20 @@
     <Content Include="Homepage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerProductGallery.aspx.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
