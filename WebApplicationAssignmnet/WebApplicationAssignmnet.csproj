@@ -70,11 +70,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Tayy.mdf" />
-    <Content Include="App_Data\Tayy_log.ldf">
-      <DependentUpon>Tayy.mdf</DependentUpon>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AddProduct.aspx" />
+    <Content Include="App_Data\Tayy2.mdf" />
+    <Content Include="App_Data\Tayy2_log.ldf">
+      <DependentUpon>Tayy2.mdf</DependentUpon>
     </Content>
     <Content Include="assets\Images\blackcrop.png" />
+    <Content Include="assets\Images\form-header.jpg" />
+    <Content Include="assets\Images\digitalArt.jpg" />
+    <Content Include="assets\Images\drawing.png" />
+    <Content Include="assets\Images\rosegold.png" />
+    <Content Include="assets\product\sculpture\baby-gorilla.png" />
+    <Content Include="assets\product\sculpture\baby-gorilla1.png" />
+    <Content Include="assets\product\sculpture\ballerina.png" />
+    <Content Include="assets\product\sculpture\cat-sitting.png" />
+    <Content Include="assets\product\sculpture\cat-sitting1.png" />
+    <Content Include="assets\product\sculpture\elephant-calf.png" />
+    <Content Include="assets\product\sculpture\elephant-calf1.png" />
+    <Content Include="assets\product\sculpture\family-of-four.png" />
+    <Content Include="assets\product\sculpture\feeding-mother.png" />
+    <Content Include="assets\product\sculpture\flying-horse.png" />
+    <Content Include="assets\product\sculpture\flying-horse1.png" />
+    <Content Include="assets\product\sculpture\heart-in-hands.png" />
+    <Content Include="assets\product\sculpture\loving-hand.png" />
+    <Content Include="assets\product\sculpture\msytery.png" />
+    <Content Include="assets\product\sculpture\msytery1.png" />
+    <Content Include="assets\product\sculpture\silence.png" />
+    <Content Include="assets\product\sculpture\silence1.png" />
+    <Content Include="assets\product\sculpture\wooden-buffalo.png" />
+    <Content Include="assets\product\sculpture\wooden-buffalo1.png" />
+    <Content Include="assets\product\sculpture\wooden-buffalo2.png" />
+    <Content Include="assets\product\sculpture\world-in-his-hands.png" />
+    <Content Include="CustomerProductGallery.aspx" />
     <Content Include="assets\Images\FAQ\FAQ wallpaper.jpg" />
     <Content Include="assets\Images\homepage\homeCaterAP.jpg" />
     <Content Include="assets\Images\homepage\homeCaterOP.jpg" />
@@ -124,20 +152,53 @@
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js" />
+    <Content Include="lib\css\AboutUs.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="lib\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="lib\css\Homepage.css" />
     <Content Include="lib\css\MasterPage.css" />
+    <Content Include="lib\css\ProductGallery.css" />
     <Content Include="lib\css\Tools.css" />
     <Content Include="lib\js\Homepage.js" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
+    <Content Include="lib\js\ProductGallery.js" />
+    <Content Include="ProductGallery.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProductGallery.aspx.cs">
+      <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerProductGallery.aspx.designer.cs">
+      <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductGallery.aspx.cs">
+      <DependentUpon>ProductGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductGallery.aspx.designer.cs">
+      <DependentUpon>ProductGallery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Constant.cs" />
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
