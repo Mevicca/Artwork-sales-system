@@ -21,18 +21,16 @@ function slides(n) {
 		x[i].style.display = "none";
 	}
 	x[slideIndex - 1].style.display = "inline-block";
+	var altName = x[slideIndex - 1].getAttribute("alt")
+	var altName2 = document.getElementsByClassName("zoom").getAttribute("alt")
+	if (altName == altName2)
+		document.getElementsByClassName("zoom").style.transform = "scale(1.25)";
+	else
+		document.getElementsByClassName("zoom").style.transform = "none";
 }
 
-function wishLsit() {
-	if (wishcheck == 0) {
-		document.getElementById('wishL').style.color = "red";
-		alert("Added To Wishlist !")
-		wishcheck++;
-	}
-	else {
-		document.getElementById('wishL').style.color = "black";
-		wishcheck = 0;
-	}
+function wishList() {
+	alert("Added To Wishlist !")
 }
 
 

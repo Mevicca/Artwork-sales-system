@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebApplicationAssignmnet
 {
-    public partial class ProductPage : System.Web.UI.Page
+    public partial class WishList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }

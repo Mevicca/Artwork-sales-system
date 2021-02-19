@@ -25,18 +25,14 @@
     min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }
 
-.wishList {
-    cursor:pointer;
-}
-
-.wishList:hover{
-    color:red;
-}
-
 .zoom{
     transition: transform.2s;
 }
 
 .zoom:hover {
    transform: scale(1.25);
+}
+
+.textBox{
+    border:none;
 }
