@@ -81,15 +81,15 @@
                             <asp:Image ID="news1" runat="server" ImageUrl='<%# Eval("ImgPath") %>' CssClass="newsImg" />
                         </td>
                         <td class="newsDesc">
-                            <asp:Label ID="Title" runat="server" Text='<%# Eval("NewsTitle") %>' Font-Bold="True" CssClass="titleOfNews"></asp:Label><br />
+                            <asp:Label ID="Title" runat="server" Text='<%# Eval("NewsTitle") %>' Font-Bold="True" ></asp:Label><br />
                             <br />
-                            <asp:Label ID="Description" runat="server" Text='<%# Eval("NewsDesc") %>' CssClass="descOfNews"></asp:Label>
+                            <asp:Label ID="Description" runat="server" Text='<%# Eval("NewsDesc") %>' ></asp:Label>
                             <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl='<%# Eval("ReferenceLink") %>'>Read more</asp:HyperLink><br />
                             <br />
                             Date:
-                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("StartDate","{0:dd/M/yyyy}") %>' CssClass="descOfNews"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("StartDate","{0:dd/M/yyyy}") %>' ></asp:Label>
                             - 
-                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("EndDate","{0:dd/M/yyyy}") %>' CssClass="descOfNews"></asp:Label><br />
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("EndDate","{0:dd/M/yyyy}") %>'></asp:Label><br />
                         </td>
                     </tr>
                 </table>
