@@ -1,44 +1,35 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductGallery.aspx.cs" Inherits="WebApplicationAssignmnet.ProductGallery" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="ProductGallery.aspx.cs" Inherits="WebApplicationAssignmnet.ProductGallery" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
+    <link href="lib/css/ProductGallery.css" rel="stylesheet" />
 
-<link href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="lib/css/Tools.css" rel="stylesheet" />
-<link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-
-<link href="lib/css/ProductGallery.css" rel="stylesheet" />
-
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
     <form id="form1" runat="server">
-        <div>
+        <div class="container">
 
-            <div class="navbar">
-                <div class="allProductCategory"><asp:HyperLink ID="AllProduct" runat="server" href="localhost/Products?id=@{CategoryID}"> All </asp:HyperLink></div>
-                <div class="dropdown">
+            <div class="navbar-gallery">
+                <div class="allProductCategory">
+                    <asp:HyperLink ID="AllProduct" ClientIDMode="Static" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' Style="color: white;" runat="server" > All </asp:HyperLink>
+                </div>
+                <div class="dropdown-category">
                     <button class="dropbtn">
                         Painting 
                         <i class="fa fa-caret-down"></i>
                     </button>
-                    <div class="dropdown-content">
-                        <asp:HyperLink ID="oilPaint" runat="server" href="localhost/Products?id=@{CategoryID}">Oil Paint</asp:HyperLink>
-                        <asp:HyperLink ID="ArcylirPaint" runat="server" href="localhost/Products?id=@{CategoryID}">Arcylir Paint</asp:HyperLink>
-                        <asp:HyperLink ID="WaterColor" runat="server" href="localhost/Products?id=@{CategoryID}">Water Color</asp:HyperLink>
+                    <div class="dropdown-category-content">
+                        <asp:HyperLink ID="oilPaint" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Oil Paint</asp:HyperLink>
+                        <asp:HyperLink ID="ArcylirPaint" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Arcylir Paint</asp:HyperLink>
+                        <asp:HyperLink ID="WaterColor" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Water Color</asp:HyperLink>
                     </div>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown-category">
                     <button class="dropbtn">
                         Sculpture 
                         <i class="fa fa-caret-down"></i>
                     </button>
-                    <div class="dropdown-content">
-                        <asp:HyperLink ID="Animals" runat="server" href="localhost/Products?id=@{CategoryID}">Animals</asp:HyperLink>
-                        <asp:HyperLink ID="Bronzo" runat="server" href="localhost/Products?id=@{CategoryID}">Bronzo</asp:HyperLink>
-                        <asp:HyperLink ID="Wood" runat="server" href="localhost/Products?id=@{CategoryID}">Wood</asp:HyperLink>
+                    <div class="dropdown-category-content">
+                        <asp:HyperLink ID="Animals"NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Animals</asp:HyperLink>
+                        <asp:HyperLink ID="Bronzo" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Bronzo</asp:HyperLink>
+                        <asp:HyperLink ID="Wood" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Wood</asp:HyperLink>
                     </div>
                 </div>
             </div>
@@ -71,8 +62,10 @@
                             <table class="content">
                                 <tr>
                                     <td class="img" aria-hidden="False">
-                                        <div class="viewButton">View</div>
-                                        <asp:ImageButton ID="ProductImage" runat="server" Height="220px" ImageAlign="Middle" ImageUrl='<%# Eval("path1") %>' Width="220px" href="localhost/Products?id=@{CategoryID}" />
+                                        <div class="viewButton">
+                                            <asp:HyperLink ID="view" ClientIDMode="Static" NavigateUrl='<%#"ViewProduct.aspx?id="+Eval("ProductID")%>' runat="server">View</asp:HyperLink>
+                                        </div>
+                                        <asp:ImageButton ID="ProductImage" runat="server" Height="220px" ImageAlign="Middle" ImageUrl='<%# Eval("path1") %>' Width="220px" PostBackUrl='<%#"ViewProduct.aspx?id="+Eval("ProductID")%>'/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -93,11 +86,9 @@
                             </table>
                         </ItemTemplate>
                     </asp:DataList>
-
                 </div>
+
             </div>
         </div>
     </form>
-    <script src="lib/js/ProductGallery.js"></script>
-</body>
-</html>
+</asp:Content>
