@@ -27,7 +27,7 @@
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-category-content">
-                        <asp:HyperLink ID="Animals"NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Animals</asp:HyperLink>
+                        <asp:HyperLink ID="Animals" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Animals</asp:HyperLink>
                         <asp:HyperLink ID="Bronzo" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Bronzo</asp:HyperLink>
                         <asp:HyperLink ID="Wood" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Wood</asp:HyperLink>
                     </div>
@@ -63,7 +63,7 @@
                                 <tr>
                                     <td class="img" aria-hidden="False">
                                         <div class="viewButton">
-                                            <asp:HyperLink ID="view" ClientIDMode="Static" NavigateUrl='<%#"ViewProduct.aspx?id="+Eval("ProductID")%>' runat="server">View</asp:HyperLink>
+                                            <asp:HyperLink ID="view" ClientIDMode="Static" NavigateUrl='<%#"Product.aspx?id="+Eval("ProductID")%>' runat="server">View</asp:HyperLink>
                                         </div>
                                         <asp:ImageButton ID="ProductImage" runat="server" Height="220px" ImageAlign="Middle" ImageUrl='<%# Eval("path1") %>' Width="220px" PostBackUrl='<%#"ViewProduct.aspx?id="+Eval("ProductID")%>'/>
                                     </td>

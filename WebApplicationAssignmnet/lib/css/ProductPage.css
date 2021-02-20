@@ -10,29 +10,153 @@
 .nextIcon {
     cursor: pointer;
 }
-.nextIcon:hover {
-    color: gainsboro;
-}
+
+    .nextIcon:hover {
+        color: gainsboro;
+    }
 
 .prevIcon {
-    cursor:pointer;
+    cursor: pointer;
 }
-.prevIcon:hover {
-    color: gainsboro;
-}
+
+    .prevIcon:hover {
+        color: gainsboro;
+    }
 
 .container {
     min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }
 
-.zoom{
+.zoom {
     transition: transform.2s;
 }
 
-.zoom:hover {
-   transform: scale(1.25);
+    .zoom:hover {
+        transform: scale(1.25);
+    }
+
+.textBox {
+    border: none;
 }
 
-.textBox{
-    border:none;
+.slidesImg {
+    width: 300px;
+    height: 350px;
+    margin-top: 30px;
+}
+
+.zoom {
+    margin-left: 10px;
+    width: 60px;
+    height: 70px;
+}
+
+#TblDesc {
+    font-size: medium;
+    color: brown;
+}
+
+.card {
+    border: 3px;
+    margin-top: 30px;
+    margin-right: 40px;
+    border-color: brown;
+    background-color: rgba(212, 165, 154,0.6);
+    border-radius: 10%;
+    border-style: inset;
+}
+
+.product {
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.fa-money, .fa-user-secret, .fa-calendar-minus-o, .fa-map-o {
+    margin-right: 15px;
+    margin-top: 5px;
+    color: white;
+}
+
+span {
+    color: white;
+}
+
+.fa-thumbs-up, .fa-motorcycle {
+    color: beige;
+    font-size: 60px;
+    margin-left: 20px;
+}
+
+.details-card > .row {
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.suggestionList {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+.checked {
+    color: orange;
+    margin-top: 5px;
+}
+
+#LblArtistName {
+    margin-right: 10px;
+}
+
+.row-spec {
+    height: 50px;
+}
+
+.suggestionList {
+    height: 90px;
+    width: 70px;
+}
+
+    .suggestionList:hover {
+        height: 100px;
+        width: 75px;
+    }
+
+.images {
+    opacity: 0.6;
+}
+
+    .active, .images:hover {
+        opacity: 1;
+    }
+
+.img-magnifier-container {
+    position: relative;
+}
+
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 50px;
+    height: 50px;
+}
+
+.card-body {
+    margin-left: 35px;
+}
+
+#CartBtn {
+    cursor: pointer;
+    margin-right: 20px
+}
+
+#WishBtn {
+    cursor: pointer
+}
+
+.bottom-card, .card-header {
+    background-image: url("../../assets/Images/form-header.jpg");
+    color: firebrick;
 }

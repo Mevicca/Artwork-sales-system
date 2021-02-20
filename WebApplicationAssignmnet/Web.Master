@@ -4,8 +4,7 @@
 <link href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="lib/css/Tools.css" rel="stylesheet" />
 <link href="lib/css/MasterPage.css" rel="stylesheet" />
-<link href="lib/sweetAlert/sweetalert.css" rel="stylesheet" /
-<link href="lib/css/ProductPage.css" rel="stylesheet" />
+<link href="lib/sweetAlert/sweetalert.css" rel="stylesheet" />
 <link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <script src="lib/js/jquery.js"></script>
 <script src="lib/sweetAlert/sweetalert.js"></script>
@@ -29,11 +28,24 @@
                 </button>
             </li>
             <li>
-                <asp:Label ID="menuLabel" runat="server" Text=""></asp:Label>
+                <span id="menuLabel"></span>
             </li>
-            <li><a href="Test.aspx">Test Link</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
+            <li><a href="Homepage.aspx">Homepage</a></li>
+            <li><a href="AboutUs.aspx">About Us</a></li>
+            <li><a href="FAQ.aspx">FAQ</a></li>
+
+            <%-- customer side --%>
+            <li id="cust-productGallery" style="visibility:visible;"><a href="CustomerProductGallery.aspx">Product</a></li>
+            <li style="visibility:visible;"><a href="#">View cart</a></li>
+            
+            <%-- Artist side --%>
+            <%--<li style="visibility:hidden;"><a href="#">Link 3</a></li>
+            <li style="visibility:hidden;"><a href="Test.aspx">Test Link</a></li>
+            <li style="visibility:hidden;"><a href="#">Link 2</a></li>
+            <li style="visibility:hidden;"><a href="#">Link 3</a></li>--%>
+
+            
+
         </ul>
     </div>
 

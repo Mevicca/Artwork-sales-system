@@ -55,11 +55,13 @@ namespace WebApplicationAssignmnet
                                 Password = reader.GetString(1),
                                 FullName = reader.GetString(2),
                                 Email = reader.GetString(3),
-                                Gender = (char)reader.GetChars(4, 0, new char[1], 0, 1),
+                                //Gender = (char)reader.GetChars(4, 0, new char[1], 0, 1),
+                                Gender = reader.GetString(4)[0],
                                 CreatedAt = reader.GetDateTime(5),
-                                IsActive = reader.GetBoolean(6)
-                            };
-
+                                IsActive = reader.GetBoolean(6),
+                                Role = DropDownListIdentification.SelectedValue
+                        };
+                            
                             Session["LoginUser"] = user;
                             FormsAuthentication.RedirectFromLoginPage(user.ID.ToString(), chkPersistCookie.Checked);
                             //encrypt in password
