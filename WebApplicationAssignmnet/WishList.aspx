@@ -18,6 +18,7 @@
         <div class="container bg-white containerSize" style="min-height: 250px;">
             <div class="row">
                 <div class=" col-sm-2" style="text-align: center">
+                    
                     <img src="assets/Acrylic/carlos pun B&L.jpg" style="width: 132px; height: 178px; margin-top: 40px;margin-left:50px" />
                 </div>
                 <div class="col-sm-6" style="margin-left: 50px">
@@ -30,10 +31,14 @@
                 </div>
 
                 <div class="col-sm-2" style="text-align: center; margin-top: 70px; margin-left:60px">
-                    <button type="button" class="btn btn-outline-primary" style="cursor: pointer"><i class="fa fa-cart-plus"></i>&nbsp; Add to Cart</button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-primary" style="cursor: pointer">
+                        <i class="fa fa-cart-plus"></i>&nbsp; Add to Cart
+                    </asp:LinkButton>
                     <br />
                     <br />
-                    <button type="button" class="btn btn-outline-danger" onclick="deleteItems()" style="cursor: pointer"><i class="fa fa-trash"></i>&nbsp; Remove </button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-danger" style="cursor: pointer" OnClientClick="deleteItems();return false;">
+                        <i class="fa fa-trash"></i>&nbsp; Remove
+                    </asp:LinkButton>
                 </div>
             </div>
         </div>
@@ -53,10 +58,14 @@
                 </div>
 
                 <div class="col-sm-2" style="text-align: center; margin-top: 70px; margin-left:60px">
-                    <button type="button" class="btn btn-outline-primary" style="cursor: pointer"><i class="fa fa-cart-plus"></i>&nbsp; Add to Cart</button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-primary" style="cursor: pointer">
+                        <i class="fa fa-cart-plus"></i>&nbsp; Add to Cart
+                    </asp:LinkButton>
                     <br />
                     <br />
-                    <button type="button" class="btn btn-outline-danger" onclick="deleteItems()" style="cursor: pointer"><i class="fa fa-trash"></i>&nbsp; Remove </button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-danger" style="cursor: pointer" OnClientClick="deleteItems();return false;">
+                        <i class="fa fa-trash"></i>&nbsp; Remove
+                    </asp:LinkButton>
                 </div>
             </div>
         </div>

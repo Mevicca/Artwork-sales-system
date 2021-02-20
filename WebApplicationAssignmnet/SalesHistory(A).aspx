@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="SalesHistory(A).aspx.cs" Inherits="WebApplicationAssignmnet.SalesHistory_A_" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
+    <link href="lib/css/OrderPage(A).css" rel="stylesheet" />
     <form id="form1" runat="server">
     <link href="lib/css/Login.css" rel="stylesheet" />
     <h1>Sales History</h1>
@@ -36,7 +37,9 @@
                 <td>RM 2022</td>
                 <td>Delivered</td>
                 <td style="text-align:center">
-                    <button type="button" class="btn btn-outline-primary" style="cursor:pointer"><i class="fa fa-search"></i>&nbsp; View Details</button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-primary" style="cursor: pointer">
+                        <i class="fa fa-search"></i>&nbsp; View Details
+                    </asp:LinkButton>
                 </td>
               </tr>
               <tr style="text-align:center">
@@ -46,7 +49,9 @@
                 <td>RM 2023</td>
                 <td>Delivered</td>
                 <td style="text-align:center">
-                    <button type="button" class="btn btn-outline-primary" style="cursor:pointer"><i class="fa fa-search"></i>&nbsp; View Details </button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-primary" style="cursor: pointer">
+                        <i class="fa fa-search"></i>&nbsp; View Details
+                    </asp:LinkButton>
                 </td>
               </tr>
             </tbody>

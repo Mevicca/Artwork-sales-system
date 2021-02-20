@@ -4,4 +4,5 @@
     var index = p.parentNode;
     if (x == true)
         index.parentNode.remove(index);
+    return false;
 }

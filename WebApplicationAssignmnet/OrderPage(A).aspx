@@ -40,9 +40,13 @@
                 <td>RM 2022</td>
                 <td>Shipping</td>
                 <td style="text-align:center">
-                    <button type="button" class="btn btn-outline-primary" style="cursor:pointer"><i class="fa fa-search"></i>&nbsp; View Details</button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-primary" style="cursor: pointer">
+                        <i class="fa fa-search"></i>&nbsp; View Details
+                    </asp:LinkButton>
                      &nbsp;
-                    <button type="button" class="btn btn-outline-danger" id="cancel" style="cursor:pointer" onclick="comfirmMsg()"><i class="fa fa-trash"></i>&nbsp; Cancel Order</button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-danger" style="cursor: pointer" OnClientClick="comfirmMsg();return false;">
+                        <i class="fa fa-trash"></i>&nbsp; Cancel Order
+                    </asp:LinkButton>
                 </td>
               </tr>
               <tr style="text-align:center">
@@ -53,9 +57,13 @@
                 <td>RM 2023</td>
                 <td>To Ship</td>
                 <td style="text-align:center">
-                    <button type="button" class="btn btn-outline-primary" style="cursor:pointer"><i class="fa fa-search"></i>&nbsp; View Details</button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-primary" style="cursor: pointer">
+                        <i class="fa fa-search"></i>&nbsp; View Details
+                    </asp:LinkButton>
                      &nbsp;
-                    <button type="button" class="btn btn-outline-danger" onclick="comfirmMsg()" style="cursor:pointer"><i class="fa fa-trash"></i>&nbsp; Cancel Order</button>
+                    <asp:LinkButton  runat="server" class="btn btn-outline-danger" style="cursor: pointer" OnClientClick="comfirmMsg();return false;">
+                        <i class="fa fa-trash"></i>&nbsp; Cancel Order
+                    </asp:LinkButton>
                 </td>
               </tr>
             </tbody>
