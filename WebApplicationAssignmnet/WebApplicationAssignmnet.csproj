@@ -81,6 +81,11 @@
     <Content Include="assets\Images\digitalArt.jpg" />
     <Content Include="assets\Images\drawing.png" />
     <Content Include="assets\Images\rosegold.png" />
+    <Content Include="assets\product\Acrylic\carlos pun B&amp;L.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun DD.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun Marvin.jpeg" />
+    <Content Include="assets\product\Acrylic\carlos pun MM.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun Mono.jpg" />
     <Content Include="assets\product\sculpture\baby-gorilla.png" />
     <Content Include="assets\product\sculpture\baby-gorilla1.png" />
     <Content Include="assets\product\sculpture\ballerina.png" />
@@ -102,6 +107,12 @@
     <Content Include="assets\product\sculpture\wooden-buffalo1.png" />
     <Content Include="assets\product\sculpture\wooden-buffalo2.png" />
     <Content Include="assets\product\sculpture\world-in-his-hands.png" />
+    <Content Include="assets\Services\DHL Express.png" />
+    <Content Include="assets\Services\Grab.png" />
+    <Content Include="assets\Services\j&amp;t.png" />
+    <Content Include="assets\Services\PosLaju.jpg" />
+    <Content Include="Bank.aspx" />
+    <Content Include="BankPayment.aspx" />
     <Content Include="CustomerProductGallery.aspx" />
     <Content Include="assets\Images\FAQ\FAQ wallpaper.jpg" />
     <Content Include="assets\Images\homepage\homeCaterAP.jpg" />
@@ -140,7 +151,14 @@
     <Content Include="lib\css\Login.css" />
     <Content Include="lib\css\SignUp.css" />
     <Content Include="lib\js\FAQ.js" />
+    <Content Include="lib\sweetAlert\sweetalert.css" />
+    <Content Include="lib\sweetAlert\sweetalert.js" />
+    <Content Include="lib\sweetAlert\sweetalert.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Payment.aspx" />
+    <Content Include="ProductPage.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="Shipping.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
@@ -169,6 +187,7 @@
     <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
+    <Content Include="WishList.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutUs.aspx.cs">
@@ -185,12 +204,35 @@
     <Compile Include="AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Bank.aspx.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bank.aspx.designer.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BankPayment.aspx.cs">
+      <DependentUpon>BankPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankPayment.aspx.designer.cs">
+      <DependentUpon>BankPayment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerProductGallery.aspx.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CustomerProductGallery.aspx.designer.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Email.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductGallery.aspx.cs">
       <DependentUpon>ProductGallery.aspx</DependentUpon>
@@ -199,7 +241,6 @@
     <Compile Include="ProductGallery.aspx.designer.cs">
       <DependentUpon>ProductGallery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Constant.cs" />
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -213,6 +254,27 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPage.aspx.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductPage.aspx.designer.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping.aspx.cs">
+      <DependentUpon>Shipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping.aspx.designer.cs">
+      <DependentUpon>Shipping.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
@@ -235,6 +297,13 @@
     </Compile>
     <Compile Include="Web.Master.designer.cs">
       <DependentUpon>Web.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WishList.aspx.cs">
+      <DependentUpon>WishList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WishList.aspx.designer.cs">
+      <DependentUpon>WishList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
