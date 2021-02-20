@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="WishList.aspx.cs" Inherits="WebApplicationAssignmnet.WishList" %>
-
+<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="WishList.aspx.cs" Inherits="WebApplicationAssignmnet.WishList" %>
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="lib/css/WishList.css" rel="stylesheet" />
     <link href="lib/css/Login.css" rel="stylesheet" />
