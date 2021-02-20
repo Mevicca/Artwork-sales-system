@@ -17,7 +17,7 @@
             });
         }
     </script>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="display:flex">
         <link href="lib/css/Shipping.css" rel="stylesheet" />
         <div class="container">
             <div class="row justify-content-center">
@@ -64,7 +64,7 @@
                                 <div class="row">
                                     <i class="fa fa-ship"></i>
                                     Select Shipping Companies
-                                    <asp:TextBox runat="server" ID="txtDeliveryCompany" Text="" CssClass="line-input txtDeliveryCompany" Enabled="FALSE"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtDeliveryCompany" Text="" CssClass="line-input txtDeliveryCompany" Enabled="FALSE" ClientIDMode="Static"></asp:TextBox>
                                     <div class="slidegallery">
                                         <asp:Repeater ID="RepeaterDeliveryCompany" runat="server" DataSourceID="SqlDataSource2">
                                             <ItemTemplate>
@@ -166,7 +166,7 @@
                         <asp:Button ID="btnBack" runat="server" Text="Back to cart" CssClass="btn btn-danger btnBack" />
                         <asp:Button ID="btnPayment" runat="server" Text="Go payment" CssClass="btn btn-success btnPayment" OnClick="BtnPayment_Click" />
                     </div>
-                    <div style="word-wrap: break-word">
+                    <div style="word-wrap: break-word; margin-bottom:50px;">
                         If you faced any question, kindly read
                     <asp:HyperLink ID="linkFAQ" runat="server" Text="FAQ"></asp:HyperLink>
                         or contact us with 018-888 8300.

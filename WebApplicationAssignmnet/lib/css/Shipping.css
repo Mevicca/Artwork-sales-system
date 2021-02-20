@@ -66,8 +66,8 @@
 }
 
 .dropdownmenu {
-    background-color: gainsboro;
-    color: crimson;
+    background-color: #d4a59a;
+    color: white;
 }
 
 .lbl-click {
@@ -94,4 +94,8 @@ td > label {
 
 h3{
     font-weight:bold;
+}
+
+#txtDeliveryCompany{
+    cursor:no-drop;
 }

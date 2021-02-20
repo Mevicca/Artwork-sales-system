@@ -28,10 +28,10 @@
             });
         }
     </script>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="margin-bottom:0px;">
         <div class="container">
-            <div>
-                <h3>
+            <div style="margin-left:25px;">
+                <h3 style="margin-bottom:25px;padding-top:20px;">
                     <asp:Label ID="BankName" runat="server" ClientIDMode="Static"></asp:Label>
                     Payment Agent</h3>
                 <div class="justify-content-center ">

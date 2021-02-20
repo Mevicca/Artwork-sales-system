@@ -36,7 +36,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td style="margin-top:20px;">
                                             <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
                                         </td>
                                     </tr>
@@ -58,7 +58,7 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: right;">
-                                            <asp:Button ID="LoginButton" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" Height="35px" Text="Log In" ValidationGroup="Login1" Width="60px" OnClick="Login1_Authenticate" />
+                                            <asp:Button ID="LoginButton" runat="server" ClientIDMode="Static" BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" Height="35px" Text="Log In" ValidationGroup="Login1" Width="60px" OnClick="Login1_Authenticate" />
                                         </td>
                                     </tr>
                                 </table>
