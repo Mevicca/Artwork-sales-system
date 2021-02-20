@@ -46,6 +46,8 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -55,6 +57,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -67,8 +70,96 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AddProduct.aspx" />
+    <Content Include="App_Data\Tayy2.mdf" />
+    <Content Include="App_Data\Tayy2_log.ldf">
+      <DependentUpon>Tayy2.mdf</DependentUpon>
+    </Content>
     <Content Include="assets\Images\blackcrop.png" />
+    <Content Include="assets\Images\form-header.jpg" />
+    <Content Include="assets\Images\digitalArt.jpg" />
+    <Content Include="assets\Images\drawing.png" />
     <Content Include="assets\Images\rosegold.png" />
+    <Content Include="assets\product\Acrylic\carlos pun B&amp;L.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun DD.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun Marvin.jpeg" />
+    <Content Include="assets\product\Acrylic\carlos pun MM.jpg" />
+    <Content Include="assets\product\Acrylic\carlos pun Mono.jpg" />
+    <Content Include="assets\product\sculpture\baby-gorilla.png" />
+    <Content Include="assets\product\sculpture\baby-gorilla1.png" />
+    <Content Include="assets\product\sculpture\ballerina.png" />
+    <Content Include="assets\product\sculpture\cat-sitting.png" />
+    <Content Include="assets\product\sculpture\cat-sitting1.png" />
+    <Content Include="assets\product\sculpture\elephant-calf.png" />
+    <Content Include="assets\product\sculpture\elephant-calf1.png" />
+    <Content Include="assets\product\sculpture\family-of-four.png" />
+    <Content Include="assets\product\sculpture\feeding-mother.png" />
+    <Content Include="assets\product\sculpture\flying-horse.png" />
+    <Content Include="assets\product\sculpture\flying-horse1.png" />
+    <Content Include="assets\product\sculpture\heart-in-hands.png" />
+    <Content Include="assets\product\sculpture\loving-hand.png" />
+    <Content Include="assets\product\sculpture\msytery.png" />
+    <Content Include="assets\product\sculpture\msytery1.png" />
+    <Content Include="assets\product\sculpture\silence.png" />
+    <Content Include="assets\product\sculpture\silence1.png" />
+    <Content Include="assets\product\sculpture\wooden-buffalo.png" />
+    <Content Include="assets\product\sculpture\wooden-buffalo1.png" />
+    <Content Include="assets\product\sculpture\wooden-buffalo2.png" />
+    <Content Include="assets\product\sculpture\world-in-his-hands.png" />
+    <Content Include="assets\Services\DHL Express.png" />
+    <Content Include="assets\Services\Grab.png" />
+    <Content Include="assets\Services\j&amp;t.png" />
+    <Content Include="assets\Services\PosLaju.jpg" />
+    <Content Include="Bank.aspx" />
+    <Content Include="BankPayment.aspx" />
+    <Content Include="CustomerProductGallery.aspx" />
+    <Content Include="assets\Images\FAQ\FAQ wallpaper.jpg" />
+    <Content Include="assets\Images\homepage\homeCaterAP.jpg" />
+    <Content Include="assets\Images\homepage\homeCaterOP.jpg" />
+    <Content Include="assets\Images\homepage\homeCaterS.jpg" />
+    <Content Include="assets\Images\homepage\homeCaterWP.jpg" />
+    <Content Include="assets\Images\homepage\news1.jpg" />
+    <Content Include="assets\Images\homepage\news2.jpg" />
+    <Content Include="assets\Images\homepage\news3.PNG" />
+    <Content Include="assets\Images\homepage\slide1.jpg" />
+    <Content Include="assets\Images\homepage\slide2.jpg" />
+    <Content Include="assets\Images\homepage\slide3.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Afternoon Blues.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Autumn fly.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Backyard.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Beauty of West.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Boat.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Chinese Temple.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Flower at the window.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Mountain.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Plaza Shadows.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Purple lake.jpg" />
+    <Content Include="assets\Images\product\Watercolor\River.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Rural.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Seaside.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Snow.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Snowy mountain.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Square.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Street.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Vally.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Vernazza Reflection.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Winter.jpg" />
+    <Content Include="assets\Images\rosegold.png" />
+    <Content Include="FAQ.aspx" />
+    <Content Include="lib\css\FAQ.css" />
+    <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\SignUp.css" />
+    <Content Include="lib\js\FAQ.js" />
+    <Content Include="lib\sweetAlert\sweetalert.css" />
+    <Content Include="lib\sweetAlert\sweetalert.js" />
+    <Content Include="lib\sweetAlert\sweetalert.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Payment.aspx" />
+    <Content Include="ProductPage.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="Shipping.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.css" />
@@ -79,19 +170,119 @@
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js" />
+    <Content Include="lib\css\AboutUs.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="lib\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="lib\css\Homepage.css" />
     <Content Include="lib\css\MasterPage.css" />
+    <Content Include="lib\css\ProductGallery.css" />
     <Content Include="lib\css\Tools.css" />
+    <Content Include="lib\js\Homepage.js" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
+    <Content Include="lib\js\ProductGallery.js" />
+    <Content Include="ProductGallery.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
+    <Content Include="WishList.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bank.aspx.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bank.aspx.designer.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BankPayment.aspx.cs">
+      <DependentUpon>BankPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankPayment.aspx.designer.cs">
+      <DependentUpon>BankPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProductGallery.aspx.cs">
+      <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerProductGallery.aspx.designer.cs">
+      <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Email.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductGallery.aspx.cs">
+      <DependentUpon>ProductGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductGallery.aspx.designer.cs">
+      <DependentUpon>ProductGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPage.aspx.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductPage.aspx.designer.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping.aspx.cs">
+      <DependentUpon>Shipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping.aspx.designer.cs">
+      <DependentUpon>Shipping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
@@ -100,19 +291,19 @@
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Web.Master.cs">
       <DependentUpon>Web.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Web.Master.designer.cs">
       <DependentUpon>Web.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WishList.aspx.cs">
+      <DependentUpon>WishList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WishList.aspx.designer.cs">
+      <DependentUpon>WishList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -171,7 +362,7 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\product\" />
+    <Folder Include="assets\product\oilPaint\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -204,11 +395,4 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
