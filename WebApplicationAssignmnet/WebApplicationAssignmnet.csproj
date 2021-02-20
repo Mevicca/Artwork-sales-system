@@ -70,16 +70,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Tayy.mdf" />
-    <Content Include="App_Data\Tayy_log.ldf">
-      <DependentUpon>Tayy.mdf</DependentUpon>
-    </Content>
+    <Content Include="assets\Acrylic\carlos pun B&amp;L.jpg" />
+    <Content Include="assets\Acrylic\carlos pun DD.jpg" />
+    <Content Include="assets\Acrylic\carlos pun Marvin.jpeg" />
+    <Content Include="assets\Acrylic\carlos pun MM.jpg" />
+    <Content Include="assets\Acrylic\carlos pun Mono.jpg" />
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
     <Content Include="assets\Images\rosegold.png" />
     <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\OrderPage%28A%29.css" />
     <Content Include="lib\css\SignUp.css" />
+    <Content Include="lib\css\WishList.css" />
+    <Content Include="lib\js\OrderPage%28A%29.js" />
+    <Content Include="lib\js\WishList.js" />
     <Content Include="Login.aspx" />
+    <Content Include="OrderPage%28A%29.aspx" />
+    <Content Include="SalesHistory%28A%29.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
@@ -101,6 +108,7 @@
     <Content Include="lib\js\Masterpage.js" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
+    <Content Include="WishList.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constant.cs" />
@@ -110,6 +118,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderPage%28A%29.aspx.cs">
+      <DependentUpon>OrderPage%28A%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderPage%28A%29.aspx.designer.cs">
+      <DependentUpon>OrderPage%28A%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesHistory%28A%29.aspx.cs">
+      <DependentUpon>SalesHistory%28A%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesHistory%28A%29.aspx.designer.cs">
+      <DependentUpon>SalesHistory%28A%29.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
@@ -132,6 +154,13 @@
     </Compile>
     <Compile Include="Web.Master.designer.cs">
       <DependentUpon>Web.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WishList.aspx.cs">
+      <DependentUpon>WishList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WishList.aspx.designer.cs">
+      <DependentUpon>WishList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
