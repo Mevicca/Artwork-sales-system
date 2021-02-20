@@ -1,0 +1,38 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.bColor {
+    background-color: #F3E0DC;
+}
+
+
+.nextIcon {
+    cursor: pointer;
+}
+.nextIcon:hover {
+    color: gainsboro;
+}
+
+.prevIcon {
+    cursor:pointer;
+}
+.prevIcon:hover {
+    color: gainsboro;
+}
+
+.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
+}
+
+.zoom{
+    transition: transform.2s;
+}
+
+.zoom:hover {
+   transform: scale(1.25);
+}
+
+.textBox{
+    border:none;
+}
