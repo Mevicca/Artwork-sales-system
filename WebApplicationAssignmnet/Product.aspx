@@ -47,9 +47,9 @@
                     <div class="row">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-7" style="text-align: center; display: inline;">
-                            <asp:ImageButton ID="ImgPath1" CssClass="images zoom" runat="server" OnClientClick="slides(1)"/>
-                            <asp:ImageButton ID="ImgPath2" CssClass="images zoom" runat="server" OnClientClick="slides(2)"/>
-                            <asp:ImageButton ID="ImgPath3" CssClass="images zoom" runat="server" OnClientClick="slides(3)"/>
+                            <asp:ImageButton ID="ImgPath1" CssClass="images zoom" runat="server"/>
+                            <asp:ImageButton ID="ImgPath2" CssClass="images zoom" runat="server"/>
+                            <asp:ImageButton ID="ImgPath3" CssClass="images zoom" runat="server"/>
                         </div>
                         <div class="col-sm-1"></div>
                     </div>
