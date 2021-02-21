@@ -73,6 +73,10 @@
     <Content Include="AboutUs.aspx" />
     <Content Include="AddProduct.aspx" />
     <Content Include="App_Data\Tayy.mdf" />
+    <Content Include="App_Data\Tayy3.mdf" />
+    <Content Include="App_Data\Tayy3_log.ldf">
+      <DependentUpon>Tayy3.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Tayy_log.ldf">
       <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>

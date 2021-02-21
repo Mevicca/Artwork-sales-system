@@ -8,7 +8,7 @@
 
             <div class="navbar-gallery">
                 <div class="allProductCategory">
-                    <asp:HyperLink ID="AllProduct" ClientIDMode="Static" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' Style="color: white;" runat="server" > All </asp:HyperLink>
+                    <asp:HyperLink ID="AllProduct" ClientIDMode="Static" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' Style="color: white; cursor:pointer;" runat="server" > All </asp:HyperLink>
                 </div>
                 <div class="dropdown-category">
                     <button class="dropbtn">
