@@ -72,9 +72,13 @@
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
     <Content Include="AddProduct.aspx" />
+    <Content Include="App_Data\Tayy.mdf" />
     <Content Include="App_Data\Tayy2.mdf" />
     <Content Include="App_Data\Tayy2_log.ldf">
       <DependentUpon>Tayy2.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Tayy_log.ldf">
+      <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>
     <Content Include="assets\Images\AboutUs\art.png" />
     <Content Include="assets\Images\AboutUs\art2.jpg" />

@@ -13,7 +13,6 @@ namespace WebApplicationAssignmnet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //productID.Text = Request.QueryString["id"].ToString();
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
@@ -39,15 +38,6 @@ namespace WebApplicationAssignmnet
                         releasedDate.Text= reader.GetDateTime(5).ToString("yyyy-MM-dd");
                         quantity.Value = reader.GetInt32(6).ToString();
 
-                        //List<string> list = new List<string>();
-                        //list.Add(reader.GetString(7));
-                        //list.Add(reader.GetString(8));
-                        //list.Add(reader.GetString(9));
-
-                        //foreach (String img in list)
-                        //{
-
-                        //}
                         ImgPath1.ImageUrl= reader.GetString(7);
                         if (reader.GetString(8) != "")
                         {

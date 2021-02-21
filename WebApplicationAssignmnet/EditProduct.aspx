@@ -114,7 +114,7 @@
                                 <asp:Label ID="Label4" runat="server" Text="Label">:</asp:Label>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox ID="releasedDate" TextMode="Date" Width="150px" AutoPostBack="true" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="releasedDate" TextMode="Date" Width="150px" AutoPostBack="true" Enabled="false" runat="server"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
 

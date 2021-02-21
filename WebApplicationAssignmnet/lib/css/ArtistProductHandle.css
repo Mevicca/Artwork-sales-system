@@ -44,7 +44,7 @@
 
 .controlbtn {
     display: flex;
-    justify-content: flex-end;
+    justify-content:space-between;
 }
 
 #showPreviousImage {
@@ -63,14 +63,33 @@
     margin-left:10px;
     font-size:16px;
 }
+#backBtn {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+    color: black;
+    border-radius: 8px;
+    border-width:1px;
+    cursor: pointer;
+}
 
+    #backBtn:hover {
+        background-color: #d3d3d3;
+        color:black;
+    }
+
+.twobtn{
+    display:flex;
+}
 #resetCancelBtn {
     width: 100px;
     height: 40px;
     display: flex;
     justify-content: center;
     margin-right: 15px;
-    background-color: #ffa7a7;
+    background-color: #be2d2d;
     color: white;
     border-radius: 8px;
     border: none;
@@ -78,7 +97,7 @@
 }
 
     #resetCancelBtn:hover {
-        background-color: red;
+        background-color: #ff0000;
     }
 
 #addSaveProductbtn {
@@ -86,7 +105,7 @@
     height: 40px;
     display: flex;
     justify-content: center;
-    background-color: #9bc6ff;
+    background-color: #395ba9;
     color: white;
     border-radius: 10px;
     border: none;
@@ -94,5 +113,5 @@
 }
 
     #addSaveProductbtn:hover {
-        background-color: blue;
+        background-color: #0072ff;
     }

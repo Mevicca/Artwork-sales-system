@@ -27,7 +27,7 @@
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-category-content">
-                        <asp:HyperLink ID="Animals"NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Animals</asp:HyperLink>
+                        <asp:HyperLink ID="Animals" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Animals</asp:HyperLink>
                         <asp:HyperLink ID="Bronzo" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Bronzo</asp:HyperLink>
                         <asp:HyperLink ID="Wood" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Wood</asp:HyperLink>
                     </div>

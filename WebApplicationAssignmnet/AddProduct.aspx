@@ -110,8 +110,13 @@
                 <br />
                 <hr />
                 <div class="controlbtn">
+                    <div>
+                    <asp:Button ID="backBtn" ClientIDMode="Static" runat="server" Text="BACK" PostBackUrl="~/ProductGallery.aspx" />
+                    </div>
+                    <div class="twobtn">
                     <input id="resetCancelBtn" type="reset" value="RESET" />
                     <asp:Button ID="addSaveProductbtn" ClientIDMode="Static" runat="server" Text="ADD" PostBackUrl="~/ProductGallery.aspx" />
+                </div>
                 </div>
             </div>
         </div>
