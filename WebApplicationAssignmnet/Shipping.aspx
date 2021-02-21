@@ -1,28 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="Shipping.aspx.cs" Inherits="WebApplicationAssignmnet.Shipping" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
-    <script type="text/javascript">
-        function failalert(ftitle, ftext) {
-            swal({
-                title: ftitle,
-                text: ftext,
-                type: 'error'
-            });
-        }
-        function successalert(stitle, stext) {
-            swal({
-                title: stitle,
-                text: stext,
-                type: 'success'
-            });
-        }
-    </script>
-    <form id="form1" runat="server" style="display:flex">
+    <form id="form1" runat="server" style="display: flex">
         <link href="lib/css/Shipping.css" rel="stylesheet" />
+        <script type="text/javascript">
+            function failalert(ftitle, ftext) {
+                swal({
+                    title: ftitle,
+                    text: ftext,
+                    type: 'error'
+                });
+            }
+            function successalert(stitle, stext) {
+                swal({
+                    title: stitle,
+                    text: stext,
+                    type: 'success'
+                });
+            }
+        </script>
         <div class="container">
             <div class="row justify-content-center">
                 <ul class="list-group list-group-horizontal tab">
-                    <li class="list-group-item active">Shipping</li>
+                    <li class="list-group-item active" style="z-index: 1">Shipping</li>
                     <li class="list-group-item">Payment</li>
                 </ul>
             </div>
@@ -39,11 +39,11 @@
                                 <div class="row d-flex row-click">
                                     <i class="fa fa-address-card"></i>
                                     <asp:Label runat="server" Text="Shipping details"></asp:Label>
-                                    <asp:HyperLink CssClass="lbl-click" ID="linkShippingDetails" runat="server" NavigateUrl="#">Add</asp:HyperLink>
                                 </div>
-                                <div class="row">
+                                <div class="row" style="display:inline-flex;">
                                     <asp:DropDownList ID="ddlAddress" runat="server" CssClass="dropdownmenu">
                                     </asp:DropDownList>
+                                    <asp:Button CssClass="lbl-click btn btn-info" ID="BtnShippingDetails" ClientIDMode="Static" runat="server" Text="Add" />
                                 </div>
                                 <div class="row d-flex row-click">
                                     <i class="fa  fa-ambulance"></i>Billing to the same address
@@ -90,6 +90,71 @@
                 </div>
                 <%--End shipping details--%>
 
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>ADD ADDRESS</h2>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Table runat="server">
+                                <asp:TableRow>
+                                    <asp:TableCell>Address Label :</asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox ID="txtLabel" runat="server" placeholder="Label">
+                                        </asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>Address 1 :</asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox ID="txtAdd1" runat="server" placeholder="Address 1">
+                                        </asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>Address 2 :</asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox ID="txtAdd2" runat="server" placeholder="Address 2">
+                                        </asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>Address 3 :</asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox ID="txtAdd3" runat="server" placeholder="Address 3">
+                                        </asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>PostCode :</asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox ID="txtPostCode" runat="server" placeholder="xxxxx" TextMode="Number">
+                                        </asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>City :</asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox ID="txtCity" runat="server" placeholder="City">
+                                        </asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell></asp:TableCell>
+                                    <asp:TableCell></asp:TableCell>
+                                </asp:TableRow>
+                            </asp:Table>
+                            <asp:Button runat="server" ID="BtnAdd" CssClass="btn btn-success" Text="Add" OnClick="BtnAdd_Click"/>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>To add your address</h3>
+                        </div>
+                    </div>
+                </div>
+
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT Delivery_Company, ImagePath FROM DeliveryMethod WHERE (isActive = @isActive)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="1" Name="isActive" Type="Byte" />
@@ -128,7 +193,7 @@
                                     Subtotal
                                 </div>
                                 <div class="col-sm-6">
-                                    : RM
+                                    :
                                 <asp:Label ID="lblSubtotal" runat="server" Text="0.00"></asp:Label>
                                 </div>
                             </div>
@@ -137,7 +202,7 @@
                                     <asp:Label ID="lbelDiscount" runat="server" Text="Discount"></asp:Label>
                                 </div>
                                 <div class="col-sm-6">
-                                    : ( RM
+                                    : (
                                     <asp:Label ID="lblDiscount" runat="server" Text="0.00"></asp:Label>
                                     )<br />
                                 </div>
@@ -147,7 +212,7 @@
                                     Shipping
                                 </div>
                                 <div class="col-sm-6">
-                                    : RM
+                                    : 
                                 <asp:Label ID="lblShipping" runat="server" Text="0.00"></asp:Label>
                                 </div>
                             </div>
@@ -156,7 +221,7 @@
                                     Final Total 
                                 </div>
                                 <div class="col-sm-6">
-                                    : RM
+                                    :
                                 <asp:Label ID="lblFinalTotal" runat="server" Text="0.00"></asp:Label><br />
                                 </div>
                             </div>
@@ -166,7 +231,7 @@
                         <asp:Button ID="btnBack" runat="server" Text="Back to cart" CssClass="btn btn-danger btnBack" />
                         <asp:Button ID="btnPayment" runat="server" Text="Go payment" CssClass="btn btn-success btnPayment" OnClick="BtnPayment_Click" />
                     </div>
-                    <div style="word-wrap: break-word; margin-bottom:50px;">
+                    <div style="word-wrap: break-word; margin-bottom: 50px;">
                         If you faced any question, kindly read
                     <asp:HyperLink ID="linkFAQ" runat="server" Text="FAQ"></asp:HyperLink>
                         or contact us with 018-888 8300.
@@ -176,5 +241,7 @@
             </div>
         </div>
     </form>
+    <script src="lib/js/Tools.js"></script>
+
 </asp:Content>
 

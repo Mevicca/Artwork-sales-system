@@ -9,7 +9,6 @@
 <script src="lib/js/jquery.js"></script>
 <script src="lib/sweetAlert/sweetalert.js"></script>
 <script src="lib/js/Masterpage.js"></script>
-<script src="lib/js/ProductPage.js"></script>
 
 <html>
 <head runat="server">

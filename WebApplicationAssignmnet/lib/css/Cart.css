@@ -1,0 +1,37 @@
+﻿.sort {
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom:20px;
+}
+
+    .card:hover {
+        background-color: rgba(236, 216, 245, 0.30);
+    }
+
+.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
+}
+
+.btn {
+    width: 150px;
+}
+
+.Imgbtn {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.col-sm-6 > * {
+    color: crimson;
+}
+
+.bottom-card, .card-header {
+    background-image: url("../../assets/Images/form-header.jpg");
+    color: firebrick;
+}

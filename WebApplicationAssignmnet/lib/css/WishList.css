@@ -1,14 +1,31 @@
-﻿* {
-}
-
 .sort{
-    float:right;
-    margin-right:50px;
+    margin-right:30px;
+    margin-top:20px;
 }
 
-.containerSize {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-right: 50px;
-    border-radius: 10px
+.card {
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
+
+    .card:hover {
+        background-color: rgba(128, 128, 128, 0.38);
+    }
+
+.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
+}
+
+.btn{
+    width:150px;
+}
+
+.Imgbtn{
+    margin-top:20px;
+    margin-left:20px;
+}
+
+.col-sm-6 > *{
+    color:crimson;

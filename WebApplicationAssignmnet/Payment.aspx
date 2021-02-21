@@ -125,7 +125,7 @@
                                     Subtotal
                                 </div>
                                 <div class="col-sm-6">
-                                    : RM
+                                    : 
                                     <asp:Label ID="lblSubtotal" runat="server" Text="0.00"></asp:Label>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                     Discount
                                 </div>
                                 <div class="col-sm-6">
-                                    : ( RM
+                                    : ( 
                                     <asp:Label ID="lblDiscount" runat="server" Text="0.00"></asp:Label>
                                     )<br />
                                 </div>
@@ -144,7 +144,7 @@
                                     Shipping
                                 </div>
                                 <div class="col-sm-6">
-                                    : RM
+                                    : 
                                     <asp:Label ID="lblShipping" runat="server" Text="0.00"></asp:Label>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                                     Final Total 
                                 </div>
                                 <div class="col-sm-6">
-                                    : RM
+                                    :
                                     <asp:Label ID="lblFinalTotal" runat="server" Text="0.00"></asp:Label><br />
                                 </div>
                             </div>

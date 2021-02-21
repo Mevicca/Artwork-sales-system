@@ -14,7 +14,7 @@ namespace WebApplicationAssignmnet
             if (!IsPostBack)
             {
                 BankName.Text = Session["Bank"].ToString();
-                Amount.Text = String.Format("{0:0.00}", Double.Parse(Session["Amount"].ToString()));
+                Amount.Text = Session["Amount"].ToString().Substring(2);
             }
         }
 
