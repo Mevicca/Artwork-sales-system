@@ -53,6 +53,8 @@ body {
 /* Change background color of buttons on hover */
 .tab button:hover, .exBtn:hover {
     background-color: #f88787;
+    color: white;
+    text-decoration: none;
 }
 
 /* Create an active/current "tab button" class */

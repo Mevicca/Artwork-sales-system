@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
         <link href="lib/css/CustomerProfile.css" rel="stylesheet" />
-        <link href="lib/css/ArtistProfile.css" rel="stylesheet" />
+        <link href="lib/css/ArtistProfileSetting.css" rel="stylesheet" />
         <div class="container h-100 d-flex justify-content-center align-items-center">
             <div class="tab">
                 <button class="tablinks">General Account Settings</button>

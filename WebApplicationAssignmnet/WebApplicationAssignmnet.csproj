@@ -154,7 +154,7 @@
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js" />
     <Content Include="lib\css\AboutUs.css" />
-    <Content Include="lib\css\ArtistProfile.css" />
+    <Content Include="lib\css\ArtistProfileSetting.css" />
     <Content Include="lib\css\ArtProfile.css" />
     <Content Include="lib\css\CustomerProfile.css" />
     <Content Include="lib\css\FAQ.css" />
