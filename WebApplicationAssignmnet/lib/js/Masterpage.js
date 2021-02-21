@@ -37,6 +37,7 @@ function nav_open() {
     isFixedNav = false;
     nav_openning();
 }
+
 function nav_close() {
     isFixedNav = false;
     document.getElementById("leftSide").style.display = "none";    //left nav bar
@@ -45,10 +46,21 @@ function nav_close() {
     document.getElementById("rightSide").style.marginLeft = "0px";
     document.getElementById("bottom-footer").style.marginLeft = "0px";
 }
+
 function nav_pin() {
     isFixedNav = !isFixedNav;
     checkNav();
     localStorage.setItem("isFixedNavKey", isFixedNav);
+    var userType = document.getElementById("Userrole").value;
+    if (userType === "Customer") {
+        $('#cust-productGallery').style.visibility = "visible";
+    }
+    else if(userType === "Artist"){
+
+    }
+    else {//unknown
+        
+    }
 }
 
 function checkNav() {

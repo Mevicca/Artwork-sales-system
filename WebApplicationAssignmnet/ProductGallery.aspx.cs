@@ -13,10 +13,5 @@ namespace WebApplicationAssignmnet
         {
 
         }
-
-        protected void ProductImage_Click(object sender, ImageClickEventArgs e)
-        {
-            var test = "";
-        }
     }
 }
