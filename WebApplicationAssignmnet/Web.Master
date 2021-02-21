@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="WebApplicationAssignmnet.Web" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="WebApplicationAssignmnet.Web" %>
 <!DOCTYPE html>
 
 <link href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />

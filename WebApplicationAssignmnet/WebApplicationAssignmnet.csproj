@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -70,14 +70,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\Acrylic\carlos pun B&amp;L.jpg" />
+    <Content Include="assets\Acrylic\carlos pun DD.jpg" />
+    <Content Include="assets\Acrylic\carlos pun Marvin.jpeg" />
+    <Content Include="assets\Acrylic\carlos pun MM.jpg" />
+    <Content Include="assets\Acrylic\carlos pun Mono.jpg" />
     <Content Include="AboutUs.aspx" />
     <Content Include="AddProduct.aspx" />
     <Content Include="App_Data\Tayy.mdf" />
-
-    <Content Include="App_Data\Tayy2.mdf" />
-    <Content Include="App_Data\Tayy2_log.ldf">
-      <DependentUpon>Tayy2.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\Tayy_log.ldf">
       <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>
@@ -143,6 +143,7 @@
     <Content Include="assets\Services\PosLaju.jpg" />
     <Content Include="Bank.aspx" />
     <Content Include="BankPayment.aspx" />
+    <Content Include="CustomerProductGallery.aspx" />
     <Content Include="assets\Images\FAQ\FAQ wallpaper.jpg" />
     <Content Include="assets\Images\homepage\homeCaterAP.jpg" />
     <Content Include="assets\Images\homepage\homeCaterOP.jpg" />
@@ -154,6 +155,47 @@
     <Content Include="assets\Images\homepage\slide1.jpg" />
     <Content Include="assets\Images\homepage\slide2.jpg" />
     <Content Include="assets\Images\homepage\slide3.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Afternoon Blues.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Autumn fly.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Backyard.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Beauty of West.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Boat.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Chinese Temple.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Flower at the window.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Mountain.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Plaza Shadows.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Purple lake.jpg" />
+    <Content Include="assets\Images\product\Watercolor\River.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Rural.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Seaside.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Snow.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Snowy mountain.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Square.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Street.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Vally.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Vernazza Reflection.jpg" />
+    <Content Include="assets\Images\product\Watercolor\Winter.jpg" />
+    <Content Include="assets\Images\rosegold.png" />
+    <Content Include="FAQ.aspx" />
+    <Content Include="lib\css\FAQ.css" />
+    <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\OrderHistoryDetails.css" />
+    <Content Include="lib\css\OrderPage%28A%29.css" />
+    <Content Include="lib\css\SignUp.css" />
+    <Content Include="lib\css\WishList.css" />
+    <Content Include="lib\js\OrderPage%28A%29.js" />
+    <Content Include="lib\js\WishList.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="OrderHistoryDetails.aspx" />
+    <Content Include="OrderPage%28A%29.aspx" />
+    <Content Include="SalesHistory%28A%29.aspx" />
+    <Content Include="lib\js\FAQ.js" />
+    <Content Include="lib\sweetAlert\sweetalert.css" />
+    <Content Include="lib\sweetAlert\sweetalert.js" />
+    <Content Include="lib\sweetAlert\sweetalert.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Payment.aspx" />
+    <Content Include="ProductPage.aspx" />
     <Content Include="assets\Images\rosegold.png" />
     <Content Include="FAQ.aspx" />
     <Content Include="lib\css\Bank.css" />
@@ -204,6 +246,8 @@
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
     <Content Include="lib\js\ProductGallery.js" />
+    <Content Include="ProductGallery.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ProductGallery.aspx" />
     <Content Include="TestingArtistProfile.aspx" />
@@ -268,7 +312,15 @@
     <Compile Include="CustomerProductGallery.aspx.designer.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
     </Compile>
-
+    <Compile Include="Email.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="OrderHistoryDetails.aspx.cs">
+      <DependentUpon>OrderHistoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderHistoryDetails.aspx.designer.cs">
+      <DependentUpon>OrderHistoryDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerProfileSetting.aspx.cs">
       <DependentUpon>CustomerProfileSetting.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -292,7 +344,6 @@
     <Compile Include="ProductGallery.aspx.designer.cs">
       <DependentUpon>ProductGallery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Constant.cs" />
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -307,6 +358,26 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="OrderPage%28A%29.aspx.cs">
+      <DependentUpon>OrderPage%28A%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderPage%28A%29.aspx.designer.cs">
+      <DependentUpon>OrderPage%28A%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesHistory%28A%29.aspx.cs">
+      <DependentUpon>SalesHistory%28A%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesHistory%28A%29.aspx.designer.cs">
+      <DependentUpon>SalesHistory%28A%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPage.aspx.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductPage.aspx.designer.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -421,7 +492,6 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\Images\product\" />
     <Folder Include="assets\product\oilPaint\" />
   </ItemGroup>
   <PropertyGroup>

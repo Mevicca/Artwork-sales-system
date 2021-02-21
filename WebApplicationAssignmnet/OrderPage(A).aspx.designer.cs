@@ -11,7 +11,7 @@ namespace WebApplicationAssignmnet
 {
 
 
-    public partial class WishList
+    public partial class OrderPage_A_
     {
 
         /// <summary>
