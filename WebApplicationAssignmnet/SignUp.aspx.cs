@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -30,11 +31,11 @@ namespace WebApplicationAssignmnet
                     gender = 'M';
                 }
 
-                using (SqlConnection conn = new SqlConnection(Constant.connectionStrings))
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
                     string query = "";
-                    if (DropDownListIdentification.SelectedValue == "")
+                    if (DropDownListIdentification.SelectedValue == "Customer")
                     {
                         query = "INSERT INTO CUSTOMER(CustPassword, CustFullName, CustEmail, CustGender, CreatedAt) VALUES (@0,@1,@2,@3,GETDATE())";
                     }
@@ -50,7 +51,7 @@ namespace WebApplicationAssignmnet
                     cmd.Parameters.AddWithValue("3", gender);
 
                     cmd.ExecuteNonQuery();
-                    
+
                 }
                 Response.Redirect("Login.aspx", false);
             }

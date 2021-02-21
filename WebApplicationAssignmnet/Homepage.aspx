@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Web.Master" CodeBehind="Homepage.aspx.cs" Inherits="WebApplicationAssignmnet.Homepage" %>
+<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Web.Master" CodeBehind="Homepage.aspx.cs" Inherits="WebApplicationAssignmnet.Homepage" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="lib/css/Homepage.css" rel="stylesheet" />
