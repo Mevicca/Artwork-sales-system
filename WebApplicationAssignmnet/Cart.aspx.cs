@@ -11,7 +11,7 @@ using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
-    public partial class WishList : System.Web.UI.Page
+    public partial class Cart : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,11 +22,12 @@ namespace WebApplicationAssignmnet
         {
             try
             {
+                double total = 0;
                 User user = Session["LoginUser"] as User;
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = @"SELECT p.productID, p.ProductName, ar.ArtFullName, p.ProductPrice, p.path1 FROM [WishList] A 
+                    string query = @"SELECT p.productID, p.ProductName, ar.ArtFullName, p.ProductPrice, p.path1 FROM [ADDTOCARTLIST] A 
 INNER JOIN PRODUCTS P ON (P.ProductID = A.ProductID)
 INNER JOIN Artist AR ON (AR.ArtistID = P.ArtistID)
 WHERE A.CustID = @CustID";
@@ -40,11 +41,17 @@ WHERE A.CustID = @CustID";
                         sda.Fill(dt);
                         rptProducts.DataSource = dt;
                         rptProducts.DataBind();
+                        for(var i = 0; i < dt.Rows.Count; i++)
+                        {
+                            total += Double.Parse(dt.Rows[i][3].ToString());
+                        }
+
+                        lblTotal.Text = total.ToString("C2");
                     }
                 }
                 if(rptProducts.Items.Count == 0)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Empty in wish list.');", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Empty in cart.');", true);
                 }
             }
             catch(Exception ex)
@@ -53,7 +60,7 @@ WHERE A.CustID = @CustID";
             }
         }
 
-        protected void Cart_Click(object sender, EventArgs e)
+        protected void Wish_Click(object sender, EventArgs e)
         {
             try
             {
@@ -62,7 +69,7 @@ WHERE A.CustID = @CustID";
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = @"INSERT INTO ADDTOCARTLIST(PRODUCTID,CUSTID,QUANTITY) VALUES (@productID, @userID, 1);";
+                    string query = @"INSERT INTO WISHLIST(PRODUCTID,CUSTID) VALUES (@productID, @userID);";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("productID", btn.CommandArgument);
@@ -73,11 +80,11 @@ WHERE A.CustID = @CustID";
 
                     if (result > 0)
                     {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to added in cart.');", true);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to added in wish list.');", true);
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to added in cart.');", true);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to added in wish list.');", true);
                     }
                     BindData();
                 }
@@ -96,12 +103,12 @@ WHERE A.CustID = @CustID";
                 var result = DeleteInList(Int32.Parse(btn.CommandArgument));
                 if (result > 0)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Delete in wishlist.');", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Delete in cart.');", true);
                     BindData();
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to delete in wishlist.');", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to delete in cart.');", true);
                 }
                 
             }
@@ -117,7 +124,7 @@ WHERE A.CustID = @CustID";
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
-                string query = @"DELETE FROM WISHLIST WHERE PRODUCTID = @productID AND CUSTID = @userID;";
+                string query = @"DELETE FROM ADDTOCARTLIST WHERE PRODUCTID = @productID AND CUSTID = @userID;";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("productID", productID);

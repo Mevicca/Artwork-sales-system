@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -29,7 +30,7 @@ namespace WebApplicationAssignmnet
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert("+ex.Message+");", true); 
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Something wrong.');", true);
             }
 
         }
@@ -204,7 +205,7 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
                             total += Double.Parse(dt.Rows[i][2].ToString());
                         }
 
-                        lblSubtotal.Text = String.Format("{0:0.00}", Double.Parse(total.ToString()));
+                        lblSubtotal.Text = total.ToString("C2");
                     }
                 }
                 #endregion
@@ -222,7 +223,8 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
                     coupon = coupon.ToUpper();
                     if (coupon == "HAPPY2021")//hardcode first, not sure whether the admin side can add on or not
                     {
-                        lblDiscount.Text = String.Format("{0:0.00}", (Double.Parse(lblSubtotal.Text.ToString()) * 0.05).ToString());
+                        var value = double.Parse(lblSubtotal.Text, NumberStyles.Currency);
+                        lblDiscount.Text = (value * 0.05).ToString("C2");
                         lbelDiscount.Text = "Discount 5%";
                         CalculateFinal();
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Coupon applied.')", true);
@@ -234,7 +236,7 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','"+ex.Message+"')", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error', 'Something wrong')", true);
             }
         }
 
@@ -242,11 +244,13 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
         {
             try
             {
-                double subtotal = Double.Parse(lblSubtotal.Text.ToString());
-                double discount = lblDiscount.Text.ToString() == null ? 0.00 : Double.Parse(lblDiscount.Text.ToString());
-                double shipping = lblShipping.Text.ToString() == null ? 0.00 : Double.Parse(lblShipping.Text.ToString());
+                double subtotal = double.Parse(lblSubtotal.Text, NumberStyles.Currency);
+                double discount = double.Parse(lblDiscount.Text, NumberStyles.Currency);
+                double shipping = double.Parse(lblShipping.Text, NumberStyles.Currency);
 
-                lblFinalTotal.Text = String.Format("{0:0.00}", subtotal - discount + shipping);
+                lblFinalTotal.Text = (subtotal - discount + shipping).ToString("C2");
+                lblDiscount.Text = discount.ToString("C2");
+                lblShipping.Text = shipping.ToString("C2");
             }
             catch (Exception ex)
             {
@@ -256,7 +260,8 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
 
         protected void BtnPayment_Click(object sender, EventArgs e)
         {
-            if (Double.Parse(lblFinalTotal.Text) > 0)
+
+            if (double.Parse(lblFinalTotal.Text, NumberStyles.Currency) > 0)
             {
                 Session["Email"] = txtEmailAdd.Text;
                 Response.Redirect(@"Payment.aspx?Subtotal=" + lblSubtotal.Text +
@@ -275,13 +280,62 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
             if (radioListMethod.SelectedItem != null)
             {
                 var items = (radioListMethod.SelectedItem?.Value).Split(';');
-                lblShipping.Text = String.Format("{0:0.00}", Double.Parse(items[1]));
+                lblShipping.Text = Double.Parse(items[1]).ToString("C2");
                 CalculateFinal();
             }
         }
         protected void RadioListMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             BindRadio();
+        }
+
+        protected void BtnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                User user = Session["LoginUser"] as User;
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+
+                {
+                    conn.Open();
+                    string query = @"DECLARE @var INT;
+
+INSERT INTO ADDRESS([AddressLabel], [Address1], [Address2], [Address3], [Postcode], [City]) 
+VALUES(@label,@add1,@add2,@add3,@postcode,@city);
+
+SELECT @var = SCOPE_IDENTITY()
+
+INSERT INTO ADDRESSLIST([AddressID], [CustID], [IsDefault]) VALUES (@var, @CustID, 1);";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("label", txtLabel.Text.Trim());
+                    cmd.Parameters.AddWithValue("add1", txtAdd1.Text == null ? "" : txtAdd1.Text.Trim());
+                    cmd.Parameters.AddWithValue("add2", txtAdd2.Text == null ? "" : txtAdd2.Text.Trim());
+                    cmd.Parameters.AddWithValue("add3", txtAdd3.Text == null ? "" : txtAdd3.Text.Trim());
+                    cmd.Parameters.AddWithValue("postcode", txtPostCode.Text);
+                    cmd.Parameters.AddWithValue("city", txtCity.Text);
+                    cmd.Parameters.AddWithValue("CustID", user.ID);
+
+                    var result = cmd.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to add.');", true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to add.');", true);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
         }
     }
 

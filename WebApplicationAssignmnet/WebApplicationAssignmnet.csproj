@@ -72,9 +72,13 @@
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
     <Content Include="AddProduct.aspx" />
+    <Content Include="App_Data\Tayy.mdf" />
     <Content Include="App_Data\Tayy2.mdf" />
     <Content Include="App_Data\Tayy2_log.ldf">
       <DependentUpon>Tayy2.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Tayy_log.ldf">
+      <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
@@ -149,8 +153,12 @@
     <Content Include="FAQ.aspx" />
     <Content Include="lib\css\FAQ.css" />
     <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\Shipping.css" />
     <Content Include="lib\css\SignUp.css" />
+    <Content Include="lib\css\WishList.css" />
+    <Content Include="lib\css\Cart.css" />
     <Content Include="lib\js\FAQ.js" />
+    <Content Include="lib\js\Tools.js" />
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />
@@ -187,6 +195,7 @@
     <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
+    <Content Include="Cart.aspx" />
     <Content Include="WishList.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +306,13 @@
     </Compile>
     <Compile Include="Web.Master.designer.cs">
       <DependentUpon>Web.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="WishList.aspx.cs">
       <DependentUpon>WishList.aspx</DependentUpon>
