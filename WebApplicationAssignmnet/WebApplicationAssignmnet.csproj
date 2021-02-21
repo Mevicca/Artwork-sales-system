@@ -72,7 +72,16 @@
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
     <Content Include="AddProduct.aspx" />
+    <Content Include="App_Data\Tayy.mdf" />
+    <Content Include="App_Data\Tayy2.mdf" />
+    <Content Include="App_Data\Tayy2_log.ldf">
+      <DependentUpon>Tayy2.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Tayy_log.ldf">
+      <DependentUpon>Tayy.mdf</DependentUpon>
+    </Content>
+    <Content Include="ArtistProfile.aspx" />
+    <Content Include="ArtistProfileSetting.aspx" />
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\FAQ\FAQ wallpaper.jpg" />
     <Content Include="assets\Images\homepage\homeCaterAP.jpg" />
@@ -85,26 +94,26 @@
     <Content Include="assets\Images\homepage\slide1.jpg" />
     <Content Include="assets\Images\homepage\slide2.jpg" />
     <Content Include="assets\Images\homepage\slide3.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Afternoon Blues.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Autumn fly.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Backyard.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Beauty of West.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Boat.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Chinese Temple.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Flower at the window.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Mountain.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Plaza Shadows.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Purple lake.jpg" />
-    <Content Include="assets\Images\product\Watercolor\River.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Rural.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Seaside.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Snow.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Snowy mountain.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Square.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Street.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Vally.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Vernazza Reflection.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Winter.jpg" />
+    <Content Include="assets\product\Watercolor\Afternoon Blues.jpg" />
+    <Content Include="assets\product\Watercolor\Autumn fly.jpg" />
+    <Content Include="assets\product\Watercolor\Backyard.jpg" />
+    <Content Include="assets\product\Watercolor\Beauty of West.jpg" />
+    <Content Include="assets\product\Watercolor\Boat.jpg" />
+    <Content Include="assets\product\Watercolor\Chinese Temple.jpg" />
+    <Content Include="assets\product\Watercolor\Flower at the window.jpg" />
+    <Content Include="assets\product\Watercolor\Mountain.jpg" />
+    <Content Include="assets\product\Watercolor\Plaza Shadows.jpg" />
+    <Content Include="assets\product\Watercolor\Purple lake.jpg" />
+    <Content Include="assets\product\Watercolor\River.jpg" />
+    <Content Include="assets\product\Watercolor\Rural.jpg" />
+    <Content Include="assets\product\Watercolor\Seaside.jpg" />
+    <Content Include="assets\product\Watercolor\Snow.jpg" />
+    <Content Include="assets\product\Watercolor\Snowy mountain.jpg" />
+    <Content Include="assets\product\Watercolor\Square.jpg" />
+    <Content Include="assets\product\Watercolor\Street.jpg" />
+    <Content Include="assets\product\Watercolor\Vally.jpg" />
+    <Content Include="assets\product\Watercolor\Vernazza Reflection.jpg" />
+    <Content Include="assets\product\Watercolor\Winter.jpg" />
     <Content Include="assets\Images\form-header.jpg" />
     <Content Include="assets\Images\digitalArt.jpg" />
     <Content Include="assets\Images\drawing.png" />
@@ -130,7 +139,10 @@
     <Content Include="assets\product\sculpture\wooden-buffalo1.png" />
     <Content Include="assets\product\sculpture\wooden-buffalo2.png" />
     <Content Include="assets\product\sculpture\world-in-his-hands.png" />
+    <Content Include="ChangePassword.aspx" />
     <Content Include="CustomerProductGallery.aspx" />
+    <Content Include="CustomerProfileSetting.aspx" />
+    <Content Include="FAQ.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.css" />
@@ -142,20 +154,30 @@
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js" />
     <Content Include="lib\css\AboutUs.css" />
+    <Content Include="lib\css\ArtistProfile.css" />
+    <Content Include="lib\css\ArtProfile.css" />
+    <Content Include="lib\css\CustomerProfile.css" />
+    <Content Include="lib\css\FAQ.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="lib\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="lib\css\Homepage.css" />
+    <Content Include="lib\css\Login.css" />
     <Content Include="lib\css\MasterPage.css" />
     <Content Include="lib\css\ProductGallery.css" />
+    <Content Include="lib\css\SignUp.css" />
     <Content Include="lib\css\Tools.css" />
+    <Content Include="lib\js\FAQ.js" />
     <Content Include="lib\js\Homepage.js" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
     <Content Include="lib\js\ProductGallery.js" />
+    <Content Include="Login.aspx" />
     <Content Include="ProductGallery.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="TestingArtistProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
   </ItemGroup>
@@ -174,6 +196,27 @@
     <Compile Include="AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ArtistProfile.aspx.cs">
+      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistProfile.aspx.designer.cs">
+      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistProfileSetting.aspx.cs">
+      <DependentUpon>ArtistProfileSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistProfileSetting.aspx.designer.cs">
+      <DependentUpon>ArtistProfileSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerProductGallery.aspx.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -181,6 +224,14 @@
     <Compile Include="CustomerProductGallery.aspx.designer.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerProfileSetting.aspx.cs">
+      <DependentUpon>CustomerProfileSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerProfileSetting.aspx.designer.cs">
+      <DependentUpon>CustomerProfileSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="ProductGallery.aspx.cs">
       <DependentUpon>ProductGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -217,6 +268,13 @@
     </Compile>
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestingArtistProfile.aspx.cs">
+      <DependentUpon>TestingArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestingArtistProfile.aspx.designer.cs">
+      <DependentUpon>TestingArtistProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web.Master.cs">
       <DependentUpon>Web.Master</DependentUpon>
@@ -282,6 +340,7 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\Images\product\" />
     <Folder Include="assets\product\oilPaint\" />
   </ItemGroup>
   <PropertyGroup>

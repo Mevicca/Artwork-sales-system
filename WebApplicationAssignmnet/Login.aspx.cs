@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Windows.Forms;
+using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
@@ -20,34 +22,47 @@ namespace WebApplicationAssignmnet
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(Constant.connectionStrings))
+                Session.Clear();
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
                     string query = "";
-                    if (DropDownListIdentification.SelectedValue == "")
+                    if (DropDownListIdentification.SelectedValue == "Customer")
                     {
-                        query = "SELECT COUNT(*), ISACTIVE FROM CUSTOMER WHERE CustEmail = @0 AND CustPassword =@1 GROUP BY ISACTIVE";
+                        query = "SELECT * FROM CUSTOMER WHERE CustEmail = @0 AND CustPassword =@1";
                     }
                     else
                     {
-                        query = "SELECT COUNT(*), ISACTIVE  FROM ARTIST WHERE ArtEmail = @0 AND ArtPassword =@1 GROUP BY ISACTIVE";
+                        query = "SELECT * FROM ARTIST WHERE ArtEmail = @0 AND ArtPassword =@1";
                     }
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("0", txtEmail.Text.Trim());
                     cmd.Parameters.AddWithValue("1", txtPassword.Text.Trim());
-
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
-                            if (reader.GetInt32(0) > 0 && !reader.GetBoolean(1))
+                            if (reader.HasRows && !reader.GetBoolean(6))
                             {
                                 throw new Exception("Inactive account.");
                             }
+                            User user = new User
+                            {
+                                ID = reader.GetInt32(0),
+                                Password = reader.GetString(1),
+                                FullName = reader.GetString(2),
+                                Email = reader.GetString(3),
+                                Gender = reader.GetString(4)[0],
+                                CreatedAt = reader.GetDateTime(5),
+                                IsActive = reader.GetBoolean(6)
+                            };
 
+                            Session["LoginUser"] = user;
+                            FormsAuthentication.RedirectFromLoginPage(user.ID.ToString(), chkPersistCookie.Checked);
+                            //encrypt in password
                         }
                     }
                     else
@@ -55,8 +70,6 @@ namespace WebApplicationAssignmnet
                         throw new Exception("Wrong Email / Password.");
                     }
                 }
-
-                Response.Redirect("Homepage.aspx", false);
             }
             catch (Exception ex)
             {

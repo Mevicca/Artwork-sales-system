@@ -1,0 +1,91 @@
+﻿* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
+}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #D4A59A;
+    color: white;
+    width: 230px;
+    height: 330px;
+    margin-bottom: 30px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: white;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.exBtn {
+    display: block;
+    background-color: inherit;
+    color: white;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover, .exBtn:hover {
+    background-color: #f88787;
+}
+
+/* Create an active/current "tab button" class */
+.tab .tablinks{
+     background-color: #fba9a9;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 15px 30px;
+    border: 1px solid #ccc;
+    width: 520px;
+    border-left: none;
+    height: 330px;
+    margin-bottom: 30px;
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.colIcon {
+    padding-right: 10px;
+}
+
+..colwidth-icon {
+    padding-left: 10px;
+}
+
+.col-width {
+    padding-top: 5px;
+}
+
+.editBtn {
+    margin-left: 300px;
+    margin-top: 60px;
+}
