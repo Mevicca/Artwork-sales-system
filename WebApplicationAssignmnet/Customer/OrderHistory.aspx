@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="OrderPage(A).aspx.cs" Inherits="WebApplicationAssignmnet.OrderPage_A_" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="OrderHistory.aspx.cs" Inherits="WebApplicationAssignmnet.OrderHistory" %>
 
-<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="../lib/css/OrderPage(A).css" rel="stylesheet" />
     <script src="../lib/js/OrderPage(A).js"></script>
     <form id="form1" runat="server">
         <div class="container" style="background-color: white">
             <div class="row" style="width: 100%; display: contents">
-                <h1 class="float-left" style="margin-top: 10px;margin-left:5px;"><strong>Sales Order</strong></h1>
+                <h1 class="float-left" style="margin-top: 10px;margin-left:5px;"><strong>Order History</strong></h1>
                 <div class="sort float-right galley-sort-by">
                     <div class="sort">
                         <a>Sort By :</a>
@@ -27,7 +27,6 @@
                         <th>Order ID</th>
                         <th>Order Date</th>
                         <th>Release Date</th>
-                        <th>Customer Name</th>
                         <th>Total Price</th>
                         <th>Status</th>
                         <th>&nbsp</th>
@@ -39,15 +38,13 @@
                         <td>O1001</td>
                         <td>12/02/2021</td>
                         <td>22/02/2021</td>
-                        <td>Tay</td>
-                        <td>RM 2022</td>
+                        <td>RM 2,022.00</td>
                         <td>Shipping</td>
                         <td style="text-align: center">
-                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl="~/Artist/OrderDetails.aspx">
+                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl="~/Customer/HistoryDetails.aspx">
                         <i class="fa fa-search"></i>&nbsp; View Details
                     </asp:LinkButton>
                             &nbsp;
-                   
                             <asp:LinkButton runat="server" class="btn btn-outline-danger" Style="cursor: pointer" OnClientClick="comfirmMsg();return false;">
                         <i class="fa fa-trash"></i>&nbsp; Cancel Order
                     </asp:LinkButton>
@@ -57,11 +54,10 @@
                         <td>O1002</td>
                         <td>13/12/2021</td>
                         <td></td>
-                        <td>Mak</td>
-                        <td>RM 2023</td>
+                        <td>RM 2,023.00</td>
                         <td>To Ship</td>
                         <td style="text-align: center">
-                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl="~/Artist/OrderDetails.aspx">
+                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl="~/Customer/HistoryDetails.aspx">
                         <i class="fa fa-search"></i>&nbsp; View Details
                     </asp:LinkButton>
                             &nbsp;

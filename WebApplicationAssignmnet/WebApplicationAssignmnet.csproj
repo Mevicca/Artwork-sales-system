@@ -73,6 +73,7 @@
     <Content Include="Artist\AboutUs.aspx" />
     <Content Include="Artist\FAQ.aspx" />
     <Content Include="Artist\Homepage.aspx" />
+    <Content Include="Artist\OrderDetails.aspx" />
     <Content Include="assets\Acrylic\carlos pun B&amp;L.jpg" />
     <Content Include="assets\Acrylic\carlos pun DD.jpg" />
     <Content Include="assets\Acrylic\carlos pun Marvin.jpeg" />
@@ -214,6 +215,8 @@
     <Content Include="assets\product\sculpture\world-in-his-hands.png" />
     <Content Include="Artist\EditProduct.aspx" />
     <Content Include="Customer\CustomerFAQ.aspx" />
+    <Content Include="Customer\HistoryDetails.aspx" />
+    <Content Include="Customer\OrderHistory.aspx" />
     <Content Include="lib\css\ArtistProductHandle.css" />
     <Content Include="lib\css\Cart.css" />
     <Content Include="lib\css\FAQ.css" />
@@ -286,6 +289,13 @@
     <Content Include="Customer\WishList.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artist\OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artist\OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerChangePassword.aspx.cs">
       <DependentUpon>CustomerChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -383,6 +393,20 @@
     </Compile>
     <Compile Include="Artist\EditProduct.aspx.designer.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\HistoryDetails.aspx.cs">
+      <DependentUpon>HistoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\HistoryDetails.aspx.designer.cs">
+      <DependentUpon>HistoryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\OrderHistory.aspx.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\OrderHistory.aspx.designer.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Email.cs" />
     <Compile Include="Models\User.cs" />

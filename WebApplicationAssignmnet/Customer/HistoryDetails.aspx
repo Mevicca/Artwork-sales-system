@@ -1,18 +1,18 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="OrderHistoryDetails.aspx.cs" Inherits="WebApplicationAssignmnet.OrderHistoryDetails" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="HistoryDetails.aspx.cs" Inherits="WebApplicationAssignmnet.HistoryDetails" %>
 
-<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="../lib/css/OrderHistoryDetails.css" rel="stylesheet" />
     <form id="form1" runat="server">
         <div class="container bg-white containerSize" style="max-width: 700px; border-radius: 10px; margin-top: 30px; margin-bottom: 30px">
             <div class="row">
                 <div class="col-sm-6">
-                    <h5 style="margin-top: 10px"><strong>Customer Information</strong></h5>
+                    <h5 style="margin-top: 10px"><strong>Your Information</strong></h5>
                     <br />
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <h6><i class="fa fa-user"></i>&nbsp Customer Name :</h6>
+                    <h6><i class="fa fa-user"></i>&nbsp Receiver Name :</h6>
                 </div>
                 <div class="col-sm-3">
                     <h6>Chen Teng Siang</h6>
@@ -164,11 +164,13 @@
                 </div>
 
             </div>
-            <div class="row float-right" style="margin-right: 5px;">
-                <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Artist/SalesHistory(A).aspx" />
+
+            <div class="row float-right" style="margin-right:5px;">
+                <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Customer/OrderHistory.aspx" />
             </div>
             <br />
             <br />
         </div>
+
     </form>
 </asp:Content>

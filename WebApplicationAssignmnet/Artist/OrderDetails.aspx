@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="OrderHistoryDetails.aspx.cs" Inherits="WebApplicationAssignmnet.OrderHistoryDetails" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="OrderDetails.aspx.cs" Inherits="WebApplicationAssignmnet.OrderDetails" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/OrderHistoryDetails.css" rel="stylesheet" />
@@ -130,9 +130,9 @@
 
                 <div class="col-sm-4" style="margin-left: 90px; text-align: right">
                     <h6><strong>O1001</strong></h6>
-                    <h6>02/02/2021 18:25</h6>
                     <h6>09/02/2021 12:30</h6>
-                    <h6>16/02/2021 14:30</h6>
+                    <h6>-</h6>
+                    <h6></h6>
                 </div>
             </div>
 
@@ -165,7 +165,7 @@
 
             </div>
             <div class="row float-right" style="margin-right: 5px;">
-                <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Artist/SalesHistory(A).aspx" />
+                <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Artist/OrderPage(A).aspx" />
             </div>
             <br />
             <br />

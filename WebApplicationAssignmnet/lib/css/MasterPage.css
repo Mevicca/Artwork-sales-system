@@ -35,7 +35,7 @@
     padding: 12px 16px;
     text-decoration: none;
     text-align: center;
-    color: chocolate;
+    color:yellow;
 }
 
 #hideNavBar li a {
@@ -82,7 +82,9 @@
     left: 0;
     overflow-x: hidden;
     transition: 0.5s;
-    background-image: linear-gradient(to right, IndianRed, LightCoral, DarkSalmon, Salmon, LightSalmon);
+    /*background-image: linear-gradient(to right, IndianRed, LightCoral, DarkSalmon, Salmon, LightSalmon);*/
+    background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    animation: gradient 4s ease infinite;
 }
 
 button:focus {
@@ -302,5 +304,33 @@ body {
 @media only screen and (max-width: 540px) {
     html, body{
         min-width:540px;
+    }
+}
+
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }

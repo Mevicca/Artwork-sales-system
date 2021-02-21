@@ -36,12 +36,8 @@
             <li><a href="CustomerProductGallery.aspx">Products</a></li>
             <li><a href="WishList.aspx">WishList</a></li>
             <li><a href="Cart.aspx">View cart</a></li>
+            <li><a href="OrderHistory.aspx">Order History</a></li>
             <li><a href="CustomerProfileSetting.aspx">Settings</a></li>
-
-            <li></li>
-            
-            
-
         </ul>
     </div>
 
