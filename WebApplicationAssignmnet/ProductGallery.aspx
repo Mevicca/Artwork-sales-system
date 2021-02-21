@@ -40,9 +40,9 @@
                                 <tr>
                                     <td class="img" aria-hidden="False">
                                         <div class="viewButton">
-                                            <asp:HyperLink ID="view" ClientIDMode="Static" NavigateUrl='<%#"ViewProduct.aspx?id="+Eval("ProductID")%>' runat="server">View</asp:HyperLink>
+                                            <asp:HyperLink ID="view" ClientIDMode="Static" NavigateUrl='<%#"EditProduct.aspx?id="+Eval("ProductID")%>' runat="server">View</asp:HyperLink>
                                         </div>
-                                        <asp:ImageButton ID="ProductImage" runat="server" Height="220px" ImageAlign="Middle" ImageUrl='<%# Eval("path1") %>' Width="220px" PostBackUrl='<%#"ViewProduct.aspx?id="+Eval("ProductID")%>' />
+                                        <asp:ImageButton ID="ProductImage" runat="server" Height="220px" ImageAlign="Middle" ImageUrl='<%# Eval("path1") %>' Width="220px" PostBackUrl='<%#"EditProduct.aspx?id="+Eval("ProductID")%>' />
                                     </td>
                                 </tr>
                                 <tr>
