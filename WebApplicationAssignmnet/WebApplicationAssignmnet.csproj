@@ -176,7 +176,6 @@
     <Content Include="Login.aspx" />
     <Content Include="ProductGallery.aspx" />
     <Content Include="SignUp.aspx" />
-    <Content Include="Test.aspx" />
     <Content Include="TestingArtistProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />

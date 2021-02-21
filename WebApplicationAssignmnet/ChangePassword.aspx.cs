@@ -17,9 +17,9 @@ namespace WebApplicationAssignmnet
         {
             User user = Session["LoginUser"] as User;
             if (user.ID > 10000)
-                AccSet.NavigateUrl = "~/CustomerProfile.aspx";
+                AccSet.NavigateUrl = "~/CustomerProfileSetting.aspx";
             else
-                AccSet.NavigateUrl = "~/ArtistProfile.aspx";
+                AccSet.NavigateUrl = "~/ArtistProfileSetting.aspx";
         }
 
 
