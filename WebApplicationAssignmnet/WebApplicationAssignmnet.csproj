@@ -1,4 +1,4 @@
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -70,13 +70,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Artist\AboutUs.aspx" />
+    <Content Include="Artist\FAQ.aspx" />
+    <Content Include="Artist\Homepage.aspx" />
     <Content Include="assets\Acrylic\carlos pun B&amp;L.jpg" />
     <Content Include="assets\Acrylic\carlos pun DD.jpg" />
     <Content Include="assets\Acrylic\carlos pun Marvin.jpeg" />
     <Content Include="assets\Acrylic\carlos pun MM.jpg" />
     <Content Include="assets\Acrylic\carlos pun Mono.jpg" />
-    <Content Include="AboutUs.aspx" />
-    <Content Include="AddProduct.aspx" />
+    <Content Include="Customer\CustomerChangePassword.aspx" />
+    <Content Include="Customer\CustomerAboutUs.aspx" />
+    <Content Include="Artist\AddProduct.aspx" />
     <Content Include="App_Data\Tayy.mdf" />
     <Content Include="App_Data\Tayy2.mdf" />
     <Content Include="App_Data\Tayy2_log.ldf">
@@ -92,15 +96,16 @@
     <Content Include="App_Data\Tayy_log.ldf">
       <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>
-    <Content Include="ArtistProfile.aspx" />
-    <Content Include="ArtistProfileSetting.aspx" />
+    <Content Include="Customer\ArtistProfile.aspx" />
+    <Content Include="Artist\ArtistProfileSetting.aspx" />
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
     <Content Include="assets\Images\digitalArt.jpg" />
     <Content Include="assets\Images\drawing.png" />
-    <Content Include="ChangePassword.aspx" />
-    <Content Include="CustomerProductGallery.aspx" />
-    <Content Include="CustomerProfileSetting.aspx" />
+    <Content Include="Customer\Cart.aspx" />
+    <Content Include="Artist\ChangePassword.aspx" />
+    <Content Include="Customer\CustomerProductGallery.aspx" />
+    <Content Include="Customer\CustomerProfileSetting.aspx" />
     <Content Include="assets\Images\rosegold.png" />
     <Content Include="assets\product\Acrylic\carlos pun B&amp;L.jpg" />
     <Content Include="assets\product\Acrylic\carlos pun DD.jpg" />
@@ -152,9 +157,8 @@
     <Content Include="assets\Services\Grab.png" />
     <Content Include="assets\Services\j&amp;t.png" />
     <Content Include="assets\Services\PosLaju.jpg" />
-    <Content Include="Bank.aspx" />
-    <Content Include="BankPayment.aspx" />
-    <Content Include="CustomerProductGallery.aspx" />
+    <Content Include="Customer\Bank.aspx" />
+    <Content Include="Customer\BankPayment.aspx" />
     <Content Include="assets\Images\FAQ\FAQ wallpaper.jpg" />
     <Content Include="assets\Images\homepage\homeCaterAP.jpg" />
     <Content Include="assets\Images\homepage\homeCaterOP.jpg" />
@@ -208,32 +212,29 @@
     <Content Include="assets\product\sculpture\wooden-buffalo1.png" />
     <Content Include="assets\product\sculpture\wooden-buffalo2.png" />
     <Content Include="assets\product\sculpture\world-in-his-hands.png" />
-    <Content Include="CustomerProductGallery.aspx" />
-    <Content Include="EditProduct.aspx" />
-    <Content Include="FAQ.aspx" />
+    <Content Include="Artist\EditProduct.aspx" />
+    <Content Include="Customer\CustomerFAQ.aspx" />
     <Content Include="lib\css\ArtistProductHandle.css" />
+    <Content Include="lib\css\Cart.css" />
     <Content Include="lib\css\FAQ.css" />
     <Content Include="lib\css\Login.css" />
     <Content Include="lib\css\OrderHistoryDetails.css" />
     <Content Include="lib\css\OrderPage%28A%29.css" />
-    <Content Include="lib\css\SignUp.css" />
     <Content Include="lib\js\addProduct.js" />
     <Content Include="lib\css\WishList.css" />
     <Content Include="lib\js\OrderPage%28A%29.js" />
+    <Content Include="lib\js\Tools.js" />
     <Content Include="lib\js\WishList.js" />
-    <Content Include="Login.aspx" />
-    <Content Include="OrderHistoryDetails.aspx" />
-    <Content Include="OrderPage%28A%29.aspx" />
-    <Content Include="SalesHistory%28A%29.aspx" />
+    <Content Include="Anonymous\Login.aspx" />
+    <Content Include="Artist\OrderHistoryDetails.aspx" />
+    <Content Include="Artist\OrderPage%28A%29.aspx" />
+    <Content Include="Artist\SalesHistory%28A%29.aspx" />
     <Content Include="lib\js\FAQ.js" />
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />
-    <Content Include="Login.aspx" />
-    <Content Include="Payment.aspx" />
-    <Content Include="ProductPage.aspx" />
+    <Content Include="Customer\Payment.aspx" />
     <Content Include="assets\Images\rosegold.png" />
-    <Content Include="FAQ.aspx" />
     <Content Include="lib\css\Bank.css" />
     <Content Include="lib\css\BankPayment.css" />
     <Content Include="lib\css\Payment.css" />
@@ -247,13 +248,12 @@
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />
-    <Content Include="Payment.aspx" />
-    <Content Include="Product.aspx">
+    <Content Include="Customer\Product.aspx">
       <BrowseToURL>~/Product.aspx</BrowseToURL>
     </Content>
-    <Content Include="ResetPassword.aspx" />
-    <Content Include="Shipping.aspx" />
-    <Content Include="SignUp.aspx" />
+    <Content Include="Anonymous\ResetPassword.aspx" />
+    <Content Include="Customer\Shipping.aspx" />
+    <Content Include="Anonymous\SignUp.aspx" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
     <Content Include="lib\bootstrap-4.0.0-dist\css\bootstrap-reboot.css" />
@@ -268,13 +268,11 @@
     <Content Include="lib\css\ArtistProfileSetting.css" />
     <Content Include="lib\css\ArtProfile.css" />
     <Content Include="lib\css\CustomerProfile.css" />
-    <Content Include="lib\css\FAQ.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="lib\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="lib\css\Homepage.css" />
-    <Content Include="lib\css\Login.css" />
     <Content Include="lib\css\MasterPage.css" />
     <Content Include="lib\css\ProductGallery.css" />
     <Content Include="lib\css\Tools.css" />
@@ -282,179 +280,205 @@
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
     <Content Include="lib\js\ProductGallery.js" />
-    <Content Include="ProductGallery.aspx" />
+    <Content Include="Artist\ProductGallery.aspx" />
     <Content Include="Test.aspx" />
-    <Content Include="Login.aspx" />
-    <Content Include="ProductGallery.aspx" />
     <Content Include="TestingArtistProfile.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Homepage.aspx" />
-    <Content Include="WishList.aspx" />
+    <Content Include="Customer\CustomerHomepage.aspx" />
+    <Content Include="Customer\WishList.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutUs.aspx.cs">
+    <Compile Include="Customer\CustomerChangePassword.aspx.cs">
+      <DependentUpon>CustomerChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerChangePassword.aspx.designer.cs">
+      <DependentUpon>CustomerChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerAboutUs.aspx.cs">
+      <DependentUpon>CustomerAboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerAboutUs.aspx.designer.cs">
+      <DependentUpon>CustomerAboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artist\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AboutUs.aspx.designer.cs">
+    <Compile Include="Artist\AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddProduct.aspx.cs">
+    <Compile Include="Artist\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddProduct.aspx.designer.cs">
+    <Compile Include="Artist\AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ArtistProfile.aspx.cs">
+    <Compile Include="Customer\ArtistProfile.aspx.cs">
       <DependentUpon>ArtistProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ArtistProfile.aspx.designer.cs">
+    <Compile Include="Customer\ArtistProfile.aspx.designer.cs">
       <DependentUpon>ArtistProfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ArtistProfileSetting.aspx.cs">
+    <Compile Include="Artist\ArtistProfileSetting.aspx.cs">
       <DependentUpon>ArtistProfileSetting.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ArtistProfileSetting.aspx.designer.cs">
+    <Compile Include="Artist\ArtistProfileSetting.aspx.designer.cs">
       <DependentUpon>ArtistProfileSetting.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ChangePassword.aspx.cs">
+    <Compile Include="Artist\FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artist\FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artist\Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artist\Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artist\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-	  <Compile Include="ChangePassword.aspx.designer.cs">
-		  <DependentUpon>ChangePassword.aspx</DependentUpon>
-	  </Compile>
-    <Compile Include="Bank.aspx.cs">
+    <Compile Include="Artist\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Bank.aspx.cs">
       <DependentUpon>Bank.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Bank.aspx.designer.cs">
+    <Compile Include="Customer\Bank.aspx.designer.cs">
       <DependentUpon>Bank.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BankPayment.aspx.cs">
+    <Compile Include="Customer\BankPayment.aspx.cs">
       <DependentUpon>BankPayment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BankPayment.aspx.designer.cs">
+    <Compile Include="Customer\BankPayment.aspx.designer.cs">
       <DependentUpon>BankPayment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerProductGallery.aspx.cs">
+    <Compile Include="Customer\CustomerProductGallery.aspx.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerProductGallery.aspx.designer.cs">
+    <Compile Include="Customer\CustomerProductGallery.aspx.designer.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditProduct.aspx.cs">
+    <Compile Include="Artist\EditProduct.aspx.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditProduct.aspx.designer.cs">
+    <Compile Include="Artist\EditProduct.aspx.designer.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Email.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="OrderHistoryDetails.aspx.cs">
+    <Compile Include="Artist\OrderHistoryDetails.aspx.cs">
       <DependentUpon>OrderHistoryDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OrderHistoryDetails.aspx.designer.cs">
+    <Compile Include="Artist\OrderHistoryDetails.aspx.designer.cs">
       <DependentUpon>OrderHistoryDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerProfileSetting.aspx.cs">
+    <Compile Include="Customer\CustomerProfileSetting.aspx.cs">
       <DependentUpon>CustomerProfileSetting.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerProfileSetting.aspx.designer.cs">
+    <Compile Include="Customer\CustomerProfileSetting.aspx.designer.cs">
       <DependentUpon>CustomerProfileSetting.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Email.cs" />
-    <Compile Include="Payment.aspx.cs">
+    <Compile Include="Customer\Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Payment.aspx.designer.cs">
+    <Compile Include="Customer\Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductGallery.aspx.cs">
+    <Compile Include="Artist\ProductGallery.aspx.cs">
       <DependentUpon>ProductGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductGallery.aspx.designer.cs">
+    <Compile Include="Artist\ProductGallery.aspx.designer.cs">
       <DependentUpon>ProductGallery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FAQ.aspx.cs">
-      <DependentUpon>FAQ.aspx</DependentUpon>
+    <Compile Include="Customer\CustomerFAQ.aspx.cs">
+      <DependentUpon>CustomerFAQ.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FAQ.aspx.designer.cs">
-      <DependentUpon>FAQ.aspx</DependentUpon>
+    <Compile Include="Customer\CustomerFAQ.aspx.designer.cs">
+      <DependentUpon>CustomerFAQ.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Anonymous\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Anonymous\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OrderPage%28A%29.aspx.cs">
+    <Compile Include="Artist\OrderPage%28A%29.aspx.cs">
       <DependentUpon>OrderPage%28A%29.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OrderPage%28A%29.aspx.designer.cs">
+    <Compile Include="Artist\OrderPage%28A%29.aspx.designer.cs">
       <DependentUpon>OrderPage%28A%29.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SalesHistory%28A%29.aspx.cs">
+    <Compile Include="Artist\SalesHistory%28A%29.aspx.cs">
       <DependentUpon>SalesHistory%28A%29.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SalesHistory%28A%29.aspx.designer.cs">
+    <Compile Include="Artist\SalesHistory%28A%29.aspx.designer.cs">
       <DependentUpon>SalesHistory%28A%29.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductPage.aspx.cs">
-      <DependentUpon>ProductPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProductPage.aspx.designer.cs">
-      <DependentUpon>ProductPage.aspx</DependentUpon>
-    <Compile Include="Product.aspx.cs">
+    <Compile Include="Customer\Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Product.aspx.designer.cs">
+    <Compile Include="Customer\Product.aspx.designer.cs">
       <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ResetPassword.aspx.cs">
+    <Compile Include="Anonymous\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ResetPassword.aspx.designer.cs">
+    <Compile Include="Anonymous\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Shipping.aspx.cs">
+    <Compile Include="Customer\Shipping.aspx.cs">
       <DependentUpon>Shipping.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Shipping.aspx.designer.cs">
+    <Compile Include="Customer\Shipping.aspx.designer.cs">
       <DependentUpon>Shipping.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SignUp.aspx.cs">
+    <Compile Include="Anonymous\SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SignUp.aspx.designer.cs">
+    <Compile Include="Anonymous\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Homepage.aspx.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
+    <Compile Include="Customer\CustomerHomepage.aspx.cs">
+      <DependentUpon>CustomerHomepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Homepage.aspx.designer.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
+    <Compile Include="Customer\CustomerHomepage.aspx.designer.cs">
+      <DependentUpon>CustomerHomepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestingArtistProfile.aspx.cs">
       <DependentUpon>TestingArtistProfile.aspx</DependentUpon>
@@ -463,6 +487,20 @@
     <Compile Include="TestingArtistProfile.aspx.designer.cs">
       <DependentUpon>TestingArtistProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebAnony.Master.cs">
+      <DependentUpon>WebAnony.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAnony.Master.designer.cs">
+      <DependentUpon>WebAnony.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebArt.Master.cs">
+      <DependentUpon>WebArt.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebArt.Master.designer.cs">
+      <DependentUpon>WebArt.Master</DependentUpon>
+    </Compile>
     <Compile Include="Web.Master.cs">
       <DependentUpon>Web.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -470,11 +508,11 @@
     <Compile Include="Web.Master.designer.cs">
       <DependentUpon>Web.Master</DependentUpon>
     </Compile>
-    <Compile Include="WishList.aspx.cs">
+    <Compile Include="Customer\WishList.aspx.cs">
       <DependentUpon>WishList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WishList.aspx.designer.cs">
+    <Compile Include="Customer\WishList.aspx.designer.cs">
       <DependentUpon>WishList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -524,6 +562,8 @@
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js.map" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js.map" />
     <None Include="packages.config" />
+    <Content Include="WebArt.Master" />
+    <Content Include="WebAnony.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

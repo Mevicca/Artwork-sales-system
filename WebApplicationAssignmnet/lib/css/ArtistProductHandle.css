@@ -3,6 +3,7 @@
 
 .container {
     background-color: white;
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }
 
 .addprodTitle{

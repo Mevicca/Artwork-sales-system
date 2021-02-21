@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebArt.master.cs" Inherits="WebApplicationAssignmnet.WebArt" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebArt.Master.cs" Inherits="WebApplicationAssignmnet.Web" %>
 <!DOCTYPE html>
 
 <link href="../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -29,14 +29,14 @@
             <li>
                 <span id="menuLabel"></span>
             </li>
-            <li><a href="CustomerHomepage.aspx">Homepage</a></li>
-            <li><a href="CustomerAboutUs.aspx">About Us</a></li>
-            <li><a href="CustomerFAQ.aspx">FAQ</a></li>
+            <li><a href="Homepage.aspx">Homepage</a></li>
+            <li><a href="AboutUs.aspx">About Us</a></li>
+            <li><a href="FAQ.aspx">FAQ</a></li>
 
-            <li><a href="CustomerProductGallery.aspx">Products</a></li>
-            <li><a href="WishList.aspx">WishList</a></li>
-            <li><a href="Cart.aspx">View cart</a></li>
-            <li><a href="CustomerProfileSetting.aspx">Settings</a></li>
+            <li><a href="ProductGallery.aspx">My Products</a></li>
+            <li><a href="OrderPage(A).aspx">Current Order</a></li>
+            <li><a href="SalesHistory(A).aspx">History Order</a></li>
+            <li><a href="ArtistProfileSetting.aspx">Settings</a></li>
 
             <li></li>
             
@@ -84,7 +84,7 @@
         </div>
 
         <div id="content" style="padding-left:25px;">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </div>
 
         <div id="bottom-footer">
