@@ -15,7 +15,7 @@ namespace WebApplicationAssignmnet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnlogin_Click(object sender, EventArgs e)
@@ -59,6 +59,7 @@ namespace WebApplicationAssignmnet
                                 CreatedAt = reader.GetDateTime(5),
                                 IsActive = reader.GetBoolean(6)
                             };
+
 
                             Session["LoginUser"] = user;
                             FormsAuthentication.RedirectFromLoginPage(user.ID.ToString(), chkPersistCookie.Checked);

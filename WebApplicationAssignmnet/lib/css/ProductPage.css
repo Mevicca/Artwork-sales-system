@@ -1,0 +1,155 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.bColor {
+    background-color: #F3E0DC;
+}
+
+
+.nextIcon {
+    cursor: pointer;
+}
+
+    .nextIcon:hover {
+        color: gainsboro;
+    }
+
+.prevIcon {
+    cursor: pointer;
+}
+
+    .prevIcon:hover {
+        color: gainsboro;
+    }
+
+.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
+}
+
+.zoom {
+    transition: transform.2s;
+}
+
+    .zoom:hover {
+        transform: scale(1.25);
+    }
+
+.textBox {
+    border: none;
+}
+
+.slidesImg {
+    width: 300px;
+    height: 350px;
+    margin-top: 30px;
+}
+
+.zoom {
+    margin-left: 10px;
+    width: 60px;
+    height: 70px;
+}
+
+#TblDesc {
+    font-size: medium;
+    color: brown;
+}
+
+.card {
+    margin-top: 30px;
+    margin-right: 100px;
+    border: 2px;
+    border-radius: 5%;
+    border-style:outset;
+    background-color:#f4f4f4;
+}
+
+.product {
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.fa-money, .fa-user-secret, .fa-calendar-minus-o, .fa-map-o {
+    margin-top: 5px;
+    color: #343a40;
+    margin-right: 20px;
+}
+
+span {
+    color:black;
+}
+
+.fa-thumbs-up, .fa-motorcycle {
+    color: #6382c7;
+    font-size: 60px;
+    margin-left: 20px;
+}
+
+.details-card > .row {
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.suggestionList {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+.checked {
+    color: orange;
+    margin-top: 5px;
+}
+
+#LblArtistName {
+    margin-right: 10px;
+}
+
+.row-spec {
+    height: 50px;
+}
+
+.suggestionList {
+    height: 90px;
+    width: 70px;
+}
+
+    .suggestionList:hover {
+        transform:scale(1.2);
+    }
+
+.images {
+    opacity: 0.6;
+}
+
+    .active, .images:hover {
+        opacity: 1;
+    }
+
+.img-magnifier-container {
+    position: relative;
+}
+
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid black;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 75px;
+    height: 75px;
+}
+
+.card-body {
+    margin-left: 35px;
+}
+
+#CartBtn {
+    cursor: pointer;
+    margin-right: 20px
+}
+
+#WishBtn {
+    cursor: pointer
+}
