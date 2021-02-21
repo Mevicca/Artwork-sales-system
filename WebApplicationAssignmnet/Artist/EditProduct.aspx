@@ -34,7 +34,7 @@
             <div class="addProd">
                 <%--Title--EDIT ARTWORK DETAILS--%>
                 <div class="addprodTitle">
-                    <h3>Edit Artwork Details</h3>
+                    <h2 class="headerStyle">Edit Artwork Details</h2>
                     <asp:HyperLink NavigateUrl="ProductGallery.aspx" runat="server">
                         <i class="fa fa-trash-o" id="dltProduct" aria-hidden="true"></i>
                     </asp:HyperLink>

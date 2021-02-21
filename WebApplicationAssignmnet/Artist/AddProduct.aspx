@@ -10,7 +10,7 @@
             <%--Title--ADD NEW ARKWORK--%>
             <div class="addProd">
                 <div class="addprodTitle">
-                    <h3>Add New Artwork</h3>
+                    <h2 class="headerStyle">Add New Artwork</h2>
                 </div>
                 <hr />
                 <br />

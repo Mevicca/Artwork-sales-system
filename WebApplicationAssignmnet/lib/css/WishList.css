@@ -27,5 +27,12 @@
     margin-left:20px;
 }
 
-.col-sm-6 > *{
-    color:crimson;
+.col-sm-6 > * {
+    color: crimson;
+}
+
+.headerStyle {
+    font-family: cursive;
+    font-weight: bold;
+    color: #D4A59A
+}

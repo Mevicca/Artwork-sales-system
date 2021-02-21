@@ -35,3 +35,9 @@
     background-image: url("../../assets/Images/form-header.jpg");
     color: firebrick;
 }
+
+.headerStyle {
+    font-family: cursive;
+    font-weight: bold;
+    color: #D4A59A
+}

@@ -27,7 +27,7 @@
     <form id="form1" runat="server">
         <div class="container" style="background-color: white">
             <div class="row" style="width: 100%; display: contents">
-                <h1 class="float-left" style="margin-top: 10px"><strong>Wish List</strong></h1>
+                <h1 class="float-left headerStyle" style="margin-top: 10px"><strong>Wish List</strong></h1>
                 <div class="sort float-right galley-sort-by">
                     <a>Sort By :</a>
                     <asp:DropDownList ID="DropDownList1" runat="server">

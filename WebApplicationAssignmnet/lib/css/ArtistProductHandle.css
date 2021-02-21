@@ -116,3 +116,9 @@
     #addSaveProductbtn:hover {
         background-color: #0072ff;
     }
+
+.headerStyle {
+    font-family: cursive;
+    font-weight: bold;
+    color: #D4A59A
+}

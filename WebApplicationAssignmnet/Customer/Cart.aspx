@@ -27,7 +27,7 @@
     <form id="form1" runat="server">
         <div class="container" style="background-color: white; display: block;">
             <div class="row" style="width: 100%; display: block">
-                <h1 class="float-left" style="margin-top: 10px;margin-left: 20px;"><strong>Cart</strong></h1>
+                <h1 class="float-left headerStyle" style="margin-top: 10px;margin-left: 20px;"><strong>Cart</strong></h1>
                 <div class="sort float-right galley-sort-by">
                     <a>Sort By :</a>
                     <asp:DropDownList ID="DropDownList1" runat="server">

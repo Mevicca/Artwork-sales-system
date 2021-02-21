@@ -6,7 +6,7 @@
     <form id="form1" runat="server">
         <div class="container" style="background-color: white">
             <div class="row" style="width: 100%; display: contents">
-                <h1 class="float-left" style="margin-top: 10px;margin-left:5px;"><strong>Order History</strong></h1>
+                <h1 class="float-left headerStyle" style="margin-top: 10px;margin-left:5px;"><strong>Order History</strong></h1>
                 <div class="sort float-right galley-sort-by">
                     <div class="sort">
                         <a>Sort By :</a>

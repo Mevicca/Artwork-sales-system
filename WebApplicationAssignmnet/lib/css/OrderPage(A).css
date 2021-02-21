@@ -9,3 +9,9 @@
 .container {
     min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }
+
+.headerStyle {
+    font-family: cursive;
+    font-weight: bold;
+    color: #D4A59A
+}
