@@ -30,5 +30,4 @@ namespace WebApplicationAssignmnet.Models
             public string Role { get; set; }
         }
     }
-
 }

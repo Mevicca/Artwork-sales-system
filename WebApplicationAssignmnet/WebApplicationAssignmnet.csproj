@@ -73,17 +73,28 @@
     <Content Include="AboutUs.aspx" />
     <Content Include="AddProduct.aspx" />
     <Content Include="App_Data\Tayy.mdf" />
+
+    <Content Include="App_Data\Tayy2.mdf" />
+    <Content Include="App_Data\Tayy2_log.ldf">
+      <DependentUpon>Tayy2.mdf</DependentUpon>
+
     <Content Include="App_Data\Tayy3.mdf" />
     <Content Include="App_Data\Tayy3_log.ldf">
       <DependentUpon>Tayy3.mdf</DependentUpon>
+
     </Content>
     <Content Include="App_Data\Tayy_log.ldf">
       <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>
+    <Content Include="ArtistProfile.aspx" />
+    <Content Include="ArtistProfileSetting.aspx" />
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
     <Content Include="assets\Images\digitalArt.jpg" />
     <Content Include="assets\Images\drawing.png" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="CustomerProductGallery.aspx" />
+    <Content Include="CustomerProfileSetting.aspx" />
     <Content Include="assets\Images\rosegold.png" />
     <Content Include="assets\product\Acrylic\carlos pun B&amp;L.jpg" />
     <Content Include="assets\product\Acrylic\carlos pun DD.jpg" />
@@ -185,20 +196,29 @@
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js" />
     <Content Include="lib\css\AboutUs.css" />
+    <Content Include="lib\css\ArtistProfileSetting.css" />
+    <Content Include="lib\css\ArtProfile.css" />
+    <Content Include="lib\css\CustomerProfile.css" />
+    <Content Include="lib\css\FAQ.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="lib\css\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="lib\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="lib\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="lib\css\Homepage.css" />
+    <Content Include="lib\css\Login.css" />
     <Content Include="lib\css\MasterPage.css" />
     <Content Include="lib\css\ProductGallery.css" />
+    <Content Include="lib\css\SignUp.css" />
     <Content Include="lib\css\Tools.css" />
+    <Content Include="lib\js\FAQ.js" />
     <Content Include="lib\js\Homepage.js" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
     <Content Include="lib\js\ProductGallery.js" />
+    <Content Include="Login.aspx" />
     <Content Include="ProductGallery.aspx" />
-    <Content Include="Test.aspx" />
+    <Content Include="SignUp.aspx" />
+    <Content Include="TestingArtistProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
     <Content Include="WishList.aspx" />
@@ -218,6 +238,26 @@
     <Compile Include="AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ArtistProfile.aspx.cs">
+      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistProfile.aspx.designer.cs">
+      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistProfileSetting.aspx.cs">
+      <DependentUpon>ArtistProfileSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistProfileSetting.aspx.designer.cs">
+      <DependentUpon>ArtistProfileSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     <Compile Include="Bank.aspx.cs">
       <DependentUpon>Bank.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -239,6 +279,15 @@
     <Compile Include="CustomerProductGallery.aspx.designer.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
     </Compile>
+
+    <Compile Include="CustomerProfileSetting.aspx.cs">
+      <DependentUpon>CustomerProfileSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerProfileSetting.aspx.designer.cs">
+      <DependentUpon>CustomerProfileSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Payment.aspx.cs">
@@ -255,6 +304,7 @@
     <Compile Include="ProductGallery.aspx.designer.cs">
       <DependentUpon>ProductGallery.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Constant.cs" />
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -304,6 +354,13 @@
     </Compile>
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestingArtistProfile.aspx.cs">
+      <DependentUpon>TestingArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestingArtistProfile.aspx.designer.cs">
+      <DependentUpon>TestingArtistProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web.Master.cs">
       <DependentUpon>Web.Master</DependentUpon>
@@ -376,6 +433,7 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\Images\product\" />
     <Folder Include="assets\product\oilPaint\" />
   </ItemGroup>
   <PropertyGroup>
