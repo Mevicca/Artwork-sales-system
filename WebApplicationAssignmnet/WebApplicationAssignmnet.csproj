@@ -72,9 +72,13 @@
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
     <Content Include="AddProduct.aspx" />
-    <Content Include="App_Data\Tayy2.mdf" />
-    <Content Include="App_Data\Tayy2_log.ldf">
-      <DependentUpon>Tayy2.mdf</DependentUpon>
+    <Content Include="App_Data\Tayy.mdf" />
+    <Content Include="App_Data\Tayy3.mdf" />
+    <Content Include="App_Data\Tayy3_log.ldf">
+      <DependentUpon>Tayy3.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Tayy_log.ldf">
+      <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
@@ -107,6 +111,26 @@
     <Content Include="assets\product\sculpture\wooden-buffalo1.png" />
     <Content Include="assets\product\sculpture\wooden-buffalo2.png" />
     <Content Include="assets\product\sculpture\world-in-his-hands.png" />
+    <Content Include="assets\product\Watercolor\Afternoon Blues.jpg" />
+    <Content Include="assets\product\Watercolor\Autumn fly.jpg" />
+    <Content Include="assets\product\Watercolor\Backyard.jpg" />
+    <Content Include="assets\product\Watercolor\Beauty of West.jpg" />
+    <Content Include="assets\product\Watercolor\Boat.jpg" />
+    <Content Include="assets\product\Watercolor\Chinese Temple.jpg" />
+    <Content Include="assets\product\Watercolor\Flower at the window.jpg" />
+    <Content Include="assets\product\Watercolor\Mountain.jpg" />
+    <Content Include="assets\product\Watercolor\Plaza Shadows.jpg" />
+    <Content Include="assets\product\Watercolor\Purple lake.jpg" />
+    <Content Include="assets\product\Watercolor\River.jpg" />
+    <Content Include="assets\product\Watercolor\Rural.jpg" />
+    <Content Include="assets\product\Watercolor\Seaside.jpg" />
+    <Content Include="assets\product\Watercolor\Snow.jpg" />
+    <Content Include="assets\product\Watercolor\Snowy mountain.jpg" />
+    <Content Include="assets\product\Watercolor\Square.jpg" />
+    <Content Include="assets\product\Watercolor\Street.jpg" />
+    <Content Include="assets\product\Watercolor\Vally.jpg" />
+    <Content Include="assets\product\Watercolor\Vernazza Reflection.jpg" />
+    <Content Include="assets\product\Watercolor\Winter.jpg" />
     <Content Include="assets\Services\DHL Express.png" />
     <Content Include="assets\Services\Grab.png" />
     <Content Include="assets\Services\j&amp;t.png" />
@@ -125,38 +149,28 @@
     <Content Include="assets\Images\homepage\slide1.jpg" />
     <Content Include="assets\Images\homepage\slide2.jpg" />
     <Content Include="assets\Images\homepage\slide3.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Afternoon Blues.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Autumn fly.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Backyard.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Beauty of West.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Boat.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Chinese Temple.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Flower at the window.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Mountain.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Plaza Shadows.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Purple lake.jpg" />
-    <Content Include="assets\Images\product\Watercolor\River.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Rural.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Seaside.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Snow.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Snowy mountain.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Square.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Street.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Vally.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Vernazza Reflection.jpg" />
-    <Content Include="assets\Images\product\Watercolor\Winter.jpg" />
     <Content Include="assets\Images\rosegold.png" />
     <Content Include="FAQ.aspx" />
+    <Content Include="lib\css\Bank.css" />
+    <Content Include="lib\css\BankPayment.css" />
     <Content Include="lib\css\FAQ.css" />
     <Content Include="lib\css\Login.css" />
+    <Content Include="lib\css\Payment.css" />
+    <Content Include="lib\css\ProductPage.css" />
+    <Content Include="lib\css\ResetPassword.css" />
+    <Content Include="lib\css\Shipping.css" />
     <Content Include="lib\css\SignUp.css" />
     <Content Include="lib\js\FAQ.js" />
+    <Content Include="lib\js\Payment.js" />
+    <Content Include="lib\js\ProductPage.js" />
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Payment.aspx" />
-    <Content Include="ProductPage.aspx" />
+    <Content Include="Product.aspx">
+      <BrowseToURL>~/Product.aspx</BrowseToURL>
+    </Content>
     <Content Include="ResetPassword.aspx" />
     <Content Include="Shipping.aspx" />
     <Content Include="SignUp.aspx" />
@@ -255,12 +269,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductPage.aspx.cs">
-      <DependentUpon>ProductPage.aspx</DependentUpon>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductPage.aspx.designer.cs">
-      <DependentUpon>ProductPage.aspx</DependentUpon>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>

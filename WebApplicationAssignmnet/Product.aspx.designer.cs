@@ -11,7 +11,7 @@ namespace WebApplicationAssignmnet
 {
 
 
-    public partial class ProductGallery
+    public partial class ProductPage
     {
 
         /// <summary>
@@ -24,102 +24,138 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// AllProduct control.
+        /// ImgSlides1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink AllProduct;
+        protected global::System.Web.UI.WebControls.Image ImgSlides1;
 
         /// <summary>
-        /// oilPaint control.
+        /// ImgSlides2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink oilPaint;
+        protected global::System.Web.UI.WebControls.Image ImgSlides2;
 
         /// <summary>
-        /// ArcylirPaint control.
+        /// ImgSlides3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ArcylirPaint;
+        protected global::System.Web.UI.WebControls.Image ImgSlides3;
 
         /// <summary>
-        /// WaterColor control.
+        /// ImgPath1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink WaterColor;
+        protected global::System.Web.UI.WebControls.ImageButton ImgPath1;
 
         /// <summary>
-        /// Animals control.
+        /// ImgPath2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Animals;
+        protected global::System.Web.UI.WebControls.ImageButton ImgPath2;
 
         /// <summary>
-        /// Bronzo control.
+        /// ImgPath3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Bronzo;
+        protected global::System.Web.UI.WebControls.ImageButton ImgPath3;
 
         /// <summary>
-        /// Wood control.
+        /// LblProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Wood;
+        protected global::System.Web.UI.WebControls.Label LblProductName;
 
         /// <summary>
-        /// lblGalleryCategory control.
+        /// LblArtistName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGalleryCategory;
+        protected global::System.Web.UI.WebControls.Label LblArtistName;
 
         /// <summary>
-        /// ddlSortBy control.
+        /// LblPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSortBy;
+        protected global::System.Web.UI.WebControls.Label LblPrice;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// LblDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label LblDate;
 
         /// <summary>
-        /// ProductGalleryDataList control.
+        /// LblDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList ProductGalleryDataList;
+        protected global::System.Web.UI.WebControls.Label LblDesc;
+
+        /// <summary>
+        /// CartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton CartBtn;
+
+        /// <summary>
+        /// WishBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton WishBtn;
+
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+
+        /// <summary>
+        /// rptSuggest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptSuggest;
     }
 }

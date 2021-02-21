@@ -26,6 +26,8 @@ namespace WebApplicationAssignmnet.Models
             public char Gender { get; set; }
             public System.DateTime CreatedAt { get; set; }
             public bool IsActive { get; set; }
+
+            public string Role { get; set; }
         }
     }
 
