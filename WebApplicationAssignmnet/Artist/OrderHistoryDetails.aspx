@@ -55,7 +55,7 @@
                 <div class="col-sm-6">
                     <h6>Bug Bunny & Lola in Love</h6>
                     <h6 style="text-align:right;margin-left:90px">x 1</h6>
-                    <h6 style="text-align:right;margin-left:90px;color:red"><strong>RM&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 24950</strong></h6>
+                    <h6 style="text-align:right;margin-left:90px;color:red"><strong>RM&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 24,950.00</strong></h6>
                     <br />
                 </div>
 
@@ -71,7 +71,7 @@
                 <div class="col-sm-6">
                     <h6>Mc Duck Success Treasure Hunt</h6>
                     <h6 style="text-align:right;margin-left:90px">x 1</h6>
-                    <h6 style="text-align:right;margin-left:90px;color:red"><strong>RM&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 33250</strong></h6>
+                    <h6 style="text-align:right;margin-left:90px;color:red"><strong>RM&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 33,250.00</strong></h6>
                     <br />
                 </div>
             </div>
@@ -94,10 +94,10 @@
                 </div>
 
                 <div class="col-sm-2">
-                    <h6>58200.00</h6>
-                    <h6>14.20</h6>
-                    <h6>100.00</h6>
-                    <h6 style="color:red"><strong>58114.20</strong></h6>
+                    <h6>58,200.00</h6>
+                    <h6>&nbsp&nbsp&nbsp&nbsp&nbsp 14.20</h6>
+                    <h6>&nbsp&nbsp&nbsp&nbsp 100.00</h6>
+                    <h6 style="color:red"><strong>58,114.20</strong></h6>
                 </div>
             </div>
 

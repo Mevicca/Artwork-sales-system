@@ -281,8 +281,6 @@
     <Content Include="lib\js\Masterpage.js" />
     <Content Include="lib\js\ProductGallery.js" />
     <Content Include="Artist\ProductGallery.aspx" />
-    <Content Include="Test.aspx" />
-    <Content Include="TestingArtistProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer\CustomerHomepage.aspx" />
     <Content Include="Customer\WishList.aspx" />
@@ -479,13 +477,6 @@
     </Compile>
     <Compile Include="Customer\CustomerHomepage.aspx.designer.cs">
       <DependentUpon>CustomerHomepage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TestingArtistProfile.aspx.cs">
-      <DependentUpon>TestingArtistProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestingArtistProfile.aspx.designer.cs">
-      <DependentUpon>TestingArtistProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebAnony.Master.cs">
       <DependentUpon>WebAnony.Master</DependentUpon>

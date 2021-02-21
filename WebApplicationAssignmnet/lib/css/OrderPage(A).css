@@ -1,8 +1,11 @@
 ﻿* {
 }
-.sort{
-    border:none;
-    float:right;
-    margin-right:50px;
-    margin-top:20px;
+
+.sort {
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.container {
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }

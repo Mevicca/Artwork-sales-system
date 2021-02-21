@@ -12,15 +12,7 @@ namespace WebApplicationAssignmnet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    User user = Session["LoginUser"] as User;
-            //    Userrole.Value = user.Role;
-            //}
-            //catch
-            //{
-            //    Userrole.Value = "Unknown";
-            //}
+           
         }
     }
 }
