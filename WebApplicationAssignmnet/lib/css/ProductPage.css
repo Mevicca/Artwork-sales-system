@@ -78,7 +78,7 @@
 }
 
 span {
-    color: white;
+    color:crimson;
 }
 
 .fa-thumbs-up, .fa-motorcycle {
@@ -154,9 +154,4 @@ span {
 
 #WishBtn {
     cursor: pointer
-}
-
-.bottom-card, .card-header {
-    background-image: url("../../assets/Images/form-header.jpg");
-    color: firebrick;
 }

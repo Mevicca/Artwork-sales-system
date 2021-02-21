@@ -47,9 +47,9 @@
                     <div class="row">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-7" style="text-align: center; display: inline;">
-                            <asp:Image ID="ImgPath1" CssClass="images zoom" runat="server" />
-                            <asp:Image ID="ImgPath2" CssClass="images zoom" runat="server" />
-                            <asp:Image ID="ImgPath3" CssClass="images zoom" runat="server" />
+                            <asp:ImageButton ID="ImgPath1" CssClass="images zoom" runat="server" OnClientClick="slides(1)"/>
+                            <asp:ImageButton ID="ImgPath2" CssClass="images zoom" runat="server" OnClientClick="slides(2)"/>
+                            <asp:ImageButton ID="ImgPath3" CssClass="images zoom" runat="server" OnClientClick="slides(3)"/>
                         </div>
                         <div class="col-sm-1"></div>
                     </div>
@@ -113,12 +113,11 @@
                 </div>
             </div>
             <br />
-
-            <div class="row">
-                <div class=" col" style="margin-top: 30px;">
-                    <h5 style="margin-left: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: maroon">Suggested For You :</h5>
+            <div class="row" style="background-color: black; margin-top: 50px;">
+                <div class=" col" style="margin-top: 5px;min-height:160px">
+                    <h5 style="margin-left: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: white">Suggested For You :</h5>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Tayy.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT TOP 10 * FROM PRODUCTS WHERE QUANTITY &gt; 0"></asp:SqlDataSource>
-                    <div class="row" style="margin-left: 50px;">
+                    <div class="row" style="margin-left: 50px; ">
                         <asp:Repeater ID="rptSuggest" runat="server" DataSourceID="SqlDataSource2">
                             <ItemTemplate>
                                 <asp:ImageButton ID="Suggestion" class="zoom" ImageUrl='<%#Eval("path1") %>' PostBackUrl='<%#"Product.aspx?id=" + Eval("ProductID") %>' CssClass="suggestionList" runat="server"></asp:ImageButton>
@@ -127,5 +126,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </form>
 </asp:Content>

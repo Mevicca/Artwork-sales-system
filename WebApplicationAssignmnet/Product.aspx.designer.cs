@@ -57,7 +57,7 @@ namespace WebApplicationAssignmnet
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImgPath1;
+        protected global::System.Web.UI.WebControls.ImageButton ImgPath1;
 
         /// <summary>
         /// ImgPath2 control.
@@ -66,7 +66,7 @@ namespace WebApplicationAssignmnet
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImgPath2;
+        protected global::System.Web.UI.WebControls.ImageButton ImgPath2;
 
         /// <summary>
         /// ImgPath3 control.
@@ -75,7 +75,7 @@ namespace WebApplicationAssignmnet
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImgPath3;
+        protected global::System.Web.UI.WebControls.ImageButton ImgPath3;
 
         /// <summary>
         /// LblProductName control.

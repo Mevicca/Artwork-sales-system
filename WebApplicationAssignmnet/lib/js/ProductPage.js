@@ -27,10 +27,6 @@ function slides(n) {
     magnify("ContentPlaceHolder_ImgSlides" + n, 2);
 }
 
-function wishList() {
-    alert("Added To Wishlist !");
-}
-
 function zoomOut() {
     var zooms = document.querySelectorAll(".img-magnifier-glass");
     for (var x = 0; x < zooms.length; x++) {
