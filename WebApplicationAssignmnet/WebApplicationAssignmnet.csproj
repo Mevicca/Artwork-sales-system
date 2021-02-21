@@ -76,6 +76,10 @@
     <Content Include="App_Data\Tayy2_log.ldf">
       <DependentUpon>Tayy2.mdf</DependentUpon>
     </Content>
+    <Content Include="assets\Images\AboutUs\art.png" />
+    <Content Include="assets\Images\AboutUs\art2.jpg" />
+    <Content Include="assets\Images\AboutUs\digitalArt.jpg" />
+    <Content Include="assets\Images\AboutUs\drawing.png" />
     <Content Include="assets\Images\blackcrop.png" />
     <Content Include="assets\Images\form-header.jpg" />
     <Content Include="assets\Images\digitalArt.jpg" />
@@ -157,10 +161,13 @@
     <Content Include="assets\product\sculpture\wooden-buffalo2.png" />
     <Content Include="assets\product\sculpture\world-in-his-hands.png" />
     <Content Include="CustomerProductGallery.aspx" />
+    <Content Include="EditProduct.aspx" />
     <Content Include="FAQ.aspx" />
+    <Content Include="lib\css\ArtistProductHandle.css" />
     <Content Include="lib\css\FAQ.css" />
     <Content Include="lib\css\Login.css" />
     <Content Include="lib\css\SignUp.css" />
+    <Content Include="lib\js\addProduct.js" />
     <Content Include="lib\js\FAQ.js" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
@@ -213,6 +220,13 @@
     </Compile>
     <Compile Include="CustomerProductGallery.aspx.designer.cs">
       <DependentUpon>CustomerProductGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductGallery.aspx.cs">
       <DependentUpon>ProductGallery.aspx</DependentUpon>
@@ -315,6 +329,7 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\Images\SavedImages\" />
     <Folder Include="assets\product\oilPaint\" />
   </ItemGroup>
   <PropertyGroup>

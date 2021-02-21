@@ -1,22 +1,61 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="WebApplicationAssignmnet.AddProduct" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="WebApplicationAssignmnet.EditProduct" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
 
     <link href="lib/css/ArtistProductHandle.css" rel="stylesheet" />
-    <script src="lib/js/addProduct.js"></script>
+    
+    <script>
+        $(function () {
+            $("#FileImageUpload").change(function () {
+                $('#showPreviousImage').css("display", "none");
+
+                var previewimages = $("#showImage");
+                previewimages.html("");
+
+                $($(this)[0].files).each(function () {
+                    var file = $(this);
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        var img = $("<img />");
+                        img.attr("style", "height:150px; width:150px;");
+                        img.attr("src", e.target.result);
+                        previewimages.append(img);
+                    }
+                    reader.readAsDataURL(file[0]);
+                });
+            });
+        });
+        
+    </script>
 
     <form id="form1" method="post" enctype="multipart/form-data" runat="server">
         <div class="container">
-            <%--Title--ADD NEW ARKWORK--%>
             <div class="addProd">
+                <%--Title--EDIT ARTWORK DETAILS--%>
                 <div class="addprodTitle">
-                    <h3>Add New Artwork</h3>
+                    <h3>Edit Artwork Details</h3>
+                    <asp:HyperLink NavigateUrl="~/ProductGallery.aspx" runat="server">
+                        <i class="fa fa-trash-o" id="dltProduct" aria-hidden="true"></i>
+                    </asp:HyperLink>
                 </div>
                 <hr />
                 <br />
+                <%--Table content of the details--%>
                 <div class="addprodContent">
-                    <%--Table content details--%>
                     <asp:Table ID="addProductTb" runat="server" Width="100%" CellPadding="10" CellSpacing="20" Font-Size="18px">
+                        <asp:TableRow>
+                            <asp:TableCell Width="200px">
+                                <asp:Label ID="Label9" runat="server" Text="Label">Product ID</asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label ID="Label10" runat="server" Text="">:</asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label ID="productID" runat="server" Text=""></asp:Label>
+                            </asp:TableCell>
+                        </asp:TableRow>
+
                         <asp:TableRow>
                             <asp:TableCell Width="200px">
                                 <asp:Label ID="name" runat="server" Text="Label">Product Name</asp:Label>
@@ -75,7 +114,7 @@
                                 <asp:Label ID="Label4" runat="server" Text="Label">:</asp:Label>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <input id="releasedDate" style="width: 20%" type="date" runat="server" />
+                                <asp:TextBox ID="releasedDate" TextMode="Date" Width="150px" AutoPostBack="true" runat="server"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
 
@@ -87,7 +126,7 @@
                                 <asp:Label ID="Label5" runat="server" Text="Label">:</asp:Label>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <input id="quantity" type="number" style="width: 20%" runat="server" />
+                                <input id="quantity" type="number" style="width: 20%; min-width:150px;" runat="server" />
                             </asp:TableCell>
                         </asp:TableRow>
 
@@ -99,21 +138,28 @@
                                 <asp:Label ID="Label6" runat="server" Text="Label">:</asp:Label>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <input id="FileImageUpload" class="textField" type="file" multiple="multiple" name="FileImageUpload" accept="image/*" />
+                                <input id="FileImageUpload" class="textField" type="file" multiple="multiple" name="FileImageUpload" accept="image/*"/>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
                 </div>
+                <%--Display db images--%>
+                <div id="showPreviousImage">
+                    <asp:Image ID="ImgPath1" runat="server" Width="150px" Height="150px"/>
+                    <asp:Image ID="ImgPath2" runat="server" Width="150px" Height="150px"/>
+                    <asp:Image ID="ImgPath3" runat="server" Width="150px" Height="150px"/>
+                </div>
                 <%--Display posted images--%>
                 <div id="showImage">
-                </div>
+                    </div>
                 <br />
                 <hr />
                 <div class="controlbtn">
-                    <input id="resetCancelBtn" type="reset" value="RESET" />
-                    <asp:Button ID="addSaveProductbtn" ClientIDMode="Static" runat="server" Text="ADD" PostBackUrl="~/ProductGallery.aspx" />
+                    <asp:Button ID="resetCancelBtn" ClientIDMode="Static" runat="server" Text="CANCEL" PostBackUrl="~/ProductGallery.aspx" />
+                    <asp:Button ID="addSaveProductbtn" ClientIDMode="Static" runat="server" Text="SAVE" PostBackUrl="~/ProductGallery.aspx" />
                 </div>
             </div>
         </div>
     </form>
+
 </asp:Content>
