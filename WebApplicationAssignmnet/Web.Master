@@ -65,8 +65,7 @@
                         <div class="dropdown" id="profileIcon">
                             <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                             <div class="dropdown-content">
-                                <a href="../Anonymous/Login.aspx">Login</a>
-                                <a href="../Anonymous/SignUp.aspx">Sign up</a>
+                                <a href="../Anonymous/Login.aspx">Sign out</a>
                             </div>
                         </div>
                     </li>

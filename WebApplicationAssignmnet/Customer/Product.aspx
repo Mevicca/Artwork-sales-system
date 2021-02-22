@@ -127,6 +127,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="margin-left:30px">
+                <asp:Button runat="server" PostBackUrl="CustomerProductGallery.aspx" Text="Back" CssClass="btn btn-info" Width="100"/>
+            </div>
+            <br />
+            
         </div>
     </form>
 </asp:Content>
