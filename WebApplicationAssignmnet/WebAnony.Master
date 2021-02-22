@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-md navbar-light" id="nav-bar">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"></div>
             <div class="order-first order-md-0">
-                <a href="Homepage.aspx">
+                <a href="#">
                     <img src="../assets/Images/rosegold.png" alt="Tayy Art" width="150" height="60">
                 </a>
             </div>
