@@ -40,19 +40,19 @@
 
         <div class="caterRow">
             <div class="caterColumn">
-                <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/assets/Images/homepage/homecaterap.jpg" NavigateUrl="~/FAQ.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/assets/Images/homepage/homecaterap.jpg" NavigateUrl="CustomerProductGallery.aspx"></asp:HyperLink>
                 <div class="homeCater">Arcylic Painting</div>
             </div>
             <div class="caterColumn">
-                <asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/assets/Images/homepage/homecaterop.jpg" NavigateUrl="~/FAQ.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/assets/Images/homepage/homecaterop.jpg" NavigateUrl="CustomerProductGallery.aspx"></asp:HyperLink>
                 <div class="homeCater">Oil Painting</div>
             </div>
             <div class="caterColumn">
-                <asp:HyperLink ID="HyperLink3" runat="server" ImageUrl="~/assets/Images/homepage/homecaters.jpg" NavigateUrl="~/FAQ.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="HyperLink3" runat="server" ImageUrl="~/assets/Images/homepage/homecaters.jpg" NavigateUrl="CustomerProductGallery.aspx"></asp:HyperLink>
                 <div class="homeCater">Sculpture</div>
             </div>
             <div class="caterColumn">
-                <asp:HyperLink ID="HyperLink4" runat="server" ImageUrl="~/assets/Images/homepage/homecaterwp.jpg" NavigateUrl="~/FAQ.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="HyperLink4" runat="server" ImageUrl="~/assets/Images/homepage/homecaterwp.jpg" NavigateUrl="CustomerProductGallery.aspx"></asp:HyperLink>
                 <div class="homeCater">Watercolor Artwork</div>
             </div>
         </div>
