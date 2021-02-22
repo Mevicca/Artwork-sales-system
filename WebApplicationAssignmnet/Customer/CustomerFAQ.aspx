@@ -71,5 +71,5 @@
             </div>
         </div>
     </div>
-    <script src="lib/js/FAQ.js"></script>
+    <script src="../lib/js/FAQ.js"></script>
 </asp:Content>
