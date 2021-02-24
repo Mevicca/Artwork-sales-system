@@ -1,16 +1,14 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="WebApplicationAssignmnet.Web" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebArt.master.cs" Inherits="WebApplicationAssignmnet.WebArt" %>
 <!DOCTYPE html>
 
-<link href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="lib/css/Tools.css" rel="stylesheet" />
-<link href="lib/css/MasterPage.css" rel="stylesheet" />
-<link href="lib/sweetAlert/sweetalert.css" rel="stylesheet" /
-<link href="lib/css/ProductPage.css" rel="stylesheet" />
-<link href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-<script src="lib/js/jquery.js"></script>
-<script src="lib/sweetAlert/sweetalert.js"></script>
-<script src="lib/js/Masterpage.js"></script>
-<script src="lib/js/ProductPage.js"></script>
+<link href="../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="../lib/css/Tools.css" rel="stylesheet" />
+<link href="../lib/css/MasterPage.css" rel="stylesheet" />
+<link href="../lib/sweetAlert/sweetalert.css" rel="stylesheet" />
+<link href="../lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<script src="../lib/js/jquery.js"></script>
+<script src="../lib/sweetAlert/sweetalert.js"></script>
+<script src="../lib/js/Masterpage.js"></script>
 
 <html>
 <head runat="server">
@@ -29,11 +27,17 @@
                 </button>
             </li>
             <li>
-                <asp:Label ID="menuLabel" runat="server" Text=""></asp:Label>
+                <span id="menuLabel"></span>
             </li>
-            <li><a href="Test.aspx">Test Link</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
+            <li><a href="CustomerHomepage.aspx">Homepage</a></li>
+            <li><a href="CustomerAboutUs.aspx">About Us</a></li>
+            <li><a href="CustomerFAQ.aspx">FAQ</a></li>
+
+            <li><a href="CustomerProductGallery.aspx">Products</a></li>
+            <li><a href="WishList.aspx">WishList</a></li>
+            <li><a href="Cart.aspx">View cart</a></li>
+            <li><a href="OrderHistory.aspx">Order History</a></li>
+            <li><a href="CustomerProfileSetting.aspx">Settings</a></li>
         </ul>
     </div>
 
@@ -41,8 +45,8 @@
         <nav class="navbar navbar-expand-md navbar-light" id="nav-bar">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"></div>
             <div class="order-first order-md-0">
-                <a href="Homepage.aspx">
-                    <img src="assets/Images/rosegold.png" alt="Tayy Art" width="150" height="60">
+                <a href="CustomerHomepage.aspx">
+                    <img src="../assets/Images/rosegold.png" alt="Tayy Art" width="150" height="60">
                 </a>
             </div>
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
@@ -61,8 +65,7 @@
                         <div class="dropdown" id="profileIcon">
                             <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                             <div class="dropdown-content">
-                                <a href="Login.aspx">Login</a>
-                                <a href="SignUp.aspx">Sign up</a>
+                                <a href="../Anonymous/Login.aspx">Sign out</a>
                             </div>
                         </div>
                     </li>

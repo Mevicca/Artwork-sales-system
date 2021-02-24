@@ -1,0 +1,124 @@
+﻿body {
+}
+
+.container {
+    background-color: white;
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
+}
+
+.addprodTitle{
+    font-size:30px;
+    font-weight:bold;
+    display:flex;
+    justify-content:space-between;
+}
+
+#dltProduct {
+    color: red;
+    cursor:pointer;
+    margin-right:10px;
+}
+#dltProduct:hover {
+    color:gold;
+}
+
+.tbLabel {
+    width: 200px;
+}
+
+.addprodContent {
+    display: flex;
+    justify-content: center;
+}
+
+.addProd {
+    padding: 30px;
+    padding-bottom: 40px;
+}
+
+.textField{
+    width:70%;
+    display:flex;
+    align-items:center;
+    min-width:150px;
+}
+
+.controlbtn {
+    display: flex;
+    justify-content:space-between;
+}
+
+#showPreviousImage {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#showImage {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#fileLbl{
+    display:flex;
+    align-items:center;
+    margin-left:10px;
+    font-size:16px;
+}
+#backBtn {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+    color: black;
+    border-radius: 8px;
+    border-width:1px;
+    cursor: pointer;
+}
+
+    #backBtn:hover {
+        background-color: #d3d3d3;
+        color:black;
+    }
+
+.twobtn{
+    display:flex;
+}
+#resetCancelBtn {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+    background-color: #be2d2d;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+    #resetCancelBtn:hover {
+        background-color: #ff0000;
+    }
+
+#addSaveProductbtn {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #395ba9;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+    #addSaveProductbtn:hover {
+        background-color: #0072ff;
+    }
+
+.headerStyle {
+    font-family: cursive;
+    font-weight: bold;
+    color: #D4A59A
+}
