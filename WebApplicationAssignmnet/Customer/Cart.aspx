@@ -32,7 +32,7 @@
                     <ul class="list-group list-group-horizontal tab">
                         <li class="list-group-item active" style="z-index: 1">Cart</li>
                         <li class="list-group-item">Shipping</li>
-                        <li class="list-group-item">Payment</li>
+                        <li class="list-group-item" style="padding-bottom: 0px;">Payment</li>
                     </ul>
                 </div>
 
@@ -58,7 +58,7 @@
                     <asp:Repeater ID="RptProducts" runat="server">
                         <ItemTemplate>
                             <div class="row" style="justify-content: center;">
-                                <div class="card" style="min-width: 600px">
+                                <div class="card" style="min-width: 680px">
                                     <div class="row cart-line" style="align-items: center;">
                                         <div class="col-2" style="text-align: center; margin-top: 5px; margin-left: 8px;">
                                             <asp:ImageButton runat="server" ImageUrl='<%#Eval("Path1") %>' Width="90" Height="100" CssClass="Imgbtn" PostBackUrl='<%#"Product.aspx?id=" + Eval("ProductID") %>' />

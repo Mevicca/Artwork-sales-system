@@ -24,7 +24,7 @@
                 <ul class="list-group list-group-horizontal tab">
                     <li class="list-group-item">Cart</li>
                     <li class="list-group-item active" style="z-index: 1">Shipping</li>
-                    <li class="list-group-item">Payment</li>
+                    <li class="list-group-item" style="padding-bottom: 0px;">Payment</li>
                 </ul>
             </div>
 
@@ -97,7 +97,7 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2>ADD ADDRESS</h2>
+                            <h2>Add Address</h2>
                             <span class="close">&times;</span>
                         </div>
                         <div class="modal-body">
@@ -149,10 +149,10 @@
                                     <asp:TableCell></asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
-                            <asp:Button runat="server" ID="BtnAdd" CssClass="btn btn-success" Text="Add" OnClick="BtnAdd_Click" />
+                            <asp:Button runat="server" ID="BtnAdd" CssClass="btn btn-success" Text="Add" OnClick="BtnAdd_Click" style="float:right;"/>
                         </div>
                         <div class="modal-footer">
-                            <h3>To add your address</h3>
+                            <p>To add your address</p>
                         </div>
                     </div>
                 </div>

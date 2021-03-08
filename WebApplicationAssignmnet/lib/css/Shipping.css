@@ -110,7 +110,7 @@ h3{
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -160,8 +160,8 @@ h3{
 
 .modal-header {
     padding: 2px 16px;
-    background-color: rgba(212, 165, 154, 0.70);
-    color:crimson;
+    background-color: lightgray;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .modal-body {
@@ -170,8 +170,9 @@ h3{
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: rgba(212, 165, 154, 0.70);
-    color: crimson;
+    background-color: lightgray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:medium;
 }
 
 #BtnShippingDetails{

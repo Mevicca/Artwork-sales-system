@@ -72,7 +72,7 @@ WHERE A.CustID = @CustID ";
                 {
                     LblNone.Visible = true;
                     LblCheckout.Enabled = false;
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Empty in cart.');", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Warning','Empty in cart.');", true);
                 }
             }
             catch (Exception ex)

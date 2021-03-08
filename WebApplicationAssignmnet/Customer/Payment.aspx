@@ -25,7 +25,7 @@
                 <ul class="list-group list-group-horizontal tab">
                     <li class="list-group-item">Cart</li>
                     <li class="list-group-item">Shipping</li>
-                    <li class="list-group-item active" style="z-index: 1">Payment</li>
+                    <li class="list-group-item active" style="z-index: 1; padding-bottom:0px;">Payment</li>
                 </ul>
             </div>
             <div class="row">
