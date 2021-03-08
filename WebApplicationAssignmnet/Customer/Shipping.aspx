@@ -22,6 +22,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <ul class="list-group list-group-horizontal tab">
+                    <li class="list-group-item">Cart</li>
                     <li class="list-group-item active" style="z-index: 1">Shipping</li>
                     <li class="list-group-item">Payment</li>
                 </ul>
@@ -40,14 +41,15 @@
                                     <i class="fa fa-address-card"></i>
                                     <asp:Label runat="server" Text="Shipping details"></asp:Label>
                                 </div>
-                                <div class="row" style="display:inline-flex;">
+                                <div class="row" style="display: inline-flex;">
                                     <asp:DropDownList ID="ddlAddress" runat="server" CssClass="dropdownmenu">
                                     </asp:DropDownList>
                                     <asp:Button CssClass="lbl-click btn btn-info" ID="BtnShippingDetails" ClientIDMode="Static" runat="server" Text="Add" />
                                 </div>
                                 <div class="row d-flex row-click">
                                     <i class="fa  fa-ambulance"></i>Billing to the same address
-                                    <asp:CheckBox CssClass="lbl-click" runat="server" ID="chkbox" Checked="true" />
+                                    <asp:CheckBox CssClass="lbl-click" runat="server" ID="chkbox" Checked="true" OnCheckedChanged="Chkbox_CheckedChanged" AutoPostBack="true" />
+                                    <asp:TextBox ID="txtBillAdd" runat="server" Placeholder="Billing address" Visible="false" Width="250"></asp:TextBox>
                                 </div>
                                 <div class="row">
                                     <i class="fa  fa-archive"></i>
@@ -147,7 +149,7 @@
                                     <asp:TableCell></asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
-                            <asp:Button runat="server" ID="BtnAdd" CssClass="btn btn-success" Text="Add" OnClick="BtnAdd_Click"/>
+                            <asp:Button runat="server" ID="BtnAdd" CssClass="btn btn-success" Text="Add" OnClick="BtnAdd_Click" />
                         </div>
                         <div class="modal-footer">
                             <h3>To add your address</h3>
