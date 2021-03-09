@@ -52,7 +52,7 @@ namespace WebApplicationAssignmnet
 
                 }
 
-                if (Equals(bio, ""))
+                if (Equals(bio, "Empty"))
                 {
                     ArtBioLbl.Text = "You haven't add your bio.";
                 }

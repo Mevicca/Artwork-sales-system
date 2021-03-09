@@ -18,7 +18,7 @@
                     </button>
                     <div class="dropdown-category-content">
                         <asp:HyperLink ID="oilPaint" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Oil Paint</asp:HyperLink>
-                        <asp:HyperLink ID="ArcylirPaint" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Arcylir Paint</asp:HyperLink>
+                        <asp:HyperLink ID="ArcylirPaint" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Arcylic Paint</asp:HyperLink>
                         <asp:HyperLink ID="WaterColor" NavigateUrl='<%#"Product.aspx?id="+Eval("CategoryID")%>' runat="server">Water Color</asp:HyperLink>
                     </div>
                 </div>

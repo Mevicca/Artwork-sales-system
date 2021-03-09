@@ -5,14 +5,23 @@
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 500px;
+    box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.5);
+    max-width: 600px;
     margin: auto;
     text-align: center;
     font-family: arial;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 30px;
+}
+
+.ArtistPP {
+    width: 180px;
+    height: 180px;
 }
 
 .bio {
+    margin-top: 0px;
     color: black;
     font-size: 17px;
     font-family: 'Lucida Handwriting';
@@ -22,19 +31,14 @@
     border: none;
     outline: 0;
     display: inline-block;
-    padding: 8px;
+    padding: 3px;
     color: white;
-    background-color: #572865;
+    background-color: black;
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 60%;
     font-size: 18px;
-}
-
-a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
+    border-radius: 8px;
 }
 
 .contactButton:hover, a:hover {
@@ -44,11 +48,12 @@ a {
 
 .artwork {
     margin-top: 20px;
+    padding-left: 30px;
 }
 
 .img {
-    width: 210px;
-    height: 210px;
+    width: 200px;
+    height: 200px;
     filter: grayscale(0);
     object-fit: contain;
     margin-bottom: 10px;
