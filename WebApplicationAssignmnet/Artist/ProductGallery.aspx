@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/ProductGallery.css" rel="stylesheet" />
+    <script src="../lib/js/ProductGallery.js"></script>
 
     <form id="form1" runat="server">
         <div class="container">
@@ -26,15 +27,15 @@
                     </tr>
 
                 </table>
-                <div id="myBtnContainer">
-                    <button class="btn-status active" onclick="filterSelection('all')">Show All</button>
-                    <button class="btn-status" onclick="filterSelection('inStock')">In Stock</button>
-                    <button class="btn-status" onclick="filterSelection('soldOut')">Sold Out</button>
+                <div id="myBtnContainer" style="margin-bottom:50px;">
+                    <asp:button class="btn-status" Text="Show All" runat="server" OnClick="showAll_Click"/>
+                    <asp:button class="btn-status" Text="In Stock" runat="server" OnClick="inStock_Click"/>
+                    <asp:button class="btn-status" Text="Sold Out" runat="server" OnClick="soldOut_Click"/>
                 </div>
 
                 <div>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Products]"></asp:SqlDataSource>
-                    <asp:DataList ID="ProductGalleryDataList" runat="server" CellPadding="20" DataKeyField="ProductID" DataSourceID="SqlDataSource1" RepeatColumns="4" RepeatDirection="Horizontal" HorizontalAlign="Center">
+                    <asp:DataList ID="ProductGalleryDataList" runat="server" DataKeyField="ProductID" RepeatColumns="4" RepeatDirection="Horizontal" HorizontalAlign="Center" CellPadding="10" CellSpacing="1">
                         <ItemTemplate>
                             <table class="content">
                                 <tr>
@@ -52,7 +53,7 @@
                                 </tr>
                                 <tr>
                                     <td class="qty">
-                                        <asp:Label ID="Quantity" runat="server" Text='<%# Eval("Quantity") %>' Font-Size="18px" ForeColor="#33CC33"></asp:Label>
+                                        <asp:Label ID="Quantity" runat="server" Text='<%# Eval("Quantity") %>' Font-Size="18px" ForeColor="Black"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -64,7 +65,6 @@
                         </ItemTemplate>
                     </asp:DataList>
                 </div>
-
             </div>
         </div>
     </form>

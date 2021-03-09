@@ -56,11 +56,6 @@
     margin-bottom: 10px;
 }
 
-/* The "show" class is added to the filtered elements */
-.show {
-    display: block;
-}
-
 /* Style the buttons */
 .btn-status {
     border: none;
@@ -70,17 +65,12 @@
     cursor: pointer;
     width: calc( ( 100%  - 12px  ) / 3 );
 }
-
-    /* Add a light grey background on mouse-over */
-    .btn-status:hover {
-        background-color: #efbdb2;
-    }
-
-    /* Add a dark background to the active button */
-    .btn-status.active {
+    /* Add a dark background select button*/
+    .active, .btn-status:hover {
         background-color: #bc5b51;
         color: white;
     }
+
 
 /* Gallery Content Style */
 .content {

@@ -70,6 +70,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Tayy.mdf" />
+    <Content Include="App_Data\Tayy_log.ldf">
+      <DependentUpon>Tayy.mdf</DependentUpon>
+    </Content>
     <Content Include="Artist\AboutUs.aspx" />
     <Content Include="Artist\FAQ.aspx" />
     <Content Include="Artist\Homepage.aspx" />
@@ -82,21 +86,10 @@
     <Content Include="Customer\CustomerChangePassword.aspx" />
     <Content Include="Customer\CustomerAboutUs.aspx" />
     <Content Include="Artist\AddProduct.aspx" />
-    <Content Include="App_Data\Tayy.mdf" />
-    <Content Include="App_Data\Tayy2.mdf" />
-    <Content Include="App_Data\Tayy2_log.ldf">
-      <DependentUpon>Tayy2.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Tayy_log.ldf">
-      <DependentUpon>Tayy.mdf</DependentUpon>
-    </Content>
     <Content Include="assets\Images\AboutUs\art.png" />
     <Content Include="assets\Images\AboutUs\art2.jpg" />
     <Content Include="assets\Images\AboutUs\digitalArt.jpg" />
     <Content Include="assets\Images\AboutUs\drawing.png" />
-    <Content Include="App_Data\Tayy_log.ldf">
-      <DependentUpon>Tayy.mdf</DependentUpon>
-    </Content>
     <Content Include="Customer\ArtistProfile.aspx" />
     <Content Include="Artist\ArtistProfileSetting.aspx" />
     <Content Include="assets\Images\blackcrop.png" />

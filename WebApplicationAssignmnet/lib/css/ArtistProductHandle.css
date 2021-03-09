@@ -14,13 +14,20 @@
 }
 
 #dltProduct {
-    color: red;
-    cursor:pointer;
-    margin-right:10px;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
 }
-#dltProduct:hover {
-    color:gold;
-}
+    #dltProduct:hover {
+        background-color: #ffd800;
+    }
 
 .tbLabel {
     width: 200px;
@@ -36,11 +43,12 @@
     padding-bottom: 40px;
 }
 
-.textField{
-    width:70%;
-    display:flex;
-    align-items:center;
-    min-width:150px;
+.textField {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-width: 150px;
+    min-height:30px;
 }
 
 .controlbtn {
@@ -64,33 +72,18 @@
     margin-left:10px;
     font-size:16px;
 }
-#backBtn {
-    width: 100px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    margin-right: 15px;
-    color: black;
-    border-radius: 8px;
-    border-width:1px;
-    cursor: pointer;
-}
-
-    #backBtn:hover {
-        background-color: #d3d3d3;
-        color:black;
-    }
 
 .twobtn{
     display:flex;
 }
+
 #resetCancelBtn {
     width: 100px;
     height: 40px;
     display: flex;
     justify-content: center;
     margin-right: 15px;
-    background-color: #be2d2d;
+    background-color: black;
     color: white;
     border-radius: 8px;
     border: none;
@@ -121,4 +114,14 @@
     font-family: cursive;
     font-weight: bold;
     color: #D4A59A
+}
+
+.validatorMsg {
+    float: left;
+    text-align: left;
+    color: red;
+    font-size: medium;
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
 }
