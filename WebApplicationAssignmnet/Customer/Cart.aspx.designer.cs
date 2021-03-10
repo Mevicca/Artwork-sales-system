@@ -24,22 +24,31 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// DropDownListSort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListSort;
 
         /// <summary>
-        /// rptProducts control.
+        /// LblNone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptProducts;
+        protected global::System.Web.UI.WebControls.Label LblNone;
+
+        /// <summary>
+        /// RptProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RptProducts;
 
         /// <summary>
         /// lblTotal control.

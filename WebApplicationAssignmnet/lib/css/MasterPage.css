@@ -269,7 +269,7 @@ input:focus {
 
 #content {
     font-family: 'Times New Roman', Times, serif;
-    background: #F3E0DC;
+    /*background: #F3E0DC;*/
     flex: 1 0 auto;
 }
 
@@ -284,7 +284,6 @@ h1, h2 {
 
 
 html {
-    background: #F3E0DC;
     position: relative;
     margin:auto;
 }

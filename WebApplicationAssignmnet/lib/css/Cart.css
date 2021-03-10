@@ -1,4 +1,18 @@
-﻿.sort {
+﻿.btn-rem, .btn-move {
+    display: none;
+}
+
+div.row.cart-line:hover .btn-rem{
+    display: block;
+}
+
+div.row.cart-line:hover .btn-move {
+    display: block;
+    margin-bottom:5px;
+}
+
+
+.sort {
     margin-right: 30px;
     margin-top: 20px;
 }
@@ -7,25 +21,17 @@
     border-radius: 10px;
     border: 1px solid black;
     margin-top: 10px;
-    margin-bottom:20px;
+    margin-bottom: 5px;
 }
-
-    .card:hover {
-        background-color: rgba(236, 216, 245, 0.30);
-    }
 
 .container {
     min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }
 
 .btn {
-    width: 150px;
+    width: 160px;
 }
 
-.Imgbtn {
-    margin-top: 20px;
-    margin-left: 20px;
-}
 
 .col-sm-6 > * {
     color: crimson;
@@ -40,4 +46,8 @@
     font-family: cursive;
     font-weight: bold;
     color: #D4A59A
+}
+
+#txtQuantity{
+    text-align:center;
 }
