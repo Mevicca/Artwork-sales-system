@@ -29,12 +29,12 @@
                         <asp:QueryStringParameter Name="id" QueryStringField="id" />
                     </SelectParameters>
                 </asp:SqlDataSource>
-                <asp:DataList ID="DataList1" runat="server" CellPadding="20" DataSourceID="SqlDataSource1" RepeatColumns="4" RepeatDirection="Horizontal">
+                <asp:DataList ID="DataList1" runat="server" CellPadding="20" DataSourceID="SqlDataSource1" RepeatColumns="5" RepeatDirection="Horizontal">
                     <ItemTemplate>
                         <table>
                             <tr>
                                 <td class="img">
-                                    <asp:ImageButton ID="ProductImage" runat="server" Height="200px" ImageAlign="Middle" ImageUrl='<%# Eval("path1") %>' Width="200px" PostBackUrl='<%#"Product.aspx?id="+Eval("ProductID")%>' />
+                                    <asp:ImageButton ID="ProductImage" runat="server" Height="160px" ImageAlign="Middle" ImageUrl='<%# Eval("path1") %>' Width="160px" PostBackUrl='<%#"Product.aspx?id="+Eval("ProductID")%>' />
 
                                 </td>
                             </tr>

@@ -48,12 +48,12 @@
 
 .artwork {
     margin-top: 20px;
-    padding-left: 30px;
+    padding-left: 18px;
 }
 
 .img {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     filter: grayscale(0);
     object-fit: contain;
     margin-bottom: 10px;
@@ -65,8 +65,12 @@
     transform: scale(1.05);
 }
 
+.prodName {
+    text-align: center;
+}
+
 .artName {
     font-family: 'Century Gothic';
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;   
 }
