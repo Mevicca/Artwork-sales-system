@@ -81,6 +81,9 @@
     <Content Include="assets\Acrylic\carlos pun Marvin.jpeg" />
     <Content Include="assets\Acrylic\carlos pun MM.jpg" />
     <Content Include="assets\Acrylic\carlos pun Mono.jpg" />
+    <Content Include="assets\ArtistProfile\Artist.png" />
+    <Content Include="assets\ArtistProfile\ArtistMan.png" />
+    <Content Include="assets\ArtistProfile\ArtistWomen.png" />
     <Content Include="Customer\CustomerChangePassword.aspx" />
     <Content Include="Customer\CustomerAboutUs.aspx" />
     <Content Include="Artist\AddProduct.aspx" />
@@ -88,9 +91,6 @@
     <Content Include="App_Data\Tayy2.mdf" />
     <Content Include="App_Data\Tayy2_log.ldf">
       <DependentUpon>Tayy2.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Tayy_log.ldf">
-      <DependentUpon>Tayy.mdf</DependentUpon>
     </Content>
     <Content Include="assets\Images\AboutUs\art.png" />
     <Content Include="assets\Images\AboutUs\art2.jpg" />
