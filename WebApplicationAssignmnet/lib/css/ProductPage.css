@@ -147,9 +147,10 @@ span {
 
 #CartBtn {
     cursor: pointer;
-    margin-right: 20px
+    margin-right: 20px;
 }
 
 #WishBtn {
-    cursor: pointer
+    cursor: pointer;
 }
+

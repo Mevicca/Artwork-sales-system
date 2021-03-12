@@ -126,5 +126,12 @@ WHERE A.CustID = @CustID";
                 return cmd.ExecuteNonQuery();
             }
         }
+
+        protected void Product_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton btn = sender as ImageButton;
+            HiddenField productID = btn.FindControl("hiddenProduct") as HiddenField;
+            Response.Redirect("Product.aspx?id="+ productID.Value);
+        }
     }
 }
