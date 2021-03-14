@@ -63,13 +63,13 @@ namespace WebApplicationAssignmnet
             //string path 1 = "~\assets\product\sculpture\" + prodName.Text.Trim() + ".png";
             //validate database whether same path (if yes, no++)
             //here
-            if (FileImageUpload.PostedFile != null)
-            {
-                string imgfile = Path.GetFileName(FileImageUpload.PostedFile.FileName);
-                FileImageUpload.SaveAs("~/assets/product/scupture/" + imgfile);
-                string path_1 = "~/assets/product/scupture/" + prodName.Text.Trim() + ".png";
-                cmd.Parameters.AddWithValue("path1", path_1);
-            }
+            //if (FileImageUpload.PostedFile != null)
+            //{
+            //    string imgfile = Path.GetFileName(FileImageUpload.PostedFile.FileName);
+            //    FileImageUpload.SaveAs("~/assets/product/scupture/" + imgfile);
+            //    string path_1 = "~/assets/product/scupture/" + prodName.Text.Trim() + ".png";
+            //    cmd.Parameters.AddWithValue("path1", path_1);
+            //}
 
             //step 2
             //path 1 image(ui) store into the path1(generated justnow)

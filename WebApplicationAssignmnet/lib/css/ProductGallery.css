@@ -63,14 +63,12 @@
     padding: 12px;
     background-color: #F3E0DC;
     cursor: pointer;
-    width: calc( ( 100%  - 12px  ) / 3 );
+    width: calc( ( 100%  - 12px  ) / 4 );
 }
-    /* Add a dark background select button*/
-    .active, .btn-status:hover {
-        background-color: #bc5b51;
-        color: white;
-    }
 
+.alignText{
+    text-align:center;
+}
 
 /* Gallery Content Style */
 .content {
@@ -109,6 +107,7 @@
 }
 
 /*gallerydropdown - Customers*/
+
 .navbar-gallery {
     overflow: hidden;
     background-color: #D4A59A;
@@ -152,26 +151,37 @@
     display: none;
     position: fixed;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    cursor: pointer;
 
 }
 
-    .dropdown-category-content a {
+    .dropdown-category-content .categorybtn {
         float: none;
         color: black;
+        min-width: 150px;
         padding: 10px 16px;
         text-decoration: none;
         display: block;
         text-align: left;
+        border: none;
+        background-color: white;
+        cursor: pointer;
     }
 
-        .dropdown-category-content a:hover {
+        .dropdown-category-content .categorybtn:hover {
             background-color: #F3E0DC;
         }
 
 .dropdown-category:hover .dropdown-category-content {
     display: block;
+}
+
+.pagingbtn {
+    cursor:pointer;
+    width:80px;
+    border:none;
+    border-radius:5px;
+    height: 30px;
 }

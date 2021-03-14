@@ -275,7 +275,6 @@
     <Content Include="lib\js\Homepage.js" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
-    <Content Include="lib\js\ProductGallery.js" />
     <Content Include="Artist\ProductGallery.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer\CustomerHomepage.aspx" />

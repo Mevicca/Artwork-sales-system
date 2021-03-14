@@ -42,7 +42,7 @@
                                 <asp:Label ID="Label8" runat="server" Text="Label">:</asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="categoryddl" class="textField" Height="35px" runat="server" DataSourceID="SqlDataSource1" DataTextField="CategoryDesc" DataValueField="CategoryDesc">
+                                <asp:DropDownList ID="categoryddl" class="textField" style="min-height:30px;"  runat="server" DataSourceID="SqlDataSource1" DataTextField="CategoryDesc" DataValueField="CategoryDesc">
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [CategoryDesc] FROM [Category]"></asp:SqlDataSource>
                             </td>
@@ -90,7 +90,7 @@
                                 <asp:Label ID="Label4" runat="server" Text="Label">:</asp:Label>
                             </td>
                             <td>
-                                <input id="releasedDate" style="width: 25%" type="date" runat="server" />
+                                <input id="releasedDate" style="width:150px" type="date" runat="server" />
                             </td>
                             <td class="validatorMsg"> <%--required msg--%>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
@@ -107,7 +107,7 @@
                                 <asp:Label ID="Label5" runat="server" Text="Label">:</asp:Label>
                             </td>
                             <td>
-                                <input id="quantity" type="number" style="width: 25%" min="1" max="" runat="server" />
+                                <input id="quantity" type="number" style="width:150px" min="1" max="" runat="server" />
                             </td>
                             <td class="validatorMsg"> <%--required msg--%>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
@@ -124,7 +124,7 @@
                                 <asp:Label ID="Label6" runat="server" Text="Label">:</asp:Label>
                             </td>
                             <td>
-                                <input id="FileImageUpload" class="textField" style="width:50px;" type="file" multiple="multiple" name="FileImageUpload" accept="image/*" runat="server"/>
+                                <input id="FileImageUpload" style="width:100px;" type="file" multiple="multiple" name="FileImageUpload" accept="image/*" runat="server"/>
                             </td>
                         </tr>
                     </table>
@@ -136,10 +136,10 @@
                 <hr />
                 <div class="controlbtn">
                     <div>
-                    <asp:Button ID="resetCancelBtn" ClientIDMode="Static" runat="server" Text="BACK" CausesValidation="false" OnClick="backBtn_Click" OnClientClick="return confirm('The records are not saved. Are you sure?');"/>
+                    <asp:Button ID="resetCancelBtn" CssClass="cancel" ClientIDMode="Static" runat="server" Text="Cancel" CausesValidation="false" OnClick="backBtn_Click" OnClientClick="return confirm('The records are not saved. Are you sure?');"/>
                     </div>
                     <div class="twobtn">
-                    <asp:Button ID="addSaveProductbtn" ClientIDMode="Static" runat="server" Text="ADD" OnClick="addSaveProductbtn_Click" OnClientClick="return confirm('Are you sure you want to add new Artwork?');"/>
+                    <asp:Button ID="addSaveProductbtn" CssClass="confrim" ClientIDMode="Static" runat="server" Text="Add" OnClick="addSaveProductbtn_Click" OnClientClick="return confirm('Are you sure you want to add new Artwork?');"/>
                 </div>
                 </div>
             </div>
