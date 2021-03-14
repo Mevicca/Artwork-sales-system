@@ -25,7 +25,7 @@ namespace WebApplicationAssignmnet
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = @"select * from products where ArtistID = @id";
+                    string query = @"select * from products where ArtistID = @id and IsActive = 1";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("id", user.ID);
 
@@ -119,7 +119,7 @@ namespace WebApplicationAssignmnet
                     string query = @"select * from products where ArtistID = @id ";
                     if (btn.Text == "Show All")
                     {
-                        query += "";
+                        tab = @"and IsActive = 1 ";
                     }
                     else if (btn.Text == "In Stock")
                     {

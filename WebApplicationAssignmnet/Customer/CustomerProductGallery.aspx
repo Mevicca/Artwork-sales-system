@@ -8,28 +8,22 @@
 
             <div class="navbar-gallery">
                 <div class="dropdown-category">
-                    <asp:Button runat="server" CssClass="dropbtn" OnClick="Category_Click" Text="All" />
+                    <asp:Button ID="all" runat="server" CssClass="dropbtn" OnClick="Category_Click" Text="All" />
                 </div>
                 <div class="dropdown-category">
-                    <button class="dropbtn">
-                        Painting 
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-category-content">
-                        <asp:Button runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Oil Paint" />
-                        <asp:Button runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Arcylir Paint" />
-                        <asp:Button runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Water Color" />
+                    <asp:Button ID="paintingTab" CssClass="dropbtn" runat="server" Text="Painting" />
+                    <div  class="dropdown-category-content">
+                        <asp:Button ID="oilpaint" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Oil Paint" />
+                        <asp:Button ID="arcylirpaint" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Arcylir Paint" />
+                        <asp:Button ID="watercolor" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Water Color" />
                     </div>
                 </div>
                 <div class="dropdown-category">
-                    <button class="dropbtn">
-                        Sculpture 
-                        <i class="fa fa-caret-down"></i>
-                    </button>
+                    <asp:Button ID="sculptureTab" CssClass="dropbtn" runat="server" Text="Sculpture" />
                     <div class="dropdown-category-content">
-                        <asp:Button runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Animals" />
-                        <asp:Button runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Bronzo" />
-                        <asp:Button runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Wood" />
+                        <asp:Button ID="animals" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Animals" />
+                        <asp:Button ID="bronzo" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Bronzo" />
+                        <asp:Button ID="wood" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Wood" />
                     </div>
                 </div>
             </div>

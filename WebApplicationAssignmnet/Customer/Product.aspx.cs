@@ -64,9 +64,9 @@ namespace WebApplicationAssignmnet
                             ImgPath1.ImageUrl = reader.GetString(8);
                             ImgPath2.ImageUrl = reader.GetString(9) ?? "";
                             ImgPath3.ImageUrl = reader.GetString(10) ?? "";
-                            LinkArtistName.NavigateUrl = "ArtistProfile.aspx?id=" + reader.GetInt32(11).ToString();
-                            LinkArtistName.Text = "By " + reader.GetString(12);
-                            LblDate.Text = reader.GetDateTime(13).ToString("dd-MM-yyyy");
+                            LinkArtistName.NavigateUrl = "ArtistProfile.aspx?id=" + reader.GetInt32(12).ToString();
+                            LinkArtistName.Text = "By " + reader.GetString(13);
+                            LblDate.Text = reader.GetDateTime(14).ToString("dd-MM-yyyy");
                         }
                     }
 

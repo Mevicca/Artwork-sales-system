@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,6 +16,8 @@ namespace WebApplicationAssignmnet
         int CurrentPage;
         protected void Page_Load(object sender, EventArgs e)
         {
+            all.BackColor = Color.FromArgb(0xBC4639);
+            all.ForeColor = Color.White;
             if (!IsPostBack)
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
@@ -92,7 +95,38 @@ namespace WebApplicationAssignmnet
                     value = Request.Cookies["sort"].Value;
                 }
 
+                all.BackColor = Color.FromArgb(0xD4A59A);
+                all.ForeColor = Color.White;
+                paintingTab.BackColor = Color.FromArgb(0xD4A59A);
+                paintingTab.ForeColor = Color.White;
+                oilpaint.BackColor = Color.FromArgb(0xD4A59A);
+                oilpaint.ForeColor = Color.White;
+                arcylirpaint.BackColor = Color.FromArgb(0xD4A59A);
+                arcylirpaint.ForeColor = Color.White;
+                watercolor.BackColor = Color.FromArgb(0xD4A59A);
+                watercolor.ForeColor = Color.White;
+                sculptureTab.BackColor = Color.FromArgb(0xD4A59A);
+                sculptureTab.ForeColor = Color.White;
+                animals.BackColor = Color.FromArgb(0xD4A59A);
+                animals.ForeColor = Color.White;
+                bronzo.BackColor = Color.FromArgb(0xD4A59A);
+                bronzo.ForeColor = Color.White;
+                wood.BackColor = Color.FromArgb(0xD4A59A);
+                wood.ForeColor = Color.White;
+
                 Button btn = sender as Button;
+                btn.BackColor = Color.FromArgb(0xBC4639);
+                btn.ForeColor = Color.White;
+                if(btn.Text == "Oil Paint" || btn.Text == "Arcylir Paint"|| btn.Text == "Water Color")
+                {
+                    paintingTab.BackColor = Color.FromArgb(0xBC4639);
+                    paintingTab.ForeColor = Color.White;
+                }
+                else if (btn.Text == "Animals" || btn.Text == "Bronzo" || btn.Text == "Wood")
+                {
+                    animals.BackColor = Color.FromArgb(0xBC4639);
+                    animals.ForeColor = Color.White;
+                }
                 string tab = "";
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
