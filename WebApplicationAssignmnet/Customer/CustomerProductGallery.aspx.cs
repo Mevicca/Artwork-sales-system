@@ -23,7 +23,7 @@ namespace WebApplicationAssignmnet
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = @"select * from products";
+                    string query = @"select * from products where Quantity >= 1 and IsActive = 1";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -131,34 +131,34 @@ namespace WebApplicationAssignmnet
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = @"select * from products ";
+                    string query = @"select * from products where Quantity >= 1 and IsActive = 1 ";
                     if (btn.Text == "All")
                     {
                         query += "";
                     }
                     else if (btn.Text == "Animals")
                     {
-                        tab = @"where CategoryID = 'S1001' ";
+                        tab = @"and CategoryID = 'S1001' ";
                     }
                     else if (btn.Text == "Bronzo")
                     {
-                        tab = @"where CategoryID = 'S1002' ";
+                        tab = @"and CategoryID = 'S1002' ";
                     }
                     else if (btn.Text == "Wood")
                     {
-                        tab = @"where CategoryID = 'S1003' ";
+                        tab = @"and CategoryID = 'S1003' ";
                     }
                     else if (btn.Text == "Oil Paint")
                     {
-                        tab = @"where CategoryID = 'S1004' ";
+                        tab = @"and CategoryID = 'S1004' ";
                     }
                     else if (btn.Text == "Water Color")
                     {
-                        tab = @"where CategoryID = 'S1005' ";
+                        tab = @"and CategoryID = 'S1005' ";
                     }
                     else if (btn.Text == "Arcylir Paint")
                     {
-                        tab = @"where CategoryID = 'S1006' ";
+                        tab = @"and CategoryID = 'S1006' ";
                     }
                     query += tab;
                     query += value;
@@ -199,7 +199,7 @@ namespace WebApplicationAssignmnet
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = @"select * from products ";
+                    string query = @"select * from products where Quantity >= 1 and IsActive = 1 ";
                     var sortValue = "";
                     query += tabValue;
                     if (ddlSortBy.SelectedValue == "New Arrived")
