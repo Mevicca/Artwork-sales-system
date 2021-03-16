@@ -27,7 +27,7 @@
     <form id="form1" runat="server">
         <div class="container" style="background-color: white">
             <div class="row" style="display: contents">
-                <h1 class="float-left headerStyle" style="margin-top: 10px"><strong>Wish List</strong></h1>
+                <h1 class="float-left headerStyle" style="margin-top: 10px;display:contents"><strong>Wish List</strong></h1>
                 <div class="sort float-right galley-sort-by">
                     <a>Sort By :</a>
                     <asp:DropDownList ID="DropDownList1" runat="server">
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <br />
-            <div style="display: inline-block">
+            <div style="display: block">
                 <br />
                 <asp:Repeater ID="rptProducts" runat="server">
                     <ItemTemplate>
