@@ -4,10 +4,13 @@
 }
 
 .card {
-    border-radius: 10px;
-    border: 1px solid black;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-left: 30px;
+    margin-right: -30px;
+    height: 365px;
 }
 
     .card:hover {
@@ -18,21 +21,34 @@
     min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }
 
-.btn{
-    width:150px;
+.btn {
+    border-radius:0px;
 }
 
-.Imgbtn{
-    margin-top:20px;
-    margin-left:20px;
+.btn-primary:hover {
+    background-color: white;
+    color: blue;
 }
-
-.col-sm-6 > * {
-    color: crimson;
+.btn-danger:hover {
+    background-color: white;
+    color: red;
 }
 
 .headerStyle {
     font-family: cursive;
     font-weight: bold;
     color: #D4A59A
+}
+
+.size1of3 {
+    float: left;
+    width: 18%;
+    margin-right:10px;
+}
+
+h4 {
+    font-weight: bold;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
