@@ -2,7 +2,18 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="../lib/css/ProductGallery.css" rel="stylesheet" />
-
+    <script>
+        var btnContainer = document.getElementById("dropdown-category");
+        var dropbtn = btnContainer.getElementsByClassName("dropbtn");
+        var btns = dropbtn.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
     <form id="form1" runat="server">
         <div class="container">
 
@@ -11,7 +22,7 @@
                     <asp:Button ID="all" runat="server" CssClass="dropbtn" OnClick="Category_Click" Text="All" />
                 </div>
                 <div class="dropdown-category">
-                    <asp:Button ID="paintingTab" CssClass="dropbtn" runat="server" Text="Painting" />
+                    <asp:Button ID="paintingTab" CssClass="dropbtn" runat="server" Enabled="false" Text="Painting" />
                     <div  class="dropdown-category-content">
                         <asp:Button ID="oilpaint" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Oil Paint" />
                         <asp:Button ID="arcylirpaint" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Arcylir Paint" />
@@ -19,7 +30,7 @@
                     </div>
                 </div>
                 <div class="dropdown-category">
-                    <asp:Button ID="sculptureTab" CssClass="dropbtn" runat="server" Text="Sculpture" />
+                    <asp:Button ID="sculptureTab" CssClass="dropbtn" runat="server" Enabled="false" Text="Sculpture" />
                     <div class="dropdown-category-content">
                         <asp:Button ID="animals" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Animals" />
                         <asp:Button ID="bronzo" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Bronzo" />

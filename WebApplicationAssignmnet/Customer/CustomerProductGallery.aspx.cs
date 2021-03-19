@@ -115,17 +115,50 @@ namespace WebApplicationAssignmnet
                 wood.ForeColor = Color.White;
 
                 Button btn = sender as Button;
-                btn.BackColor = Color.FromArgb(0xBC4639);
-                btn.ForeColor = Color.White;
-                if(btn.Text == "Oil Paint" || btn.Text == "Arcylir Paint"|| btn.Text == "Water Color")
+                if(btn.Text == "All")
+                {
+                    all.BackColor = Color.FromArgb(0xBC4639);
+                    all.ForeColor = Color.White;
+                }
+                else if(btn.Text == "Oil Paint" || btn.Text == "Arcylir Paint" || btn.Text == "Water Color")
                 {
                     paintingTab.BackColor = Color.FromArgb(0xBC4639);
                     paintingTab.ForeColor = Color.White;
+                    if(btn.Text == "Oil Paint")
+                    {
+                        oilpaint.BackColor = Color.FromArgb(0xBC4639);
+                        oilpaint.ForeColor = Color.White;
+                    }
+                    else if(btn.Text == "Arcylir Paint")
+                    {
+                        arcylirpaint.BackColor = Color.FromArgb(0xBC4639);
+                        arcylirpaint.ForeColor = Color.White;
+                    }
+                    else if(btn.Text == "Water Color")
+                    {
+                        watercolor.BackColor = Color.FromArgb(0xBC4639);
+                        watercolor.ForeColor = Color.White;
+                    }
                 }
                 else if (btn.Text == "Animals" || btn.Text == "Bronzo" || btn.Text == "Wood")
                 {
-                    animals.BackColor = Color.FromArgb(0xBC4639);
-                    animals.ForeColor = Color.White;
+                    sculptureTab.BackColor = Color.FromArgb(0xBC4639);
+                    sculptureTab.ForeColor = Color.White;
+                    if (btn.Text == "Animals")
+                    {
+                        animals.BackColor = Color.FromArgb(0xBC4639);
+                        animals.ForeColor = Color.White;
+                    }
+                    else if (btn.Text == "Bronzo")
+                    {
+                        bronzo.BackColor = Color.FromArgb(0xBC4639);
+                        bronzo.ForeColor = Color.White;
+                    }
+                    else if (btn.Text == "Wood")
+                    {
+                        wood.BackColor = Color.FromArgb(0xBC4639);
+                        wood.ForeColor = Color.White;
+                    }
                 }
                 string tab = "";
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
