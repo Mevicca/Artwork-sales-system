@@ -72,6 +72,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Tayy.mdf" />
+    <Content Include="App_Data\Tayy_log.ldf">
+      <DependentUpon>Tayy.mdf</DependentUpon>
+    </Content>
     <Content Include="Artist\AboutUs.aspx" />
     <Content Include="Artist\FAQ.aspx" />
     <Content Include="Artist\Homepage.aspx" />
@@ -87,18 +96,10 @@
     <Content Include="Customer\CustomerChangePassword.aspx" />
     <Content Include="Customer\CustomerAboutUs.aspx" />
     <Content Include="Artist\AddProduct.aspx" />
-    <Content Include="App_Data\Tayy.mdf" />
-    <Content Include="App_Data\Tayy2.mdf" />
-    <Content Include="App_Data\Tayy2_log.ldf">
-      <DependentUpon>Tayy2.mdf</DependentUpon>
-    </Content>
     <Content Include="assets\Images\AboutUs\art.png" />
     <Content Include="assets\Images\AboutUs\art2.jpg" />
     <Content Include="assets\Images\AboutUs\digitalArt.jpg" />
     <Content Include="assets\Images\AboutUs\drawing.png" />
-    <Content Include="App_Data\Tayy_log.ldf">
-      <DependentUpon>Tayy.mdf</DependentUpon>
-    </Content>
     <Content Include="Customer\ArtistProfile.aspx" />
     <Content Include="Artist\ArtistProfileSetting.aspx" />
     <Content Include="assets\Images\blackcrop.png" />
@@ -284,7 +285,6 @@
     <Content Include="lib\js\Homepage.js" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
-    <Content Include="lib\js\ProductGallery.js" />
     <Content Include="Artist\ProductGallery.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer\CustomerHomepage.aspx" />

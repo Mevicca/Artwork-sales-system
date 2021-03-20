@@ -3,8 +3,8 @@
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <link href="../lib/css/ArtistProductHandle.css" rel="stylesheet" />
-    
-    <script>
+
+    <script type="text/javascript">
         $(function () {
             $("#FileImageUpload").change(function () {
                 $('#showPreviousImage').css("display", "none");
@@ -26,7 +26,6 @@
                 });
             });
         });
-        
     </script>
 
     <form id="form1" method="post" enctype="multipart/form-data" runat="server">
@@ -34,132 +33,158 @@
             <div class="addProd">
                 <%--Title--EDIT ARTWORK DETAILS--%>
                 <div class="addprodTitle">
-                    <h2 class="headerStyle">Edit Artwork Details</h2>
-                    <asp:HyperLink NavigateUrl="ProductGallery.aspx" runat="server">
-                        <i class="fa fa-trash-o" id="dltProduct" aria-hidden="true"></i>
-                    </asp:HyperLink>
+                    <h2 class="headerStyle">
+                        <asp:Label ID="title" runat="server" Text="View Artwork Details"></asp:Label>
+                    </h2>
                 </div>
                 <hr />
                 <br />
                 <%--Table content of the details--%>
                 <div class="addprodContent">
-                    <asp:Table ID="addProductTb" runat="server" Width="100%" CellPadding="10" CellSpacing="20" Font-Size="18px">
-                        <asp:TableRow>
-                            <asp:TableCell Width="200px">
+                    <table id="addProductTb" runat="server" width="100%" cellpadding="10" cellspacing="20" font-size="18px">
+                        <tr>
+                            <td style="width: 200px;">
                                 <asp:Label ID="Label9" runat="server" Text="Label">Product ID</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="Label10" runat="server" Text="">:</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="productID" runat="server" Text=""></asp:Label>
-                            </asp:TableCell>
-                        </asp:TableRow>
+                            </td>
+                        </tr>
 
-                        <asp:TableRow>
-                            <asp:TableCell Width="200px">
+                        <tr>
+                            <td style="width: 200px;">
                                 <asp:Label ID="name" runat="server" Text="Label">Product Name</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="Label1" runat="server" Text="Label">:</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:TextBox ID="prodName" class="textField" runat="server"></asp:TextBox>
-                            </asp:TableCell>
-                        </asp:TableRow>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="prodName" class="textField" Text="" runat="server"></asp:TextBox>
+                            </td>
+                            <td class="validatorMsg"><%--required msg--%>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorprodName" runat="server"
+                                    ControlToValidate="prodName" ForeColor="Red" Display="Dynamic"
+                                    ErrorMessage="Required." />
+                            </td>
+                        </tr>
 
-                        <asp:TableRow>
-                            <asp:TableCell Width="200px">
+                        <tr>
+                            <td style="width: 200px;">
                                 <asp:Label ID="Label7" runat="server" Text="Label">Product Category</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="Label8" runat="server" Text="Label">:</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:DropDownList ID="categoryddl" class="textField" runat="server" DataSourceID="SqlDataSource1" DataTextField="CategoryDesc" DataValueField="CategoryDesc">
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="categoryddl" Style="min-height: 30px;" class="textField" runat="server" DataSourceID="SqlDataSource1" DataTextField="CategoryDesc" DataValueField="CategoryDesc">
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [CategoryDesc] FROM [Category]"></asp:SqlDataSource>
-                            </asp:TableCell>
-                        </asp:TableRow>
+                            </td>
+                        </tr>
 
-                        <asp:TableRow>
-                            <asp:TableCell Width="200px">
+                        <tr>
+                            <td style="width: 200px;">
                                 <asp:Label ID="desc" runat="server" Text="Label">Product Description</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="Label2" runat="server" Text="Label">:</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <textarea id="prodDesc" class="textField" cols="20" rows="2" runat="server"></textarea>
-                            </asp:TableCell>
-                        </asp:TableRow>
+                            </td>
+                            <td>
+                                <textarea id="prodDesc" class="textField" style="min-height: 30px;" cols="20" rows="2" runat="server"></textarea>
+                            </td>
+                            <td class="validatorMsg"><%--required msg--%>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="prodDesc" ForeColor="Red" Display="Dynamic"
+                                    ErrorMessage="Required." />
+                            </td>
+                        </tr>
 
-                        <asp:TableRow>
-                            <asp:TableCell Width="200px">
+                        <tr>
+                            <td style="width: 200px;">
                                 <asp:Label ID="price" runat="server" Text="Label">Product Price (RM)</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="Label3" runat="server" Text="Label">:</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <input id="prodPrice" class="textField" type="number" runat="server" />
-                            </asp:TableCell>
-                        </asp:TableRow>
+                            </td>
+                            <td>
+                                <input id="prodPrice" class="textField" type="number" max="" min="100" runat="server" />
+                            </td>
+                            <td class="validatorMsg"><%--required msg--%>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                    ControlToValidate="prodPrice" ForeColor="Red" Display="Dynamic"
+                                    ErrorMessage="Required." />
+                            </td>
+                        </tr>
 
-                        <asp:TableRow>
-                            <asp:TableCell Width="200px">
+                        <tr>
+                            <td style="width: 200px;">
                                 <asp:Label ID="date" runat="server" Text="Label">Released Date</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="Label4" runat="server" Text="Label">:</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:TextBox ID="releasedDate" TextMode="Date" Width="150px" AutoPostBack="true" Enabled="false" runat="server"></asp:TextBox>
-                            </asp:TableCell>
-                        </asp:TableRow>
+                            </td>
+                        </tr>
 
-                        <asp:TableRow>
-                            <asp:TableCell Width="200px">
+                        <tr>
+                            <td style="width: 200px;">
                                 <asp:Label ID="qty" runat="server" Text="Label">Quantity</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="Label5" runat="server" Text="Label">:</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <input id="quantity" type="number" style="width: 20%; min-width:150px;" runat="server" />
-                            </asp:TableCell>
-                        </asp:TableRow>
+                            </td>
+                            <td>
+                                <input id="quantity" type="number" style="width: 150px" min="1" max="" runat="server" />
+                            </td>
+                            <td class="validatorMsg"><%--required msg--%>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+                                    ControlToValidate="quantity" ForeColor="Red" Display="Dynamic"
+                                    ErrorMessage="Required." />
+                            </td>
+                        </tr>
 
-                        <asp:TableRow>
-                            <asp:TableCell Width="200px">
+                        <tr>
+                            <td style="width: 200px;">
                                 <asp:Label ID="productImage" runat="server" Text="Label">Product Image</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
+                            </td>
+                            <td>
                                 <asp:Label ID="Label6" runat="server" Text="Label">:</asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <input id="FileImageUpload" class="textField" type="file" multiple="multiple" name="FileImageUpload" accept="image/*"/>
-                            </asp:TableCell>
-                        </asp:TableRow>
-                    </asp:Table>
+                            </td>
+                            <td>
+                                <input id="FileImageUpload" style="width: 100px;" type="file" multiple="multiple" name="FileImageUpload" accept="image/*" runat="server" />
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <%--Display db images--%>
                 <div id="showPreviousImage">
-                    <asp:Image ID="ImgPath1" runat="server" Width="150px" Height="150px"/>
-                    <asp:Image ID="ImgPath2" runat="server" Width="150px" Height="150px"/>
-                    <asp:Image ID="ImgPath3" runat="server" Width="150px" Height="150px"/>
+                    <asp:Image ID="ImgPath1" runat="server" Width="150px" Height="150px" />
+                    <asp:Image ID="ImgPath2" runat="server" Width="150px" Height="150px" />
+                    <asp:Image ID="ImgPath3" runat="server" Width="150px" Height="150px" />
                 </div>
                 <%--Display posted images--%>
                 <div id="showImage">
-                    </div>
+                </div>
                 <br />
                 <hr />
                 <div class="controlbtn">
-                    <asp:Button ID="resetCancelBtn" ClientIDMode="Static" runat="server" Text="CANCEL" PostBackUrl="ProductGallery.aspx" />
-                    <asp:Button ID="addSaveProductbtn" ClientIDMode="Static" runat="server" Text="SAVE" PostBackUrl="ProductGallery.aspx" />
+                    <div>
+                        <asp:Button ID="back" CssClass="cancel" ClientIDMode="Static" runat="server" Text="Back" OnClick="back_Click" />
+                        <asp:Button ID="cancel" CssClass="cancel" ClientIDMode="Static" runat="server" Text="Cancel" OnClick="cancel_Click" OnClientClick="return confirm('The records are not saved. Are you sure?');" />
+                    </div>
+                    <div class="twobtn">
+                        <asp:HiddenField ID="HiddenProduct" runat="server" />
+                        <asp:Button ID="dltProduct" ClientIDMode="Static" runat="server" Text="Deactivate" OnCommand="dltProduct_Click" OnClientClick="return confirm('Are you sure to deactivate this artwork?');" />
+                        <asp:Button ID="edit" CssClass="confrim" ClientIDMode="Static" runat="server" Text="Edit" OnClick="edit_Click" />
+                        <asp:Button ID="save" CssClass="confrim" ClientIDMode="Static" runat="server" Text="Save" OnClick="save_Click" OnClientClick="return confirm('Are you sure to edit this artwork?');" />
+                    </div>
                 </div>
             </div>
         </div>
     </form>
-
 </asp:Content>
