@@ -104,7 +104,7 @@
                                 <asp:LinkButton runat="server" CssClass="btn btn-outline-primary" ID="CartBtn" ClientIDMode="Static" OnClick="CartBtn_Click">
                                 <i class="fa fa-cart-plus">&nbsp</i>Add to Cart
                                 </asp:LinkButton>
-                                <asp:LinkButton runat="server" CssClass="btn btn-outline-danger" ID="WishBtn" ClientIDMode="Static" OnClick="WishBtn_Click">
+                                <asp:LinkButton runat="server" CssClass="btn btn-outline-danger" ID="WishBtn" ClientIDMode="Static" OnClick="WishBtn_Click" on>
                                 <i class="fa fa-heart" id="wishL">&nbsp</i>Wishlist
                                 </asp:LinkButton>
                             </div>

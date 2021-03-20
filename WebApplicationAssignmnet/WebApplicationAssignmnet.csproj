@@ -44,7 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.CodeDom, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.CodeDom.5.0.0\lib\net461\System.CodeDom.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -83,6 +90,9 @@
     <Content Include="assets\Acrylic\carlos pun Marvin.jpeg" />
     <Content Include="assets\Acrylic\carlos pun MM.jpg" />
     <Content Include="assets\Acrylic\carlos pun Mono.jpg" />
+    <Content Include="assets\ArtistProfile\Artist.png" />
+    <Content Include="assets\ArtistProfile\ArtistMan.png" />
+    <Content Include="assets\ArtistProfile\ArtistWomen.png" />
     <Content Include="Customer\CustomerChangePassword.aspx" />
     <Content Include="Customer\CustomerAboutUs.aspx" />
     <Content Include="Artist\AddProduct.aspx" />
@@ -218,6 +228,7 @@
     <Content Include="lib\css\OrderPage%28A%29.css" />
     <Content Include="lib\js\addProduct.js" />
     <Content Include="lib\css\WishList.css" />
+    <Content Include="lib\js\Cart.js" />
     <Content Include="lib\js\OrderPage%28A%29.js" />
     <Content Include="lib\js\Tools.js" />
     <Content Include="lib\js\WishList.js" />
@@ -225,7 +236,6 @@
     <Content Include="Artist\OrderHistoryDetails.aspx" />
     <Content Include="Artist\OrderPage%28A%29.aspx" />
     <Content Include="Artist\SalesHistory%28A%29.aspx" />
-    <Content Include="lib\js\FAQ.js" />
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />

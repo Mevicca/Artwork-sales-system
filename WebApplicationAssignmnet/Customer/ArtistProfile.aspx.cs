@@ -23,14 +23,14 @@ namespace WebApplicationAssignmnet
         }
         private String BindData(int artistID)
         {
-            string artEmail = "";
-            
+            string artEmail = "", artGender = "";
+
             try
-            {               
+            {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = "SELECT ArtFullName, ArtBio, ArtEmail FROM ARTIST WHERE ArtistID = @artistID;";
+                    string query = "SELECT ArtFullName, ArtBio, ArtEmail, ArtGender FROM ARTIST WHERE ArtistID = @artistID;";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("artistID", artistID);
@@ -42,18 +42,32 @@ namespace WebApplicationAssignmnet
                         while (reader.Read())
                         {
                             artist.Text = reader.GetString(0);
-                            artEmail = reader.GetString(2);
                             artistBio.Text = reader.GetString(1).Trim();
-                            
+                            artEmail = reader.GetString(2);
+                            artGender = reader.GetString(3).Trim();
                         }
                     }
                 }
+
+                if (String.Equals(artGender, "M"))
+                {
+                    artistPic.ImageUrl = "~/assets/ArtistProfile/ArtistMan.png";
+                }
+                else if (String.Equals(artGender, "F"))
+                {
+                    artistPic.ImageUrl = "~/assets/ArtistProfile/ArtistWomen.png";
+                }
+                else
+                {
+                    artistPic.ImageUrl = "~/assets/ArtistProfile/Artist.png";
+                }
+                if (String.Equals(artistBio.Text, "Empty"))
+                    artistBio.Text = "The artist hasn't add bio.";
                 return artEmail;
             }
             catch (Exception ex)
             {
-                artistBio.Text = "The artist hasn't add bio.";
-                return artEmail;
+                throw ex;
             }
         }
 
