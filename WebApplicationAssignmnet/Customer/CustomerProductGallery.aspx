@@ -2,18 +2,7 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="../lib/css/ProductGallery.css" rel="stylesheet" />
-    <script>
-        var btnContainer = document.getElementById("dropdown-category");
-        var dropbtn = btnContainer.getElementsByClassName("dropbtn");
-        var btns = dropbtn.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
-    </script>
+
     <form id="form1" runat="server">
         <div class="container">
 
