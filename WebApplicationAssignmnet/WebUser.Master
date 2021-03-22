@@ -33,8 +33,11 @@
     <script src="../lib/DataTables/Buttons-1.7.0/js/dataTables.buttons.min.js" defer></script>
     <script src="../lib/DataTables/Buttons-1.7.0/js/buttons.html5.min.js" defer></script>
     <script src="../lib/DataTables/Buttons-1.7.0/js/buttons.print.min.js" defer></script>
+    <script src="../lib/DataTables/pdfmake-0.1.36/pdfmake.js" defer></script>
+    <script src="../lib/DataTables/pdfmake-0.1.36/vfs_fonts.js" defer></script>
     <script src="../lib/sweetAlert/sweetalert.js"></script>
     <script src="../lib/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="../lib/DataTables/JSZip-2.5.0/jszip.min.js" defer></script>
     <link href="../lib/DataTables/DataTables-1.10.21/css/jquery.dataTables.css" rel="stylesheet" />
     <link href="../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../lib/css/Tools.css" rel="stylesheet" />

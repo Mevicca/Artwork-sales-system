@@ -48,6 +48,9 @@
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.CodeDom, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.CodeDom.5.0.0\lib\net461\System.CodeDom.dll</HintPath>
       <Private>True</Private>
@@ -339,6 +342,7 @@
     <Content Include="Artist\OrderPage%28A%29.aspx" />
     <Content Include="Artist\SalesHistory%28A%29.aspx" />
     <Content Include="lib\material-components-web\4.0.0\material-components-web.min.css" />
+    <Content Include="lib\Moment\moment.min.js" />
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />
@@ -700,6 +704,7 @@
     <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.material.min.js" />
     <Content Include="lib\DataTables\Buttons-1.7.0\css\common.scss" />
     <Content Include="lib\DataTables\Buttons-1.7.0\css\mixins.scss" />
+    <Content Include="lib\DataTables\DataTables-1.10.21\js\datatables.datetime.min.js" />
     <None Include="packages.config" />
     <Content Include="WebArt.Master" />
     <Content Include="WebAnony.Master" />

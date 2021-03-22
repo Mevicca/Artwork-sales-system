@@ -28,6 +28,42 @@
         .mdc-data-table {
             display: contents;
         }
+
+        .dt-button {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-left:10px;
+}
+
+.dt-button:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.dt-button:focus, .dt-button.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.dt-button.disabled, .dt-button:disabled {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.dt-button:not(:disabled):not(.disabled):active, .dt-button:not(:disabled):not(.disabled).active,
+.show > .dt-button.dropdown-toggle {
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
+}
+
+.dt-button:not(:disabled):not(.disabled):active:focus, .dt-button:not(:disabled):not(.disabled).active:focus,
+.show > .dt-button.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
     </style>
     <script src="../lib/js/jquery.js"></script>
     <form id="form1" runat="server">
@@ -85,10 +121,10 @@
                         </div>
                         <div class="col">
                             <asp:Label runat="server" Font-Bold="true">
-                        Customer name :
+                        Customer ID :
                             </asp:Label>
                             <br />
-                            <asp:TextBox CssClass="form-control" ID="CustomerName" runat="server"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="CustomerID" runat="server"></asp:TextBox>
                             <br />
                             <br />
                         </div>
@@ -105,7 +141,7 @@
                     </div>
                     <div class="row" style="float: right;">
                         <div class="row" style="float: right;">
-                            <asp:Button Text="Search" ID="BtnSearch" runat="server" CssClass="btn btn-primary" ClientIDMode="Static" OnClick="BtnSearch_Click" />
+                            <asp:Button Text="Search" ID="BtnSearch" runat="server" CssClass="btn btn-primary" ClientIDMode="Static" OnClientClick="return clickSearch();" />
                         </div>
                     </div>
                     <div>
@@ -117,44 +153,97 @@
         <div class="card input-group">
             <div class="card-body" style="margin: auto; width: 100%;">
                 <div class="table-responsive">
-                    <asp:GridView ID="GridViewSales" runat="server" CssClass="display mdl-data-table " AutoGenerateColumns="false" ClientIDMode="Static" EmptyDataText="No record." ShowHeaderWhenEmpty="true" EmptyDataRowStyle-BorderStyle="None">
-                        <Columns>
-                            <asp:BoundField DataField="OrderTime" HeaderText="Order Time" DataFormatString="{0:dd-MM-yyyy hh:mm:ss}" />
-                            <asp:BoundField DataField="CustID" HeaderText="Customer ID" />
-                            <asp:BoundField DataField="BillingAddress" HeaderText="Billing address" />
-                            <asp:BoundField DataField="PaymentMethod" HeaderText="Payment Method" />
-                            <asp:BoundField DataField="Discount" HeaderText="Coupon Discount" DataFormatString="{0:###,##0.00}" />
-                            <asp:BoundField DataField="DeliveryCost" HeaderText="Delivery Cost" DataFormatString="{0:###,##0.00}" />
-                            <asp:BoundField DataField="FinalTotal" HeaderText="Final Total" DataFormatString="{0:###,##0.00}" />
-                        </Columns>
-                    </asp:GridView>
+                    <table id="GridViewSales" style="display mdl-data-table">
+                        <thead>
+                            <tr>
+                                <th>Order time</th>
+                                <th>Payment method</th>
+                                <th>Billing address</th>
+                                <th>Discount</th>
+                                <th>Delivery cost</th>
+                                <th>Final total</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </form>
 
     <script>
+        var isSearch;
 
         $(document).ready(function () {
-            var table = $('#GridViewSales').DataTable({
-                responsive: {
-                    details: {
-                        type: 'column'
-                    }
-                },
-                columnDefs: [
-                    {
-                        targets: ['_all'],
-                        className: 'mdc-data-table__cell',
-                        language: {
-                            infoEmpty: "Empty information.",
-                            emptyTable: "No record.",
-                            zeroRecords: "No record."
-                        }
-                    }]
-            });
+            //if (isSearch === true) {
+                redraw();
+            //}
+            //isSearch = false;
+        }
+        );
 
-        });
+        function redraw() {
+            var cust = $('#ContentPlaceHolder1_CustomerID').val();
+            if (cust === "") cust = null;
+
+            var obj = {
+                startTime: $('#ContentPlaceHolder1_StartDate').val(),
+                endTime: $('#ContentPlaceHolder1_EndDate').val(),
+                custID: cust,
+                address: $('#ContentPlaceHolder1_TxtBillingEmail').val(),
+                paymentMethod: $('#PaymentMethod option:selected').text()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "SalesReport.aspx/BindDatatable",
+                data: JSON.stringify(obj),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $('#GridViewSales').dataTable({
+                        responsive: true,
+                        dom: 'lBftrip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf','print'
+                        ],
+                        data: JSON.parse(data.d),
+                        columns: [
+                            { 'data': 'ordertime' },
+                            { 'data': 'paymentMethod' },
+                            { 'data': 'billingaddress' },
+                            { 'data': 'discount' },
+                            { 'data': 'DeliveryCost' },
+                            { 'data': 'FinalTotal' },
+                        ],
+                        "responsive": {
+                            "details": {
+                                "type": 'column'
+                            }
+                        },
+                        "columnDefs": [
+                            {
+                                "targets": ['_all'],
+                                "className": 'mdc-data-table__cell',
+                                "language": {
+                                    "infoEmpty": "Empty information.",
+                                    "emptyTable": "No record.",
+                                    "zeroRecords": "No record."
+                                }
+                            }]
+                    });
+                },
+                error: function (e) {
+                    console.log("Error :  ");
+                    console.log(JSON.stringify(e));
+                }
+            });
+        }
+
+        function clickSearch() {
+            console.log(isSearch);
+            isSearch = true;
+        }
 
     </script>
 </asp:Content>
