@@ -24,6 +24,7 @@
         .navbar-nav li ul li {
             width: auto;
         }
+
     </style>
 </head>
 <body>
@@ -35,6 +36,7 @@
     <script src="../lib/DataTables/Buttons-1.7.0/js/buttons.print.min.js" defer></script>
     <script src="../lib/DataTables/pdfmake-0.1.36/pdfmake.js" defer></script>
     <script src="../lib/DataTables/pdfmake-0.1.36/vfs_fonts.js" defer></script>
+    <script src="lib/DataTables/DataTables-1.10.21/js/dataTables.responsive.min.js" defer></script>
     <script src="../lib/sweetAlert/sweetalert.js"></script>
     <script src="../lib/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
     <script src="../lib/DataTables/JSZip-2.5.0/jszip.min.js" defer></script>
@@ -46,7 +48,9 @@
     <link href="../lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="../lib/material-components-web/4.0.0/material-components-web.min.css" rel="stylesheet" />
     <link href="../lib/DataTables/DataTables-1.10.21/css/dataTables.material.min.css" rel="stylesheet" />
+    <link href="lib/DataTables/DataTables-1.10.21/css/responsive.dataTables.min.css" rel="stylesheet" />
     <link href="../lib/DataTables/Buttons-1.7.0/css/buttons.bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/css/UserLayout.css" rel="stylesheet" />
 
     <div class="row header">
         <div class="navbar-header">

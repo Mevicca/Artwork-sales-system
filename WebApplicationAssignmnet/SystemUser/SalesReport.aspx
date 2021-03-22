@@ -3,67 +3,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css">
-        .row {
-            margin: 0px;
-        }
-
-        .data-field {
-            margin-right: 15px;
-            margin-left: 15px;
-        }
-
-        .form-control, .input {
-            width: 250px;
-            display: inline-block;
-        }
-
-        #BtnSearch {
-            right: 50px;
-        }
-
         #GridViewSales {
-            width: 100%;
+            width: 99%;
         }
-
-        .mdc-data-table {
-            display: contents;
-        }
-
-        .dt-button {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-  margin-left:10px;
-}
-
-.dt-button:hover {
-  color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
-}
-
-.dt-button:focus, .dt-button.focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
-.dt-button.disabled, .dt-button:disabled {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.dt-button:not(:disabled):not(.disabled):active, .dt-button:not(:disabled):not(.disabled).active,
-.show > .dt-button.dropdown-toggle {
-  color: #fff;
-  background-color: #0062cc;
-  border-color: #005cbf;
-}
-
-.dt-button:not(:disabled):not(.disabled):active:focus, .dt-button:not(:disabled):not(.disabled).active:focus,
-.show > .dt-button.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
     </style>
     <script src="../lib/js/jquery.js"></script>
     <form id="form1" runat="server">
@@ -152,21 +94,19 @@
 
         <div class="card input-group">
             <div class="card-body" style="margin: auto; width: 100%;">
-                <div class="table-responsive">
-                    <table id="GridViewSales" style="display mdl-data-table">
-                        <thead>
-                            <tr>
-                                <th>Order time</th>
-                                <th>Payment method</th>
-                                <th>Billing address</th>
-                                <th>Discount</th>
-                                <th>Delivery cost</th>
-                                <th>Final total</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+                <table id="GridViewSales" class="display nowrap responsive mdl-data-table">
+                    <thead>
+                        <tr>
+                            <th>Order time</th>
+                            <th>Payment method</th>
+                            <th>Billing address</th>
+                            <th>Discount</th>
+                            <th>Delivery cost</th>
+                            <th>Final total</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </form>
@@ -176,7 +116,7 @@
 
         $(document).ready(function () {
             //if (isSearch === true) {
-                redraw();
+            redraw();
             //}
             //isSearch = false;
         }
@@ -202,10 +142,9 @@
                 dataType: "json",
                 success: function (data) {
                     $('#GridViewSales').dataTable({
-                        responsive: true,
                         dom: 'lBftrip',
                         buttons: [
-                            'copy', 'csv', 'excel', 'pdf','print'
+                            'copy', 'csv', 'excel', 'pdf', 'print'
                         ],
                         data: JSON.parse(data.d),
                         columns: [

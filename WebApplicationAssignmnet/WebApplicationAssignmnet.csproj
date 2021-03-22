@@ -228,6 +228,7 @@
     <Content Include="lib\css\Login.css" />
     <Content Include="lib\css\OrderHistoryDetails.css" />
     <Content Include="lib\css\OrderPage%28A%29.css" />
+    <Content Include="lib\css\UserLayout.css" />
     <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.bootstrap.css" />
     <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.bootstrap.min.css" />
     <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.bootstrap4.css" />
@@ -394,6 +395,7 @@
     <Content Include="lib\js\Masterpage.js" />
     <Content Include="lib\js\ProductGallery.js" />
     <Content Include="Artist\ProductGallery.aspx" />
+    <Content Include="SystemUser\CustomerList.aspx" />
     <Content Include="SystemUser\SalesReport.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer\CustomerHomepage.aspx" />
@@ -612,6 +614,13 @@
     </Compile>
     <Compile Include="Customer\CustomerHomepage.aspx.designer.cs">
       <DependentUpon>CustomerHomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemUser\CustomerList.aspx.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemUser\CustomerList.aspx.designer.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
     </Compile>
     <Compile Include="SystemUser\SalesReport.aspx.cs">
       <DependentUpon>SalesReport.aspx</DependentUpon>
