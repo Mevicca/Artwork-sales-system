@@ -15,11 +15,11 @@ namespace WebApplicationAssignmnet
     {
         int CurrentPage;
         protected void Page_Load(object sender, EventArgs e)
-        {
-            all.BackColor = Color.FromArgb(0xBC4639);
-            all.ForeColor = Color.White;
+        {    
             if (!IsPostBack)
             {
+                all.BackColor = Color.FromArgb(0xBC4639);
+                all.ForeColor = Color.White;
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
