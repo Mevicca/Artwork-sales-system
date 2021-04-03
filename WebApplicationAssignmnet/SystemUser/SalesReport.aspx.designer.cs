@@ -33,33 +33,6 @@ namespace WebApplicationAssignmnet.SystemUser
         protected global::System.Web.UI.WebControls.TextBox StartDate;
 
         /// <summary>
-        /// StartDateButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton StartDateButton;
-
-        /// <summary>
-        /// StartDateCalendar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar StartDateCalendar;
-
-        /// <summary>
-        /// CompareValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
-
-        /// <summary>
         /// EndDate control.
         /// </summary>
         /// <remarks>
@@ -69,42 +42,6 @@ namespace WebApplicationAssignmnet.SystemUser
         protected global::System.Web.UI.WebControls.TextBox EndDate;
 
         /// <summary>
-        /// EndDateButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton EndDateButton;
-
-        /// <summary>
-        /// EndDateCalendar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar EndDateCalendar;
-
-        /// <summary>
-        /// PaymentMethod control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList PaymentMethod;
-
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
-        /// <summary>
         /// CustomerID control.
         /// </summary>
         /// <remarks>
@@ -112,23 +49,5 @@ namespace WebApplicationAssignmnet.SystemUser
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CustomerID;
-
-        /// <summary>
-        /// TxtBillingEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBillingEmail;
-
-        /// <summary>
-        /// BtnSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSearch;
     }
 }

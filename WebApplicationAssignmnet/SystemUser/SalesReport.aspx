@@ -22,29 +22,14 @@
                         Start Date :
                             </asp:Label>
                             <br />
-                            <asp:TextBox CssClass="form-control" ID="StartDate" runat="server" OnTextChanged="StartDate_TextChanged" AutoPostBack="true"></asp:TextBox>
-                            <asp:LinkButton ID="StartDateButton" OnClick="StartDateButton_Click" runat="server">
-                        <i class="fa fa-calendar"></i>
-                            </asp:LinkButton>
-                            <br />
-                            <asp:Calendar ID="StartDateCalendar" runat="server" TodayDayStyle-ForeColor="SkyBlue" Visible="false" OnSelectionChanged="StartDateCalendar_SelectionChanged">
-                                <SelectedDayStyle BackColor="PowderBlue" />
-                            </asp:Calendar>
-                            <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="StartDate" ErrorMessage="Invalid Date Format" Type="Date" Operator="DataTypeCheck" Display="Dynamic" Text="*" ForeColor="Red">
-                            </asp:CompareValidator>
+                            <asp:TextBox CssClass="form-control" runat="server" ID="StartDate" ClientIDMode="Static"></asp:TextBox>
                         </div>
                         <div class="col">
                             <asp:Label runat="server" Font-Bold="true">
                         End Date :
                             </asp:Label>
                             <br />
-                            <asp:TextBox CssClass="form-control" ID="EndDate" runat="server" OnTextChanged="EndDate_TextChanged" AutoPostBack="true"></asp:TextBox>
-                            <asp:LinkButton ID="EndDateButton" OnClick="EndDateButton_Click" runat="server">
-                        <i class="fa fa-calendar"></i>
-                            </asp:LinkButton>
-                            <asp:Calendar ID="EndDateCalendar" runat="server" TodayDayStyle-ForeColor="SkyBlue" Visible="false" OnSelectionChanged="EndDateCalendar_SelectionChanged">
-                                <SelectedDayStyle BackColor="PowderBlue" />
-                            </asp:Calendar>
+                            <asp:TextBox CssClass="form-control" ID="EndDate" runat="server" ClientIDMode="Static"></asp:TextBox>
                         </div>
                         <div class="col">
                             <asp:Label runat="server" Font-Bold="true">
@@ -66,7 +51,7 @@
                         Customer ID :
                             </asp:Label>
                             <br />
-                            <asp:TextBox CssClass="form-control" ID="CustomerID" runat="server"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="CustomerID" runat="server" ClientIDMode="Static"></asp:TextBox>
                             <br />
                             <br />
                         </div>
@@ -76,14 +61,14 @@
                         Billing email address :
                             </asp:Label>
                             <br />
-                            <asp:TextBox CssClass="form-control" ID="TxtBillingEmail" runat="server"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="TxtBillingEmail" runat="server" ClientIDMode="Static"></asp:TextBox>
                             <br />
                             <br />
                         </div>
                     </div>
                     <div class="row" style="float: right;">
                         <div class="row" style="float: right;">
-                            <asp:Button Text="Search" ID="BtnSearch" runat="server" CssClass="btn btn-primary" ClientIDMode="Static" OnClientClick="return clickSearch();" />
+                            <button type="button" id="BtnSearch" class="btn btn-primary" onclick="clickSearch();">Search</button>
                         </div>
                     </div>
                     <div>
@@ -112,25 +97,39 @@
     </form>
 
     <script>
-        var isSearch;
-
+        var table;
         $(document).ready(function () {
-            //if (isSearch === true) {
             redraw();
-            //}
-            //isSearch = false;
+            var startdate = moment().startOf('month').format("DD-MM-YYYY");
+            var enddate = moment(new Date()).format("DD-MM-YYYY");
+            $("input[id*='StartDate']").datepicker({
+                format: "dd-mm-yyyy",
+                defaultDate: startdate
+            });
+            $("input[id*='EndDate']").datepicker({
+                format: "dd-mm-yyyy",
+                defaultDate: enddate
+            });
+            $("input[id*='StartDate']").datepicker("setDate", startdate);
+            $("input[id*='EndDate']").datepicker("setDate", enddate);
+            
         }
         );
 
         function redraw() {
-            var cust = $('#ContentPlaceHolder1_CustomerID').val();
-            if (cust === "") cust = null;
-
+            var cust = $('#CustomerID').val();
+            //if (cust === "") cust = ;
+            var startDate = $('#StartDate').val();
+            var endDate = $('#EndDate').val();
+            if (startDate === undefined)
+                startDate = '';
+            if (endDate === undefined)
+                endDate = '';
             var obj = {
-                startTime: $('#ContentPlaceHolder1_StartDate').val(),
-                endTime: $('#ContentPlaceHolder1_EndDate').val(),
+                startTime: startDate,
+                endTime: endDate,
                 custID: cust,
-                address: $('#ContentPlaceHolder1_TxtBillingEmail').val(),
+                address: $('#TxtBillingEmail').val(),
                 paymentMethod: $('#PaymentMethod option:selected').text()
             };
 
@@ -180,9 +179,13 @@
         }
 
         function clickSearch() {
-            console.log(isSearch);
-            isSearch = true;
+            debugger;
+            var table = table = $('#GridViewSales').DataTable();
+            table.destroy();
+            redraw();
         }
 
+
     </script>
+    <script src="../lib/js/Moment.js"></script>
 </asp:Content>

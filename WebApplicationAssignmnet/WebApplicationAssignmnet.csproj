@@ -222,6 +222,8 @@
     <Content Include="Customer\CustomerFAQ.aspx" />
     <Content Include="Customer\HistoryDetails.aspx" />
     <Content Include="Customer\OrderHistory.aspx" />
+    <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.css" />
+    <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.js" />
     <Content Include="lib\css\ArtistProductHandle.css" />
     <Content Include="lib\css\Cart.css" />
     <Content Include="lib\css\FAQ.css" />
@@ -335,6 +337,7 @@
     <Content Include="lib\js\addProduct.js" />
     <Content Include="lib\css\WishList.css" />
     <Content Include="lib\js\Cart.js" />
+    <Content Include="lib\js\Moment.js" />
     <Content Include="lib\js\OrderPage%28A%29.js" />
     <Content Include="lib\js\Tools.js" />
     <Content Include="lib\js\WishList.js" />
@@ -343,7 +346,6 @@
     <Content Include="Artist\OrderPage%28A%29.aspx" />
     <Content Include="Artist\SalesHistory%28A%29.aspx" />
     <Content Include="lib\material-components-web\4.0.0\material-components-web.min.css" />
-    <Content Include="lib\Moment\moment.min.js" />
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />

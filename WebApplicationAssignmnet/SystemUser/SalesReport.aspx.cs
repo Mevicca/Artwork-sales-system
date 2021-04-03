@@ -26,7 +26,8 @@ namespace WebApplicationAssignmnet.SystemUser
         {
             try
             {
-
+                if(startTime == "") startTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1).ToString("dd-MM-yyyy");
+                if(endTime == "") endTime = DateTime.Today.ToString("dd-MM-yyyy");
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
 
@@ -85,38 +86,6 @@ where orderTime between @startTime and @endtime + 1
             {
                 throw ex;
             }
-
-        }
-
-        protected void StartDateButton_Click(object sender, EventArgs e)
-        {
-            StartDateCalendar.Visible = !StartDateCalendar.Visible;
-        }
-
-        protected void EndDateButton_Click(object sender, EventArgs e)
-        {
-            EndDateCalendar.Visible = !EndDateCalendar.Visible;
-        }
-
-        protected void EndDateCalendar_SelectionChanged(object sender, EventArgs e)
-        {
-            EndDate.Text = EndDateCalendar.SelectedDate.ToString("dd-MM-yyyy");
-            EndDateCalendar.Visible = false;
-        }
-
-        protected void StartDateCalendar_SelectionChanged(object sender, EventArgs e)
-        {
-            StartDate.Text = StartDateCalendar.SelectedDate.ToString("dd/MM/yyyy");
-            StartDateCalendar.Visible = false;
-        }
-
-        protected void StartDate_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void EndDate_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
