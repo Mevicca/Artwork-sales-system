@@ -15,7 +15,8 @@
                     <h6><i class="fa fa-user"></i>&nbsp Receiver Name :</h6>
                 </div>
                 <div class="col-sm-3">
-                    <h6>Chen Teng Siang</h6>
+                    <h6>
+                        <asp:Label ID="LblCustName" runat="server"></asp:Label></h6>
                 </div>
             </div>
             <div class="row">
@@ -23,7 +24,8 @@
                     <h6><i class="fa fa-phone"></i>&nbsp Contact Number :</h6>
                 </div>
                 <div class="col-sm-3">
-                    <h6>013-5223809</h6>
+                    <h6>
+                        <asp:Label ID="LblPhNum" runat="server"></asp:Label></h6>
                 </div>
             </div>
             <div class="row">
@@ -31,7 +33,8 @@
                     <h6><i class="fa fa-map-marker"></i>&nbsp Delivery Adress : </h6>
                 </div>
                 <div class="col-sm-8">
-                    <h6>1A-17-05, Iconic Skies, Halaman Relau, 11900 Relau, Penang</h6>
+                    <h6>
+                        <asp:Label ID="LblDelAdd" runat="server"></asp:Label></h6>
                 </div>
             </div>
 
@@ -44,39 +47,29 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-2" style="text-align: right; margin-left: 30px">
-                    <img src="../assets/Acrylic/carlos pun B&L.jpg" style="width: 66px; height: 89px;" />
-                </div>
+            <asp:Repeater ID="rptProducts" runat="server">
+                <ItemTemplate>
+                    <div class="row">
+                        <div class="col-sm-2" style="text-align: right; margin-left: 30px">
+                            <asp:ImageButton ID="ImgPath" Width="66px" Height="89px" runat="server" ImageUrl= <%# Eval("path1") %>/>
+                        </div>
 
-                <div class="col-sm-2" style="text-align: right">
-                    <h6>Name :</h6>
-                </div>
+                        <div class="col-sm-2" style="text-align: right">
+                            <h6>Name : </h6>
+                        </div>
 
-                <div class="col-sm-6">
-                    <h6>Bug Bunny & Lola in Love</h6>
-                    <h6 style="text-align: right; margin-left: 90px">x 1</h6>
-                    <h6 style="text-align: right; margin-left: 90px; color: red"><strong>RM&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 24,950.00</strong></h6>
-                    <br />
-                </div>
-
-
-                <div class="col-sm-2" style="text-align: right; margin-left: 30px">
-                    <img src="../assets/Acrylic/carlos pun DD.jpg" style="width: 66px; height: 89px;" />
-                </div>
-
-                <div class="col-sm-2" style="text-align: right">
-                    <h6>Name :</h6>
-                </div>
-
-                <div class="col-sm-6">
-                    <h6>Mc Duck Success Treasure Hunt</h6>
-                    <h6 style="text-align: right; margin-left: 90px">x 1</h6>
-                    <h6 style="text-align: right; margin-left: 90px; color: red"><strong>RM&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 33,250.00</strong></h6>
-                    <br />
-                </div>
-            </div>
-
+                        <div class="col-sm-6">
+                            <h6>
+                                <asp:Label ID="LblProductName" runat="server"> <%# Eval("ProductName") %></asp:Label></h6>
+                            <h6 style="text-align: right; margin-left: 90px">x
+                                <asp:Label ID="LblQuantity" runat="server"> <%# Eval("quantity") %></asp:Label></h6>
+                            <h6 style="text-align: right; margin-left: 90px; color: red"><strong>RM&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:Label ID="LblPrice" runat="server"><%# Eval("ProductPrice") %></asp:Label></strong></h6>
+                            <br />
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
             <hr />
 
             <div class="row">
@@ -95,10 +88,13 @@
                 </div>
 
                 <div class="col-sm-2">
-                    <h6>58,200.00</h6>
-                    <h6>&nbsp&nbsp&nbsp&nbsp&nbsp 14.20</h6>
-                    <h6>&nbsp&nbsp&nbsp&nbsp 100.00</h6>
-                    <h6 style="color: red"><strong>58,114.20</strong></h6>
+                    <h6>
+                        <asp:Label ID="LblSubTtl" runat="server"></asp:Label></h6>
+                    <h6>&nbsp&nbsp&nbsp<asp:Label ID="LblShipFee" runat="server"></asp:Label></h6>
+                    <h6>&nbsp&nbsp&nbsp&nbsp
+                        <asp:Label ID="LblDisc" runat="server"></asp:Label></h6>
+                    <h6 style="color: red"><strong>
+                        <asp:Label ID="LblFinalTtl" runat="server"></asp:Label></strong></h6>
                 </div>
             </div>
 
@@ -129,9 +125,14 @@
                 </div>
 
                 <div class="col-sm-4" style="margin-left: 90px; text-align: right">
-                    <h6><strong>O1001</strong></h6>
-                    <h6>02/02/2021 18:25</h6>
-                    <h6>09/02/2021 12:30</h6>
+                    <h6><strong>
+                        <asp:Label ID="LblOrderId" runat="server"></asp:Label></strong></h6>
+                    <h6>
+                        <asp:Label ID="LblPaymentDate" runat="server"></asp:Label>
+                        <asp:Label ID="LblPaymentTime" runat="server"></asp:Label></h6>
+                    <h6>
+                        <asp:Label ID="LblOrderDate" runat="server"></asp:Label>
+                        <asp:Label ID="LblOrderTime" runat="server"></asp:Label></h6>
                     <h6>16/02/2021 14:30</h6>
                 </div>
             </div>
@@ -165,7 +166,7 @@
 
             </div>
 
-            <div class="row float-right" style="margin-right:5px;">
+            <div class="row float-right" style="margin-right: 5px;">
                 <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Customer/OrderHistory.aspx" />
             </div>
             <br />

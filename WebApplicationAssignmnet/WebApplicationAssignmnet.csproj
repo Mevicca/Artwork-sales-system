@@ -228,7 +228,6 @@
     <Content Include="lib\css\OrderPage%28A%29.css" />
     <Content Include="lib\js\addProduct.js" />
     <Content Include="lib\css\WishList.css" />
-    <Content Include="lib\js\Cart.js" />
     <Content Include="lib\js\OrderPage%28A%29.js" />
     <Content Include="lib\js\Tools.js" />
     <Content Include="lib\js\WishList.js" />
