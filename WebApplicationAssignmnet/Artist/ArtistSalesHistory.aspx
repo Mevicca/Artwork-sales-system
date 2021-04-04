@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="SalesHistory(A).aspx.cs" Inherits="WebApplicationAssignmnet.SalesHistory_A_" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="ArtistSalesHistory.aspx.cs" Inherits="WebApplicationAssignmnet.SalesHistory_A_" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/OrderPage(A).css" rel="stylesheet" />
@@ -48,7 +48,7 @@
                             <asp:Label ID="LblCustname" runat="server" Text='<%# Eval("CustFullName") %>'></asp:Label>
                             </td>
                         <td>
-                            <asp:Label ID="LblTotalPrice" runat="server" Text='<%#"RM " +Eval("FinalTotal") %>'></asp:Label>
+                            <asp:Label ID="LblTotalPrice" runat="server" Text='<%#"RM " +String.Format("{0:#,##0.00}",Eval("FinalTotal")) %>'></asp:Label>
                             </td>
                         <td>
                             <asp:Label ID="LblStatus" runat="server" Text='<%# Eval("DeliveryStatus") %>'></asp:Label>

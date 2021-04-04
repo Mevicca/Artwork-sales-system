@@ -242,8 +242,8 @@
     <Content Include="lib\js\WishList.js" />
     <Content Include="Anonymous\Login.aspx" />
     <Content Include="Artist\OrderHistoryDetails.aspx" />
-    <Content Include="Artist\OrderPage%28A%29.aspx" />
-    <Content Include="Artist\SalesHistory%28A%29.aspx" />
+    <Content Include="Artist\ArtistOrderPage.aspx" />
+    <Content Include="Artist\ArtistSalesHistory.aspx" />
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />
@@ -469,19 +469,19 @@
     <Compile Include="Anonymous\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Artist\OrderPage%28A%29.aspx.cs">
-      <DependentUpon>OrderPage%28A%29.aspx</DependentUpon>
+    <Compile Include="Artist\ArtistOrderPage.aspx.cs">
+      <DependentUpon>ArtistOrderPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Artist\OrderPage%28A%29.aspx.designer.cs">
-      <DependentUpon>OrderPage%28A%29.aspx</DependentUpon>
+    <Compile Include="Artist\ArtistOrderPage.aspx.designer.cs">
+      <DependentUpon>ArtistOrderPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Artist\SalesHistory%28A%29.aspx.cs">
-      <DependentUpon>SalesHistory%28A%29.aspx</DependentUpon>
+    <Compile Include="Artist\ArtistSalesHistory.aspx.cs">
+      <DependentUpon>ArtistSalesHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Artist\SalesHistory%28A%29.aspx.designer.cs">
-      <DependentUpon>SalesHistory%28A%29.aspx</DependentUpon>
+    <Compile Include="Artist\ArtistSalesHistory.aspx.designer.cs">
+      <DependentUpon>ArtistSalesHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>

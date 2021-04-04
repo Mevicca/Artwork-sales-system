@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="OrderPage(A).aspx.cs" Inherits="WebApplicationAssignmnet.OrderPage_A_" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="ArtistOrderPage.aspx.cs" Inherits="WebApplicationAssignmnet.OrderPage_A_" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/OrderPage(A).css" rel="stylesheet" />
@@ -6,7 +6,7 @@
     <form id="form1" runat="server">
         <div class="container" style="background-color: white">
             <div class="row" style="width: 100%; display: contents">
-                <h1 class="float-left headerStyle" style="margin-top: 10px; margin-left: 5px;"><strong>Sales Order</strong></h1>
+                <h1 class="float-left headerStyle" style="margin-top: 10px; margin-left: 5px;"><strong>Current Sales Order</strong></h1>
                 <div class="sort float-right galley-sort-by">
                     <div class="sort">
                         <a>Sort By :</a>
@@ -48,7 +48,7 @@
                                     <asp:Label ID="LblCustname" runat="server" Text='<%# Eval("CustFullName") %>'></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:Label ID="LblTotalPrice" runat="server" Text='<%#"RM " +Eval("FinalTotal") %>'></asp:Label>
+                                    <asp:Label ID="LblTotalPrice" runat="server" Text='<%#"RM " +String.Format("{0:##,##0.00}",Eval("FinalTotal")) %>'></asp:Label>
                                 </td>
                                 <td>
                                     <asp:Label ID="LblStatus" runat="server" Text='<%# Eval("DeliveryStatus") %>'></asp:Label>

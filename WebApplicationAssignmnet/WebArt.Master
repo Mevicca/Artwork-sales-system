@@ -24,8 +24,8 @@
             <a href="AboutUs.aspx">About Us</a>
             <a href="FAQ.aspx">FAQ</a>
             <a href="ProductGallery.aspx">My Products</a>
-            <a href="OrderPage(A).aspx">Current Order</a>
-            <a href="SalesHistory(A).aspx">History Order</a>
+            <a href="ArtistOrderPage.aspx">Current Order</a>
+            <a href="ArtistSalesHistory.aspx">History Order</a>
             <a href="ArtistProfileSetting.aspx">Settings</a>
     </div>
 
