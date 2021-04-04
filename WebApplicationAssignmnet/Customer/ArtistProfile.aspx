@@ -29,7 +29,7 @@
                         <asp:QueryStringParameter Name="id" QueryStringField="id" />
                     </SelectParameters>
                 </asp:SqlDataSource>
-                <asp:DataList ID="DataList1" runat="server" CellPadding="20" DataSourceID="SqlDataSource1" RepeatColumns="5" RepeatDirection="Horizontal">
+                <asp:DataList ID="DataList1" runat="server" CellPadding="20" DataSourceID="SqlDataSource1" RepeatColumns="5" RepeatDirection="Horizontal" HorizontalAlign="Center">
                     <ItemTemplate>
                         <table>
                             <tr>

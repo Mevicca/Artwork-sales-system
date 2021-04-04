@@ -6,14 +6,13 @@
     <form id="form1" runat="server">
         <div class="container" style="background-color: white">
             <div class="row" style="width: 100%; display: contents">
-                <h1 class="float-left headerStyle" style="margin-top: 10px;margin-left:5px;"><strong>Order History</strong></h1>
+                <h1 class="float-left headerStyle" style="margin-top: 10px; margin-left: 5px;"><strong>Order History</strong></h1>
                 <div class="sort float-right galley-sort-by">
                     <div class="sort">
                         <a>Sort By :</a>
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="ddlSortBy" AutoPostBack="true" OnSelectedIndexChanged="ddlSortBy_SelectedIndexChanged" runat="server">
                             <asp:ListItem Selected="True">Date</asp:ListItem>
                             <asp:ListItem>Total Price</asp:ListItem>
-                            <asp:ListItem>Customer Name</asp:ListItem>
                             <asp:ListItem>Order ID</asp:ListItem>
                         </asp:DropDownList>
                     </div>
@@ -26,51 +25,56 @@
                     <tr style="text-align: center">
                         <th>Order ID</th>
                         <th>Order Date</th>
-                        <th>Release Date</th>
+                        <th>Update Date</th>
                         <th>Total Price</th>
                         <th>Status</th>
                         <th>&nbsp</th>
                     </tr>
                 </thead>
-
                 <tbody>
-                    <tr style="text-align: center">
-                        <td>O1001</td>
-                        <td>12/02/2021</td>
-                        <td>22/02/2021</td>
-                        <td>RM 2,022.00</td>
-                        <td>Shipping</td>
-                        <td style="text-align: center">
-                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl="~/Customer/HistoryDetails.aspx">
+                    <asp:Repeater ID="orderHistory" runat="server" OnItemDataBound="orderHistory_ItemDataBound">
+                        <ItemTemplate>
+                            <tr style="text-align: center">
+                                <td>
+                                    <asp:Label ID="LblOrderID" runat="server" Text='<%# Eval("SalesID") %>'></asp:Label>
+
+                                </td>
+                                <td>
+
+                                    <asp:Label ID="LblOrderDate" runat="server" Text='<%# Eval("OrderTime") %>'></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Label ID="LblUpdateDate" runat="server" Text='<%# Eval("UpdateAt") %>'></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Label ID="LblTotalPrice" runat="server" Text='<%#"RM " +Eval("FinalTotal") %>'></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Label ID="LblStatus" runat="server" Text='<%# Eval("DeliveryStatus") %>'></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl='<%#"~/Customer/HistoryDetails.aspx?id="+Eval("SalesID")%>'>
                         <i class="fa fa-search"></i>&nbsp; View Details
-                    </asp:LinkButton>
-                            &nbsp;
-                            <asp:LinkButton runat="server" class="btn btn-outline-danger" Style="cursor: pointer" OnClientClick="comfirmMsg();return false;">
+                                    </asp:LinkButton>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <asp:LinkButton ID="btnCancel" runat="server" class="btn btn-outline-danger" CommandName ="Cancel" CommandArgument=<%# Eval("SalesID") %>
+                                        Style="cursor: pointer" OnCommand="btnCancel_Click" OnClientClick="return confirmMsg();">
                         <i class="fa fa-trash"></i>&nbsp; Cancel Order
-                    </asp:LinkButton>
-                        </td>
-                    </tr>
-                    <tr style="text-align: center">
-                        <td>O1002</td>
-                        <td>13/12/2021</td>
-                        <td></td>
-                        <td>RM 2,023.00</td>
-                        <td>To Ship</td>
-                        <td style="text-align: center">
-                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl="~/Customer/HistoryDetails.aspx">
-                        <i class="fa fa-search"></i>&nbsp; View Details
-                    </asp:LinkButton>
-                            &nbsp;
-                   
-                            <asp:LinkButton runat="server" class="btn btn-outline-danger" Style="cursor: pointer" OnClientClick="comfirmMsg();return false;">
-                        <i class="fa fa-trash"></i>&nbsp; Cancel Order
-                    </asp:LinkButton>
-                        </td>
-                    </tr>
+                                    </asp:LinkButton>
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </tbody>
             </table>
         </div>
-
     </form>
-
+    <script>
+        function confirmMsg() {
+            return confirm('Are you confirm to cancel order?');
+        }
+    </script>
 </asp:Content>
+

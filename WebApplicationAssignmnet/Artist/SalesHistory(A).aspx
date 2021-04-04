@@ -10,7 +10,7 @@
                 <div class="sort float-right galley-sort-by">
                     <div class="sort">
                         <a>Sort By :</a>
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="ddlSortBy" AutoPostBack="true" OnSelectedIndexChanged="ddlSortBy_SelectedIndexChanged" runat="server">
                             <asp:ListItem Selected="True">Date</asp:ListItem>
                             <asp:ListItem>Total Price</asp:ListItem>
                             <asp:ListItem>Customer Name</asp:ListItem>
@@ -19,7 +19,6 @@
                     </div>
                 </div>
             </div>
-
             <br />
 
             <table class="table table-striped">
@@ -35,30 +34,34 @@
                 </thead>
 
                 <tbody>
+                    <asp:Repeater ID="salesHistory" runat="server">
+            <ItemTemplate>
+                
                     <tr style="text-align: center">
-                        <td>O1001</td>
-                        <td>27/12/2020</td>
-                        <td>Tay</td>
-                        <td>RM 2022</td>
-                        <td>Delivered</td>
+                        <td>
+                            <asp:Label ID="LblOrderID" runat="server" Text='<%# Eval("SalesID") %>'></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="LblUpdateDate" runat="server" Text='<%# Eval("UpdateAt") %>'></asp:Label>
+                            </td>
+                        <td>
+                            <asp:Label ID="LblCustname" runat="server" Text='<%# Eval("CustFullName") %>'></asp:Label>
+                            </td>
+                        <td>
+                            <asp:Label ID="LblTotalPrice" runat="server" Text='<%#"RM " +Eval("FinalTotal") %>'></asp:Label>
+                            </td>
+                        <td>
+                            <asp:Label ID="LblStatus" runat="server" Text='<%# Eval("DeliveryStatus") %>'></asp:Label>
+                        </td>
                         <td style="text-align: center">
-                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl="~/Artist/OrderHistoryDetails.aspx">
+                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl='<%#"~/Artist/OrderHistoryDetails.aspx?id="+Eval("OrderDetails.ProductID")%>'>
                         <i class="fa fa-search"></i>&nbsp; View Details
                     </asp:LinkButton>
                         </td>
                     </tr>
-                    <tr style="text-align: center">
-                        <td>O1002</td>
-                        <td>31/12/2020</td>
-                        <td>Mak</td>
-                        <td>RM 2023</td>
-                        <td>Delivered</td>
-                        <td style="text-align: center">
-                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl="~/Artist/OrderHistoryDetails.aspx">
-                        <i class="fa fa-search"></i>&nbsp; View Details
-                    </asp:LinkButton>
-                        </td>
-                    </tr>
+               
+            </ItemTemplate>
+        </asp:Repeater>
                 </tbody>
             </table>
         </div>
