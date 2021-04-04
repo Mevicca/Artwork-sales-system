@@ -15,13 +15,13 @@ namespace WebApplicationAssignmnet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                if (HttpContext.Current.User.Identity.Name == "Customer")
-                    Response.Redirect("~/Customer/CustomerHomepage.aspx");
-                else
-                    Response.Redirect("~/Artist/Homepage.aspx");
-            }
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    if (HttpContext.Current.User.Identity.Name == "Customer")
+            //        Response.Redirect("~/Customer/CustomerHomepage.aspx");
+            //    else
+            //        Response.Redirect("~/Artist/Homepage.aspx");
+            //}
         }
 
         protected void btnlogin_Click(object sender, EventArgs e)

@@ -29,15 +29,15 @@ namespace WebApplicationAssignmnet
 
         private void Application_AuthenticateRequest(object sender, EventArgs e)
         {
-            HttpCookie decryptedCookie = Context.Request.Cookies[FormsAuthentication.FormsCookieName];
+            //HttpCookie decryptedCookie = Context.Request.Cookies[FormsAuthentication.FormsCookieName];
 
-            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(decryptedCookie.Value);
+            //FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(decryptedCookie.Value);
 
-            var identity = new GenericIdentity(ticket.Name);
-            var principal = new GenericPrincipal(identity, null);
+            //var identity = new GenericIdentity(ticket.Name);
+            //var principal = new GenericPrincipal(identity, null);
 
-            HttpContext.Current.User = principal;
-            Thread.CurrentPrincipal = HttpContext.Current.User;
+            //HttpContext.Current.User = principal;
+            //Thread.CurrentPrincipal = HttpContext.Current.User;
         }
 
         protected void Application_Error(object sender, EventArgs e)
