@@ -64,7 +64,7 @@
                             <h6 style="text-align: right; margin-left: 90px">x
                                 <asp:Label ID="LblQuantity" runat="server"> <%# Eval("quantity") %></asp:Label></h6>
                             <h6 style="text-align: right; margin-left: 90px; color: red"><strong>RM&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:Label ID="LblPrice" runat="server"><%# Eval("ProductPrice") %></asp:Label></strong></h6>
+                                <asp:Label ID="LblPrice" runat="server"><%# String.Format("{0:#,##0.00}",Eval("ProductPrice")) %></asp:Label></strong></h6>
                             <br />
                         </div>
                     </div>
@@ -90,11 +90,11 @@
                 <div class="col-sm-2">
                     <h6>
                         <asp:Label ID="LblSubTtl" runat="server"></asp:Label></h6>
-                    <h6>&nbsp&nbsp&nbsp<asp:Label ID="LblShipFee" runat="server"></asp:Label></h6>
-                    <h6>&nbsp&nbsp&nbsp&nbsp
+                    <h6><asp:Label ID="LblShipFee" runat="server"></asp:Label></h6>
+                    <h6>
                         <asp:Label ID="LblDisc" runat="server"></asp:Label></h6>
                     <h6 style="color: red"><strong>
-                        <asp:Label ID="LblFinalTtl" runat="server"></asp:Label></strong></h6>
+                        <asp:Label ID="LblFinalTtl" runat="server"> </asp:Label></strong></h6>
                 </div>
             </div>
 
@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h5><strong>Payment Method</strong></h5>
-                    <h6 style="margin-left: 50px"><i class="fa fa-globe"></i>&nbsp Online Banking (FPX)</h6>
+                    <h6 style="margin-left: 50px"><i class="fa fa-globe"></i>&nbsp <asp:Label runat="server" ID="paymentMethod"></asp:Label></h6>
                 </div>
             </div>
 
@@ -120,33 +120,29 @@
                 <div class="col-sm-4" style="margin-left: 50px">
                     <h6><strong>Order ID</strong></h6>
                     <h6>Payment Time</h6>
-                    <h6>Ship Time</h6>
-                    <h6>Delivered Time</h6>
+                    <h6>Delivery status</h6>
                 </div>
 
                 <div class="col-sm-4" style="margin-left: 90px; text-align: right">
                     <h6><strong>
                         <asp:Label ID="LblOrderId" runat="server"></asp:Label></strong></h6>
                     <h6>
-                        <asp:Label ID="LblPaymentDate" runat="server"></asp:Label>
                         <asp:Label ID="LblPaymentTime" runat="server"></asp:Label></h6>
                     <h6>
-                        <asp:Label ID="LblOrderDate" runat="server"></asp:Label>
-                        <asp:Label ID="LblOrderTime" runat="server"></asp:Label></h6>
-                    <h6>16/02/2021 14:30</h6>
+                        <asp:Label ID="LblOrderStatus" runat="server"></asp:Label></h6>
                 </div>
             </div>
 
             <hr />
 
-            <div class="row">
+            <%--<div class="row">
                 <div class="col-sm-6">
                     <h5><strong>Rate</strong></h5>
                     <br />
                 </div>
-            </div>
+            </div>--%>
 
-            <div class="row" style="margin-left: 230px">
+           <%-- <div class="row" style="margin-left: 230px">
                 <div class="col-sm-1">
                     <h5><i class="fa fa-star checked"></i></h5>
                 </div>
@@ -164,7 +160,7 @@
                     <br />
                 </div>
 
-            </div>
+            </div>--%>
 
             <div class="row float-right" style="margin-right: 5px;">
                 <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Customer/OrderHistory.aspx" />

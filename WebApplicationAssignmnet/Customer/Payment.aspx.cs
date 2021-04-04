@@ -69,7 +69,9 @@ namespace WebApplicationAssignmnet
                 int deliveryComID = Int32.Parse(Session["DeliveryMethod"].ToString());
                 int addressID = Int32.Parse(Session["DeliveryAddressID"].ToString());
                 double discount = Double.Parse(lblDiscount.Text?.Substring(2)??"0.00");
+                string telephoneNo = Session["TelephoneNo"].ToString();
                 Session.Remove("DeliveryMethod");
+                Session.Remove("TelephoneNo");
                 Session.Remove("DeliveryAddressID");
 
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
@@ -93,7 +95,7 @@ SET @var = SCOPE_IDENTITY();
 
                     query += @"
 DELETE FROM ADDTOCARTLIST WHERE CUSTID = @custiD;
-INSERT INTO DELIVERY(SALESID, ADDRESSID, DELIVERYSERVICESNO, DELIVERYSTATUS, UPDATEAT) VALUES (@VAR, @ADDID, @DELSERNO, @DELSTATUS, SYSDATETIME());
+INSERT INTO DELIVERY(SALESID, ADDRESSID, DELIVERYSERVICESNO, DELIVERYSTATUS, UPDATEAT, TELEPHONENO) VALUES (@VAR, @ADDID, @DELSERNO, @DELSTATUS, SYSDATETIME(),@tel);
 ";
 
                     query += @"INSERT INTO PAYMENT(SALESID, PAYMENTDATE, TOTALAMOUNT, PAYMENTMETHODID, ISPAID) VALUES 
@@ -105,6 +107,7 @@ INSERT INTO DELIVERY(SALESID, ADDRESSID, DELIVERYSERVICESNO, DELIVERYSTATUS, UPD
                     cmd.Parameters.AddWithValue("Total", Double.Parse(lblFinalTotal.Text.Substring(2)));
                     cmd.Parameters.AddWithValue("BILLINGADD", billingAdd);
                     cmd.Parameters.AddWithValue("payMethod", paymentid);
+                    cmd.Parameters.AddWithValue("tel", telephoneNo);
 
                     index = 0;
                     foreach (var product in cartList)

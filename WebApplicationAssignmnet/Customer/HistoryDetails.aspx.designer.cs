@@ -96,6 +96,15 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.WebControls.Label LblFinalTtl;
 
         /// <summary>
+        /// paymentMethod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label paymentMethod;
+
+        /// <summary>
         /// LblOrderId control.
         /// </summary>
         /// <remarks>
@@ -103,15 +112,6 @@ namespace WebApplicationAssignmnet
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblOrderId;
-
-        /// <summary>
-        /// LblPaymentDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPaymentDate;
 
         /// <summary>
         /// LblPaymentTime control.
@@ -123,21 +123,12 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.WebControls.Label LblPaymentTime;
 
         /// <summary>
-        /// LblOrderDate control.
+        /// LblOrderStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblOrderDate;
-
-        /// <summary>
-        /// LblOrderTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblOrderTime;
+        protected global::System.Web.UI.WebControls.Label LblOrderStatus;
     }
 }

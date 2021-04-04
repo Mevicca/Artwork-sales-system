@@ -99,6 +99,12 @@ namespace WebApplicationAssignmnet
             {
                 EmailBinding();
                 GetProducts();
+                //bind telephoneNo
+                if (Session["LoginUser"] != null)
+                {
+                    User user = Session["LoginUser"] as User;
+                    telNumber.Text = String.IsNullOrEmpty(user.TelephoneNo) ? "": user.TelephoneNo;
+                }
             }
             catch (Exception ex)
             {
@@ -270,7 +276,8 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
                 Session["Discount"] = lblDiscount.Text;
                 Session["Shipping"] = lblShipping.Text;
                 Session["Total"] = lblFinalTotal.Text;
-                
+                Session["TelephoneNo"] = telNumber.Text;
+
                 Response.Redirect("Payment.aspx");
             }
         }
@@ -365,20 +372,24 @@ INSERT INTO ADDRESSLIST([AddressID], [CustID], [IsDefault]) VALUES (@var, @CustI
                 {
                     throw new Exception("Please select a shipping company.");
                 }
-                if(!chkbox.Checked && txtBillAdd.Text == "")
+                if (!chkbox.Checked && txtBillAdd.Text == "")
                 {
                     throw new Exception("Please enter the billing address.");
+                }
+                if (String.IsNullOrEmpty(telNumber.Text))
+                {
+                    throw new Exception("Please enter the telephone number for delivery.");
                 }
                 //store the shipping session
                 var address = (radioListMethod.SelectedItem?.Value).Split(';'); //inside format : deliveryMethodNo + ";" + deliveryFee
                 Session["DeliveryMethod"] = address[0];
-                Session["DeliveryAddress"]= ddlAddress.SelectedItem.Text;
+                Session["DeliveryAddress"] = ddlAddress.SelectedItem.Text;
                 Session["BillAddress"] = txtBillAdd.Text;
                 Session["BillingEmailAdress"] = txtEmailAdd.Text;
             }
             catch (Exception ex)
             {
-                string js = "failalert('" + ex.Message+"');";
+                string js = "failalert('" + ex.Message + "');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", js, true);
                 return false;
             }
