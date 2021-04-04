@@ -13,5 +13,11 @@ namespace WebApplicationAssignmnet
         {
 
         }
+
+        protected void SignOut_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/SystemUser/UserLogin.aspx");
+        }
     }
 }

@@ -8,98 +8,95 @@
         }
     </style>
     <script src="../lib/js/jquery.js"></script>
-    <form id="form1" runat="server">
-
-        <div class="card input-group" style="margin-bottom: 10px;">
-            <div class="card-body" style="border: solid; border-radius: 5px; border: brown 0.5px; margin-right: 5px;">
-                <div class="data-field">
-                    <div class="row">
-                        <h3 style="margin-left: 10px;">Payment report</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <asp:Label runat="server" Font-Bold="true">
+    <div class="card input-group" style="margin-bottom: 10px;">
+        <div class="card-body" style="border: solid; border-radius: 5px; border: brown 0.5px; margin-right: 5px;">
+            <div class="data-field">
+                <div class="row">
+                    <h3 style="margin-left: 10px;">Payment report</h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <asp:Label runat="server" Font-Bold="true">
                         Start Date :
-                            </asp:Label>
-                            <br />
-                            <asp:TextBox CssClass="form-control" runat="server" ID="StartDate" ClientIDMode="Static"></asp:TextBox>
-                        </div>
-                        <div class="col">
-                            <asp:Label runat="server" Font-Bold="true">
+                        </asp:Label>
+                        <br />
+                        <asp:TextBox CssClass="form-control" runat="server" ID="StartDate" ClientIDMode="Static"></asp:TextBox>
+                    </div>
+                    <div class="col">
+                        <asp:Label runat="server" Font-Bold="true">
                         End Date :
-                            </asp:Label>
-                            <br />
-                            <asp:TextBox CssClass="form-control" ID="EndDate" runat="server" ClientIDMode="Static"></asp:TextBox>
-                        </div>
-                        <div class="col">
-                            <asp:Label runat="server" Font-Bold="true">
+                        </asp:Label>
+                        <br />
+                        <asp:TextBox CssClass="form-control" ID="EndDate" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    </div>
+                    <div class="col">
+                        <asp:Label runat="server" Font-Bold="true">
                         Payment Method :
-                            </asp:Label>
-                            <br />
-                            <asp:DropDownList ID="PaymentMethod" ClientIDMode="Static" runat="server" CssClass="custom-select input" DataSourceID="SqlDataSource1" DataTextField="PMDescription" DataValueField="PaymentMethodID" AppendDataBoundItems="true">
-                                <asp:ListItem Text="All" Value="0" Selected="True"></asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Tayy.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [PaymentMethodID], [PMDescription] FROM [PaymentMethod] WHERE ([IsActive] = @IsActive)">
-                                <SelectParameters>
-                                    <asp:Parameter DefaultValue="true" Name="IsActive" Type="Boolean" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
-                            -
-                        </div>
-                        <div class="col">
-                            <asp:Label runat="server" Font-Bold="true">
+                        </asp:Label>
+                        <br />
+                        <asp:DropDownList ID="PaymentMethod" ClientIDMode="Static" runat="server" CssClass="custom-select input" DataSourceID="SqlDataSource1" DataTextField="PMDescription" DataValueField="PaymentMethodID" AppendDataBoundItems="true">
+                            <asp:ListItem Text="All" Value="0" Selected="True"></asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Tayy.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [PaymentMethodID], [PMDescription] FROM [PaymentMethod] WHERE ([IsActive] = @IsActive)">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="true" Name="IsActive" Type="Boolean" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                        -
+                    </div>
+                    <div class="col">
+                        <asp:Label runat="server" Font-Bold="true">
                         Customer ID :
-                            </asp:Label>
-                            <br />
-                            <asp:TextBox CssClass="form-control" ID="CustomerID" runat="server" ClientIDMode="Static"></asp:TextBox>
-                            <br />
-                            <br />
-                        </div>
-                        <div class="w-100"></div>
-                        <div class="col">
-                            <asp:Label runat="server" Font-Bold="true">
+                        </asp:Label>
+                        <br />
+                        <asp:TextBox CssClass="form-control" ID="CustomerID" runat="server" ClientIDMode="Static"></asp:TextBox>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <asp:Label runat="server" Font-Bold="true">
                         Payment status :
-                            </asp:Label>
-                            <br />
-                           <asp:DropDownList runat="server" CssClass="custom-select input" ID="ddlPayment">
-                               <asp:ListItem Text="All" Value="2" Selected="True"></asp:ListItem>
-                               <asp:ListItem Text="Unpaid" Value="0"></asp:ListItem>
-                               <asp:ListItem Text="Paid" Value="1"></asp:ListItem>
-                           </asp:DropDownList>
-                            <br />
-                            <br />
-                        </div>
+                        </asp:Label>
+                        <br />
+                        <asp:DropDownList runat="server" CssClass="custom-select input" ID="ddlPayment">
+                            <asp:ListItem Text="All" Value="2" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="Unpaid" Value="0"></asp:ListItem>
+                            <asp:ListItem Text="Paid" Value="1"></asp:ListItem>
+                        </asp:DropDownList>
+                        <br />
+                        <br />
                     </div>
+                </div>
+                <div class="row" style="float: right;">
                     <div class="row" style="float: right;">
-                        <div class="row" style="float: right;">
-                            <button type="button" id="BtnSearch" class="btn btn-primary" onclick="clickSearch();">Search</button>
-                        </div>
+                        <button type="button" id="BtnSearch" class="btn btn-primary" onclick="clickSearch();">Search</button>
                     </div>
-                    <div>
-                    </div>
+                </div>
+                <div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="card input-group">
-            <div class="card-body" style="margin: auto; width: 100%;">
-                <table id="GridViewPayment" class="display nowrap responsive mdl-data-table">
-                    <thead>
-                        <tr>
-                            <th>Payment ID</th>
-                            <th>Payment time</th>
-                            <th>Customer name</th>
-                            
-                            <th>Payment method</th>
-                            <th>Total Amount (RM)</th>
-                            <th>Payment status</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+    <div class="card input-group">
+        <div class="card-body" style="margin: auto; width: 100%;">
+            <table id="GridViewPayment" class="display nowrap responsive mdl-data-table">
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Payment time</th>
+                        <th>Customer name</th>
+
+                        <th>Payment method</th>
+                        <th>Total Amount (RM)</th>
+                        <th>Payment status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
-    </form>
+    </div>
 
     <script>
         var table;
@@ -117,7 +114,7 @@
             });
             $("input[id*='StartDate']").datepicker("setDate", startdate);
             $("input[id*='EndDate']").datepicker("setDate", enddate);
-            
+
         }
         );
 

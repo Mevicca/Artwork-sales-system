@@ -222,6 +222,7 @@
     <Content Include="Customer\CustomerFAQ.aspx" />
     <Content Include="Customer\HistoryDetails.aspx" />
     <Content Include="Customer\OrderHistory.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.css" />
     <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.js" />
     <Content Include="lib\css\ArtistProductHandle.css" />
@@ -400,6 +401,7 @@
     <Content Include="SystemUser\CustomerList.aspx" />
     <Content Include="SystemUser\PaymentReport.aspx" />
     <Content Include="SystemUser\SalesReport.aspx" />
+    <Content Include="SystemUser\UserLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer\CustomerHomepage.aspx" />
     <Content Include="Customer\WishList.aspx" />
@@ -525,6 +527,9 @@
       <DependentUpon>OrderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Email.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="Artist\OrderHistoryDetails.aspx.cs">
       <DependentUpon>OrderHistoryDetails.aspx</DependentUpon>
@@ -638,6 +643,13 @@
     </Compile>
     <Compile Include="SystemUser\SalesReport.aspx.designer.cs">
       <DependentUpon>SalesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemUser\UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemUser\UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebAnony.Master.cs">
       <DependentUpon>WebAnony.Master</DependentUpon>

@@ -16,14 +16,29 @@
             width: 150px;
         }
 
-        .active-nav {
-            background-color: white;
-            color: black;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
         }
 
-        .navbar-nav li ul li {
-            width: auto;
+        li {
+            float: left;
         }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    color: white;
+                }
     </style>
 </head>
 <body>
@@ -41,7 +56,7 @@
     <script src="../lib/DataTables/JSZip-2.5.0/jszip.min.js" defer></script>
     <link href="../lib/DataTables/DataTables-1.10.21/css/jquery.dataTables.css" rel="stylesheet" />
     <link href="../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../lib/boostrap-datepicker/bootstrap-datepicker.css" rel="stylesheet"/>
+    <link href="../lib/boostrap-datepicker/bootstrap-datepicker.css" rel="stylesheet" />
     <link href="../lib/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="../lib/css/Tools.css" rel="stylesheet" />
     <link href="../lib/css/MasterPage.css" rel="stylesheet" />
@@ -51,30 +66,28 @@
     <link href="../lib/DataTables/DataTables-1.10.21/css/dataTables.material.min.css" rel="stylesheet" />
     <link href="../lib/DataTables/Buttons-1.7.0/css/buttons.bootstrap.min.css" rel="stylesheet" />
     <link href="../lib/css/UserLayout.css" rel="stylesheet" />
-
-    <div class="row header">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="padding: 0px;">
-                <img src="../assets/Images/rosegold.png" alt="Tayy Art" width="130" height="50"></a>
-        </div>
-        <ul class="navbar-nav">
-            <li class="active-nav"><a href="#">Home</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
-        <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Page 1-1</a></li>
-                    <li><a href="#">Page 1-2</a></li>
-                    <li><a href="#">Page 1-3</a></li>
-                </ul>
+    <form id="form1" runat="server">
+        <ul>
+            <li>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" style="padding: 0px;">
+                        <img src="../assets/Images/rosegold.png" alt="Tayy Art" width="130" height="50"></a>
+                </div>
             </li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li><a href="../SystemUser/CustomerList.aspx">Customer List</a></li>
+            <li><a href="../SystemUser/SalesReport.aspx">Sales Report</a></li>
+            <li><a href="../SystemUser/PaymentReport.aspx">Payment Report</a></li>
+             <li style="float:right;">
+                <asp:LinkButton runat="server" ID="SignOut" OnClick="SignOut_Click">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </asp:LinkButton>
+            </li>
         </ul>
-    </div>
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
+        <div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
 </body>
 </html>

@@ -8,60 +8,59 @@
         }
     </style>
     <script src="../lib/js/jquery.js"></script>
-    <form id="form1" runat="server">
 
-        <div class="card input-group" style="margin-bottom: 10px;">
-            <div class="card-body" style="border: solid; border-radius: 5px; border: brown 0.5px; margin-right: 5px;">
-                <div class="data-field">
-                    <div class="row">
-                        <h3 style="margin-left: 10px;">Customer report</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <asp:Label runat="server" Font-Bold="true">
+
+    <div class="card input-group" style="margin-bottom: 10px;">
+        <div class="card-body" style="border: solid; border-radius: 5px; border: brown 0.5px; margin-right: 5px;">
+            <div class="data-field">
+                <div class="row">
+                    <h3 style="margin-left: 10px;">Customer report</h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <asp:Label runat="server" Font-Bold="true">
                         Start Join Date :
-                            </asp:Label>
-                            <br />
-                            <asp:TextBox CssClass="form-control" runat="server" ID="StartDate" ClientIDMode="Static"></asp:TextBox>
-                        </div>
-                        <div class="col">
-                            <asp:Label runat="server" Font-Bold="true">
+                        </asp:Label>
+                        <br />
+                        <asp:TextBox CssClass="form-control" runat="server" ID="StartDate" ClientIDMode="Static"></asp:TextBox>
+                    </div>
+                    <div class="col">
+                        <asp:Label runat="server" Font-Bold="true">
                         Customer ID :
-                            </asp:Label>
-                            <br />
-                            <asp:TextBox CssClass="form-control" ID="CustomerID" runat="server" ClientIDMode="Static"></asp:TextBox>
-                            <br />
-                            <br />
-                        </div>
+                        </asp:Label>
+                        <br />
+                        <asp:TextBox CssClass="form-control" ID="CustomerID" runat="server" ClientIDMode="Static"></asp:TextBox>
+                        <br />
+                        <br />
                     </div>
+                </div>
+                <div class="row" style="float: right;">
                     <div class="row" style="float: right;">
-                        <div class="row" style="float: right;">
-                            <button type="button" id="BtnSearch" class="btn btn-primary" onclick="clickSearch();">Search</button>
-                        </div>
+                        <button type="button" id="BtnSearch" class="btn btn-primary" onclick="clickSearch();">Search</button>
                     </div>
-                    <div>
-                    </div>
+                </div>
+                <div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="card input-group">
-            <div class="card-body" style="margin: auto; width: 100%;">
-                <table id="GridViewCustomer" class="display nowrap responsive mdl-data-table">
-                    <thead>
-                        <tr>
-                            <th>Customer ID</th>
-                            <th>Customer name</th>
-                            <th>Start join date</th>
-                            <th>Total order</th>
-                            <th>Total amount (RM)</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+    <div class="card input-group">
+        <div class="card-body" style="margin: auto; width: 100%;">
+            <table id="GridViewCustomer" class="display nowrap responsive mdl-data-table">
+                <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Customer name</th>
+                        <th>Start join date</th>
+                        <th>Total order</th>
+                        <th>Total amount (RM)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
-    </form>
+    </div>
 
     <script>
         var table;
