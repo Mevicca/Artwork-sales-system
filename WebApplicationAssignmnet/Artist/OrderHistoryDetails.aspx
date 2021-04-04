@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="OrderHistoryDetails.aspx.cs" Inherits="WebApplicationAssignmnet.OrderHistoryDetails" %>
 <%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
+<%@ Register TagPrefix="page" TagName="BackBtn" Src="~/DynamicData/FieldTemplates/BackButton.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/OrderHistoryDetails.css" rel="stylesheet" />
@@ -167,7 +168,7 @@
             </div>--%>
 
             <div class="row float-right" style="margin-right: 5px;">
-                <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Artist/ArtistSalesHistory.aspx" />
+                <page:BackBtn runat="server" url="~/Artist/ArtistSalesHistory.aspx"></page:BackBtn>
             </div>
             <br />
             <br />

@@ -52,7 +52,8 @@ namespace WebApplicationAssignmnet.SystemUser
                                 Email = "",
                                 Gender = reader.GetString(4)[0],
                                 CreatedAt = reader.GetDateTime(6),
-                                IsActive = reader.GetBoolean(7)
+                                IsActive = reader.GetBoolean(7),
+                                Role= reader.GetString(8)
                             };
 
                             Session["LoginUser"] = user;

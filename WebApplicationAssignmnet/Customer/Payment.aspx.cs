@@ -68,7 +68,7 @@ namespace WebApplicationAssignmnet
                 User user = Session["LoginUser"] as User;
                 int deliveryComID = Int32.Parse(Session["DeliveryMethod"].ToString());
                 int addressID = Int32.Parse(Session["DeliveryAddressID"].ToString());
-                double discount = Double.Parse(lblDiscount.Text?.Substring(2)??"0.00");
+                double discount = Double.Parse(lblDiscount.Text?.Substring(2) ?? "0.00");
                 string telephoneNo = Session["TelephoneNo"].ToString();
                 Session.Remove("DeliveryMethod");
                 Session.Remove("TelephoneNo");
@@ -87,6 +87,7 @@ SET @var = SCOPE_IDENTITY();
                     GetCart();
 
                     int index = 0;
+                    int salesID = 0;
                     foreach (var product in cartList)
                     {
                         query += "INSERT INTO SALESDETAILS(SALESID,PRODUCTID,QUANTITY) VALUES (@VAR, @PRODUCTID" + index.ToString() + ",@QUANTITY" + index.ToString() + ");";
@@ -99,7 +100,9 @@ INSERT INTO DELIVERY(SALESID, ADDRESSID, DELIVERYSERVICESNO, DELIVERYSTATUS, UPD
 ";
 
                     query += @"INSERT INTO PAYMENT(SALESID, PAYMENTDATE, TOTALAMOUNT, PAYMENTMETHODID, ISPAID) VALUES 
-(@var, SYSDATETIME(),@total,@payMethod,1);";
+(@var, SYSDATETIME(),@total,@payMethod,1);
+
+SELECT @var";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("custID", user.ID);
                     cmd.Parameters.AddWithValue("discount", discount);
@@ -121,8 +124,13 @@ INSERT INTO DELIVERY(SALESID, ADDRESSID, DELIVERYSERVICESNO, DELIVERYSTATUS, UPD
                     cmd.Parameters.AddWithValue("DELSERNO", deliveryComID);
                     cmd.Parameters.AddWithValue("DELSTATUS", "Unpack");
 
-                    var result = cmd.ExecuteNonQuery();
-                    if (result == 0)
+                    var result = cmd.ExecuteReader();
+                    if (result.HasRows && result.Read())
+                    {
+                        salesID = result.GetInt32(0);
+                        Response.Redirect("~/Customer/HistoryDetails.aspx?id=" + salesID);
+                    }
+                    else
                     {
                         throw new Exception("FAIL TO PLACE ORDER;");
                     }

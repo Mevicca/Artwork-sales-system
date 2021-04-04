@@ -15,8 +15,17 @@ using System.Xml.Linq;
 
 namespace WebApplicationAssignmnet.DynamicData.FieldTemplates
 {
-    public partial class SpecialPageTitle : System.Web.UI.UserControl
+    public partial class BackButton : System.Web.UI.UserControl
     {
-        
+        public string Url { get; set; }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Url);
+        }
     }
 }

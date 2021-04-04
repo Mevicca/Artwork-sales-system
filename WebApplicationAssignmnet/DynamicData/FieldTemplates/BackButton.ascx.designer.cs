@@ -11,7 +11,7 @@ namespace WebApplicationAssignmnet.DynamicData.FieldTemplates
 {
 
 
-    public partial class SpecialPageTitle
+    public partial class BackButton
     {
     }
 }

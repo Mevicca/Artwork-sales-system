@@ -8,7 +8,7 @@
         <div class="container" style="background-color: white">
             <div class="row" style="width: 100%; display: contents">
                 <div style="margin-top: 10px; margin-left: 5px;">
-                    <page:PageTitle runat="server" ID="title" PageHeader="OrderPage"></page:PageTitle>
+                    <page:PageTitle runat="server" ID="title" PageHeader="Current Orders"></page:PageTitle>
                     <div class="sort float-right galley-sort-by">
                         <div class="sort">
                             <a>Sort By :</a>

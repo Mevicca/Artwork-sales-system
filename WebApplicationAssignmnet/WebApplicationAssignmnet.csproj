@@ -110,7 +110,7 @@
     <Content Include="assets\Acrylic\rougepassion.jpg" />
     <Content Include="assets\Acrylic\treschicas.jpeg" />
     <Content Include="assets\Acrylic\TwilightOfMagic.jpeg" />
-    <Content Include="assets\Acrylic\We%27venevermet.jpg" />
+    <Content Include="assets\Acrylic\Wevenevermet.jpg" />
     <Content Include="assets\ArtistProfile\Artist.png" />
     <Content Include="assets\ArtistProfile\ArtistMan.png" />
     <Content Include="assets\ArtistProfile\ArtistWomen.png" />
@@ -242,7 +242,7 @@
     <Content Include="Customer\HistoryDetails.aspx" />
     <Content Include="Customer\OrderHistory.aspx" />
     <Content Include="DynamicData\FieldTemplates\PageTitle.ascx" />
-    <Content Include="DynamicData\FieldTemplates\SpecialPageTitle.ascx" />
+    <Content Include="DynamicData\FieldTemplates\BackButton.ascx" />
     <Content Include="Global.asax" />
     <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.css" />
     <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.js" />
@@ -573,12 +573,12 @@
     <Compile Include="DynamicData\FieldTemplates\PageTitle.ascx.designer.cs">
       <DependentUpon>PageTitle.ascx</DependentUpon>
     </Compile>
-    <Compile Include="DynamicData\FieldTemplates\SpecialPageTitle.ascx.cs">
-      <DependentUpon>SpecialPageTitle.ascx</DependentUpon>
+    <Compile Include="DynamicData\FieldTemplates\BackButton.ascx.cs">
+      <DependentUpon>BackButton.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DynamicData\FieldTemplates\SpecialPageTitle.ascx.designer.cs">
-      <DependentUpon>SpecialPageTitle.ascx</DependentUpon>
+    <Compile Include="DynamicData\FieldTemplates\BackButton.ascx.designer.cs">
+      <DependentUpon>BackButton.ascx</DependentUpon>
     </Compile>
     <Compile Include="Email.cs" />
     <Compile Include="Global.asax.cs">

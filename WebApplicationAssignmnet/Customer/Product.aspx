@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="WebApplicationAssignmnet.ProductPage" %>
 <%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
+<%@ Register TagPrefix="page" TagName="BackBtn" Src="~/DynamicData/FieldTemplates/BackButton.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <form id="form1" runat="server">
@@ -132,7 +133,7 @@
                 </div>
             </div>
             <div class="row" style="margin-left:30px">
-                <asp:Button runat="server" PostBackUrl="CustomerProductGallery.aspx" Text="Back" CssClass="btn btn-info" Width="100"/>
+                <page:BackBtn runat="server" url="~/Customer/CustomerProductGallery.aspx"></page:BackBtn>
             </div>
             <br />
             
