@@ -11,7 +11,7 @@ namespace WebApplicationAssignmnet.SystemUser
 {
 
 
-    public partial class SalesReport
+    public partial class PaymentReport
     {
 
         /// <summary>
@@ -69,12 +69,12 @@ namespace WebApplicationAssignmnet.SystemUser
         protected global::System.Web.UI.WebControls.TextBox CustomerID;
 
         /// <summary>
-        /// TxtBillingEmail control.
+        /// ddlPayment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBillingEmail;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPayment;
     }
 }

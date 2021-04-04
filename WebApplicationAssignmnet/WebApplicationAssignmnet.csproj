@@ -398,6 +398,7 @@
     <Content Include="lib\js\ProductGallery.js" />
     <Content Include="Artist\ProductGallery.aspx" />
     <Content Include="SystemUser\CustomerList.aspx" />
+    <Content Include="SystemUser\PaymentReport.aspx" />
     <Content Include="SystemUser\SalesReport.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer\CustomerHomepage.aspx" />
@@ -623,6 +624,13 @@
     </Compile>
     <Compile Include="SystemUser\CustomerList.aspx.designer.cs">
       <DependentUpon>CustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemUser\PaymentReport.aspx.cs">
+      <DependentUpon>PaymentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemUser\PaymentReport.aspx.designer.cs">
+      <DependentUpon>PaymentReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="SystemUser\SalesReport.aspx.cs">
       <DependentUpon>SalesReport.aspx</DependentUpon>
