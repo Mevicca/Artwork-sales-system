@@ -54,7 +54,7 @@
                             <asp:Label ID="LblStatus" runat="server" Text='<%# Eval("DeliveryStatus") %>'></asp:Label>
                         </td>
                         <td style="text-align: center">
-                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl='<%#"~/Artist/OrderHistoryDetails.aspx?id="+Eval("OrderDetails.ProductID")%>'>
+                            <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl='<%#"~/Artist/OrderHistoryDetails.aspx?id="+Eval("SalesID")%>'>
                         <i class="fa fa-search"></i>&nbsp; View Details
                     </asp:LinkButton>
                         </td>
