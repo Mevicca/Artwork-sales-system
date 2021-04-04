@@ -55,20 +55,39 @@ namespace WebApplicationAssignmnet
                             {
                                 throw new Exception("Inactive account.");
                             }
-                            User user = new User
+                            User user;
+                            if (DropDownListIdentification.SelectedValue == "Customer")
                             {
-                                ID = reader.GetInt32(0),
-                                Password = reader.GetString(1),
-                                FullName = reader.GetString(2),
-                                Email = reader.GetString(3),
-                                Gender = reader.GetString(4)[0],
-                                CreatedAt = reader.GetDateTime(5),
-                                IsActive = reader.GetBoolean(6)
-                            };
+                                user = new User
+                                {
+                                    ID = reader.GetInt32(0),
+                                    Password = reader.GetString(1),
+                                    FullName = reader.GetString(2),
+                                    Email = reader.GetString(3),
+                                    Gender = reader.GetString(4)[0],
+                                    CreatedAt = reader.GetDateTime(5),
+                                    IsActive = reader.GetBoolean(6),
+                                    TelephoneNo = reader.GetString(7)
+                                };
+                            }
+                            else
+                            {
+                                user = new User
+                                {
+                                    ID = reader.GetInt32(0),
+                                    Password = reader.GetString(1),
+                                    FullName = reader.GetString(2),
+                                    Email = reader.GetString(3),
+                                    Gender = reader.GetString(4)[0],
+                                    CreatedAt = reader.GetDateTime(5),
+                                    IsActive = reader.GetBoolean(6),
+                                    TelephoneNo = ""
+                                };
+                            }
 
 
                             Session["LoginUser"] = user;
-
+                            FormsAuthentication.RedirectFromLoginPage(user.ID.ToString(), chkPersistCookie.Checked);
                             //encrypt in password
                             if (DropDownListIdentification.SelectedValue == "Customer")
                             {

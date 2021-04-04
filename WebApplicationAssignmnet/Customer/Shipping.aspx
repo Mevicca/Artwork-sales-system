@@ -64,6 +64,11 @@
                                         ForeColor="Red"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="row">
+                                    <i class="fa  fa-phone"></i>
+                                    Telephone number:
+                                    <asp:Textbox ID="telNumber" runat="server" CssClass="line-input"></asp:Textbox>
+                                </div>
+                                <div class="row">
                                     <i class="fa fa-ship"></i>
                                     Select Shipping Companies
                                     <asp:TextBox runat="server" ID="txtDeliveryCompany" Text="" CssClass="line-input txtDeliveryCompany" Enabled="FALSE" ClientIDMode="Static"></asp:TextBox>
@@ -179,7 +184,7 @@
                                         </div>
                                         <div class="col-8" style="align-content: center">
                                             <asp:Label runat="server" Text='<%#Eval("productName")%>'></asp:Label><br />
-                                            <asp:Label runat="server" Text='<%#"RM " + Eval("productPrice")%>'></asp:Label>
+                                            <asp:Label runat="server" Text='<%#"RM " + String.Format("{0:#,##0.00}",Eval("productPrice"))%>'></asp:Label>
                                         </div>
                                     </div>
                                 </ItemTemplate>
