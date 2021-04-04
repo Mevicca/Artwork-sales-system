@@ -1,0 +1,61 @@
+﻿.row {
+    margin: 0px;
+}
+
+.data-field {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.form-control, .input {
+    width: 250px;
+    display: inline-block;
+}
+
+#BtnSearch {
+    right: 50px;
+}
+
+.mdc-data-table {
+    display: contents;
+}
+
+.dt-button {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-right: 18px;
+    cursor: pointer;
+}
+
+    .dt-button:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+    .dt-button:focus, .dt-button.focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    }
+
+    .dt-button.disabled, .dt-button:disabled {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .dt-button:not(:disabled):not(.disabled):active, .dt-button:not(:disabled):not(.disabled).active,
+    .show > .dt-button.dropdown-toggle {
+        color: #fff;
+        background-color: #0062cc;
+        border-color: #005cbf;
+    }
+
+        .dt-button:not(:disabled):not(.disabled):active:focus, .dt-button:not(:disabled):not(.disabled).active:focus,
+        .show > .dt-button.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+
+.dt-buttons {
+    margin-left: 220px;
+}
