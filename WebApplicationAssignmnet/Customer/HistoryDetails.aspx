@@ -1,9 +1,13 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="HistoryDetails.aspx.cs" Inherits="WebApplicationAssignmnet.HistoryDetails" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="../lib/css/OrderHistoryDetails.css" rel="stylesheet" />
     <form id="form1" runat="server">
-        <div class="container bg-white containerSize" style="max-width: 700px; border-radius: 10px; margin-top: 30px; margin-bottom: 30px">
+        <div class="container bg-white containerSize" style="max-width: 700px; border-radius: 10px; margin-top: 10px; margin-bottom: 30px">
+            <div class="row" style="padding:15px;margin-left:35%">
+                <page:PageTitle runat="server" ID="title" PageHeader="Order Details"></page:PageTitle>
+            </div>
             <div class="row">
                 <div class="col-sm-6">
                     <h5 style="margin-top: 10px"><strong>Your Information</strong></h5>

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="ArtistProfileSetting.aspx.cs" Inherits="WebApplicationAssignmnet.ArtistProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="ArtistProfileSetting.aspx.cs" Inherits="WebApplicationAssignmnet.ArtistProfileSetting" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
@@ -8,11 +9,11 @@
             <div class="tab">
                 <button class="tablinks">General Account Settings</button>
                 <a class="exBtn" href="ChangePassword.aspx">Security Settings</a>
-
             </div>
 
             <div id="generalSet" class="tabcontent">
-                <h3><i class="fa fa-pencil-square-o" aria-hidden="true"></i> General Account Settings </h3>
+                <page:PageTitle runat="server" ID="title" PageHeader=' General Account Settings '></page:PageTitle>
+                <h2>&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-top:5px;"></i></h2>
                 <br />
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [ArtFullName], [ArtGender], [ArtBio] FROM [Artist]">
                 </asp:SqlDataSource>

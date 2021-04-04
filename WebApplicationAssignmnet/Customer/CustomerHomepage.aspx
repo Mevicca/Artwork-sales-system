@@ -1,7 +1,11 @@
 <%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Web.Master" CodeBehind="CustomerHomepage.aspx.cs" Inherits="WebApplicationAssignmnet.CustomerHomepage" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="../lib/css/Homepage.css" rel="stylesheet" />
+     <div class="row" style="margin-left:45%;">
+        <page:PageTitle runat="server" ID="title" PageHeader="Our Home"></page:PageTitle>
+    </div>
     <div>
         <!-- Slideshow container -->
         <div class="slideshow-container">

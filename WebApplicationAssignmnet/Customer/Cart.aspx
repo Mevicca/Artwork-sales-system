@@ -1,5 +1,7 @@
 <%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="WebApplicationAssignmnet.Cart" %>
 
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
+
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="../lib/css/Cart.css" rel="stylesheet" />
     <script type="text/javascript">
@@ -27,7 +29,6 @@
     <form id="form1" runat="server">
         <div class="container" style="background-color: white;">
             <div class="row" style="width: 100%; display: table">
-                <%--<h1 class="float-left headerStyle" style="margin-top: 10px; margin-left: 20px;"><strong>Cart</strong></h1>--%>
                 <div class="row justify-content-center">
                     <ul class="list-group list-group-horizontal tab">
                         <li class="list-group-item active" style="z-index: 1">Cart</li>
@@ -39,6 +40,9 @@
             </div>
 
             <div class="row">
+                <div style="margin-left: 10px;">
+                    <page:PageTitle runat="server" ID="title" PageHeader="My Cart"></page:PageTitle>
+                </div>
                 <div class="pull-left col-8">
                     <div class="sort float-right galley-sort-by">
                         <a>Sort By :</a>
@@ -71,10 +75,10 @@
                                             </asp:Label>
                                             <br />
                                             <div style="display: inline-flex;">
-                                                <asp:Button ID="MinusProduct" runat="server" CssClass="btn btn-outline-danger" Text="-" Font-Size="Small" Width="28" Height="29" Enabled='<%#((int)Eval("Quantity")) == 1 ? false : true%>' CommandArgument='<%#Eval("ProductID") %>' CommandName="Minus" OnCommand="NoProduct_Click"/>
+                                                <asp:Button ID="MinusProduct" runat="server" CssClass="btn btn-outline-danger" Text="-" Font-Size="Small" Width="28" Height="29" Enabled='<%#((int)Eval("Quantity")) == 1 ? false : true%>' CommandArgument='<%#Eval("ProductID") %>' CommandName="Minus" OnCommand="NoProduct_Click" />
                                                 <asp:TextBox ID="txtQuantity" ClientIDMode="Static" runat="server" Text='<%#Eval("Quantity") %>' Enabled="false" Width="30" Height="30">
                                                 </asp:TextBox>
-                                                <asp:Button ID="PlusProduct" runat="server" CssClass="btn btn-outline-success" Text="+" Width="28" Height="29" Font-Size="Small" Enabled='<%#((int)Eval("productMax")) == 1 ? true : false %>' CommandArgument='<%#Eval("ProductID") %>' CommandName="Add" OnCommand="NoProduct_Click"/>
+                                                <asp:Button ID="PlusProduct" runat="server" CssClass="btn btn-outline-success" Text="+" Width="28" Height="29" Font-Size="Small" Enabled='<%#((int)Eval("productMax")) == 1 ? true : false %>' CommandArgument='<%#Eval("ProductID") %>' CommandName="Add" OnCommand="NoProduct_Click" />
                                             </div>
                                             <br />
 

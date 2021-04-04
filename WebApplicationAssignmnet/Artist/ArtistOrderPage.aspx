@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="ArtistOrderPage.aspx.cs" Inherits="WebApplicationAssignmnet.OrderPage_A_" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/OrderPage(A).css" rel="stylesheet" />
@@ -6,21 +7,22 @@
     <form id="form1" runat="server">
         <div class="container" style="background-color: white">
             <div class="row" style="width: 100%; display: contents">
-                <h1 class="float-left headerStyle" style="margin-top: 10px; margin-left: 5px;"><strong>Current Sales Order</strong></h1>
-                <div class="sort float-right galley-sort-by">
-                    <div class="sort">
-                        <a>Sort By :</a>
-                        <asp:DropDownList ID="ddlSortBy" AutoPostBack="true" OnSelectedIndexChanged="ddlSortBy_SelectedIndexChanged" runat="server">
-                            <asp:ListItem Selected="True">Date</asp:ListItem>
-                            <asp:ListItem>Total Price</asp:ListItem>
-                            <asp:ListItem>Customer Name</asp:ListItem>
-                            <asp:ListItem>Order ID</asp:ListItem>
-                        </asp:DropDownList>
+                <div style="margin-top: 10px; margin-left: 5px;">
+                    <page:PageTitle runat="server" ID="title" PageHeader="OrderPage"></page:PageTitle>
+                    <div class="sort float-right galley-sort-by">
+                        <div class="sort">
+                            <a>Sort By :</a>
+                            <asp:DropDownList ID="ddlSortBy" AutoPostBack="true" OnSelectedIndexChanged="ddlSortBy_SelectedIndexChanged" runat="server">
+                                <asp:ListItem Selected="True">Date</asp:ListItem>
+                                <asp:ListItem>Total Price</asp:ListItem>
+                                <asp:ListItem>Customer Name</asp:ListItem>
+                                <asp:ListItem>Order ID</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
                     </div>
                 </div>
             </div>
             <br />
-
             <table class="table table-striped">
                 <thead>
                     <tr style="text-align: center">
@@ -56,9 +58,9 @@
                                 <td style="text-align: center">
                                     <asp:LinkButton runat="server" class="btn btn-outline-primary" Style="cursor: pointer" PostBackUrl='<%#"~/Artist/OrderDetails.aspx?id="+Eval("SalesID")%>'>
                         <i class="fa fa-search"></i>&nbsp; View Details
-                    </asp:LinkButton>
+                                    </asp:LinkButton>
                                     &nbsp;
-                   </td>
+                                </td>
                             </tr>
 
                         </ItemTemplate>

@@ -223,6 +223,8 @@
     <Content Include="Customer\CustomerFAQ.aspx" />
     <Content Include="Customer\HistoryDetails.aspx" />
     <Content Include="Customer\OrderHistory.aspx" />
+    <Content Include="DynamicData\FieldTemplates\ListItem.ascx" />
+    <Content Include="DynamicData\FieldTemplates\PageTitle.ascx" />
     <Content Include="Global.asax" />
     <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.css" />
     <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.js" />
@@ -421,6 +423,19 @@
     </Compile>
     <Compile Include="Customer\OrderHistory.aspx.designer.cs">
       <DependentUpon>OrderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ListItem.ascx.cs">
+      <DependentUpon>ListItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ListItem.ascx.designer.cs">
+      <DependentUpon>ListItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\PageTitle.ascx.cs">
+      <DependentUpon>PageTitle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\PageTitle.ascx.designer.cs">
+      <DependentUpon>PageTitle.ascx</DependentUpon>
     </Compile>
     <Compile Include="Email.cs" />
     <Compile Include="Global.asax.cs">

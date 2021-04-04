@@ -15,6 +15,15 @@ namespace WebApplicationAssignmnet
     {
 
         /// <summary>
+        /// title control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::WebApplicationAssignmnet.DynamicData.FieldTemplates.PageTitle title;
+
+        /// <summary>
         /// HyperLink1 control.
         /// </summary>
         /// <remarks>

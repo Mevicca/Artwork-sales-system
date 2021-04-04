@@ -1,9 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="WebApplicationAssignmnet.AboutUs" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
     <link href="../lib/css/AboutUs.css" rel="stylesheet" />
-
     <form id="form1" runat="server">
         <div>
             <div class="aboutUs-container">

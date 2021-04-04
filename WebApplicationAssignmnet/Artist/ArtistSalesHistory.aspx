@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="ArtistSalesHistory.aspx.cs" Inherits="WebApplicationAssignmnet.SalesHistory_A_" %>
+<%@ Register TagPrefix ="page" TagName ="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx"%>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/OrderPage(A).css" rel="stylesheet" />
@@ -6,7 +7,7 @@
 
         <div class="container" style="background-color: white">
             <div class="row" style="width: 100%; display: contents">
-                <h1 class="float-left headerStyle" style="margin-top: 10px; margin-left: 5px;"><strong>Sales History</strong></h1>
+                <page:PageTitle runat="server" ID="title" PageHeader="Sales History"></page:PageTitle>
                 <div class="sort float-right galley-sort-by">
                     <div class="sort">
                         <a>Sort By :</a>

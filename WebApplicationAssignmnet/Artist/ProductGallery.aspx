@@ -1,10 +1,14 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="ProductGallery.aspx.cs" Inherits="WebApplicationAssignmnet.ProductGallery" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/ProductGallery.css" rel="stylesheet" />
 
     <form id="form1" runat="server">
         <div class="container">
+            <div style="margin-left: 35%">
+                <page:PageTitle runat="server" ID="title" PageHeader="My Product Gallery"></page:PageTitle>
+            </div>
             <div style="padding: 20px;">
                 <table style="width: 100%;">
                     <tr>
@@ -14,13 +18,14 @@
                         <td>
                             <div id="galley-sort-by">
                                 Sort By:    
-                            <asp:DropDownList ID="ddlSortBy" AutoPostBack="true" OnSelectedIndexChanged="ddlSortBy_SelectedIndexChanged" runat="server">
-                                <asp:ListItem>Date</asp:ListItem>
-                                <asp:ListItem>Name : A to Z</asp:ListItem>
-                                <asp:ListItem>Name : Z to A</asp:ListItem>
-                                <asp:ListItem>Price: Cheap to Expensive</asp:ListItem>
-                                <asp:ListItem>Price: Expensive to Cheap</asp:ListItem>
-                            </asp:DropDownList>
+                           
+                                <asp:DropDownList ID="ddlSortBy" AutoPostBack="true" OnSelectedIndexChanged="ddlSortBy_SelectedIndexChanged" runat="server">
+                                    <asp:ListItem>Date</asp:ListItem>
+                                    <asp:ListItem>Name : A to Z</asp:ListItem>
+                                    <asp:ListItem>Name : Z to A</asp:ListItem>
+                                    <asp:ListItem>Price: Cheap to Expensive</asp:ListItem>
+                                    <asp:ListItem>Price: Expensive to Cheap</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                         </td>
                     </tr>
@@ -56,11 +61,13 @@
                                     <td class="qty">
                                         <asp:Label ID="Quantity" runat="server" Text='<%#
                                              (Boolean.Parse(Eval("IsActive").ToString()) == false) ? "Inactive" :  (Int32.Parse(Eval("Quantity").ToString()) > 0) ?"In Stock" : "Sold Out"
-                                            %>' Font-Size="18px" ForeColor="Black"></asp:Label>
+                                            %>'
+                                            Font-Size="18px" ForeColor="Black"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="prodPrice">RM
+                                       
                                         <asp:Label ID="ProductPrice" runat="server" Text='<%# String.Format("{0:n}",Eval("ProductPrice")) %>' Font-Size="18px"></asp:Label>
                                     </td>
                                 </tr>

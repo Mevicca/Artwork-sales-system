@@ -60,9 +60,11 @@ namespace WebApplicationAssignmnet
             //store path follow the productname
             //example : bear, ~\assets\product\sculpture\bear.png
             //string no;
-            //string path 1 = "~\assets\product\sculpture\" + prodName.Text.Trim() + ".png";
-            //validate database whether same path (if yes, no++)
-            //here
+            string path1 = "~\\assets\\product\\sculpture\\" + prodName.Text.Trim() + ".png";
+            string path2 = "~\\assets\\product\\sculpture\\" + prodName.Text.Trim() + "2.png";
+            string path3 = "~\\assets\\product\\sculpture\\" + prodName.Text.Trim() + "3.png";
+            ////validate database whether same path (if yes, no++)
+            ////here
             //if (FileImageUpload.PostedFile != null)
             //{
             //    string imgfile = Path.GetFileName(FileImageUpload.PostedFile.FileName);
@@ -70,10 +72,22 @@ namespace WebApplicationAssignmnet
             //    string path_1 = "~/assets/product/scupture/" + prodName.Text.Trim() + ".png";
             //    cmd.Parameters.AddWithValue("path1", path_1);
             //}
+            //HttpPostedFile file = Request.Files["myFile"];
 
+            //check file was submitted
+            //for (int i = 0; i < Request.Files.Count; i++)
+            //{
+            //    HttpPostedFileBase file = Request.Files[i];
+            //    if (file.ContentLength > 0)
+            //    {
+            //        //saving code here
+
+            //    }
+
+            //}
             //step 2
-            //path 1 image(ui) store into the path1(generated justnow)
-            // last step
+             //path 1 image(ui) store into the path1(generated justnow)
+             // last step
 
             //cmd.Parameters.AddWithValue("@path1", );
             //cmd.Parameters.AddWithValue("@path2", );

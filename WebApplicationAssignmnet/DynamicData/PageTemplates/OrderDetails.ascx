@@ -1,13 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="OrderHistoryDetails.aspx.cs" Inherits="WebApplicationAssignmnet.OrderHistoryDetails" %>
-<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
+﻿<%@ Control Language="C#" CodeBehind="OrderDetails.ascx.cs" Inherits="WebApplicationAssignmnet.DynamicData.FieldTemplates.OrderDetails1" %>
 
-<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <link href="../lib/css/OrderHistoryDetails.css" rel="stylesheet" />
-    <form id="form1" runat="server">
-        <div class="container bg-white containerSize" style="max-width: 700px; border-radius: 10px; margin-top: 10px; margin-bottom: 30px">
-            <div class="row" style="padding:15px;margin-left:35%">
-                <page:PageTitle runat="server" ID="title" PageHeader="Order Details"></page:PageTitle>
-            </div>
+<div class="container bg-white containerSize" style="max-width: 700px; border-radius: 10px; margin-top: 30px; margin-bottom: 30px">
             <div class="row">
                 <div class="col-sm-6">
                     <h5 style="margin-top: 10px"><strong>Your Information</strong></h5>
@@ -167,11 +160,8 @@
             </div>--%>
 
             <div class="row float-right" style="margin-right: 5px;">
-                <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Artist/ArtistSalesHistory.aspx" />
+                <asp:Button runat="server" CssClass="btn btn-danger" Text="Back" PostBackUrl="~/Customer/OrderHistory.aspx" />
             </div>
             <br />
             <br />
         </div>
-
-    </form>
-    </asp:Content>

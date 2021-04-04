@@ -1,9 +1,15 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="OrderDetails.aspx.cs" Inherits="WebApplicationAssignmnet.OrderDetails" %>
 
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
+
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/OrderHistoryDetails.css" rel="stylesheet" />
     <form id="form1" runat="server">
-        <div class="container bg-white containerSize" style="max-width: 700px; border-radius: 10px; margin-top: 30px; margin-bottom: 30px">
+
+        <div class="container bg-white containerSize" style="max-width: 700px; border-radius: 10px; margin-top: 10px; margin-bottom: 30px">
+            <div class="row" style="padding:15px;">
+                <page:PageTitle runat="server" ID="title" PageHeader="Order Details"></page:PageTitle>
+            </div>
             <div class="row">
                 <div class="col-sm-6">
                     <h5 style="margin-top: 10px"><strong>Your Information</strong></h5>
@@ -51,7 +57,7 @@
                 <ItemTemplate>
                     <div class="row">
                         <div class="col-sm-2" style="text-align: right; margin-left: 30px">
-                            <asp:ImageButton ID="ImgPath" Width="66px" Height="89px" runat="server" ImageUrl= <%# Eval("path1") %>/>
+                            <asp:ImageButton ID="ImgPath" Width="66px" Height="89px" runat="server" ImageUrl='<%# Eval("path1") %>' />
                         </div>
 
                         <div class="col-sm-2" style="text-align: right">
@@ -90,7 +96,8 @@
                 <div class="col-sm-2">
                     <h6>
                         <asp:Label ID="LblSubTtl" runat="server"></asp:Label></h6>
-                    <h6><asp:Label ID="LblShipFee" runat="server"></asp:Label></h6>
+                    <h6>
+                        <asp:Label ID="LblShipFee" runat="server"></asp:Label></h6>
                     <h6>
                         <asp:Label ID="LblDisc" runat="server"></asp:Label></h6>
                     <h6 style="color: red"><strong>
@@ -103,7 +110,8 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h5><strong>Payment Method</strong></h5>
-                    <h6 style="margin-left: 50px"><i class="fa fa-globe"></i>&nbsp <asp:Label runat="server" ID="paymentMethod"></asp:Label></h6>
+                    <h6 style="margin-left: 50px"><i class="fa fa-globe"></i>&nbsp
+                        <asp:Label runat="server" ID="paymentMethod"></asp:Label></h6>
                 </div>
             </div>
 
@@ -142,7 +150,7 @@
                 </div>
             </div>--%>
 
-           <%-- <div class="row" style="margin-left: 230px">
+            <%-- <div class="row" style="margin-left: 230px">
                 <div class="col-sm-1">
                     <h5><i class="fa fa-star checked"></i></h5>
                 </div>
@@ -170,4 +178,4 @@
         </div>
 
     </form>
-    </asp:Content>
+</asp:Content>

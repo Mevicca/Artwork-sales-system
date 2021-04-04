@@ -7,30 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplicationAssignmnet
+namespace WebApplicationAssignmnet.DynamicData.FieldTemplates
 {
 
 
-    public partial class OrderHistoryDetails
+    public partial class OrderDetails1
     {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// title control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::WebApplicationAssignmnet.DynamicData.FieldTemplates.PageTitle title;
 
         /// <summary>
         /// LblCustName control.

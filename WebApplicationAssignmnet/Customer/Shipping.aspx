@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="Shipping.aspx.cs" Inherits="WebApplicationAssignmnet.Shipping" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <form id="form1" runat="server" style="display: flex">
@@ -35,7 +36,7 @@
                         <div class="cart-body">
                             <div class="container" style="margin-left: 5px;">
                                 <div class="row">
-                                    <h3>Shipping</h3>
+                                    <page:PageTitle runat="server" ID="title" PageHeader="Shipping Details"></page:PageTitle>
                                 </div>
                                 <div class="row d-flex row-click">
                                     <i class="fa fa-address-card"></i>
@@ -53,9 +54,7 @@
                                 </div>
                                 <div class="row">
                                     <i class="fa  fa-archive"></i>
-                                    Billing email address
-                                </div>
-                                <div class="row">
+                                    Billing email address &nbsp;
                                     <asp:TextBox ID="txtEmailAdd" runat="server" placeholder="Email address" CssClass="line-input" Width="250"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server"
                                         ControlToValidate="txtEmailAdd"
@@ -65,7 +64,7 @@
                                 </div>
                                 <div class="row">
                                     <i class="fa  fa-phone"></i>
-                                    Telephone number:
+                                    Telephone number &nbsp;
                                     <asp:Textbox ID="telNumber" runat="server" CssClass="line-input"></asp:Textbox>
                                 </div>
                                 <div class="row">

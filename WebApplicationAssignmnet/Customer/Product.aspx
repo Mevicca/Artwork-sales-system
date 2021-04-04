@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="WebApplicationAssignmnet.ProductPage" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <form id="form1" runat="server">
@@ -21,7 +22,10 @@
             }
         </script>
         <div class="container bg-white">
-            <div class="row">
+            <div class="row" style="padding:5px;margin-left:35%;margin-bottom:1px;">
+                <page:PageTitle runat="server" ID="title" PageHeader="Artwork Details"></page:PageTitle>
+            </div>
+            <div class="row" style="margin-top:0px;">
                 <div class="col-6 pull-left">
                     <div style="display: flex; margin-left: 40px;">
                         <div class="col-sm-1" style="text-align: right; padding-top: 12em">
