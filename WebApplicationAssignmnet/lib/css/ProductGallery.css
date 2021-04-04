@@ -2,12 +2,12 @@
 }
 .container {
     background-color: white;
-    padding-left: 0;
-    padding-right: 0;
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }
 
 .galleryContent {
     padding: 40px;
+    padding-bottom:0;
     padding-top: 20px;
 }
 
@@ -56,11 +56,6 @@
     margin-bottom: 10px;
 }
 
-/* The "show" class is added to the filtered elements */
-.show {
-    display: block;
-}
-
 /* Style the buttons */
 .btn-status {
     border: none;
@@ -68,19 +63,12 @@
     padding: 12px;
     background-color: #F3E0DC;
     cursor: pointer;
-    width: calc( ( 100%  - 12px  ) / 3 );
+    width: calc( ( 100%  - 12px  ) / 4 );
 }
 
-    /* Add a light grey background on mouse-over */
-    .btn-status:hover {
-        background-color: #efbdb2;
-    }
-
-    /* Add a dark background to the active button */
-    .btn-status.active {
-        background-color: #bc5b51;
-        color: white;
-    }
+.alignText{
+    text-align:center;
+}
 
 /* Gallery Content Style */
 .content {
@@ -119,6 +107,7 @@
 }
 
 /*gallerydropdown - Customers*/
+
 .navbar-gallery {
     overflow: hidden;
     background-color: #D4A59A;
@@ -131,7 +120,7 @@
     .navbar-gallery a {
         float: left;
         font-size: 16px;
-        color: white;
+        
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -146,42 +135,47 @@
         font-size: 16px;
         border: none;
         outline: none;
-        color: white;
         padding: 14px 16px;
-        background-color: inherit;
+        color: white;
+        background-color: #D4A59A;
         font-family: inherit;
         margin: 0;
-        cursor:pointer;
-    }
-
-    .navbar-gallery a:hover, .dropdown-category:hover .dropbtn {
-        background-color: #BC4639;
+        cursor: pointer;
     }
 
 .dropdown-category-content {
     display: none;
     position: fixed;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    cursor: pointer;
-
 }
 
-    .dropdown-category-content a {
+    .dropdown-category-content .categorybtn {
         float: none;
-        color: black;
+        color: white;
+        background-color: #D4A59A;
+        min-width: 150px;
         padding: 10px 16px;
         text-decoration: none;
         display: block;
         text-align: left;
+        border: none;
+        cursor: pointer;
     }
-
-        .dropdown-category-content a:hover {
-            background-color: #F3E0DC;
-        }
 
 .dropdown-category:hover .dropdown-category-content {
     display: block;
 }
+
+.pagingbtn {
+    cursor:pointer;
+    width:80px;
+    border:none;
+    border-radius:5px;
+    height: 30px;
+}
+    .pagingbtn:hover {
+        background-color: #BC4639;
+        color: white;
+    }

@@ -48,9 +48,6 @@
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.CodeDom, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.CodeDom.5.0.0\lib\net461\System.CodeDom.dll</HintPath>
       <Private>True</Private>
@@ -75,6 +72,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Tayy.mdf" />
+    <Content Include="App_Data\Tayy_log.ldf">
+      <DependentUpon>Tayy.mdf</DependentUpon>
+    </Content>
     <Content Include="Artist\AboutUs.aspx" />
     <Content Include="Artist\FAQ.aspx" />
     <Content Include="Artist\Homepage.aspx" />
@@ -90,18 +96,10 @@
     <Content Include="Customer\CustomerChangePassword.aspx" />
     <Content Include="Customer\CustomerAboutUs.aspx" />
     <Content Include="Artist\AddProduct.aspx" />
-    <Content Include="App_Data\Tayy.mdf" />
-    <Content Include="App_Data\Tayy2.mdf" />
-    <Content Include="App_Data\Tayy2_log.ldf">
-      <DependentUpon>Tayy2.mdf</DependentUpon>
-    </Content>
     <Content Include="assets\Images\AboutUs\art.png" />
     <Content Include="assets\Images\AboutUs\art2.jpg" />
     <Content Include="assets\Images\AboutUs\digitalArt.jpg" />
     <Content Include="assets\Images\AboutUs\drawing.png" />
-    <Content Include="App_Data\Tayy_log.ldf">
-      <DependentUpon>Tayy.mdf</DependentUpon>
-    </Content>
     <Content Include="Customer\ArtistProfile.aspx" />
     <Content Include="Artist\ArtistProfileSetting.aspx" />
     <Content Include="assets\Images\blackcrop.png" />
@@ -222,123 +220,15 @@
     <Content Include="Customer\CustomerFAQ.aspx" />
     <Content Include="Customer\HistoryDetails.aspx" />
     <Content Include="Customer\OrderHistory.aspx" />
-    <Content Include="Global.asax" />
-    <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.css" />
-    <Content Include="lib\boostrap-datepicker\bootstrap-datepicker.js" />
     <Content Include="lib\css\ArtistProductHandle.css" />
     <Content Include="lib\css\Cart.css" />
     <Content Include="lib\css\FAQ.css" />
     <Content Include="lib\css\Login.css" />
     <Content Include="lib\css\OrderHistoryDetails.css" />
     <Content Include="lib\css\OrderPage%28A%29.css" />
-    <Content Include="lib\css\UserLayout.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.bootstrap.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.bootstrap.min.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.bootstrap4.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.bootstrap4.min.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.dataTables.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.dataTables.min.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.foundation.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.foundation.min.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.jqueryui.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.jqueryui.min.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.semanticui.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\buttons.semanticui.min.css" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.bootstrap.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.bootstrap.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.bootstrap4.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.bootstrap4.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.colVis.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.colVis.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.flash.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.flash.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.foundation.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.foundation.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.html5.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.html5.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.jqueryui.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.jqueryui.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.print.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.print.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.semanticui.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\buttons.semanticui.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\dataTables.buttons.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\js\dataTables.buttons.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\swf\flashExport.swf" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.bootstrap.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.bootstrap.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.bootstrap4.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.bootstrap4.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.foundation.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.foundation.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.jqueryui.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.jqueryui.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.material.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.semanticui.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\dataTables.semanticui.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\jquery.dataTables.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\jquery.dataTables.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\css\responsive.dataTables.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\images\sort_asc.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\images\sort_asc_disabled.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\images\sort_both.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\images\sort_desc.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\images\sort_desc_disabled.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.bootstrap.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.bootstrap.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.bootstrap4.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.bootstrap4.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.foundation.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.foundation.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.jqueryui.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.jqueryui.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.responsive.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.semanticui.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.semanticui.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\jquery.dataTables.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\jquery.dataTables.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.bootstrap.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.bootstrap.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.bootstrap4.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.bootstrap4.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.foundation.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.foundation.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.jqueryui.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.jqueryui.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.semanticui.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\dataTables.semanticui.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\jquery.dataTables.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\css\jquery.dataTables.min.css" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\images\sort_asc.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\images\sort_asc_disabled.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\images\sort_both.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\images\sort_desc.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\images\sort_desc_disabled.png" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.bootstrap.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.bootstrap.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.bootstrap4.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.bootstrap4.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.foundation.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.foundation.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.jqueryui.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.jqueryui.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.semanticui.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\dataTables.semanticui.min.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\jquery.dataTables.js" />
-    <Content Include="lib\DataTables\DataTables-1.10.24\js\jquery.dataTables.min.js" />
-    <Content Include="lib\DataTables\datatables.css" />
-    <Content Include="lib\DataTables\datatables.js" />
-    <Content Include="lib\DataTables\datatables.min.css" />
-    <Content Include="lib\DataTables\datatables.min.js" />
-    <Content Include="lib\DataTables\JSZip-2.5.0\jszip.js" />
-    <Content Include="lib\DataTables\JSZip-2.5.0\jszip.min.js" />
-    <Content Include="lib\DataTables\pdfmake-0.1.36\pdfmake.js" />
-    <Content Include="lib\DataTables\pdfmake-0.1.36\pdfmake.min.js" />
-    <Content Include="lib\DataTables\pdfmake-0.1.36\vfs_fonts.js" />
     <Content Include="lib\js\addProduct.js" />
     <Content Include="lib\css\WishList.css" />
     <Content Include="lib\js\Cart.js" />
-    <Content Include="lib\js\Moment.js" />
     <Content Include="lib\js\OrderPage%28A%29.js" />
     <Content Include="lib\js\Tools.js" />
     <Content Include="lib\js\WishList.js" />
@@ -346,7 +236,6 @@
     <Content Include="Artist\OrderHistoryDetails.aspx" />
     <Content Include="Artist\OrderPage%28A%29.aspx" />
     <Content Include="Artist\SalesHistory%28A%29.aspx" />
-    <Content Include="lib\material-components-web\4.0.0\material-components-web.min.css" />
     <Content Include="lib\sweetAlert\sweetalert.css" />
     <Content Include="lib\sweetAlert\sweetalert.js" />
     <Content Include="lib\sweetAlert\sweetalert.min.js" />
@@ -396,12 +285,7 @@
     <Content Include="lib\js\Homepage.js" />
     <Content Include="lib\js\jquery.js" />
     <Content Include="lib\js\Masterpage.js" />
-    <Content Include="lib\js\ProductGallery.js" />
     <Content Include="Artist\ProductGallery.aspx" />
-    <Content Include="SystemUser\CustomerList.aspx" />
-    <Content Include="SystemUser\PaymentReport.aspx" />
-    <Content Include="SystemUser\SalesReport.aspx" />
-    <Content Include="SystemUser\UserLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer\CustomerHomepage.aspx" />
     <Content Include="Customer\WishList.aspx" />
@@ -527,9 +411,6 @@
       <DependentUpon>OrderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Email.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="Artist\OrderHistoryDetails.aspx.cs">
       <DependentUpon>OrderHistoryDetails.aspx</DependentUpon>
@@ -623,34 +504,6 @@
     <Compile Include="Customer\CustomerHomepage.aspx.designer.cs">
       <DependentUpon>CustomerHomepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SystemUser\CustomerList.aspx.cs">
-      <DependentUpon>CustomerList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SystemUser\CustomerList.aspx.designer.cs">
-      <DependentUpon>CustomerList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SystemUser\PaymentReport.aspx.cs">
-      <DependentUpon>PaymentReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SystemUser\PaymentReport.aspx.designer.cs">
-      <DependentUpon>PaymentReport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SystemUser\SalesReport.aspx.cs">
-      <DependentUpon>SalesReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SystemUser\SalesReport.aspx.designer.cs">
-      <DependentUpon>SalesReport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SystemUser\UserLogin.aspx.cs">
-      <DependentUpon>UserLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SystemUser\UserLogin.aspx.designer.cs">
-      <DependentUpon>UserLogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WebAnony.Master.cs">
       <DependentUpon>WebAnony.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -678,13 +531,6 @@
     </Compile>
     <Compile Include="Customer\WishList.aspx.designer.cs">
       <DependentUpon>WishList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebUser.Master.cs">
-      <DependentUpon>WebUser.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebUser.Master.designer.cs">
-      <DependentUpon>WebUser.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -732,10 +578,6 @@
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js.map" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.js.map" />
     <Content Include="lib\bootstrap-4.0.0-dist\js\bootstrap.min.js.map" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\dataTables.material.min.js" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\common.scss" />
-    <Content Include="lib\DataTables\Buttons-1.7.0\css\mixins.scss" />
-    <Content Include="lib\DataTables\DataTables-1.10.21\js\datatables.datetime.min.js" />
     <None Include="packages.config" />
     <Content Include="WebArt.Master" />
     <Content Include="WebAnony.Master" />
@@ -747,7 +589,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="Web.sitemap" />
-    <Content Include="WebUser.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\Images\SavedImages\" />

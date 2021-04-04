@@ -13,25 +13,22 @@ namespace WebApplicationAssignmnet
 {
     public partial class ProductPage : System.Web.UI.Page
     {
+        private static int id = 100001;
         protected void Page_Load(object sender, EventArgs e)
         {
-            var id = GetProductID();
-            GetProductDetails(id);
-            GetImages(id);
+            if (!IsPostBack)
+            {
+                GetProductID();
+                GetProductDetails(id);
+                GetImages(id);
+                CheckDuplicateWish();
+                CheckDuplicatePro();
+            }
         }
 
-        private int GetProductID()
+        private void GetProductID()
         {
-            try
-            {
-                var id = Request.QueryString["id"].ToString();
-                return Int32.Parse(id);
-            }
-            catch (Exception ex)
-            {
-                //return default
-                return 1000001;
-            }
+            id = Int32.Parse(Request.QueryString["id"].ToString());
         }
 
         private int GetUserID()
@@ -64,9 +61,9 @@ namespace WebApplicationAssignmnet
                             ImgPath1.ImageUrl = reader.GetString(8);
                             ImgPath2.ImageUrl = reader.GetString(9) ?? "";
                             ImgPath3.ImageUrl = reader.GetString(10) ?? "";
-                            LinkArtistName.NavigateUrl = "ArtistProfile.aspx?id=" + reader.GetInt32(11).ToString();
-                            LinkArtistName.Text = "By " + reader.GetString(12);
-                            LblDate.Text = reader.GetDateTime(13).ToString("dd-MM-yyyy");
+                            LinkArtistName.NavigateUrl = "ArtistProfile.aspx?id=" + reader.GetInt32(12).ToString();
+                            LinkArtistName.Text = "By " + reader.GetString(13);
+                            LblDate.Text = reader.GetDateTime(14).ToString("dd-MM-yyyy");
                         }
                     }
 
@@ -115,6 +112,7 @@ namespace WebApplicationAssignmnet
 
         protected void WishBtn_Click(object sender, EventArgs e)
         {
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
@@ -123,7 +121,7 @@ namespace WebApplicationAssignmnet
                     string query = @"INSERT INTO WISHLIST(PRODUCTID,CUSTID) VALUES (@productID, @userID);";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("productID", GetProductID());
+                    cmd.Parameters.AddWithValue("productID", id);
                     cmd.Parameters.AddWithValue("userID", GetUserID());
 
                     var result = cmd.ExecuteNonQuery();
@@ -132,6 +130,7 @@ namespace WebApplicationAssignmnet
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Added in wish list.');", true);
 
+                        CheckDuplicateWish();
                     }
                     else
                     {
@@ -143,17 +142,48 @@ namespace WebApplicationAssignmnet
             catch (Exception ex) { throw ex; }
         }
 
+        public void CheckDuplicateWish()
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                string query = @"SELECT COUNT(PRODUCTID) FROM WISHLIST WHERE PRODUCTID=@productID;";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.Parameters.AddWithValue("productID", id);
+                int returnValue = (int)cmd.ExecuteScalar();
+                conn.Close();
+
+                if (returnValue > 0)
+                {
+                    WishBtn.Text = ("Already in Wish List !");
+                    WishBtn.Enabled = false;
+                }
+                else
+                {
+                    WishBtn.Text = ("Add in Wish List !");
+                    WishBtn.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         protected void CartBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
+
                     conn.Open();
                     string query = @"INSERT INTO ADDTOCARTLIST(PRODUCTID,CUSTID,QUANTITY) VALUES (@productID, @userID, 1);";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("productID", GetProductID());
+
+                    cmd.Parameters.AddWithValue("productID", id);
                     cmd.Parameters.AddWithValue("userID", GetUserID());
 
                     var result = cmd.ExecuteNonQuery();
@@ -161,16 +191,45 @@ namespace WebApplicationAssignmnet
                     if (result > 0)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Added in cart.');", true);
-
+                        CheckDuplicatePro();
                     }
                     else
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to added in cart.');", true);
                     }
                     conn.Close();
-                }
+                }  
             }
             catch (Exception ex) { throw ex; }
+        }
+
+        public void CheckDuplicatePro()
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                string query = @"SELECT COUNT(PRODUCTID) FROM ADDTOCARTLIST WHERE PRODUCTID=@productID;";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.Parameters.AddWithValue("productID", id);
+                int returnValue = (int)cmd.ExecuteScalar();
+                conn.Close();
+
+                if (returnValue > 0)
+                {
+                    CartBtn.Text = ("Already in Cart !");
+                    CartBtn.Enabled = false;
+                }
+                else
+                {
+                    CartBtn.Text = ("Add in Cart !");
+                    CartBtn.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         protected override void OnPreInit(EventArgs e)
         {
