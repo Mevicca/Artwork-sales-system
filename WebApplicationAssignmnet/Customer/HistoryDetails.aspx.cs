@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
+using WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
@@ -26,16 +26,6 @@ namespace WebApplicationAssignmnet
         private void GetSalesID()
         {
             id = int.Parse(Request.QueryString["id"].ToString());
-        }
-
-        private int GetUserID()
-        {
-            if (Session["LoginUser"] == null)
-            {
-                return 1001;
-            }
-            User user = Session["LoginUser"] as User;
-            return user.ID;
         }
 
         private void GetOrder(int salesID)

@@ -118,7 +118,7 @@ INSERT INTO DELIVERY(SALESID, ADDRESSID, DELIVERYSERVICESNO, DELIVERYSTATUS, UPD
 
                     cmd.Parameters.AddWithValue("ADDID", addressID);
                     cmd.Parameters.AddWithValue("DELSERNO", deliveryComID);
-                    cmd.Parameters.AddWithValue("DELSTATUS", "UNPACK");
+                    cmd.Parameters.AddWithValue("DELSTATUS", "Unpack");
 
                     var result = cmd.ExecuteNonQuery();
                     if (result == 0)
