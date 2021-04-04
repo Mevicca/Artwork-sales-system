@@ -7,96 +7,136 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
     public partial class AddProduct : System.Web.UI.Page
     {
-
+        List<string> fileName;
+        User user;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["LoginUser"] != null)
 
+            {
+                user = Session["LoginUser"] as User;
+            }
         }
 
         //INSERT PRODUCT INTO DATABASE
         protected void addSaveProductbtn_Click(object sender, EventArgs e)
         {
-            string sql = "insert into Products(ProductName, ProductDesc, CategoryID, ProductPrice, ReleasedDate, Quantity, path1, path2, path3)VALUES(@0, @1, @2, @3, @4, @5, @6, @7, @8)";
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("0", prodName.Text.Trim());
-            cmd.Parameters.AddWithValue("1", prodDesc.Value.Trim());
-
-            if (categoryddl.SelectedValue == "Sculpture - Animals")
+            try
             {
-                cmd.Parameters.AddWithValue("2", "S1001");
+                string newFileName = @"~\assets\product\";
+                fileName = new List<string>();
+                string filepath = Server.MapPath("\\assets\\product\\");
+                if (categoryddl.SelectedValue.Contains("Sculpture"))
+                { 
+                    filepath += "sculpture\\";
+                    newFileName += @"sculpture\";
+                }
+                if (categoryddl.SelectedValue.Contains("Oil"))
+                {
+                    filepath += "OilPaint\\";
+                    newFileName += @"OilPaint\";
+                }
+                if (categoryddl.SelectedValue.Contains("Water"))
+                {
+                    filepath += "Watercolor\\";
+                    newFileName += @"Watercolor\";
+                }
+
+                HttpFileCollection uploadedFiles = Request.Files;
+
+                for (int i = 0; i < uploadedFiles.Count; i++)
+                {
+                    HttpPostedFile userPostedFile = uploadedFiles[i];
+
+                    try
+                    {
+                        if (userPostedFile.ContentLength > 0)
+                        {
+                            userPostedFile.SaveAs(filepath + "\\" + Path.GetFileName(userPostedFile.FileName));
+                            fileName.Add(newFileName + Path.GetFileName(userPostedFile.FileName));
+                        }
+                    }
+                    catch (Exception Ex)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "PopupMsg", "failalert('Error','" + Ex.Message + "')", true);
+                    }
+                }
+
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+                string sql = "insert into Products(ProductName, ProductDesc, CategoryID, ProductPrice, ReleasedDate, Quantity,artistID,  path1, path2, path3)VALUES(@0, @1, @2, @3, @4, @5, @6, @7, @8,@9)";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("0", prodName.Text.Trim());
+                cmd.Parameters.AddWithValue("1", prodDesc.Value.Trim());
+
+                if (categoryddl.SelectedValue == "Sculpture - Animals")
+                {
+                    cmd.Parameters.AddWithValue("2", "S1001");
+                }
+                else if (categoryddl.SelectedValue == "Sculpture - Bronzo")
+                {
+                    cmd.Parameters.AddWithValue("2", "S1002");
+                }
+                else if (categoryddl.SelectedValue == "Sculpture - Wood")
+                {
+                    cmd.Parameters.AddWithValue("2", "S1003");
+                }
+                else if (categoryddl.SelectedValue == "Oil paint")
+                {
+                    cmd.Parameters.AddWithValue("2", "S1004");
+                }
+                else if (categoryddl.SelectedValue == "Watercolor paint")
+                {
+                    cmd.Parameters.AddWithValue("2", "S1005");
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("2", "S1006");
+                }
+
+                cmd.Parameters.AddWithValue("3", Decimal.Parse(prodPrice.Value));
+                cmd.Parameters.AddWithValue("4", DateTime.Now);
+                cmd.Parameters.AddWithValue("5", Int32.Parse(quantity.Value));
+
+                if (fileName.Count >= 1) cmd.Parameters.AddWithValue("6", user.ID);
+                if (fileName.Count >= 1) cmd.Parameters.AddWithValue("7", fileName.ToArray()[0]);
+                if (fileName.Count >= 2)
+                {
+                    cmd.Parameters.AddWithValue("8", fileName.ToArray()[1]);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("8", "");
+                }
+                if (fileName.Count >= 3)
+                {
+                    cmd.Parameters.AddWithValue("9", fileName.ToArray()[2]);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("9", "");
+                }
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+
+                Response.Redirect("ProductGallery.aspx", false);
             }
-            else if (categoryddl.SelectedValue == "Sculpture - Bronzo")
+            catch (SqlException ex)
             {
-                cmd.Parameters.AddWithValue("2", "S1002");
+                ScriptManager.RegisterStartupScript(this, GetType(), "PopupMsg", "failalert('Error','Database connection got problem.')", true);
             }
-            else if (categoryddl.SelectedValue == "Sculpture - Wood")
+            catch (Exception ex)
             {
-                cmd.Parameters.AddWithValue("2", "S1003");
+                ScriptManager.RegisterStartupScript(this, GetType(), "PopupMsg", "failalert('Error','" + ex.Message + "')", true);
             }
-            else if (categoryddl.SelectedValue == "Oil paint")
-            {
-                cmd.Parameters.AddWithValue("2", "S1004");
-            }
-            else if (categoryddl.SelectedValue == "Watercolor paint")
-            {
-                cmd.Parameters.AddWithValue("2", "S1005");
-            }
-            else
-            {
-                cmd.Parameters.AddWithValue("2", "S1006");
-            }
-
-            cmd.Parameters.AddWithValue("3", Decimal.Parse(prodPrice.Value));
-            cmd.Parameters.AddWithValue("4", DateTime.Now);
-            cmd.Parameters.AddWithValue("5", Int32.Parse(quantity.Value));
-
-            //step 1
-            //store path follow the productname
-            //example : bear, ~\assets\product\sculpture\bear.png
-            //string no;
-            string path1 = "~\\assets\\product\\sculpture\\" + prodName.Text.Trim() + ".png";
-            string path2 = "~\\assets\\product\\sculpture\\" + prodName.Text.Trim() + "2.png";
-            string path3 = "~\\assets\\product\\sculpture\\" + prodName.Text.Trim() + "3.png";
-            ////validate database whether same path (if yes, no++)
-            ////here
-            //if (FileImageUpload.PostedFile != null)
-            //{
-            //    string imgfile = Path.GetFileName(FileImageUpload.PostedFile.FileName);
-            //    FileImageUpload.SaveAs("~/assets/product/scupture/" + imgfile);
-            //    string path_1 = "~/assets/product/scupture/" + prodName.Text.Trim() + ".png";
-            //    cmd.Parameters.AddWithValue("path1", path_1);
-            //}
-            //HttpPostedFile file = Request.Files["myFile"];
-
-            //check file was submitted
-            //for (int i = 0; i < Request.Files.Count; i++)
-            //{
-            //    HttpPostedFileBase file = Request.Files[i];
-            //    if (file.ContentLength > 0)
-            //    {
-            //        //saving code here
-
-            //    }
-
-            //}
-            //step 2
-             //path 1 image(ui) store into the path1(generated justnow)
-             // last step
-
-            //cmd.Parameters.AddWithValue("@path1", );
-            //cmd.Parameters.AddWithValue("@path2", );
-            //cmd.Parameters.AddWithValue("@path3", );
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-
-            Response.Redirect("ProductGallery.aspx", false);
 
         }
 

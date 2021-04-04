@@ -11,8 +11,7 @@ namespace WebApplicationAssignmnet.DynamicData.FieldTemplates
 {
 
 
-    public partial class ListItem
+    public partial class SpecialPageTitle
     {
-
     }
 }

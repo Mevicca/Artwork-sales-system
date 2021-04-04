@@ -6,7 +6,24 @@
 
     <link href="../lib/css/ArtistProductHandle.css" rel="stylesheet" />
     <script src="../lib/js/addProduct.js"></script>
-
+    <link href="../lib/sweetAlert/sweetalert.css" rel="stylesheet" />
+    <script src="../lib/sweetAlert/sweetalert.js"></script>
+    <script>
+        function successalert(stitle, stext) {
+            swal({
+                title: stitle,
+                text: stext,
+                type: 'success'
+            });
+        }
+        function failalert(ftitle, ftext) {
+            swal({
+                title: ftitle,
+                text: ftext,
+                type: 'error'
+            });
+        }
+    </script>
     <form id="form1" method="post" enctype="multipart/form-data" runat="server">
         <div class="container">
             <%--Title--ADD NEW ARTWORK--%>
