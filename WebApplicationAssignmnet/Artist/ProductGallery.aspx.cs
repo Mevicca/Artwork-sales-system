@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
+using WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
@@ -17,15 +17,15 @@ namespace WebApplicationAssignmnet
         int CurrentPage;
         protected void Page_Load(object sender, EventArgs e)
         {
-            all.BackColor = Color.FromArgb(0xbc5b51);
-            all.ForeColor = Color.White;
             if (!IsPostBack)
             {
+                all.BackColor = Color.FromArgb(0xbc5b51);
+                all.ForeColor = Color.White;
                 User user = Session["LoginUser"] as User;
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = @"select * from products where ArtistID = @id and IsActive = 1";
+                    string query = @"select * from products where ArtistID = @id ";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("id", user.ID);
 
@@ -119,7 +119,7 @@ namespace WebApplicationAssignmnet
                     string query = @"select * from products where ArtistID = @id ";
                     if (btn.Text == "Show All")
                     {
-                        tab = @"and IsActive = 1 ";
+                        query += "";
                     }
                     else if (btn.Text == "In Stock")
                     {

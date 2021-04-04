@@ -2,12 +2,12 @@
 }
 .container {
     background-color: white;
-    padding-left: 0;
-    padding-right: 0;
+    min-height: calc(100vh - 38px - 70px); /*deduct footer and header*/
 }
 
 .galleryContent {
     padding: 40px;
+    padding-bottom:0;
     padding-top: 20px;
 }
 

@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
+using WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
@@ -15,7 +15,13 @@ namespace WebApplicationAssignmnet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    if (HttpContext.Current.User.Identity.Name == "Customer")
+            //        Response.Redirect("~/Customer/CustomerHomepage.aspx");
+            //    else
+            //        Response.Redirect("~/Artist/Homepage.aspx");
+            //}
         }
 
         protected void btnlogin_Click(object sender, EventArgs e)
@@ -85,10 +91,12 @@ namespace WebApplicationAssignmnet
                             //encrypt in password
                             if (DropDownListIdentification.SelectedValue == "Customer")
                             {
+                                FormsAuthentication.RedirectFromLoginPage("Customer", chkPersistCookie.Checked);
                                 Response.Redirect("~/Customer/CustomerHomepage.aspx");
                             }
                             else
                             {
+                                FormsAuthentication.RedirectFromLoginPage("Artist", chkPersistCookie.Checked);
                                 Response.Redirect("~/Artist/Homepage.aspx");
                             }
                         }

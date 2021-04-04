@@ -59,7 +59,7 @@
 
     </div>
 
-    <h3 class="homePart artistMon">Artist of the month February - Jonathan Kueh</h3>
+    <h3 class="homePart artistMon">Artist of the month April - Jonathan Kueh</h3>
     <div class="artistRow">
         <div class="artistColumn">
             <img src="../assets/product/watercolor/square.jpg" style="width: 100%">

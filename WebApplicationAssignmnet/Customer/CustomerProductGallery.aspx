@@ -4,30 +4,28 @@
     <link href="../lib/css/ProductGallery.css" rel="stylesheet" />
 
     <form id="form1" runat="server">
-        <div class="container">
-
-            <div class="navbar-gallery">
-                <div class="dropdown-category">
-                    <asp:Button ID="all" runat="server" CssClass="dropbtn" OnClick="Category_Click" Text="All" />
-                </div>
-                <div class="dropdown-category">
-                    <asp:Button ID="paintingTab" CssClass="dropbtn" runat="server" Enabled="false" Text="Painting" />
-                    <div  class="dropdown-category-content">
-                        <asp:Button ID="oilpaint" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Oil Paint" />
-                        <asp:Button ID="arcylirpaint" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Arcylir Paint" />
-                        <asp:Button ID="watercolor" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Water Color" />
-                    </div>
-                </div>
-                <div class="dropdown-category">
-                    <asp:Button ID="sculptureTab" CssClass="dropbtn" runat="server" Enabled="false" Text="Sculpture" />
-                    <div class="dropdown-category-content">
-                        <asp:Button ID="animals" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Animals" />
-                        <asp:Button ID="bronzo" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Bronzo" />
-                        <asp:Button ID="wood" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Wood" />
-                    </div>
+        <div class="navbar-gallery">
+            <div class="dropdown-category">
+                <asp:Button ID="all" runat="server" CssClass="dropbtn" OnClick="Category_Click" Text="All" />
+            </div>
+            <div class="dropdown-category">
+                <asp:Button ID="paintingTab" CssClass="dropbtn" runat="server" Enabled="false" Text="Painting" />
+                <div class="dropdown-category-content">
+                    <asp:Button ID="oilpaint" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Oil Paint" />
+                    <asp:Button ID="arcylirpaint" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Arcylir Paint" />
+                    <asp:Button ID="watercolor" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Water Color" />
                 </div>
             </div>
-
+            <div class="dropdown-category">
+                <asp:Button ID="sculptureTab" CssClass="dropbtn" runat="server" Enabled="false" Text="Sculpture" />
+                <div class="dropdown-category-content">
+                    <asp:Button ID="animals" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Animals" />
+                    <asp:Button ID="bronzo" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Bronzo" />
+                    <asp:Button ID="wood" runat="server" CssClass="categorybtn" OnClick="Category_Click" Text="Wood" />
+                </div>
+            </div>
+        </div>
+        <div class="container">
             <div class="galleryContent">
                 <table style="width: 100%;">
                     <tr>
