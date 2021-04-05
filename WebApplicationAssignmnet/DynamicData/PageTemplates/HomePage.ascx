@@ -19,13 +19,13 @@
         <div class="mySlides fade">
             <img src="../assets/Images/Homepage/slide2.jpg" style="width: 100%" height="500">
             <div class="text">Interested in joining us as an artist?</div>
-            <asp:LinkButton CssClass="btn artist" runat="server" PostBackUrl="~/Anonymous/SignUp.aspx">JOIN US</asp:LinkButton>
+            <asp:LinkButton ID="joinBtn" CssClass="btn artist" runat="server">JOIN US</asp:LinkButton>
         </div>
 
         <div class="mySlides fade">
             <img src="../assets/Images/Homepage/slide3.jpg" style="width: 100%" height="500">
             <div class="text">Browse and enjoy arts.</div>
-            <asp:LinkButton CssClass="btn prod" runat="server" PostBackUrl="~/Customer/CustomerProductGallery.aspx">FIND ART YOU LOVE</asp:LinkButton>
+            <asp:LinkButton ID="galleryBtn" CssClass="btn prod" runat="server">FIND ART YOU LOVE</asp:LinkButton>
         </div>
 
         <!-- Next and previous buttons -->
@@ -43,19 +43,19 @@
 
     <div class="caterRow">
         <div class="caterColumn">
-            <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/assets/Images/homepage/homecaterap.jpg" NavigateUrl="~/Customer/CustomerProductGallery.aspx"></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/assets/Images/homepage/homecaterap.jpg"></asp:HyperLink>
             <div class="homeCater">Arcylic Painting</div>
         </div>
         <div class="caterColumn">
-            <asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/assets/Images/homepage/homecaterop.jpg" NavigateUrl="~/Customer/CustomerProductGallery.aspx"></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/assets/Images/homepage/homecaterop.jpg"></asp:HyperLink>
             <div class="homeCater">Oil Painting</div>
         </div>
         <div class="caterColumn">
-            <asp:HyperLink ID="HyperLink3" runat="server" ImageUrl="~/assets/Images/homepage/homecaters.jpg" NavigateUrl="~/Customer/CustomerProductGallery.aspx"></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink3" runat="server" ImageUrl="~/assets/Images/homepage/homecaters.jpg"></asp:HyperLink>
             <div class="homeCater">Sculpture</div>
         </div>
         <div class="caterColumn">
-            <asp:HyperLink ID="HyperLink4" runat="server" ImageUrl="~/assets/Images/homepage/homecaterwp.jpg" NavigateUrl="~/Customer/CustomerProductGallery.aspx"></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink4" runat="server" ImageUrl="~/assets/Images/homepage/homecaterwp.jpg"></asp:HyperLink>
             <div class="homeCater">Watercolor Artwork</div>
         </div>
     </div>
