@@ -1,6 +1,5 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebArt.Master.cs" Inherits="WebApplicationAssignmnet.WebArt" %>
 <!DOCTYPE html>
-
 <link href="../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="../lib/css/Tools.css" rel="stylesheet" />
 <link href="../lib/css/MasterPage.css" rel="stylesheet" />
@@ -9,7 +8,6 @@
 <script src="../lib/js/jquery.js"></script>
 <script src="../lib/sweetAlert/sweetalert.js"></script>
 <script src="../lib/js/Masterpage.js"></script>
-
 <html>
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +26,6 @@
             <a href="ArtistSalesHistory.aspx">History Order</a>
             <a href="ArtistProfileSetting.aspx">Settings</a>
     </div>
-
     <div id="mainContent">
         <nav class="navbar navbar-expand-md navbar-light" id="nav-bar">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
@@ -55,18 +52,24 @@
                         <div class="dropdown" id="profileIcon">
                             <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                             <div class="dropdown-content">
-                                <a href="../Anonymous/Login.aspx">Sign out
+                                <a href="../Anonymous/Login.aspx">Sign out</a>
                             </div>
                         </div>
                     </li>
+
+    
+          
+            
+          
+    
+    
+  
                 </ul>
             </div>
         </nav>
-
         <div id="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </div>
-
         <nav class="navbar navbar-expand-md navbar-light">
             <div id="bottom-footer">
                 <footer class="text-white-50">
@@ -89,12 +92,10 @@
                         </div>
                     </div>
                     <div class="navbar-collapse collapse w-100 order-3 order-md-0 dual-collapse2">
-
                         <div id="footer-copyright" class="footer-adjust">&#169; 2021 | TAYY Art  </div>
                     </div>
                 </footer>
             </div>
-        </nav>
-    </div>
+        </nav></div>
 </body>
 </html>
