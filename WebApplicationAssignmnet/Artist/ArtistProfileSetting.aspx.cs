@@ -26,7 +26,7 @@ namespace WebApplicationAssignmnet
             try
             {
                 User user = Session["LoginUser"] as User;
-                string bio;
+                //string bio, name, gender;
                 LblFullName.Text = user.FullName;
                 switch (user.Gender)
                 {
@@ -44,23 +44,41 @@ namespace WebApplicationAssignmnet
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
                     conn.Open();
-                    string query = "SELECT ArtBio FROM Artist WHERE ArtistID = @artistID;";
+                    string query = "SELECT ArtFullName, ArtGender, ArtBio FROM Artist WHERE ArtistID = @artistID;";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("artistID", user.ID);
-                    bio = cmd.ExecuteScalar().ToString().Trim();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            LblFullName.Text = reader.GetString(0).ToString();
+            
+                            if(Equals(reader.GetString(1).ToString(), "F"))
+                            {
+                                ArtGenderLabel.Text = "Female";
+                            }
+                            else if(Equals(reader.GetString(1).ToString(), "M"))
+                            {
+                                ArtGenderLabel.Text = "Male";
+                            }
+                            else
+                            {
+                                ArtGenderLabel.Text = "Prefer not to say";
+                            }
+                            if (Equals(reader.GetString(2).ToString(), "Empty"))
+                            {
+                                ArtBioLbl.Text = "You haven't add your bio.";
+                            }
+                            else
+                            {
+                                ArtBioLbl.Text = reader.GetString(2).ToString();
+                            }
+                        }
+                    }
                 }
-
-                if (Equals(bio, "Empty"))
-                {
-                    ArtBioLbl.Text = "You haven't add your bio.";
-                }
-                else
-                {
-                    ArtBioLbl.Text = bio;
-                }
-
             }
             catch (Exception ex)
             {

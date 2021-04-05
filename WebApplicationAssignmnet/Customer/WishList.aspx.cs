@@ -44,10 +44,12 @@ WHERE A.CustID = @CustID";
                 }
                 if(rptProducts.Items.Count == 0)
                 {
+                    LblNone.Visible = true;
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Empty in wish list.');", true);
                 }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
