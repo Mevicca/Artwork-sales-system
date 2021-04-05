@@ -15,14 +15,11 @@ using System.Xml.Linq;
 
 namespace WebApplicationAssignmnet.DynamicData.FieldTemplates
 {
-    public partial class OrderDetails1 : System.Web.DynamicData.FieldTemplateUserControl
+    public partial class HomePage : System.Web.UI.UserControl
     {
-        public override Control DataControl
+        protected void Page_Load(object sender, EventArgs e)
         {
-            get
-            {
-                return Literal1;
-            }
+
         }
     }
 }

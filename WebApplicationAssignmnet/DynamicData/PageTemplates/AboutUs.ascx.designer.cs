@@ -7,20 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplicationAssignmnet
+namespace WebApplicationAssignmnet.DynamicData.FieldTemplates
 {
 
 
-    public partial class Homepage
+    public partial class AboutUs
     {
 
         /// <summary>
-        /// Homepage control.
+        /// img1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebApplicationAssignmnet.DynamicData.FieldTemplates.HomePage HomePageTemplate;
+        protected global::System.Web.UI.WebControls.Image img1;
+
+        /// <summary>
+        /// img2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img2;
     }
 }

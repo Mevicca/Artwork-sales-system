@@ -38,7 +38,7 @@ namespace WebApplicationAssignmnet
                     txtCardNo3.Text == "4111" && txtCardNo4.Text == "1111" && txtCvv.Text == "123" &&
                     DateTime.Parse(txtMonth.Text) > DateTime.Today)
                 {
-                    var result = new Email().SendPaymentEmail(Session["Email"].ToString());
+                    //var result = new Email().SendPaymentEmail(Session["Email"].ToString());
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Payment Successfully.');", true);
                     StoreSales(1);
                     Session.Remove("CartList");
@@ -128,6 +128,12 @@ SELECT @var";
                     if (result.HasRows && result.Read())
                     {
                         salesID = result.GetInt32(0);
+
+                        HttpCookie orderID = new HttpCookie("OrderID");
+                        orderID.Value = salesID.ToString();
+
+                        Response.Cookies.Add(orderID);
+
                         Response.Redirect("~/Customer/HistoryDetails.aspx?id=" + salesID);
                     }
                     else

@@ -9,7 +9,7 @@ namespace WebApplicationAssignmnet
 {
     public class Email
     {
-        public bool SendPaymentEmail(string receiver)
+        public bool SendPaymentEmail(string receiver, string msg)
         {
             try
             {
@@ -17,18 +17,18 @@ namespace WebApplicationAssignmnet
                 var toAddress = new MailAddress(receiver, "Customer");
                 const string fromPassword = "test1234@";
                 const string subject = "Payment Successfully";
-                const string msg = @"Dear Customer,
-Your order already placed. If you faced any problem, welcome to contact to us. 
+                //                const string msg = @"Dear Customer,
+                //Your order already placed. If you faced any problem, welcome to contact to us. 
 
 
 
-Thank you.
+                //Thank you.
 
 
-Best Regards, 
-TAYY Art Work";
-                ;
-
+                //Best Regards, 
+                //TAYY Art Work";
+                //;
+               
                 var smtp = new SmtpClient
                 {
                     Host = "smtp.gmail.com",

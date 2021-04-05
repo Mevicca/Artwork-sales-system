@@ -42,7 +42,6 @@
                             <tr>
                                 <td class="img">
                                     <asp:ImageButton ID="ProductImage" runat="server" Height="160px" ImageAlign="Middle" ImageUrl='<%# Eval("path1") %>' Width="160px" PostBackUrl='<%#"Product.aspx?id="+Eval("ProductID")%>' />
-
                                 </td>
                             </tr>
                             <tr>

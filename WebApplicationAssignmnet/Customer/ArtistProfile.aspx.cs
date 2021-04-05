@@ -20,7 +20,24 @@ namespace WebApplicationAssignmnet
                 int artistID = int.Parse(Request.QueryString["id"]);
                 contactLink.NavigateUrl = "mailto:" + BindData(artistID);
             }
+            if (Session["LoginUser"] != null)
+            {
+                User user = Session["LoginUser"] as User;
+                if (user.Role == "Customer")
+                {
+                    Response.Redirect("~/Customer/CustomerHomepage.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/Artist/Homepage.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Anonymous/Login.aspx");
+            }
         }
+
         private String BindData(int artistID)
         {
             string artEmail = "", artGender = "";

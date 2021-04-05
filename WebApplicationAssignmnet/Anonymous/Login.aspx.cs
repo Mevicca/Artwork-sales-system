@@ -15,13 +15,19 @@ namespace WebApplicationAssignmnet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (User.Identity.IsAuthenticated)
-            //{
-            //    if (HttpContext.Current.User.Identity.Name == "Customer")
-            //        Response.Redirect("~/Customer/CustomerHomepage.aspx");
-            //    else
-            //        Response.Redirect("~/Artist/Homepage.aspx");
-            //}
+            if (Session["LoginUser"] != null)
+            {
+                User user = Session["LoginUser"] as User;
+                if (user.Role == "Customer")
+                {
+                    Response.Redirect("~/Customer/CustomerHomepage.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/Artist/Homepage.aspx");
+                }
+            }
+            
         }
 
         protected void btnlogin_Click(object sender, EventArgs e)
@@ -87,6 +93,7 @@ namespace WebApplicationAssignmnet
 
 
                             Session["LoginUser"] = user;
+                            Session.Timeout = 300;
                             FormsAuthentication.RedirectFromLoginPage(user.ID.ToString(), chkPersistCookie.Checked);
                             //encrypt in password
                             if (DropDownListIdentification.SelectedValue == "Customer")

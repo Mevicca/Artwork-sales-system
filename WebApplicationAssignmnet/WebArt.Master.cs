@@ -14,5 +14,11 @@ namespace WebApplicationAssignmnet
         {
             
         }
+
+        protected void signout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/Anonymous/Login.aspx");
+        }
     }
 }

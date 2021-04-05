@@ -241,6 +241,8 @@
     <Content Include="Customer\CustomerFAQ.aspx" />
     <Content Include="Customer\HistoryDetails.aspx" />
     <Content Include="Customer\OrderHistory.aspx" />
+    <Content Include="DynamicData\PageTemplates\HomePage.ascx" />
+    <Content Include="DynamicData\PageTemplates\AboutUs.ascx" />
     <Content Include="DynamicData\FieldTemplates\PageTitle.ascx" />
     <Content Include="DynamicData\FieldTemplates\BackButton.ascx" />
     <Content Include="Global.asax" />
@@ -565,6 +567,20 @@
     </Compile>
     <Compile Include="Customer\OrderHistory.aspx.designer.cs">
       <DependentUpon>OrderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\HomePage.ascx.cs">
+      <DependentUpon>HomePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\HomePage.ascx.designer.cs">
+      <DependentUpon>HomePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\AboutUs.ascx.cs">
+      <DependentUpon>AboutUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\AboutUs.ascx.designer.cs">
+      <DependentUpon>AboutUs.ascx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\FieldTemplates\PageTitle.ascx.cs">
       <DependentUpon>PageTitle.ascx</DependentUpon>
