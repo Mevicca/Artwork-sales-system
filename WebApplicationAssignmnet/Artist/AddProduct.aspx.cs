@@ -33,7 +33,7 @@ namespace WebApplicationAssignmnet
                 fileName = new List<string>();
                 string filepath = Server.MapPath("\\assets\\product\\");
                 if (categoryddl.SelectedValue.Contains("Sculpture"))
-                { 
+                {
                     filepath += "sculpture\\";
                     newFileName += @"sculpture\";
                 }
@@ -144,5 +144,7 @@ namespace WebApplicationAssignmnet
         {
             Response.Redirect("ProductGallery.aspx", false);
         }
+
     }
+    
 }

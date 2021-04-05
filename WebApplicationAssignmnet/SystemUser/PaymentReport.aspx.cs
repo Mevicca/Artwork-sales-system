@@ -40,8 +40,8 @@ inner join PaymentMethod pm on (pm.PaymentMethodID=p.PaymentMethodID)
 where orderTime between @startTime and @endtime + 1
 ";
                     if (!String.IsNullOrEmpty(custID)) query += @"AND c.custID LIKE '%" + custID + "%' ";
-                    if (!String.IsNullOrEmpty(paymentMethod) && paymentMethod != "All") query += @"AND pm.pmdescription LIKE '%" + paymentMethod + "%' ";
-                    if (status != "2") query += @"AND status = "+ status;
+                    if (!String.IsNullOrEmpty(paymentMethod) && paymentMethod != "All") query += @"AND pm.pmdescription LIKE '%" + paymentMethod + "% ' ";
+                    if (status != "2") query += @" AND p.isPaid = " + status;
 
 
                     using (SqlDataAdapter sda = new SqlDataAdapter(query, conn))
@@ -70,7 +70,7 @@ where orderTime between @startTime and @endtime + 1
                                         dt.Rows[index][2],
                                         dt.Rows[index][3],
                                         Convert.ToDecimal(dt.Rows[index][4]).ToString("###,##0.00"),
-                                        dt.Rows[index][5],
+                                        dt.Rows[index][5].ToString() == "0"?"Unpaid":"Paid",
                                     }
                                     );
                             }
