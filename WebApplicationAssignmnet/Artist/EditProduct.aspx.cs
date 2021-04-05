@@ -86,7 +86,6 @@ namespace WebApplicationAssignmnet
             releasedDate.Enabled = false;
             quantity.Disabled = true;
             ImgPath1.Enabled = false;
-            FileImageUpload.Disabled = true;
             title.Text = "View Artwork Details";
             edit.Visible = true;
             back.Visible = true;
@@ -104,7 +103,6 @@ namespace WebApplicationAssignmnet
             releasedDate.Enabled = false;
             quantity.Disabled = false;
             ImgPath1.Enabled = true;
-            FileImageUpload.Disabled = false;
             title.Text = "Edit Artwork Details";
             edit.Visible = false;
             back.Visible = false;
@@ -167,22 +165,23 @@ namespace WebApplicationAssignmnet
                     else
                     {
                         cmd.Parameters.AddWithValue("2", "S1006");
-                    cmd.Parameters.AddWithValue("3", Decimal.Parse(prodPrice.Value));
-                    cmd.Parameters.AddWithValue("4", Int32.Parse(quantity.Value));
-                    cmd.Parameters.AddWithValue("5", ImgPath1.ImageUrl);
-                    cmd.Parameters.AddWithValue("6", ImgPath2.ImageUrl);
-                    cmd.Parameters.AddWithValue("7", ImgPath3.ImageUrl);
-                    cmd.Parameters.AddWithValue("prodID", Int32.Parse(HiddenProduct.Value));
+                        cmd.Parameters.AddWithValue("3", Decimal.Parse(prodPrice.Value));
+                        cmd.Parameters.AddWithValue("4", Int32.Parse(quantity.Value));
+                        cmd.Parameters.AddWithValue("5", ImgPath1.ImageUrl);
+                        cmd.Parameters.AddWithValue("6", ImgPath2.ImageUrl);
+                        cmd.Parameters.AddWithValue("7", ImgPath3.ImageUrl);
+                        cmd.Parameters.AddWithValue("prodID", Int32.Parse(HiddenProduct.Value));
 
-                    var result = cmd.ExecuteNonQuery();
-                } 
-                Response.Redirect("ProductGallery.aspx");
+                        var result = cmd.ExecuteNonQuery();
+                    }
+                    Response.Redirect("ProductGallery.aspx");
+                }
             }
             catch (Exception x)
             {
                 throw x;
             }
-           
+
         }
 
         protected void cancel_Click(object sender, EventArgs e)
@@ -193,7 +192,7 @@ namespace WebApplicationAssignmnet
 
         protected void back_Click(object sender, EventArgs e)
         {
-                Response.Redirect("ProductGallery.aspx");
+            Response.Redirect("ProductGallery.aspx");
         }
 
         //INACTIVE PRODUCT ROW FROM DATABASE
@@ -208,8 +207,8 @@ namespace WebApplicationAssignmnet
                     string query = @"UPDATE Products SET IsActive = @0 WHERE ProductID = @prodID;";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("prodID", Int32.Parse(HiddenProduct.Value));
-                    
-                    
+
+
                     cmd.Parameters.AddWithValue("0", "False");
                     cmd.ExecuteNonQuery();
                 }

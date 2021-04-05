@@ -156,18 +156,18 @@
                                 <asp:Label ID="Label6" runat="server" Text="Label">:</asp:Label>
                             </td>
                             <td>
-                                <input id="FileImageUpload" style="width: 100px;" type="file" multiple="multiple" name="FileImageUpload" accept="image/*" runat="server" />
+                                <%--Display db images--%>
+                                <div id="showPreviousImage">
+                                    <asp:Image ID="ImgPath1" runat="server" Width="150px" Height="150px" />
+                                    <asp:Image ID="ImgPath2" runat="server" Width="150px" Height="150px" />
+                                    <asp:Image ID="ImgPath3" runat="server" Width="150px" Height="150px" />
+                                </div>
+                                <%--Display posted images--%>
                             </td>
                         </tr>
                     </table>
                 </div>
-                <%--Display db images--%>
-                <div id="showPreviousImage">
-                    <asp:Image ID="ImgPath1" runat="server" Width="150px" Height="150px" />
-                    <asp:Image ID="ImgPath2" runat="server" Width="150px" Height="150px" />
-                    <asp:Image ID="ImgPath3" runat="server" Width="150px" Height="150px" />
-                </div>
-                <%--Display posted images--%>
+
                 <div id="showImage">
                 </div>
                 <br />

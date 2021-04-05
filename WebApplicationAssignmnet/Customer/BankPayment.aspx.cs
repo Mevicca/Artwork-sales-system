@@ -92,6 +92,7 @@ INSERT INTO SALES(CUSTID, COUPONDISCOUNT, DELIVERYCOST, FINALTOTAL, ORDERTIME, B
 (@CUSTID, @DISCOUNT, @DELIVERYCOST, @TOTAL, SYSDATETIME(), @BILLINGADD);
 
 SET @var = SCOPE_IDENTITY();
+
 ";
                     GetCart();
 
@@ -99,6 +100,7 @@ SET @var = SCOPE_IDENTITY();
                     foreach (var product in cartList)
                     {
                         query += "INSERT INTO SALESDETAILS(SALESID,PRODUCTID,QUANTITY) VALUES (@VAR, @PRODUCTID" + index.ToString() + ",@QUANTITY" + index.ToString() + ");";
+                        query += "UPDATE PRODUCTS SET QUANTITY = Quantity - " + "@quantity" + index.ToString() + " where ProductID = @PRODUCTID" + index.ToString() + ";";
                         index++;
                     }
 
