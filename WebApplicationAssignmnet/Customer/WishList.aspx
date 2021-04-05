@@ -43,6 +43,8 @@
             <br />
             <div style="display: block">
                 <br />
+                <asp:Label ID="LblNone" runat="server" Text="Empty in wishlist." ForeColor="DarkRed" Font-Size="Larger" Visible="false"></asp:Label>
+
                 <asp:Repeater ID="rptProducts" runat="server">
                     <ItemTemplate>
                         <div class="size1of3">
