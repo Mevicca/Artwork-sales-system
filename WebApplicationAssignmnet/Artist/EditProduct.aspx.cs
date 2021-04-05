@@ -64,12 +64,23 @@ namespace WebApplicationAssignmnet
                         {
                             ImgPath3.Visible = false;
                         }
-                        viewProduct();
+                        
                         dltProduct.Visible = reader.GetBoolean(10).ToString() == "True" ? true : false;
                         //WHEN PRODUCT IS INACTIVE
                         if (dltProduct.Visible == false)
                         {
                             viewProduct();
+                            edit.Visible = false;
+                        }
+                        else
+                        {
+                            viewProduct();
+                        }
+                        
+                        if (quantity.Value == "0")
+                        {
+                            viewProduct();
+                            dltProduct.Visible = false;
                             edit.Visible = false;
                         }
                     }
@@ -92,6 +103,7 @@ namespace WebApplicationAssignmnet
             back.Visible = true;
             save.Visible = false;
             cancel.Visible = false;
+            dltProduct.Visible = false;
         }
 
         private void editProduct()
@@ -108,9 +120,9 @@ namespace WebApplicationAssignmnet
             title.Text = "Edit Artwork Details";
             edit.Visible = false;
             back.Visible = false;
-            dltProduct.Visible = true;
             save.Visible = true;
             cancel.Visible = true;
+            dltProduct.Visible = true;
         }
 
         protected override void OnPreInit(EventArgs e)
