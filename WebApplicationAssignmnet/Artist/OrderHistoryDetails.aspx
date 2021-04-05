@@ -139,34 +139,6 @@
             </div>
 
             <hr />
-
-            <%--<div class="row">
-                <div class="col-sm-6">
-                    <h5><strong>Rate</strong></h5>
-                    <br />
-                </div>
-            </div>--%>
-
-           <%-- <div class="row" style="margin-left: 230px">
-                <div class="col-sm-1">
-                    <h5><i class="fa fa-star checked"></i></h5>
-                </div>
-                <div class="col-sm-1">
-                    <h5><i class="fa fa-star checked"></i></h5>
-                </div>
-                <div class="col-sm-1">
-                    <h5><i class="fa fa-star checked"></i></h5>
-                </div>
-                <div class="col-sm-1">
-                    <h5><i class="fa fa-star "></i></h5>
-                </div>
-                <div class="col-sm-1">
-                    <h5><i class="fa fa-star "></i></h5>
-                    <br />
-                </div>
-
-            </div>--%>
-
             <div class="row float-right" style="margin-right: 5px;">
                 <page:BackBtn runat="server" url="~/Artist/ArtistSalesHistory.aspx"></page:BackBtn>
             </div>
