@@ -64,7 +64,7 @@ namespace WebApplicationAssignmnet.SystemUser
                     }
                     else
                     {
-                        throw new Exception("Wrong Email / Password.");
+                        throw new Exception("Wrong ID / Password.");
                     }
                 }
             }

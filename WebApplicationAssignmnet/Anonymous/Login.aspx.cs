@@ -15,18 +15,6 @@ namespace WebApplicationAssignmnet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["LoginUser"] != null)
-            {
-                User user = Session["LoginUser"] as User;
-                if (user.Role == "Customer")
-                {
-                    Response.Redirect("~/Customer/CustomerHomepage.aspx");
-                }
-                else
-                {
-                    Response.Redirect("~/Artist/Homepage.aspx");
-                }
-            }
             
         }
 

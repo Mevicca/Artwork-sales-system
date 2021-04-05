@@ -55,7 +55,7 @@
                         <div class="dropdown" id="profileIcon">
                             <i class="fa fa-user fa-lg" aria-hidden="true"></i>
                             <div class="dropdown-content">
-                                <asp:Button ID="signout" OnClick="signout_Click" runat="server">Sign out</asp:Button>
+                                <a href="../Anonymous/Login.aspx">Sign out
                             </div>
                         </div>
                     </li>

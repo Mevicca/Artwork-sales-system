@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="WebApplicationAssignmnet.AboutUs" %>
-<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
+<%@ Register TagPrefix="page" TagName="AboutUsTemplate" Src="~/DynamicData/PageTemplates/AboutUs.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="../lib/css/AboutUs.css" rel="stylesheet" />
