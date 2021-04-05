@@ -82,10 +82,10 @@ namespace WebApplicationAssignmnet
             try
             {
                 string tabValue = "";
-                if (Request.Cookies["tab"] != null)
-                {
-                    tabValue = Request.Cookies["tab"].Value;
-                }
+                //if (Request.Cookies["tab"] != null)
+                //{
+                //    tabValue = Request.Cookies["tab"].Value;
+                //}
 
                 User user = Session["LoginUser"] as User;
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
@@ -96,15 +96,15 @@ namespace WebApplicationAssignmnet
                     query += tabValue;
                     if (ddlSortBy.SelectedValue == "Date")
                     {
-                        sortValue = @"ORDER BY OrderTime";
+                        sortValue = @"ORDER BY s.OrderTime";
                     }
                     else if (ddlSortBy.SelectedValue == "Total Price")
                     {
-                        sortValue += @"ORDER BY FinalTotal";
+                        sortValue += @"ORDER BY s.FinalTotal";
                     }
                     else
                     {
-                        sortValue += @"ORDER BY SalesID";
+                        sortValue += @"ORDER BY s.SalesID";
                     }
                     query += sortValue;
 

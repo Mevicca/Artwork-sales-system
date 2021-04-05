@@ -58,7 +58,7 @@ WHERE CUSTOMER.CustID=SALES.CustID AND SALES.SalesID = DELIVERY.SalesID AND a.Ad
                             LblDisc.Text = reader.GetDecimal(6).ToString("#,##0.00");
                             LblOrderStatus.Text = reader.GetString(7);
                             LblPaymentTime.Text = reader.GetDateTime(8).ToString("dd-MM-yyyy HH:mm:ss");
-                            paymentMethod.Text = reader.GetString(9) == "BankPayment" ? "Online Banking(FPX)":"Card Payment";
+                            paymentMethod.Text = reader.GetString(9) == "Bank Payment" ? "Online Banking(FPX)":"Card Payment";
                         }
                     }
                     conn.Close();

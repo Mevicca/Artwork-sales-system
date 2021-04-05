@@ -328,6 +328,7 @@ INSERT INTO ADDRESSLIST([AddressID], [CustID], [IsDefault]) VALUES (@var, @CustI
                     if (result > 0)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to add.');", true);
+                        Response.Redirect("~/Customer/Shipping.aspx");
                     }
                     else
                     {
@@ -339,6 +340,10 @@ INSERT INTO ADDRESSLIST([AddressID], [CustID], [IsDefault]) VALUES (@var, @CustI
             }
             catch (Exception ex)
             {
+                if (ex.Message.Contains("Thread"))
+                {
+                    Response.Redirect("~/Customer/Shipping.aspx");
+                }
                 throw ex;
             }
         }

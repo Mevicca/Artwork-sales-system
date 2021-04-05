@@ -16,14 +16,11 @@ namespace WebApplicationAssignmnet
         private static int id = 100001;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                GetProductID();
-                GetProductDetails(id);
-                GetImages(id);
-                CheckDuplicateWish();
-                CheckDuplicatePro();
-            }
+            GetProductID();
+            GetProductDetails(id);
+            GetImages(id);
+            CheckDuplicateWish();
+            CheckDuplicatePro();
         }
 
         private void GetProductID()
@@ -198,7 +195,7 @@ namespace WebApplicationAssignmnet
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to added in cart.');", true);
                     }
                     conn.Close();
-                }  
+                }
             }
             catch (Exception ex) { throw ex; }
         }
