@@ -99,28 +99,35 @@ WHERE A.CustID = @CustID ";
             {
                 LinkButton btn = (LinkButton)sender;
                 User user = Session["LoginUser"] as User;
-                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+                if (checkDuplicate(btn.CommandArgument) == 0)
                 {
-                    conn.Open();
-                    string query = @"INSERT INTO WISHLIST(PRODUCTID,CUSTID) VALUES (@productID, @userID);";
-
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("productID", btn.CommandArgument);
-                    cmd.Parameters.AddWithValue("userID", user.ID);
-
-                    var result = cmd.ExecuteNonQuery();
-                    var results = DeleteInList(Int32.Parse(btn.CommandArgument));
-
-                    if (result > 0)
+                    using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                     {
-                        cartList.Remove(btn.CommandArgument);
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to added in wish list.');", true);
+                        conn.Open();
+                        string query = @"INSERT INTO WISHLIST(PRODUCTID,CUSTID) VALUES (@productID, @userID);";
+
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("productID", btn.CommandArgument);
+                        cmd.Parameters.AddWithValue("userID", user.ID);
+
+                        var result = cmd.ExecuteNonQuery();
+                        var results = DeleteInList(Int32.Parse(btn.CommandArgument));
+
+                        if (result > 0)
+                        {
+                            cartList.Remove(btn.CommandArgument);
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to added in wish list.');", true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to added in wish list.');", true);
+                        }
+                        BindData();
                     }
-                    else
-                    {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to added in wish list.');", true);
-                    }
-                    BindData();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','The item already inside the wishlist.');", true);
                 }
             }
             catch (Exception ex)
@@ -128,7 +135,26 @@ WHERE A.CustID = @CustID ";
                 throw ex;
             }
         }
+        public int checkDuplicate(String id)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                string query = @"SELECT COUNT(PRODUCTID) FROM ADDTOCARTLIST WHERE PRODUCTID=@productID;";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.Parameters.AddWithValue("productID", id);
+                int returnValue = (int)cmd.ExecuteScalar();
+                conn.Close();
 
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
         protected void Delete_Click(object sender, EventArgs e)
         {
             try

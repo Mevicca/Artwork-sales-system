@@ -58,36 +58,66 @@ WHERE A.CustID = @CustID";
         protected void Cart_Click(object sender, EventArgs e)
         {
             try
-            {
+            {                
                 LinkButton btn = (LinkButton)sender;
                 User user = Session["LoginUser"] as User;
-                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+                if (checkDuplicate(btn.CommandArgument)==0)
                 {
-                    conn.Open();
-                    string query = @"INSERT INTO ADDTOCARTLIST(PRODUCTID,CUSTID,QUANTITY) VALUES (@productID, @userID, 1);";
-
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("productID", btn.CommandArgument);
-                    cmd.Parameters.AddWithValue("userID", user.ID);
-
-                    var result = cmd.ExecuteNonQuery();
-                    var results = DeleteInList(Int32.Parse(btn.CommandArgument));
-
-                    if (result > 0)
+                    using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                     {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to added in cart.');", true);
+                        conn.Open();
+                        string query = @"INSERT INTO ADDTOCARTLIST(PRODUCTID,CUSTID,QUANTITY) VALUES (@productID, @userID, 1);";
+
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("productID", btn.CommandArgument);
+                        cmd.Parameters.AddWithValue("userID", user.ID);
+
+                        var result = cmd.ExecuteNonQuery();
+                        var results = DeleteInList(Int32.Parse(btn.CommandArgument));
+
+                        if (result > 0)
+                        {
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to added in cart.');", true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to added in cart.');", true);
+                        }
+                        BindData();
+
+                        conn.Close();
                     }
-                    else
-                    {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','Fail to added in cart.');", true);
-                    }
-                    BindData();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Error','The item already inside the cart.');", true);
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        public int checkDuplicate(String id)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                string query = @"SELECT COUNT(PRODUCTID) FROM ADDTOCARTLIST WHERE PRODUCTID=@productID;";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.Parameters.AddWithValue("productID", id);
+                int returnValue = (int)cmd.ExecuteScalar();
+                conn.Close();
+
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         protected void Delete_Click(object sender, EventArgs e)
