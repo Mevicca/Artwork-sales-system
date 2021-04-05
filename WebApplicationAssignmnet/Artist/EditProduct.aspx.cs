@@ -167,7 +167,6 @@ namespace WebApplicationAssignmnet
                     else
                     {
                         cmd.Parameters.AddWithValue("2", "S1006");
-                    }
                     cmd.Parameters.AddWithValue("3", Decimal.Parse(prodPrice.Value));
                     cmd.Parameters.AddWithValue("4", Int32.Parse(quantity.Value));
                     cmd.Parameters.AddWithValue("5", ImgPath1.ImageUrl);

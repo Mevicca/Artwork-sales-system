@@ -38,7 +38,17 @@ namespace WebApplicationAssignmnet
                     txtCardNo3.Text == "4111" && txtCardNo4.Text == "1111" && txtCvv.Text == "123" &&
                     DateTime.Parse(txtMonth.Text) > DateTime.Today)
                 {
-                    //var result = new Email().SendPaymentEmail(Session["Email"].ToString());
+                    string orderID = "";
+
+                    if (Request.Cookies["orderID"] != null)
+                    {
+                        orderID = Request.Cookies["orderID"].Value;
+                    }
+                    string content = "Dear Valued Customer, your Order " + orderID + " is comfirmed and placed!"
+                        + "\n\n" + "Sub Total : " + Session["Subtotal"].ToString() + "\n" + "Discount  : " + Session["Discount"].ToString()
+                        + "\n" + "Total       : " + Session["Total"].ToString() + "\n\n" + "We're excited for you to receive your order and will notify you once it is on its way!"
+                        + "If you faced any problem, feel free to contact us." + "\n\n" + "Thanks\n\nBest Regards,\nTAYY Art Work";
+                    var result = new Email().SendPaymentEmail(Session["Email"].ToString(), content);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Payment Successfully.');", true);
                     StoreSales(1);
                     Session.Remove("CartList");

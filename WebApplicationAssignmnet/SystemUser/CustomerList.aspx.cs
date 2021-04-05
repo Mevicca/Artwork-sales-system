@@ -62,7 +62,7 @@ where 1=1
                                         dt.Rows[index][0],
                                         dt.Rows[index][1],
                                         Convert.ToDateTime(dt.Rows[index][2]).ToString("dd-MM-yyyy hh:mm:ss"),
-                                        Convert.ToDecimal(dt.Rows[index][3]).ToString("###,##0.00"),
+                                        Convert.ToDecimal(dt.Rows[index][3]).ToString("###,##0"),
                                         Convert.ToDecimal(dt.Rows[index][4]).ToString("###,##0.00")
                                     }
                                     );

@@ -56,7 +56,7 @@ namespace WebApplicationAssignmnet
             {
                 orderID = Request.Cookies["orderID"].Value;
             }
-            string content = "Dear Valued Customer, your Order " + orderID + "is comfirmed and placed!"
+            string content = "Dear Valued Customer, your Order " + orderID + " is comfirmed and placed!"
                 + "\n\n" + "Sub Total : " + Session["Subtotal"].ToString() + "\n" + "Discount  : " + Session["Discount"].ToString()
                 + "\n" + "Total       : " + Session["Total"].ToString() + "\n\n" + "We're excited for you to receive your order and will notify you once it is on its way!"
                 + "If you faced any problem, feel free to contact us." + "\n\n" + "Thanks\n\nBest Regards,\nTAYY Art Work";
@@ -64,7 +64,7 @@ namespace WebApplicationAssignmnet
             ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Payment Successfully.')", true);
             
             Session.Remove("Email");
-            Response.Redirect("CustomerHomepage.aspx");
+            Response.Redirect("~/Customer/HistoryDetails.aspx?id=" + orderID);
         }
 
         private void StoreSales(int paymentid)
