@@ -9,8 +9,8 @@
 <strong>Language used</strong>
 * C#, Javascript, ajax
 
-<strong>Framework</strong>
+<strong>Framework used</strong>
 * ASP.Net (Web-form)
-* 
+
 <strong>Database used</strong>
 * Microsoft SQL server
