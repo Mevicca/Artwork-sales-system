@@ -7,7 +7,10 @@
 * Systen admin
 
 <strong>Language used</strong>
-* ASP.net, Javascript
+* C#, Javascript, ajax
 
+<strong>Framework</strong>
+* ASP.Net (Web-form)
+* 
 <strong>Database used</strong>
 * Microsoft SQL server
