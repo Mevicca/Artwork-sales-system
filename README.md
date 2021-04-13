@@ -4,7 +4,7 @@
 <strong>Role in the Artwork sales system</strong>
 * Customer
 * Artist
-* Systen admin
+* System admin
 
 <strong>Language used</strong>
 * C#, Javascript, ajax
