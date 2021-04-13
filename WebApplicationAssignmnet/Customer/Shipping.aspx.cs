@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
+using WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
@@ -99,6 +99,12 @@ namespace WebApplicationAssignmnet
             {
                 EmailBinding();
                 GetProducts();
+                //bind telephoneNo
+                if (Session["LoginUser"] != null)
+                {
+                    User user = Session["LoginUser"] as User;
+                    telNumber.Text = String.IsNullOrEmpty(user.TelephoneNo) ? "": user.TelephoneNo;
+                }
             }
             catch (Exception ex)
             {
@@ -146,7 +152,6 @@ WHERE[AddressList].CustID = @custID; ";
                             fullAddress += (postcode != null && postcode != "") ? postcode + ", \n" : "";
                             fullAddress += (city != null && city != "") ? city + "." : "";
 
-
                             var newItem = new ListItem()
                             {
                                 Text = fullAddress,
@@ -173,6 +178,8 @@ WHERE[AddressList].CustID = @custID; ";
                 #endregion
             }
             catch (Exception ex) { throw ex; }
+
+            txtBillAdd.Text = ddlAddress.SelectedItem.Text; //default
         }
 
         private void GetProducts()
@@ -260,18 +267,18 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
 
         protected void BtnPayment_Click(object sender, EventArgs e)
         {
-
-            if (double.Parse(lblFinalTotal.Text, NumberStyles.Currency) > 0)
+            if (ValidateToPayment())
             {
                 Session["Email"] = txtEmailAdd.Text;
-                Response.Redirect(@"Payment.aspx?Subtotal=" + lblSubtotal.Text +
-                    "&Discount=" + lblDiscount.Text +
-                    "&Shipping=" + lblShipping.Text +
-                    "&Total=" + lblFinalTotal.Text);
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "failalert('Please add a product into cart.');", true);
+                Session["BillingAddress"] = txtBillAdd.Text;
+                Session["DeliveryAddressID"] = ddlAddress.SelectedValue;
+                Session["Subtotal"] = lblSubtotal.Text;
+                Session["Discount"] = lblDiscount.Text;
+                Session["Shipping"] = lblShipping.Text;
+                Session["Total"] = lblFinalTotal.Text;
+                Session["TelephoneNo"] = telNumber.Text;
+
+                Response.Redirect("Payment.aspx");
             }
         }
 
@@ -284,6 +291,7 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
                 CalculateFinal();
             }
         }
+
         protected void RadioListMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             BindRadio();
@@ -295,7 +303,6 @@ INNER JOIN addtocartlist a ON (p.ProductID = a.ProductID AND a.CustID = @custID)
             {
                 User user = Session["LoginUser"] as User;
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
-
                 {
                     conn.Open();
                     string query = @"DECLARE @var INT;
@@ -321,6 +328,7 @@ INSERT INTO ADDRESSLIST([AddressID], [CustID], [IsDefault]) VALUES (@var, @CustI
                     if (result > 0)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert('Success','Successfully to add.');", true);
+                        Response.Redirect("~/Customer/Shipping.aspx");
                     }
                     else
                     {
@@ -332,8 +340,65 @@ INSERT INTO ADDRESSLIST([AddressID], [CustID], [IsDefault]) VALUES (@var, @CustI
             }
             catch (Exception ex)
             {
+                if (ex.Message.Contains("Thread"))
+                {
+                    Response.Redirect("~/Customer/Shipping.aspx");
+                }
                 throw ex;
             }
+        }
+
+        protected void Chkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!((CheckBox)sender).Checked)
+            {
+                txtBillAdd.Visible = true;
+            }
+            else
+            {
+                txtBillAdd.Visible = false;
+                txtBillAdd.Text = ddlAddress.SelectedItem.Text; //default
+            }
+        }
+
+        private bool ValidateToPayment()
+        {
+            try
+            {
+                if (ddlAddress.SelectedItem.Text.Contains("Empty"))
+                {
+                    throw new Exception("Please select the shipment address.");
+                }
+                if (double.Parse(lblFinalTotal.Text, NumberStyles.Currency) <= 0)
+                {
+                    throw new Exception("Please add a product into cart.");
+                }
+                if (txtDeliveryCompany.Text == "")
+                {
+                    throw new Exception("Please select a shipping company.");
+                }
+                if (!chkbox.Checked && txtBillAdd.Text == "")
+                {
+                    throw new Exception("Please enter the billing address.");
+                }
+                if (String.IsNullOrEmpty(telNumber.Text))
+                {
+                    throw new Exception("Please enter the telephone number for delivery.");
+                }
+                //store the shipping session
+                var address = (radioListMethod.SelectedItem?.Value).Split(';'); //inside format : deliveryMethodNo + ";" + deliveryFee
+                Session["DeliveryMethod"] = address[0];
+                Session["DeliveryAddress"] = ddlAddress.SelectedItem.Text;
+                Session["BillAddress"] = txtBillAdd.Text;
+                Session["BillingEmailAdress"] = txtEmailAdd.Text;
+            }
+            catch (Exception ex)
+            {
+                string js = "failalert('" + ex.Message + "');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", js, true);
+                return false;
+            }
+            return true;
         }
     }
 

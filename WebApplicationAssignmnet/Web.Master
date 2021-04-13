@@ -1,4 +1,5 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebArt.master.cs" Inherits="WebApplicationAssignmnet.WebArt" %>
+
 <!DOCTYPE html>
 
 <link href="../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -13,37 +14,28 @@
 <html>
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TAYY Art</title>
 </head>
 <body>
-    <div class="w3-animate-left" id="leftSide">
-        <ul id="hideNavBar" style="list-style-type: none;">
-            <li>
-                <button id="btnClose" class="roundButton" title="Close it" onclick="nav_close()">
-                    <i class="fa fa-close" id="closeIcon"></i>
-                </button>
-                <button id="btnPin" class="roundButton" title="Pin it" onclick="nav_pin()">
-                    <i id="pinIcon" class="fa fa-map-pin" aria-hidden="true"></i>
-                </button>
-            </li>
-            <li>
-                <span id="menuLabel"></span>
-            </li>
-            <li><a href="CustomerHomepage.aspx">Homepage</a></li>
-            <li><a href="CustomerAboutUs.aspx">About Us</a></li>
-            <li><a href="CustomerFAQ.aspx">FAQ</a></li>
-
-            <li><a href="CustomerProductGallery.aspx">Products</a></li>
-            <li><a href="WishList.aspx">WishList</a></li>
-            <li><a href="Cart.aspx">View cart</a></li>
-            <li><a href="OrderHistory.aspx">Order History</a></li>
-            <li><a href="CustomerProfileSetting.aspx">Settings</a></li>
-        </ul>
+    <div id="myCanvasNav" class="overlay3" onclick="closeOffcanvas()"></div>
+    <div id="myOffcanvas" class="offcanvas">
+                <a href="javascript:void(0)" class="closeOffcanvas" onclick="closeOffcanvas()">&times;</a>
+            <a href="CustomerHomepage.aspx">Homepage</a>
+            <a href="CustomerAboutUs.aspx">About Us</a>
+            <a href="CustomerFAQ.aspx">FAQ</a>
+            <a href="CustomerProductGallery.aspx">Products</a>
+            <a href="WishList.aspx">WishList</a>
+            <a href="Cart.aspx">View cart</a>
+            <a href="OrderHistory.aspx">Order History</a>
+            <a href="CustomerProfileSetting.aspx">Settings</a>
     </div>
 
-    <div id="rightSide" class="d-flex flex-column">
+    <div id="mainContent">
         <nav class="navbar navbar-expand-md navbar-light" id="nav-bar">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"></div>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <span style="font-size: 26px; cursor: pointer; color: white; display: flex; justify-content: flex-start" onclick="openNav3();openOffcanvas()">&#9776;</span>
+            </div>
             <div class="order-first order-md-0">
                 <a href="CustomerHomepage.aspx">
                     <img src="../assets/Images/rosegold.png" alt="Tayy Art" width="150" height="60">
@@ -51,7 +43,7 @@
             </div>
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <%--<li class="nav-item">
                         <form class="form-inline ml-auto">
                             <div class="searchText">
                                 <input type="text" placeholder="Search" class="searchtxt" />
@@ -60,7 +52,7 @@
                                 </a>
                             </div>
                         </form>
-                    </li>
+                    </li>--%>
                     <li class="nav-item">
                         <div class="dropdown" id="profileIcon">
                             <i class="fa fa-user fa-lg" aria-hidden="true"></i>
@@ -72,35 +64,38 @@
                 </ul>
             </div>
         </nav>
-        <div class="centered">
-            <button type="button" id="btnNavOpen" onclick="nav_open()">
-                <i class="fa fa-angle-double-right" title="Edit" style="font-size: 24px; color: red"></i>
-            </button>
-        </div>
 
-        <div id="content" style="padding-left:25px;">
+        <div id="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
         </div>
 
-        <div id="bottom-footer">
-            <footer class="text-white-50">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div id="bottom-footer">
+                <footer class="text-white-50">
+                    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                         <div id="footer-followUs" class="footer-adjust ">
-                            <div>Follow Us :
-                                <a href="https://www.facebook.com/admin.neko.art" target="_blank" ><i class="fa fa-facebook" id="fbicon" aria-hidden="true"></i></a>
-                                <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" id="instaicon" aria-hidden="true" ></i></a>
-                                <a href="https://twitter.com/twitter?lang=en" target="_blank"><i class="fa fa-twitter" id="twittericon" aria-hidden="true" ></i></a>
+                            <div>
+                                Follow Us :
+                                <a href="https://www.facebook.com/admin.neko.art" target="_blank"><i class="fa fa-facebook" id="fbicon" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" id="instaicon" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/twitter?lang=en" target="_blank"><i class="fa fa-twitter" id="twittericon" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <div id="footer-contactUs" class="footer-adjust" style="display:flex;flex-wrap:wrap; justify-content:center;">
+                    </div>
+                    <div class="navbar-collapse collapse w-100 order-2 order-md-0 dual-collapse2">
+                        <div id="footer-contactUs" class="footer-adjust" style="display: flex; flex-wrap: wrap; justify-content: center;">
                             <div>Contact Us :</div>
-                            <div style="margin-left:10px;">
+                            <div style="margin-left: 10px;">
                                 <i class="fa fa-phone"" aria-hidden="true"></i> : +018 888 8300  </div>   
                                 <i class="fa fa-fax"" aria-hidden="true" style="margin-left:5px; margin-top:2px"></i> : +03 330 0330
                         </div>
-
-                        <div id="footer-copyright" class="footer-adjust">© 2021 | TAYY Art  </div>
-            </footer>
+                    </div>
+                    <div class="navbar-collapse collapse w-100 order-3 order-md-0 dual-collapse2">
+                        <div id="footer-copyright" class="footer-adjust">&#169; 2021 | TAYY Art  </div>
+                    </div>
+                </footer>
             </div>
+        </nav>
     </div>
 </body>
 </html>

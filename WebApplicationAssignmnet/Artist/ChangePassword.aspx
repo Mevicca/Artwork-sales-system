@@ -1,17 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebArt.Master" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="WebApplicationAssignmnet.ChangePassword" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
         <link href="../lib/css/CustomerProfile.css" rel="stylesheet" />
         <div class="container h-100 d-flex justify-content-center align-items-center">
             <div class="tab">
-                <asp:HyperLink ID="AccSet" runat="server" CssClass="exBtn" >General Account Settings</asp:HyperLink>
+                <asp:HyperLink ID="AccSet" runat="server" CssClass="exBtn">General Account Settings</asp:HyperLink>
                 <button class="tablinks">Security Settings</button>
-
             </div>
 
             <div id="generalSet" class="tabcontent">
-                <h3><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Change Password </h3>
+                <page:PageTitle runat="server" ID="title" PageHeader=' Change Password '></page:PageTitle>
+                <h2>&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></h2>
                 <br />
 
                 <table>
@@ -28,7 +29,7 @@
                                 ErrorMessage="Required." />
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td><i class="fa fa-lock " aria-hidden="true"></i></td>
                         <td class="col-width">
@@ -59,8 +60,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td> </td>
-                        <td style="color: red; ">
+                        <td></td>
+                        <td style="color: red;">
                             <asp:CompareValidator ID="CompareValidatorPasword" runat="server"
                                 ControlToValidate="txtPassword2"
                                 ControlToCompare="txtPassword"
@@ -68,7 +69,7 @@
                         </td>
                     </tr>
                 </table>
-                <div class="editBtn" style="margin-top: 65px;margin-left: 250px;">
+                <div class="editBtn" style="margin-top: 65px; margin-left: 250px;">
                     <asp:Button ID="btnConfirm" runat="server" Text="Confirm Change Password" class="pressed-confirm-button" OnClick="btnConfirm_Click" />
                 </div>
             </div>

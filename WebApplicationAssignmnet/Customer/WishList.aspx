@@ -1,4 +1,5 @@
-<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="WishList.aspx.cs" Inherits="WebApplicationAssignmnet.WishList" %>
+<%@ Page Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="WishList.aspx.cs" Inherits="WebApplicationAssignmnet.WishList" EnableEventValidation="false" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
     <link href="../lib/css/WishList.css" rel="stylesheet" />
@@ -26,8 +27,10 @@
     </script>
     <form id="form1" runat="server">
         <div class="container" style="background-color: white">
-            <div class="row" style="width: 100%; display: contents">
-                <h1 class="float-left headerStyle" style="margin-top: 10px"><strong>Wish List</strong></h1>
+            <div class="row" style="display: contents">
+                <div class="row" style="margin-left:40%;">
+                    <page:pagetitle runat="server" id="title" pageheader="Wish List"></page:pagetitle>
+                </div>
                 <div class="sort float-right galley-sort-by">
                     <a>Sort By :</a>
                     <asp:DropDownList ID="DropDownList1" runat="server">
@@ -38,50 +41,50 @@
                 </div>
             </div>
             <br />
+            <div style="display: block">
+                <br />
+                <asp:Label ID="LblNone" runat="server" Text="Empty in wishlist." ForeColor="DarkRed" Font-Size="Larger" Visible="false"></asp:Label>
 
-            <asp:Repeater ID="rptProducts" runat="server">
-                <ItemTemplate>
-                    <div class="card" style="width: 100%">
-                        <div class="row">
-                            <div class=" col-sm-2" style="text-align: center">
-                                <asp:ImageButton runat="server" ImageUrl='<%#Eval("Path1") %>' Width="132" Height="178" CssClass="Imgbtn" />
-                            </div>
-                            <div class="col-sm-6" style="margin-top: 35px; margin-left: 20px;">
-                                <h5>
+                <asp:Repeater ID="rptProducts" runat="server">
+                    <ItemTemplate>
+                        <div class="size1of3">
+                            <div class="card">
+                                <asp:ImageButton runat="server" ImageUrl='<%#Eval("Path1") %>' Width="100%" Height="200px" OnClick="Product_Click" />
+                                <asp:HiddenField runat="server" Value='<%# Eval("ProductID")%>' ID="hiddenProduct" />
+                                <h4>
                                     <asp:Label runat="server" Font-Italic="true">
-                                        <%# Eval("ProductName") %></asp:Label>
-                                </h5>
-                                <hr />
-                                <h5>
-                                    <asp:Label runat="server" Font-Italic="true">
-                                        <%# "By " + Eval("ArtFullName") %>
+                                <%# Eval("ProductName") %>
                                     </asp:Label>
-                                </h5>
-                                <hr />
-                                <h5>
-                                    <asp:Label runat="server" Font-Italic="true">
-                                    <%#Double.Parse(Eval("ProductPrice").ToString()).ToString("C2")%>
-                                    </asp:Label>
-                                </h5>
-                                <hr />
-                            </div>
+                                </h4>
 
-                            <div class="col-sm-2" style="text-align: center; margin: auto">
-                                <asp:LinkButton runat="server" class="btn btn-outline-primary" CommandArgument='<%#Eval("ProductID")%>'
-                                    Style="cursor: pointer" ID="Cart" OnClick="Cart_Click" OnClientClick="return moveMsg();">
-                        <i class="fa fa-cart-plus"></i>&nbsp; Add to Cart
-                    </asp:LinkButton>
-                                <br />
-                                <br />
-                                <asp:LinkButton runat="server" class="btn btn-outline-danger" CommandArgument='<%#Eval("ProductID")%>'
-                                    Style="cursor: pointer" ID="Delete" OnClick="Delete_Click" OnClientClick="return confirmMsg()">
-                        <i class="fa fa-trash"></i>&nbsp; Remove
-                    </asp:LinkButton>
+                                <h7 style="color: gray">
+                                    <asp:Label runat="server" Font-Italic="true">
+                                <%# "By " + Eval("ArtFullName") %>
+                                    </asp:Label>
+                                </h7>
+
+                                <h6>
+                                    <asp:Label runat="server" Font-Italic="true">
+                                <%#Double.Parse(Eval("ProductPrice").ToString()).ToString("C2")%>
+                                    </asp:Label>
+                                </h6>
+                                <p style="margin-bottom: 0px">
+                                    <asp:LinkButton runat="server" class="btn btn-primary" Width="100%" CommandArgument='<%#Eval("ProductID")%>'
+                                        Style="cursor: pointer" ID="Cart" OnClick="Cart_Click" OnClientClick="return moveMsg();">
+                                <i class="fa fa-cart-plus"></i>&nbsp; Add to Cart
+                                    </asp:LinkButton>
+
+                                    <asp:LinkButton runat="server" class="btn btn-danger" Width="100%" CommandArgument='<%#Eval("ProductID")%>'
+                                        Style="cursor: pointer" ID="Delete" OnClick="Delete_Click" OnClientClick="return confirmMsg()">
+                                <i class="fa fa-trash"></i>&nbsp; Remove
+                                    </asp:LinkButton>
+                                </p>
                             </div>
                         </div>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <br style="clear: left;" />
+            </div>
         </div>
     </form>
 </asp:Content>

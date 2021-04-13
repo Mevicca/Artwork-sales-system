@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="CustomerProfileSetting.aspx.cs" Inherits="WebApplicationAssignmnet.CustomerProfile" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
@@ -11,7 +12,8 @@
             </div>
 
             <div id="generalSet" class="tabcontent">
-                <h3><i class="fa fa-pencil-square-o" aria-hidden="true"></i> General Account Settings </h3>
+                <page:PageTitle runat="server" ID="title" PageHeader=' General Account Settings '></page:PageTitle>
+                <h2>&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-top:5px;"></i></h2>
                 <br />
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [CustFullName], [CustGender] FROM [Customer] WHERE ([CustID] = @CustID)">
                 </asp:SqlDataSource>

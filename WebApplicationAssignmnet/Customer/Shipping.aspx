@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="Shipping.aspx.cs" Inherits="WebApplicationAssignmnet.Shipping" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <form id="form1" runat="server" style="display: flex">
@@ -22,8 +23,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <ul class="list-group list-group-horizontal tab">
+                    <li class="list-group-item">Cart</li>
                     <li class="list-group-item active" style="z-index: 1">Shipping</li>
-                    <li class="list-group-item">Payment</li>
+                    <li class="list-group-item" style="padding-bottom: 0px;">Payment</li>
                 </ul>
             </div>
 
@@ -34,32 +36,36 @@
                         <div class="cart-body">
                             <div class="container" style="margin-left: 5px;">
                                 <div class="row">
-                                    <h3>Shipping</h3>
+                                    <page:PageTitle runat="server" ID="title" PageHeader="Shipping Details"></page:PageTitle>
                                 </div>
                                 <div class="row d-flex row-click">
                                     <i class="fa fa-address-card"></i>
                                     <asp:Label runat="server" Text="Shipping details"></asp:Label>
                                 </div>
-                                <div class="row" style="display:inline-flex;">
+                                <div class="row" style="display: inline-flex;">
                                     <asp:DropDownList ID="ddlAddress" runat="server" CssClass="dropdownmenu">
                                     </asp:DropDownList>
                                     <asp:Button CssClass="lbl-click btn btn-info" ID="BtnShippingDetails" ClientIDMode="Static" runat="server" Text="Add" />
                                 </div>
                                 <div class="row d-flex row-click">
                                     <i class="fa  fa-ambulance"></i>Billing to the same address
-                                    <asp:CheckBox CssClass="lbl-click" runat="server" ID="chkbox" Checked="true" />
+                                    <asp:CheckBox CssClass="lbl-click" runat="server" ID="chkbox" Checked="true" OnCheckedChanged="Chkbox_CheckedChanged" AutoPostBack="true" />
+                                    <asp:TextBox ID="txtBillAdd" runat="server" Placeholder="Billing address" Visible="false" Width="250"></asp:TextBox>
                                 </div>
                                 <div class="row">
                                     <i class="fa  fa-archive"></i>
-                                    Billing email address
-                                </div>
-                                <div class="row">
+                                    Billing email address &nbsp;
                                     <asp:TextBox ID="txtEmailAdd" runat="server" placeholder="Email address" CssClass="line-input" Width="250"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server"
                                         ControlToValidate="txtEmailAdd"
                                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                                         SetFocusOnError="true" ErrorMessage="Invalid email."
                                         ForeColor="Red"></asp:RegularExpressionValidator>
+                                </div>
+                                <div class="row">
+                                    <i class="fa  fa-phone"></i>
+                                    Telephone number &nbsp;
+                                    <asp:Textbox ID="telNumber" runat="server" CssClass="line-input"></asp:Textbox>
                                 </div>
                                 <div class="row">
                                     <i class="fa fa-ship"></i>
@@ -95,7 +101,7 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2>ADD ADDRESS</h2>
+                            <h2>Add Address</h2>
                             <span class="close">&times;</span>
                         </div>
                         <div class="modal-body">
@@ -147,10 +153,10 @@
                                     <asp:TableCell></asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
-                            <asp:Button runat="server" ID="BtnAdd" CssClass="btn btn-success" Text="Add" OnClick="BtnAdd_Click"/>
+                            <asp:Button runat="server" ID="BtnAdd" CssClass="btn btn-success" Text="Add" OnClick="BtnAdd_Click" style="float:right;"/>
                         </div>
                         <div class="modal-footer">
-                            <h3>To add your address</h3>
+                            <p>To add your address</p>
                         </div>
                     </div>
                 </div>
@@ -177,7 +183,7 @@
                                         </div>
                                         <div class="col-8" style="align-content: center">
                                             <asp:Label runat="server" Text='<%#Eval("productName")%>'></asp:Label><br />
-                                            <asp:Label runat="server" Text='<%#"RM " + Eval("productPrice")%>'></asp:Label>
+                                            <asp:Label runat="server" Text='<%#"RM " + String.Format("{0:#,##0.00}",Eval("productPrice"))%>'></asp:Label>
                                         </div>
                                     </div>
                                 </ItemTemplate>

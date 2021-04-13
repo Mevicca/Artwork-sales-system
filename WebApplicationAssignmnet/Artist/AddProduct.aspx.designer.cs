@@ -24,13 +24,22 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// title control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::WebApplicationAssignmnet.DynamicData.FieldTemplates.PageTitle title;
+
+        /// <summary>
         /// addProductTb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table addProductTb;
+        protected global::System.Web.UI.HtmlControls.HtmlTable addProductTb;
 
         /// <summary>
         /// name control.
@@ -58,6 +67,15 @@ namespace WebApplicationAssignmnet
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox prodName;
+
+        /// <summary>
+        /// RequiredFieldValidatorprodName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorprodName;
 
         /// <summary>
         /// Label7 control.
@@ -123,6 +141,15 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.HtmlControls.HtmlTextArea prodDesc;
 
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
         /// price control.
         /// </summary>
         /// <remarks>
@@ -148,6 +175,15 @@ namespace WebApplicationAssignmnet
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl prodPrice;
+
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
         /// date control.
@@ -177,6 +213,15 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl releasedDate;
 
         /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+
+        /// <summary>
         /// qty control.
         /// </summary>
         /// <remarks>
@@ -204,6 +249,15 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl quantity;
 
         /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+
+        /// <summary>
         /// productImage control.
         /// </summary>
         /// <remarks>
@@ -222,13 +276,13 @@ namespace WebApplicationAssignmnet
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// backBtn control.
+        /// resetCancelBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button backBtn;
+        protected global::System.Web.UI.WebControls.Button resetCancelBtn;
 
         /// <summary>
         /// addSaveProductbtn control.

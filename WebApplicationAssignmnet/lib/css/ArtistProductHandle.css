@@ -14,13 +14,19 @@
 }
 
 #dltProduct {
-    color: red;
-    cursor:pointer;
-    margin-right:10px;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 10px;
+    border: none;
 }
-#dltProduct:hover {
-    color:gold;
-}
+    #dltProduct:hover {
+        background-color: #dc0000;
+    }
 
 .tbLabel {
     width: 200px;
@@ -36,11 +42,12 @@
     padding-bottom: 40px;
 }
 
-.textField{
-    width:70%;
-    display:flex;
-    align-items:center;
-    min-width:150px;
+.textField {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-width: 150px;
+    min-height:30px;
 }
 
 .controlbtn {
@@ -64,61 +71,56 @@
     margin-left:10px;
     font-size:16px;
 }
-#backBtn {
-    width: 100px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    margin-right: 15px;
-    color: black;
-    border-radius: 8px;
-    border-width:1px;
-    cursor: pointer;
-}
-
-    #backBtn:hover {
-        background-color: #d3d3d3;
-        color:black;
-    }
 
 .twobtn{
     display:flex;
 }
-#resetCancelBtn {
+
+.cancel {
     width: 100px;
     height: 40px;
     display: flex;
     justify-content: center;
     margin-right: 15px;
-    background-color: #be2d2d;
+    background-color: black;
     color: white;
     border-radius: 8px;
     border: none;
     cursor: pointer;
 }
 
-    #resetCancelBtn:hover {
+    .cancel:hover {
         background-color: #ff0000;
     }
 
-#addSaveProductbtn {
+.confrim {
     width: 100px;
     height: 40px;
     display: flex;
     justify-content: center;
-    background-color: #395ba9;
+    background-color: #0072ff;
     color: white;
     border-radius: 10px;
     border: none;
     cursor: pointer;
 }
 
-    #addSaveProductbtn:hover {
-        background-color: #0072ff;
+    .confrim:hover {
+        background-color: #395ba9;
     }
 
 .headerStyle {
     font-family: cursive;
     font-weight: bold;
     color: #D4A59A
+}
+
+.validatorMsg {
+    float: left;
+    text-align: left;
+    color: red;
+    font-size: medium;
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
 }

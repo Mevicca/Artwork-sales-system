@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
+using WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
@@ -49,27 +49,49 @@ namespace WebApplicationAssignmnet
                             {
                                 throw new Exception("Inactive account.");
                             }
-                            User user = new User
+                            User user;
+                            if (DropDownListIdentification.SelectedValue == "Customer")
                             {
-                                ID = reader.GetInt32(0),
-                                Password = reader.GetString(1),
-                                FullName = reader.GetString(2),
-                                Email = reader.GetString(3),
-                                Gender = reader.GetString(4)[0],
-                                CreatedAt = reader.GetDateTime(5),
-                                IsActive = reader.GetBoolean(6)
-                            };
+                                user = new User
+                                {
+                                    ID = reader.GetInt32(0),
+                                    Password = reader.GetString(1),
+                                    FullName = reader.GetString(2),
+                                    Email = reader.GetString(3),
+                                    Gender = reader.GetString(4)[0],
+                                    CreatedAt = reader.GetDateTime(5),
+                                    IsActive = reader.GetBoolean(6),
+                                    TelephoneNo = reader.GetString(7)
+                                };
+                            }
+                            else
+                            {
+                                user = new User
+                                {
+                                    ID = reader.GetInt32(0),
+                                    Password = reader.GetString(1),
+                                    FullName = reader.GetString(2),
+                                    Email = reader.GetString(3),
+                                    Gender = reader.GetString(4)[0],
+                                    CreatedAt = reader.GetDateTime(5),
+                                    IsActive = reader.GetBoolean(6),
+                                    TelephoneNo = ""
+                                };
+                            }
 
 
                             Session["LoginUser"] = user;
+                            Session.Timeout = 300;
                             FormsAuthentication.RedirectFromLoginPage(user.ID.ToString(), chkPersistCookie.Checked);
                             //encrypt in password
                             if (DropDownListIdentification.SelectedValue == "Customer")
                             {
+                                FormsAuthentication.RedirectFromLoginPage("Customer", chkPersistCookie.Checked);
                                 Response.Redirect("~/Customer/CustomerHomepage.aspx");
                             }
                             else
                             {
+                                FormsAuthentication.RedirectFromLoginPage("Artist", chkPersistCookie.Checked);
                                 Response.Redirect("~/Artist/Homepage.aspx");
                             }
                         }

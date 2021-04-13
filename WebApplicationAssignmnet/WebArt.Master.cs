@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
+using WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
@@ -13,6 +13,12 @@ namespace WebApplicationAssignmnet
         protected void Page_Load(object sender, EventArgs e)
         {
             
+        }
+
+        protected void signout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/Anonymous/Login.aspx");
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplicationAssignmnet.Models.WebApplicationAssignmnet.Models;
+using WebApplicationAssignmnet.Models;
 
 namespace WebApplicationAssignmnet
 {
@@ -77,6 +77,38 @@ namespace WebApplicationAssignmnet
                     default:
                         CustGenderLabel.Text = "Prefer not to say";
                         break;
+                }
+                
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT CustFullName, CustGender FROM Customer WHERE CustID = @custID;";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("custID", user.ID);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            LblFullName.Text = reader.GetString(0).ToString();
+            
+                            if(Equals(reader.GetString(1).ToString(), "F"))
+                            {
+                                CustGenderLabel.Text = "Female";
+                            }
+                            else if(Equals(reader.GetString(1).ToString(), "M"))
+                            {
+                                CustGenderLabel.Text = "Male";
+                            }
+                            else
+                            {
+                                CustGenderLabel.Text = "Prefer not to say";
+                            }
+                            
+                        }
+                    }
                 }
             }
             catch (Exception ex)

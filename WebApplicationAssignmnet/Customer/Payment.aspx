@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="WebApplicationAssignmnet.Payment" %>
+<%@ Register TagPrefix="page" TagName="PageTitle" Src="~/DynamicData/FieldTemplates/PageTitle.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <form id="formPayment" runat="server">
@@ -23,8 +24,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <ul class="list-group list-group-horizontal tab">
+                    <li class="list-group-item">Cart</li>
                     <li class="list-group-item">Shipping</li>
-                    <li class="list-group-item active">Payment</li>
+                    <li class="list-group-item active" style="z-index: 1; padding-bottom: 0px;">Payment</li>
                 </ul>
             </div>
             <div class="row">
@@ -34,7 +36,7 @@
                         <div class="cart-body">
                             <div class="container">
                                 <div class="row">
-                                    <h3><strong>Payment Details</strong></h3>
+                                    <page:PageTitle runat="server" ID="title" PageHeader="Payment Details"></page:PageTitle>
                                 </div>
                                 <div class="row">
                                     <asp:Button runat="server" CssClass="tablink" OnClientClick="openTab('tab-card', this);return false;" ID="defaultOpen" ClientIDMode="Static" Text="Card" UseSubmitBehavior="false" />

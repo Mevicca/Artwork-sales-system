@@ -4,6 +4,7 @@
 .aboutUs-container {
     margin: 30px;
     background-color: white;
+    position: relative;
 }
 
 .aboutUs-Imgcontainer {

@@ -15,30 +15,12 @@ namespace WebApplicationAssignmnet
     {
 
         /// <summary>
-        /// form1 control.
+        /// page control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// img1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img1;
-
-        /// <summary>
-        /// img2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img2;
+        protected global::WebApplicationAssignmnet.DynamicData.FieldTemplates.AboutUs page;
     }
 }
